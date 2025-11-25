@@ -1,5 +1,4 @@
 package src.FlowerOrderSystem;
-import src.FlowerOrderSystem.InvalidInputException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +16,7 @@ public class OrderPanel {
     private JButton bouquetButton;
     private JButton btnPrevious;
     private JLabel invalidNameLbl;
-    private JLabel invalidAddressLbl;
+    private JLabel invalidEmailAddressLbl;
     private JLabel invalidContactLbl;
     private src.FlowerOrderSystem.NewForm newForm;
 
@@ -29,7 +28,7 @@ public class OrderPanel {
         stemButton.setEnabled(false);
         bouquetButton.setEnabled(false);
         invalidNameLbl.setVisible(false);
-        invalidAddressLbl.setVisible(false);
+        invalidEmailAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
 
         userName.addActionListener(e -> validateInputs());
@@ -62,7 +61,7 @@ public class OrderPanel {
 
         // Reset visibility
         invalidNameLbl.setVisible(false);
-        invalidAddressLbl.setVisible(false);
+        invalidEmailAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
 
         String name = userName.getText().trim();
@@ -87,8 +86,8 @@ public class OrderPanel {
                     invalidNameLbl.setVisible(true);
                     break;
 
-                case "Invalid address":
-                    invalidAddressLbl.setVisible(true);
+                case "Invalid email address":
+                    invalidEmailAddressLbl.setVisible(true);
                     break;
 
                 case "Invalid contact number":

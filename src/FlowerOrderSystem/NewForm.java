@@ -14,8 +14,8 @@ public class NewForm {
         this.layout = layout;
     }
 
-    public void createUser(String name, String address, String contactNumber) throws InvalidInputException  {
-        this.user = new User(name, address, contactNumber);
+    public void createUser(String name, String emailAddress, String contactNumber) throws InvalidInputException  {
+        this.user = new User(name, emailAddress, contactNumber);
     }
 
     public void createOrder(String type){
