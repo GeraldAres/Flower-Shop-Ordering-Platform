@@ -26,10 +26,10 @@ public class ActionSwing {
         Logo.setIconTextGap(10);
         MainPanel.setLayout(cardLayout);
         MainPanel.add(FirstPage, "FirstPage");
-
         MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
         MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
         action = new Action(MainPanel, cardLayout);
+
         btnNewOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
