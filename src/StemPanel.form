@@ -243,7 +243,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Color:"/>
+                  <text value="Color"/>
                 </properties>
               </component>
               <component id="17a49" class="javax.swing.JLabel">

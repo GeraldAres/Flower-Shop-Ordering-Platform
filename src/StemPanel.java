@@ -40,7 +40,6 @@ public class StemPanel {
         flower1.setVerticalTextPosition(JLabel.CENTER);
         flower1.setIconTextGap(10);
 
-
         flower2.setIcon(scaledIcon);
         flower2.setHorizontalTextPosition(JLabel.RIGHT);
         flower2.setVerticalTextPosition(JLabel.CENTER);
