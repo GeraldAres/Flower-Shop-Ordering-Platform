@@ -2,18 +2,18 @@ package src.FlowerOrderSystem;
 
 public class User {
     private String name;
-    private String address;
+    private String emailAddress;
     private String contactNumber;
 
-    public User(String name, String address, String contactNumber) throws InvalidInputException  {
+    public User(String name, String emailAddress, String contactNumber) throws InvalidInputException  {
         if (name == null || name.trim().isEmpty()
                 || !name.matches("[a-zA-Z .]+")) {
             throw new InvalidInputException("Invalid name");
         }
 
-        if (address == null || address.trim().isEmpty()
-                || !address.matches("[a-zA-Z0-9 ,.-]+")) {
-            throw new InvalidInputException("Invalid address");
+        if (emailAddress == null || emailAddress.trim().isEmpty()
+                || !emailAddress.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            throw new InvalidInputException("Invalid email address");
         }
 
         if (contactNumber == null || contactNumber.trim().isEmpty()
@@ -21,7 +21,7 @@ public class User {
             throw new InvalidInputException("Invalid contact number");
         }
         this.name = name;
-        this.address = address;
+        this.emailAddress = emailAddress;
         this.contactNumber = contactNumber;
 
     }
@@ -30,7 +30,7 @@ public class User {
         return name;
     }
     public String getAddress() {
-        return address;
+        return emailAddress;
     }
     public String getContactNumber() {
         return contactNumber;
