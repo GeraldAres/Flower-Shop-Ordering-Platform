@@ -3,7 +3,7 @@ package src.FlowerOrderSystem;
 import javax.swing.*;
 
 public class OrderPanel {
-    private JPanel OrderPanel;
+    JPanel OrderPanel;
     private JPanel InputArea;
     private JLabel BrandName;
     private JTextField a63TextField;

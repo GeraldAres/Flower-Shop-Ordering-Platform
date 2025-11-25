@@ -7,14 +7,18 @@ import java.awt.event.ActionListener;
 
 public class ActionSwing {
     private JPanel MainPanel;
-    CardLayout cardLayout = (CardLayout) MainPanel.getLayout();
+    CardLayout cardLayout = new CardLayout();
     private JPanel ActionPanel;
     private JPanel TitlePanel;
     private JButton btnViewOrder;
     private JButton btnNewOrder;
-    private Action action = new Action(MainPanel, cardLayout);
+    final Action action;
 
     public ActionSwing() {
+        MainPanel.setLayout(cardLayout);
+        OrderPanel orderPanel = new OrderPanel();
+        MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
+        action = new Action(MainPanel, cardLayout);
         btnNewOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

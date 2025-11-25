@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Action {
-    private  String action;
+    private  String action = " ";
     private JPanel mainPanel;
     private CardLayout layout;
 
@@ -14,13 +14,14 @@ public class Action {
     }
 
     public void performAction(){
-        if (action == null) return;
+        if (action == " ") return;
 
         if (action.equalsIgnoreCase("New Order")){
-            NewForm newForm = new NewForm();
-            /* call viewOrders panel and hide firstPanel */
+           layout.show(mainPanel, "OrderPanel");
+
         } else {
             /* call viewOrders panel and hide firstPanel */
+            layout.show(mainPanel, "MainPanel");
         }
     }
 
