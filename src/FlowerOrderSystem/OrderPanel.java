@@ -23,8 +23,7 @@ public class OrderPanel {
     public OrderPanel(JPanel MainPanel, CardLayout cardLayout) {
         final JPanel parentPanel = MainPanel;
         final CardLayout layout = cardLayout;
-
-        newForm = new NewForm(parentPanel, layout);
+        newForm = new NewForm();
         stemButton.setEnabled(false);
         bouquetButton.setEnabled(false);
         invalidNameLbl.setVisible(false);
@@ -39,6 +38,7 @@ public class OrderPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 newForm.createOrder("Stem");
+                layout.show(parentPanel, "StemPanel");
             }
         });
 
@@ -46,6 +46,7 @@ public class OrderPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 newForm.createOrder("Bouquet");
+                layout.show(parentPanel, "BouquetPanel");
             }
         });
 
