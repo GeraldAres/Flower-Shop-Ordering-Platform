@@ -1,5 +1,4 @@
 package src.FlowerOrderSystem;
-import src.FlowerOrderSystem.Action;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,29 +6,41 @@ import java.awt.event.ActionListener;
 
 public class ActionSwing {
     private JPanel MainPanel;
+    private JPanel FirstPage;
     CardLayout cardLayout = new CardLayout();
-    private JPanel ActionPanel;
-    private JPanel TitlePanel;
     private JButton btnViewOrder;
     private JButton btnNewOrder;
-    final Action action;
+    private JLabel Logo;
+    private final Action action;
+    private OrderPanel orderPanel = new OrderPanel();
+    private ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
+    ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Images/flower.jpeg");
+    Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    ImageIcon scaledIcon = new ImageIcon(img);
+
 
     public ActionSwing() {
+        Logo.setIcon(scaledIcon);
+        Logo.setHorizontalTextPosition(JLabel.CENTER);
+        Logo.setVerticalTextPosition(JLabel.CENTER);
+        Logo.setIconTextGap(10);
         MainPanel.setLayout(cardLayout);
-        OrderPanel orderPanel = new OrderPanel();
+        MainPanel.add(FirstPage, "FirstPage");
+
         MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
+        MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
         action = new Action(MainPanel, cardLayout);
         btnNewOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.setAction("New Order");
+                action.performAction("New Order");
             }
         });
 
         btnViewOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.setAction("View Order");
+                action.performAction("View Order");
             }
         });
     }

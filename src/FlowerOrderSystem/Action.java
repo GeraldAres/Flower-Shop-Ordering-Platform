@@ -3,9 +3,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Action {
-    private  String action = " ";
-    private JPanel mainPanel;
-    private CardLayout layout;
+    private  String action = null;
+    private final JPanel mainPanel;
+    private final CardLayout layout;
 
 
     public Action(JPanel mainPanel, CardLayout layout) {
@@ -13,15 +13,16 @@ public class Action {
         this.layout = layout;
     }
 
-    public void performAction(){
-        if (action == " ") return;
+    public void performAction(String action){
+        this.action = action;
+        if (action == null) return;
 
         if (action.equalsIgnoreCase("New Order")){
            layout.show(mainPanel, "OrderPanel");
 
         } else {
             /* call viewOrders panel and hide firstPanel */
-            layout.show(mainPanel, "MainPanel");
+            layout.show(mainPanel, "ViewOrderPanel");
         }
     }
 
@@ -29,7 +30,4 @@ public class Action {
         return action;
     }
 
-    public void setAction(String action) {
-        this.action = action;
-    }
 }
