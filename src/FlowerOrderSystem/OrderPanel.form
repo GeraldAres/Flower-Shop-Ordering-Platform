@@ -113,7 +113,7 @@
               <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <enabled value="false"/>
+              <enabled value="true"/>
               <font size="8"/>
               <foreground color="-1769437"/>
               <text value="Please input a valid name."/>
@@ -124,7 +124,7 @@
               <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <enabled value="false"/>
+              <enabled value="true"/>
               <font size="8"/>
               <foreground color="-1769437"/>
               <text value="Please input a valid number"/>
@@ -135,7 +135,7 @@
               <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <enabled value="false"/>
+              <enabled value="true"/>
               <font size="8"/>
               <foreground color="-1769437"/>
               <text value="Please input a valid address"/>

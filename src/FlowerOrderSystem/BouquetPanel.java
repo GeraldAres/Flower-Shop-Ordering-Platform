@@ -2,8 +2,8 @@ package src.FlowerOrderSystem;
 
 import javax.swing.*;
 
-public class BoquetPanel {
-    private JPanel MainPanel3;
+public class BouquetPanel {
+    JPanel BouquetPanel;
     private JPanel FieldPanel;
     private JPanel ProductPanel;
     private JComboBox BoxSize;
@@ -38,7 +38,7 @@ public class BoquetPanel {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Boquet System");
-        frame.setContentPane(new BoquetPanel().MainPanel3);
+        frame.setContentPane(new BouquetPanel().BouquetPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 400);
         frame.setVisible(true);

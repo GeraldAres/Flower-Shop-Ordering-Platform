@@ -1,6 +1,7 @@
 package src.FlowerOrderSystem;
-
+import src.FlowerOrderSystem.InvalidInputException;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,18 +19,23 @@ public class OrderPanel {
     private JLabel invalidNameLbl;
     private JLabel invalidAddressLbl;
     private JLabel invalidContactLbl;
+    private src.FlowerOrderSystem.NewForm newForm;
 
+    public OrderPanel(JPanel MainPanel, CardLayout cardLayout) {
+        final JPanel parentPanel = MainPanel;
+        final CardLayout layout = cardLayout;
 
-    public OrderPanel() {
-        src.FlowerOrderSystem.NewForm  newForm = new NewForm();
+        newForm = new NewForm(parentPanel, layout);
         stemButton.setEnabled(false);
         bouquetButton.setEnabled(false);
         invalidNameLbl.setVisible(false);
         invalidAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
 
-        int ContactNumber = Integer.parseInt(userContactNumber.getText());
-        newForm.createUser(userName.getText(), userAddress.getText(), ContactNumber);
+        userName.addActionListener(e -> validateInputs());
+        userAddress.addActionListener(e -> validateInputs());
+        userContactNumber.addActionListener(e -> validateInputs());
+
         stemButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,16 +43,58 @@ public class OrderPanel {
             }
         });
 
-    }
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new OrderPanel().OrderPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 400);
-        frame.setVisible(true);
+        bouquetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                newForm.createOrder("Bouquet");
+            }
+        });
+
+        btnPrevious.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                layout.show(parentPanel, "FirstPage");
+            }
+        });
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+    private void validateInputs() {
+
+        // Reset visibility
+        invalidNameLbl.setVisible(false);
+        invalidAddressLbl.setVisible(false);
+        invalidContactLbl.setVisible(false);
+
+        String name = userName.getText().trim();
+        String address = userAddress.getText().trim();
+        String contact = userContactNumber.getText().trim();
+
+        try {
+            newForm.createUser(name, address, contact);
+            stemButton.setEnabled(true);
+            bouquetButton.setEnabled(true);
+
+        } catch (InvalidInputException e) {
+
+            // ANY invalid → disable buttons
+            stemButton.setEnabled(false);
+            bouquetButton.setEnabled(false);
+
+            // Show the correct error label based on exception message
+            switch (e.getMessage()) {
+
+                case "Invalid name":
+                    invalidNameLbl.setVisible(true);
+                    break;
+
+                case "Invalid address":
+                    invalidAddressLbl.setVisible(true);
+                    break;
+
+                case "Invalid contact number":
+                    invalidContactLbl.setVisible(true);
+                    break;
+            }
+        }
     }
 }

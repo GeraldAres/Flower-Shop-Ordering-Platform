@@ -5,9 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ActionSwing {
-    private JPanel MainPanel;
-    private JPanel FirstPage;
+    JPanel MainPanel;
     CardLayout cardLayout = new CardLayout();
+    private JPanel FirstPage;
     private JButton btnViewOrder;
     private JButton btnNewOrder;
     private JLabel Logo;
@@ -15,19 +15,29 @@ public class ActionSwing {
     private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Images/flower.jpeg");
     private Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
     private ImageIcon scaledIcon = new ImageIcon(img);
-    private final OrderPanel orderPanel = new OrderPanel();
-    private final ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
+
 
     public ActionSwing() {
+        MainPanel.setLayout(cardLayout);
+
+        OrderPanel orderPanel = new OrderPanel(MainPanel, cardLayout);
+        ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
+        StemPanel stemPanel = new StemPanel();
+        BouquetPanel bouquetPanel = new BouquetPanel();
+
+        MainPanel.add(FirstPage, "FirstPage");
+        MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
+        MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
+        MainPanel.add(stemPanel.StemPanel, "StemPanel" );
+        MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
+
+        action = new Action(MainPanel, cardLayout);
+
         Logo.setIcon(scaledIcon);
         Logo.setHorizontalTextPosition(JLabel.CENTER);
         Logo.setVerticalTextPosition(JLabel.CENTER);
         Logo.setIconTextGap(10);
-        MainPanel.setLayout(cardLayout);
-        MainPanel.add(FirstPage, "FirstPage");
-        MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
-        MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
-        action = new Action(MainPanel, cardLayout);
+
 
         btnNewOrder.addActionListener(new ActionListener() {
             @Override

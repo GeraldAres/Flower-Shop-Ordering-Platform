@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class StemPanel {
-    private JPanel StemPanel;
+    JPanel StemPanel;
     private JPanel FlowersPanel;
     private JLabel flower1;
     private JLabel flower1Increase;
