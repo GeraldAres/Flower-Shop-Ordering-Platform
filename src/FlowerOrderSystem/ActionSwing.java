@@ -12,12 +12,11 @@ public class ActionSwing {
     private JButton btnNewOrder;
     private JLabel Logo;
     private final Action action;
-    private OrderPanel orderPanel = new OrderPanel();
-    private ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
-    ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Images/flower.jpeg");
-    Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-    ImageIcon scaledIcon = new ImageIcon(img);
-
+    private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Images/flower.jpeg");
+    private Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    private ImageIcon scaledIcon = new ImageIcon(img);
+    private final OrderPanel orderPanel = new OrderPanel();
+    private final ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
 
     public ActionSwing() {
         Logo.setIcon(scaledIcon);
