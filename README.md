@@ -20,3 +20,4 @@ Project implementation action plan (as of November 24, 2025)
   November 7-15, 2025: Finalize project, including possible pitch deck requirement and script for presenting. Create a comprehensive paper on its intended use and applications to real-world problems. 
 
   To view more outlined allocation of tasks and progress click this excel link: https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/angelajahziel_encabo_cit_edu/IQCJkBYIVsKaTpAXVsNIdXkCAQXy0pWYhIGdOZZsHMx8LEc?e=0EMKg6 
+  To view more on the UI/UX of GUI swing implementation click this figma link: https://www.figma.com/design/5qhT7Lx3M43MfxPLY0sya1/JavaWookez?node-id=0-1&t=u9EFuwFbLSITEAQa-1
