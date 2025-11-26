@@ -4,12 +4,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ActionSwing {
+public class MainPanel {
     JPanel MainPanel;
     CardLayout cardLayout = new CardLayout();
     private JPanel FirstPage;
-    private JButton btnViewOrder;
-    private JButton btnNewOrder;
+    private JButton btnLogIn;
+    private JButton btnGuest;
     private JLabel Logo;
     private final Action action;
     private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/flower.jpeg");
@@ -17,7 +17,7 @@ public class ActionSwing {
     private ImageIcon scaledIcon = new ImageIcon(img);
 
 
-    public ActionSwing() {
+    public MainPanel() {
         MainPanel.setLayout(cardLayout);
 
         OrderPanel orderPanel = new OrderPanel(MainPanel, cardLayout);
@@ -33,20 +33,21 @@ public class ActionSwing {
 
         action = new Action(MainPanel, cardLayout);
 
+
         Logo.setIcon(scaledIcon);
         Logo.setHorizontalTextPosition(JLabel.CENTER);
         Logo.setVerticalTextPosition(JLabel.CENTER);
         Logo.setIconTextGap(10);
 
 
-        btnNewOrder.addActionListener(new ActionListener() {
+        btnGuest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 action.performAction("New Order");
             }
         });
 
-        btnViewOrder.addActionListener(new ActionListener() {
+        btnLogIn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 action.performAction("View Order");
@@ -57,7 +58,7 @@ public class ActionSwing {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Food Ordering System");
-        frame.setContentPane(new ActionSwing().MainPanel);
+        frame.setContentPane(new MainPanel().MainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 400);
         frame.setVisible(true);
