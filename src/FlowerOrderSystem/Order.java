@@ -9,10 +9,12 @@ public class Order {
 
     public Order(String type){
         this.type = type;
+        Flowers = new ArrayList<>();
     }
 
     public void addFlower(Stem stem) {
         Flowers.add(stem);
+        setPrice();
     }
 
     public void removeFlower(Stem stem) {
@@ -24,8 +26,12 @@ public class Order {
     }
 
     public void setPrice (){
-        for(int i = 0; i < Flowers.size(); i++){
-           orderPrice += Flowers.get(i).getPrice();
+        orderPrice = 0;
+//        for(int i = 0; i < Flowers.size(); i++){
+//           orderPrice += Flowers.get(i).getPrice();
+//        }
+        for(Stem flower: Flowers){
+            orderPrice += flower.getPrice();
         }
     }
 

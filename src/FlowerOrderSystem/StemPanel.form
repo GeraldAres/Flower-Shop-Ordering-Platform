@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="StemPanel" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="20" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="20" y="20" width="618" height="540"/>
+      <xy x="20" y="20" width="618" height="589"/>
     </constraints>
     <properties>
       <font size="18"/>
@@ -35,13 +35,13 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="aa65c" class="javax.swing.JLabel" binding="flower1">
+              <component id="aa65c" class="javax.swing.JLabel" binding="roseFlower">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font size="20"/>
-                  <text value="FlowerName"/>
+                  <text value="Rose"/>
                 </properties>
               </component>
               <component id="19f44" class="javax.swing.JLabel">
@@ -50,7 +50,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Color:"/>
+                  <text value="Color: Red"/>
                 </properties>
               </component>
               <component id="8f69" class="javax.swing.JLabel">
@@ -59,10 +59,10 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Price:"/>
+                  <text value="Price: ₱15.00"/>
                 </properties>
               </component>
-              <component id="431d9" class="javax.swing.JLabel">
+              <component id="431d9" class="javax.swing.JLabel" binding="roseCount">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -86,7 +86,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="761ef" class="javax.swing.JLabel" binding="flower1Increase">
+                      <component id="761ef" class="javax.swing.JLabel" binding="roseQuantityIncrease">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -105,7 +105,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="27ec1" class="javax.swing.JLabel" binding="flower1Decrease">
+                      <component id="27ec1" class="javax.swing.JLabel" binding="roseQuantityDecrease">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -128,13 +128,13 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="c2c71" class="javax.swing.JLabel" binding="flower4">
+              <component id="c2c71" class="javax.swing.JLabel" binding="lilyFlower">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font size="20"/>
-                  <text value="FlowerName"/>
+                  <text value="Lily"/>
                 </properties>
               </component>
               <component id="4552f" class="javax.swing.JLabel">
@@ -143,7 +143,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Color:"/>
+                  <text value="Color: Red"/>
                 </properties>
               </component>
               <component id="73271" class="javax.swing.JLabel">
@@ -152,10 +152,10 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Price:"/>
+                  <text value="Price: ₱30.00"/>
                 </properties>
               </component>
-              <component id="bb978" class="javax.swing.JLabel">
+              <component id="bb978" class="javax.swing.JLabel" binding="lilyCount">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -184,7 +184,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="f4396" class="javax.swing.JLabel" binding="flower4Increase">
+                          <component id="f4396" class="javax.swing.JLabel" binding="lilyQuantityIncrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -203,7 +203,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="78423" class="javax.swing.JLabel" binding="flower4Decrease">
+                          <component id="78423" class="javax.swing.JLabel" binding="lilyQuantityDecrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -228,13 +228,13 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="e9afc" class="javax.swing.JLabel" binding="flower2">
+              <component id="e9afc" class="javax.swing.JLabel" binding="carnationFlower">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font size="20"/>
-                  <text value="FlowerName"/>
+                  <text value="Carnation"/>
                 </properties>
               </component>
               <component id="7d36a" class="javax.swing.JLabel">
@@ -243,7 +243,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Color"/>
+                  <text value="Color: Red"/>
                 </properties>
               </component>
               <component id="17a49" class="javax.swing.JLabel">
@@ -252,10 +252,10 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Price:"/>
+                  <text value="Price: ₱25.00"/>
                 </properties>
               </component>
-              <component id="adbb" class="javax.swing.JLabel">
+              <component id="adbb" class="javax.swing.JLabel" binding="carnationCount">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -284,7 +284,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="2da62" class="javax.swing.JLabel" binding="flower2Increase">
+                          <component id="2da62" class="javax.swing.JLabel" binding="carnationQuantityIncrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -303,7 +303,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="6b8e4" class="javax.swing.JLabel" binding="flower2Decrease">
+                          <component id="6b8e4" class="javax.swing.JLabel" binding="carnationQuantityDecrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -328,13 +328,13 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="667e2" class="javax.swing.JLabel" binding="flower5">
+              <component id="667e2" class="javax.swing.JLabel" binding="sunflowerFlower">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font size="20"/>
-                  <text value="FlowerName"/>
+                  <text value="Sunflower"/>
                 </properties>
               </component>
               <component id="913fb" class="javax.swing.JLabel">
@@ -343,7 +343,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Color:"/>
+                  <text value="Color: Red"/>
                 </properties>
               </component>
               <component id="6e74b" class="javax.swing.JLabel">
@@ -352,10 +352,10 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Price:"/>
+                  <text value="Price: ₱40.00"/>
                 </properties>
               </component>
-              <component id="32f10" class="javax.swing.JLabel">
+              <component id="32f10" class="javax.swing.JLabel" binding="sunflowerCount">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -384,7 +384,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="92590" class="javax.swing.JLabel" binding="flower5Increase">
+                          <component id="92590" class="javax.swing.JLabel" binding="sunflowerQuantityIncrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -403,7 +403,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="39804" class="javax.swing.JLabel" binding="flower5Decrease">
+                          <component id="39804" class="javax.swing.JLabel" binding="sunflowerQuantityDecrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -428,13 +428,13 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="d91d7" class="javax.swing.JLabel" binding="flower3">
+              <component id="d91d7" class="javax.swing.JLabel" binding="daisyFlower">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font size="20"/>
-                  <text value="FlowerName"/>
+                  <text value="Daisy"/>
                 </properties>
               </component>
               <component id="470eb" class="javax.swing.JLabel">
@@ -443,7 +443,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Color:"/>
+                  <text value="Color: Red"/>
                 </properties>
               </component>
               <component id="5b719" class="javax.swing.JLabel">
@@ -452,10 +452,10 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Price:"/>
+                  <text value="Price: ₱25.00"/>
                 </properties>
               </component>
-              <component id="51c12" class="javax.swing.JLabel">
+              <component id="51c12" class="javax.swing.JLabel" binding="daisyCount">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -484,7 +484,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="31eec" class="javax.swing.JLabel" binding="flower3Increase">
+                          <component id="31eec" class="javax.swing.JLabel" binding="daisyQuantityIncrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -503,7 +503,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="89a61" class="javax.swing.JLabel" binding="flower3Decrease">
+                          <component id="89a61" class="javax.swing.JLabel" binding="daisyQuantityDecrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -528,13 +528,13 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="73f8c" class="javax.swing.JLabel" binding="flower6">
+              <component id="73f8c" class="javax.swing.JLabel" binding="tulipFlower">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <font size="20"/>
-                  <text value="FlowerName"/>
+                  <text value="Tulip"/>
                 </properties>
               </component>
               <component id="67933" class="javax.swing.JLabel">
@@ -543,7 +543,7 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Color:"/>
+                  <text value="Color: Red"/>
                 </properties>
               </component>
               <component id="4a652" class="javax.swing.JLabel">
@@ -552,10 +552,10 @@
                 </constraints>
                 <properties>
                   <font size="10"/>
-                  <text value="Price:"/>
+                  <text value="Price: ₱75.00"/>
                 </properties>
               </component>
-              <component id="fad3" class="javax.swing.JLabel">
+              <component id="fad3" class="javax.swing.JLabel" binding="tulipCount">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -584,7 +584,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="c7058" class="javax.swing.JLabel" binding="flower7Increase">
+                          <component id="c7058" class="javax.swing.JLabel" binding="tulipQuantityIncrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -603,7 +603,7 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="6ccee" class="javax.swing.JLabel" binding="flower6Increase">
+                          <component id="6ccee" class="javax.swing.JLabel" binding="tulipQuantityDecrease">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -655,7 +655,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="51009" class="javax.swing.JLabel">
+              <component id="51009" class="javax.swing.JLabel" binding="totalPrice">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
