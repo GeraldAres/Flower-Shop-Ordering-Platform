@@ -1,11 +1,15 @@
 package src.FlowerOrderSystem;
 import src.FlowerOrderSystem.InvalidInputException;
+
+import java.util.ArrayList;
+
 public class User {
     private final String fullName;
     private String username;
     private String password;
     private String email;
     private String contactNumber;
+    private ArrayList<CheckOut> Orders;
 
     public User(String fullName, String emailAddress, String contactNumber) throws InvalidInputException {
         if (fullName == null || fullName.trim().isEmpty()
@@ -56,6 +60,7 @@ public class User {
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
+        Orders = new ArrayList<>();
     }
 
     public String getFullName() {
@@ -84,5 +89,21 @@ public class User {
     }
     public String getContactNumber() {
         return contactNumber;
+    }
+
+    public void addOrder(CheckOut order) {
+        Orders.add(order);
+    }
+
+    public ArrayList<CheckOut> getOrders() {
+        return Orders;
+    }
+
+    public void removeOrder(String orderID) {
+        for (CheckOut order : Orders) {
+            if (order.getOrderID().equals(orderID)){
+                Orders.remove(order);
+            }
+        }
     }
 }
