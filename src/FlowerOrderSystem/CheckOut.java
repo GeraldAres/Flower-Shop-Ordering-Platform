@@ -106,7 +106,7 @@ public class CheckOut {
     }
 
     public void setContent() {
-         this.content = "Order ID: " + getFormattedDate() +
+         content = "Order ID: " + getFormattedDate() +
                 "\nMode of Delivery: " + getModeOfDelivery() +
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
