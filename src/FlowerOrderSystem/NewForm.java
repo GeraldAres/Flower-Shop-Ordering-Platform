@@ -1,10 +1,7 @@
 package src.FlowerOrderSystem;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class NewForm {
-    private User user;
+    private Guest guest;
     private Order order;
 
 
@@ -12,7 +9,7 @@ public class NewForm {
     }
 
     public void createUser(String name, String emailAddress, String contactNumber) throws InvalidInputException  {
-        this.user = new User(name, emailAddress, contactNumber);
+        this.guest = new Guest(name, emailAddress, contactNumber);
     }
 
     public void createOrder(String type){
@@ -23,7 +20,7 @@ public class NewForm {
         return order;
     }
 
-    public User getUser() {
-        return user;
+    public Guest getUser() {
+        return guest;
     }
 }
