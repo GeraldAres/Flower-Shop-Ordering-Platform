@@ -43,8 +43,6 @@ public class BouquetPanel {
 
     public BouquetPanel(){
 
-
-
         //small = 1, etc.
         BoxSize.addActionListener(new ActionListener() {
             @Override
@@ -52,8 +50,6 @@ public class BouquetPanel {
                 size = BoxSize.getSelectedIndex() + 1;
             }
         });
-
-
 
         buyRoseBtn.addActionListener(new ActionListener() {
             @Override
