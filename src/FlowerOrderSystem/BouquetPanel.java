@@ -36,11 +36,19 @@ public class BouquetPanel {
     private JLabel product3;
     private JLabel product1;
 
+    public BouquetPanel(){
+        Bouquet bouquet = new PreMade();
+
+
+
+    }
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Boquet System");
         frame.setContentPane(new BouquetPanel().BouquetPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 400);
+        frame.pack();
         frame.setVisible(true);
     }
 }

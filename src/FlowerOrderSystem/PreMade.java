@@ -1,15 +1,19 @@
 package src.FlowerOrderSystem;
 
 public class PreMade extends Bouquet {
-    private String name;
-    public PreMade() {
+    private Stem stemFLower;
+
+    public PreMade(Stem stem) {
         super("PreMade");
+        stemFLower = stem;
+
+
+        if(stem.getName().equalsIgnoreCase("rose")){
+
+        }
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getName() {
-        return name;
+    public Stem getFlower() {
+        return stemFLower;
     }
 }

@@ -8,8 +8,8 @@ public abstract class Bouquet {
 
     public Bouquet(String type) {
         this.type = type;
-
     }
+
     public String getType() {
         return type;
     }

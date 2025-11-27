@@ -11,6 +11,7 @@ public class LogInPanel {
     private JTextField username;
     private JTextField password;
     private JButton logInButton;
+    private JPanel Left;
 
     public LogInPanel() {
 
