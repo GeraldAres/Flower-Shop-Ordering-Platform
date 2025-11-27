@@ -11,6 +11,7 @@ public class MainPanel {
     private JButton btnLogIn;
     private JButton btnGuest;
     private JLabel Logo;
+    private JPanel BusinessName;
     private final Action action;
     private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/flower.jpeg");
     private Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
@@ -24,12 +25,14 @@ public class MainPanel {
         ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
         StemPanel stemPanel = new StemPanel();
         BouquetPanel bouquetPanel = new BouquetPanel();
+        LogInPanel logInPanel = new LogInPanel();
 
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
         MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
+        MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
 
         action = new Action(MainPanel, cardLayout);
 
@@ -43,14 +46,14 @@ public class MainPanel {
         btnGuest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.performAction("New Order");
+                action.performAction("Guest");
             }
         });
 
         btnLogIn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.performAction("View Order");
+                action.performAction("LogIn");
             }
         });
     }

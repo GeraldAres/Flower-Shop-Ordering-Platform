@@ -5,7 +5,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class LogInPanel {
-    private JPanel LogInPanel;
+    JPanel LogInPnl;
     private JLabel Welcome;
     private JPanel Right;
     private JTextField username;
@@ -13,19 +13,43 @@ public class LogInPanel {
     private JButton logInButton;
 
     public LogInPanel() {
-        // Apply rounded text fields
+
+        // ---------- Apply rounded text fields ----------
         username = new RoundedTextField(50);
         password = new RoundedTextField(50);
 
-        // Apply rounded button and marron color
+        // ---------- Apply rounded button ----------
+        // Instead of just setting border, wrap existing button with paint override
+        logInButton = new JButton("Log In") {
+            private int radius = 30;
+
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(getBackground());
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), radius, radius);
+                super.paintComponent(g2);
+                g2.dispose();
+            }
+
+            @Override
+            protected void paintBorder(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(Color.GRAY);
+                g2.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, radius, radius);
+                g2.dispose();
+            }
+        };
+
         logInButton.setBackground(Color.decode("#561C32")); // Marron
         logInButton.setForeground(Color.WHITE);
         logInButton.setFocusPainted(false);
         logInButton.setBorder(new RoundedBorder(30));
-
     }
 
-    // Custom rounded border for button
+    // ---------- Rounded border for button ----------
     static class RoundedBorder implements Border {
         private int radius;
 
@@ -46,7 +70,7 @@ public class LogInPanel {
         }
     }
 
-    // Custom JTextField with rounded corners
+    // ---------- Rounded text field ----------
     static class RoundedTextField extends JTextField {
         private int radius = 85;
 
@@ -76,12 +100,12 @@ public class LogInPanel {
         }
     }
 
+    // ---------- Main method ----------
     public static void main(String[] args) {
         JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new LogInPanel().LogInPanel);
+        frame.setContentPane(new LogInPanel().LogInPnl);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1280, 720);
-        frame.pack();
         frame.setVisible(true);
     }
 }
