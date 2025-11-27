@@ -35,12 +35,7 @@ public class BouquetPanel {
     private JLabel product2;
     private JLabel product3;
     private JLabel product1;
-
     public BouquetPanel(){
-        Bouquet bouquet = new PreMade();
-
-
-
     }
 
     public static void main(String[] args) {

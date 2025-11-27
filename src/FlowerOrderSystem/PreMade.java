@@ -5,12 +5,7 @@ public class PreMade extends Bouquet {
 
     public PreMade(Stem stem) {
         super("PreMade");
-        stemFLower = stem;
 
-
-        if(stem.getName().equalsIgnoreCase("rose")){
-
-        }
     }
 
     public Stem getFlower() {
