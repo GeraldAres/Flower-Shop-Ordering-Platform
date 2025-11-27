@@ -25,6 +25,10 @@ public class CheckOut {
         this.newForm = newForm;
     }
 
+    public CheckOut(String orderId, String customerName, String flower, double total, String date) {
+
+    }
+
     public String getModeOfDelivery() {
         return modeOfDelivery;
     }
