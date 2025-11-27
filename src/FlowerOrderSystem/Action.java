@@ -17,12 +17,12 @@ public class Action {
         this.action = action;
         if (action == null) return;
 
-        if (action.equalsIgnoreCase("New Order")){
+        if (action.equalsIgnoreCase("Guest")){
            layout.show(mainPanel, "OrderPanel");
 
         } else {
             /* call viewOrders panel and hide firstPanel */
-            layout.show(mainPanel, "ViewOrderPanel");
+            layout.show(mainPanel, "LogInPanel");
         }
     }
 

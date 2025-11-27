@@ -4,34 +4,38 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ActionSwing {
+public class MainPanel {
     JPanel MainPanel;
     CardLayout cardLayout = new CardLayout();
     private JPanel FirstPage;
-    private JButton btnViewOrder;
-    private JButton btnNewOrder;
+    private JButton btnLogIn;
+    private JButton btnGuest;
     private JLabel Logo;
+    private JPanel BusinessName;
     private final Action action;
     private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/flower.jpeg");
     private Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
     private ImageIcon scaledIcon = new ImageIcon(img);
 
 
-    public ActionSwing() {
+    public MainPanel() {
         MainPanel.setLayout(cardLayout);
 
         OrderPanel orderPanel = new OrderPanel(MainPanel, cardLayout);
         ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
         StemPanel stemPanel = new StemPanel();
         BouquetPanel bouquetPanel = new BouquetPanel();
+        LogInPanel logInPanel = new LogInPanel();
 
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
         MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
+        MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
 
         action = new Action(MainPanel, cardLayout);
+
 
         Logo.setIcon(scaledIcon);
         Logo.setHorizontalTextPosition(JLabel.CENTER);
@@ -39,17 +43,17 @@ public class ActionSwing {
         Logo.setIconTextGap(10);
 
 
-        btnNewOrder.addActionListener(new ActionListener() {
+        btnGuest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.performAction("New Order");
+                action.performAction("Guest");
             }
         });
 
-        btnViewOrder.addActionListener(new ActionListener() {
+        btnLogIn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.performAction("View Order");
+                action.performAction("LogIn");
             }
         });
     }
@@ -57,7 +61,7 @@ public class ActionSwing {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Food Ordering System");
-        frame.setContentPane(new ActionSwing().MainPanel);
+        frame.setContentPane(new MainPanel().MainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 400);
         frame.setVisible(true);

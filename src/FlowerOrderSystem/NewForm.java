@@ -11,11 +11,7 @@ public class NewForm {
     }
 
     public void createUser(String name, String emailAddress, String contactNumber, String username, String password, String confirmPassword) throws InvalidInputException  {
-        if (confirmPassword.equals(password)) {
-            this.user = new User(name, emailAddress, contactNumber, username, password);
-        } else {
-            throw new InvalidInputException("Passwords do not match");
-        }
+        this.user = new User(name, emailAddress, contactNumber, username, password, confirmPassword);
     }
 
 

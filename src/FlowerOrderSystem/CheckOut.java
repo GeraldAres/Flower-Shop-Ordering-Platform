@@ -109,6 +109,10 @@ public class CheckOut {
         return content;
     }
 
+    public String getOrderID(){
+        return formatted;
+    }
+
     public void setContent() {
          this.content = "Order ID: " + getFormattedDate() +
                 "\nMode of Delivery: " + getModeOfDelivery() +
