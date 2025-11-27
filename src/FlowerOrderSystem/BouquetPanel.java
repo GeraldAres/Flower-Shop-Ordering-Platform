@@ -1,6 +1,8 @@
 package src.FlowerOrderSystem;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BouquetPanel {
     JPanel BouquetPanel;
@@ -10,10 +12,10 @@ public class BouquetPanel {
     private JComboBox BoxColor;
     private JLabel labelSize;
     private JLabel labelColor;
-    private JButton btnBuy1;
-    private JButton btnBuy2;
-    private JButton btnBuy3;
-    private JButton btnBuy4;
+    private JButton buyRoseBtn;
+    private JButton buyTulipsBtn;
+    private JButton buyLiliesBtn;
+    private JButton buySunflowerBtn;
     private JPanel CustomPanel;
     private JButton btnBuy;
     private JButton btnPrev;
@@ -36,10 +38,50 @@ public class BouquetPanel {
     private JLabel product3;
     private JLabel product1;
 
+    private PreMade premade;
+    int size = 1;
+
     public BouquetPanel(){
-        Bouquet bouquet = new PreMade();
 
 
+
+        //small = 1, etc.
+        BoxSize.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                size = BoxSize.getSelectedIndex() + 1;
+            }
+        });
+
+
+
+        buyRoseBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                premade = new PreMade(new Rose("red"), size);
+            }
+        });
+
+        buyLiliesBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                premade = new PreMade(new Lily("red"), size);
+            }
+        });
+
+        buyTulipsBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                premade = new PreMade(new Tulip("red"), size);
+            }
+        });
+
+        buySunflowerBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                premade = new PreMade(new Sunflower("red"), size);
+            }
+        });
 
     }
 
