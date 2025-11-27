@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="LogInPnl" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="946" height="704"/>
+      <xy x="20" y="20" width="946" height="724"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -228,9 +228,9 @@
                   <vspacer id="b50f2">
                     <constraints>
                       <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                        <minimum-size width="-1" height="10"/>
-                        <preferred-size width="-1" height="10"/>
-                        <maximum-size width="-1" height="10"/>
+                        <minimum-size width="-1" height="5"/>
+                        <preferred-size width="-1" height="5"/>
+                        <maximum-size width="-1" height="5"/>
                       </grid>
                     </constraints>
                   </vspacer>
@@ -290,7 +290,7 @@
                   </vspacer>
                   <component id="42b58" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="9" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-11133902"/>
@@ -337,7 +337,7 @@
                       <visible value="false"/>
                     </properties>
                   </component>
-                  <component id="3950e" class="javax.swing.JLabel">
+                  <component id="3950e" class="javax.swing.JLabel" binding="invalidPassword">
                     <constraints>
                       <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="25" use-parent-layout="false"/>
                     </constraints>
@@ -412,7 +412,7 @@
                       <background color="-11133902"/>
                       <font name="Bell MT" size="18" style="0"/>
                       <foreground color="-11133902"/>
-                      <text value="Hey amigo! "/>
+                      <text value="Cebu knows best."/>
                     </properties>
                   </component>
                   <component id="2eaf8" class="javax.swing.JLabel">

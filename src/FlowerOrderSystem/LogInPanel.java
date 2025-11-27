@@ -12,6 +12,7 @@ public class LogInPanel {
     private JTextField password;
     private JButton logInButton;
     private JLabel InvalidUsername;
+    private JLabel invalidPassword;
     private JPanel Log;
 
 
