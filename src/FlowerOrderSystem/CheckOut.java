@@ -7,9 +7,11 @@ import java.time.*;
 
 public class CheckOut {
     private NewForm newForm;
-    private LocalDateTime orderID = LocalDateTime.now();
-    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yy hh:mm a");
-    private String formatted = orderID.format(formatter);
+    private LocalDateTime timestamp = LocalDateTime.now();
+    private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+    private DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("MM-dd-yy hh:mm a");
+    private String orderID;
+    private String formattedDate;
     private String modeOfDelivery;
     private String addressOfDelivery;
     private String modeOfPayment;
@@ -23,10 +25,15 @@ public class CheckOut {
 
     public CheckOut(NewForm newForm) {
         this.newForm = newForm;
+        this.formattedDate = timestamp.format(displayFormatter);
+        this.orderID = timestamp.format(idFormatter);
+        this.orderStatus = "Pending";
     }
 
     public CheckOut(String orderId, String customerName, String flower, double total, String date) {
-
+        this.orderID = orderId;
+        this.formattedDate = date;
+        this.totalPrice = total;
     }
 
     public String getModeOfDelivery() {
@@ -102,43 +109,50 @@ public class CheckOut {
     }
 
     public String getFormattedDate() {
-        return formatted;
+        return formattedDate;
     }
 
     public String getContent() {
+            updateContent();
         return content;
     }
 
     public String getOrderID(){
-        return formatted;
+        return orderID;
     }
 
-    public void setContent() {
-        this.content = "Order ID: " + getFormattedDate() +
+    public void updateContent() {
+        this.content = "Order ID: " + getOrderID() +
+                "\nOrder Date: " + getFormattedDate() +
                 "\nMode of Delivery: " + getModeOfDelivery() +
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
                 "\nDate of Delivery: " + getDateOfDelivery() +
                 "\nNumber of Add-Ons: " + getNumsOfAddOns() +
-                "\nAdd-Ons List: " + getAddOnsList() +
-                "\nTotal Price: $" + getTotalPrice() +
-                "\nSpecial Instructions: " + getSpecialInstructions() +
+                "\nAdd-Ons List: " + (addOnsList != null ? addOnsList.toString() : "None") +
+                "\nTotal Price: $" + String.format("%.2f", getTotalPrice()) +
+                "\nSpecial Instructions: " + (specialInstructions != null ? specialInstructions : "None") +
                 "\nOrder Status: " + getOrderStatus();
     }
 
-    public void saveToFile(String folderName, String filename) {
-        try {
-            File folder = new File(folderName);
-            if (!folder.exists()) {
-                folder.mkdirs();
+    public void saveOrderToUserFolder(String username) {
+        updateContent();
+        String mainFolderName = "Orders";
+        File userFolder = new File(mainFolderName, username);
+            if (!userFolder.exists()) {
+                boolean created = userFolder.mkdirs();
+                    if (!created) {
+                        System.err.println("Error: Could not create directory " + userFolder.getPath());
+                        return;
+                    }
             }
-            File file = new File(folder, filename + ".txt");
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
+        File file = new File(userFolder, getOrderID() + ".txt");
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
                 writer.write(content);
-                writer.newLine();
+                System.out.println("Order saved successfully to: " + file.getAbsolutePath());
+            } catch (IOException e) {
+                System.err.println("Error saving order: " + e.getMessage());
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
