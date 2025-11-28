@@ -4,7 +4,6 @@ import java.util.*;
 import java.io.*;
 
 public class ViewOrder {
-
     private ArrayList<CheckOut> ordersList = new ArrayList<>();
 
     public void loadFromFile(String filename) {
@@ -13,7 +12,6 @@ public class ViewOrder {
                 System.out.println("No previous order file found.");
                 return;
             }
-
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
                     while ((line = br.readLine()) != null) {

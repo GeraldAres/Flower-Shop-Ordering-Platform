@@ -114,7 +114,7 @@ public class CheckOut {
     }
 
     public void setContent() {
-         this.content = "Order ID: " + getFormattedDate() +
+        this.content = "Order ID: " + getFormattedDate() +
                 "\nMode of Delivery: " + getModeOfDelivery() +
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
@@ -129,14 +129,14 @@ public class CheckOut {
     public void saveToFile(String folderName, String filename) {
         try {
             File folder = new File(folderName);
-                if (!folder.exists()) {
-                    folder.mkdirs();
-                }
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
             File file = new File(folder, filename + ".txt");
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-                    writer.write(content);
-                    writer.newLine();
-                }
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
+                writer.write(content);
+                writer.newLine();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
