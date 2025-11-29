@@ -4,4 +4,5 @@ import javax.swing.*;
 
 public class DashboardPanel {
     private JPanel Dashboard;
+    private JPanel BusinessName;
 }
