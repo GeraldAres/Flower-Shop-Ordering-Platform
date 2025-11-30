@@ -21,6 +21,7 @@ public class Sample {
     private JPanel Left;
     private JPanel ButtonsList;
     private JPanel DogImageHolder;
+    private JPanel Main;
 
     public Sample() {
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doogo.png");
@@ -54,7 +55,7 @@ public class Sample {
         prevButton.setIcon(prev);
 
         ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/logout.png");
-        Image img6=  image6.getImage().getScaledInstance(129, 43, Image.SCALE_SMOOTH);
+        Image img6=  image6.getImage().getScaledInstance(115, 30, Image.SCALE_SMOOTH);
         ImageIcon log = new ImageIcon(img6);
         LogOut.setIcon(log);
 

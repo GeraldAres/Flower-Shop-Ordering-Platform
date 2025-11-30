@@ -9,22 +9,28 @@ public class DashboardPanel {
     private JButton myOrdersBtn;
     private JButton availableFlowersbtn;
     private JButton settingsBtn;
+    private JLabel LogOut;
+    private JButton prevButton;
+    private JLabel ImageHolder;
+    private JPanel Main;
     private JPanel Holder;
     private JPanel BusinessName;
-    private JLabel LogOut;
     private JPanel MainDashboard;
     private JPanel WelcomePanel;
     private JPanel Holder2;
     private JPanel Left;
     private JPanel ButtonsList;
-    private JButton prevButton;
     private JPanel DogImageHolder;
-    private JLabel ImageHolder;
 
     public DashboardPanel(){
+        ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doogo.png");
+        Image imgg =  img.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
+        ImageIcon set = new ImageIcon(imgg);
+        ImageHolder.setIcon(set);
+
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/newOrder.png");
-        Image img = image1.getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH);
-        ImageIcon newOrder = new ImageIcon(img);
+        Image img1 = image1.getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH);
+        ImageIcon newOrder = new ImageIcon(img1);
         newOrderButton.setIcon(newOrder);
 
         ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/myOrders.png");
@@ -42,9 +48,17 @@ public class DashboardPanel {
         ImageIcon avaiable = new ImageIcon(img4);
         availableFlowersbtn.setIcon(avaiable);
 
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img5);
+        prevButton.setIcon(prev);
 
+        ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/logout.png");
+        Image img6=  image6.getImage().getScaledInstance(115, 30, Image.SCALE_SMOOTH);
+        ImageIcon log = new ImageIcon(img6);
+        LogOut.setIcon(log);
 
-        JButton[] buttons = {newOrderButton, settingsBtn, myOrdersBtn, availableFlowersbtn};
+        JButton[] buttons = {newOrderButton, settingsBtn, myOrdersBtn, availableFlowersbtn, prevButton};
         for(JButton btn : buttons) {
             btn.setOpaque(false);
             btn.setBorderPainted(false);
