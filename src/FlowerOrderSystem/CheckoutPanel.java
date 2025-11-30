@@ -8,7 +8,6 @@ public class CheckoutPanel {
     private JComboBox modeOfDelivery;
     private JButton prevButton;
     private JRadioButton ferreroRadioButton;
-    private JTextArea specialInstructions;
     private JComboBox modeOfPayment;
     private JLabel contactNumber;
     private JLabel dateToDeliver;
