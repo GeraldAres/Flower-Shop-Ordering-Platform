@@ -1,6 +1,8 @@
 package src.FlowerOrderSystem;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LogInPanel {
@@ -18,17 +20,27 @@ public class LogInPanel {
     private JPanel Holder;
     private JPanel Log;
 
-    public LogInPanel() {
-        prevButton.addActionListener(ActionListener {
+    public LogInPanel(JPanel MainPanel, CardLayout cardLayout) {
 
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img5);
+        prevButton.setIcon(prev);
+        prevButton.setText("");
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(MainPanel, "FirstPage");
+            }
+        });
+
+        logInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(MainPanel, "Dashboard");
+            }
         });
     }
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new LogInPanel().LogInPnl);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setVisible(true);
-    }
+
 }
 

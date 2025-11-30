@@ -13,10 +13,6 @@ public class MainPanel {
     private JLabel Logo;
     private JPanel BusinessName;
     private final Action action;
-    private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Hiraya.png");
-    private Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
-    private ImageIcon scaledIcon = new ImageIcon(img);
-
 
     public MainPanel() {
         MainPanel.setLayout(cardLayout);
@@ -25,7 +21,8 @@ public class MainPanel {
         ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
         StemPanel stemPanel = new StemPanel();
         BouquetPanel bouquetPanel = new BouquetPanel();
-        LogInPanel logInPanel = new LogInPanel();
+        LogInPanel logInPanel = new LogInPanel(MainPanel, cardLayout);
+        DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
 
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
@@ -33,10 +30,13 @@ public class MainPanel {
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
+        MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
 
         action = new Action(MainPanel, cardLayout);
 
-
+        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Hiraya.png");
+        Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(img);
         Logo.setIcon(scaledIcon);
         Logo.setHorizontalTextPosition(JLabel.CENTER);
         Logo.setVerticalTextPosition(JLabel.CENTER);

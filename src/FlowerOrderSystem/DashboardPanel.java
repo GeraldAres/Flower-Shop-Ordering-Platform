@@ -2,15 +2,18 @@ package src.FlowerOrderSystem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class DashboardPanel {
-    private JPanel Dashboard;
+    JPanel Dashboard;
     private JButton newOrderButton;
     private JButton myOrdersBtn;
     private JButton availableFlowersbtn;
     private JButton settingsBtn;
     private JLabel LogOut;
-    private JButton prevButton;
     private JLabel ImageHolder;
     private JPanel Main;
     private JPanel Holder;
@@ -22,7 +25,7 @@ public class DashboardPanel {
     private JPanel ButtonsList;
     private JPanel DogImageHolder;
 
-    public DashboardPanel(){
+    public DashboardPanel(JPanel MainPanel, CardLayout cardLayout){
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doogo.png");
         Image imgg =  img.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
@@ -48,17 +51,13 @@ public class DashboardPanel {
         ImageIcon avaiable = new ImageIcon(img4);
         availableFlowersbtn.setIcon(avaiable);
 
-        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
-        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
-        ImageIcon prev = new ImageIcon(img5);
-        prevButton.setIcon(prev);
 
         ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/logout.png");
         Image img6=  image6.getImage().getScaledInstance(115, 30, Image.SCALE_SMOOTH);
         ImageIcon log = new ImageIcon(img6);
         LogOut.setIcon(log);
 
-        JButton[] buttons = {newOrderButton, settingsBtn, myOrdersBtn, availableFlowersbtn, prevButton};
+        JButton[] buttons = {newOrderButton, settingsBtn, myOrdersBtn, availableFlowersbtn};
         for(JButton btn : buttons) {
             btn.setOpaque(false);
             btn.setBorderPainted(false);
@@ -68,13 +67,15 @@ public class DashboardPanel {
 
         }
 
+
+
+       LogOut.addMouseListener(new MouseAdapter() {
+           @Override
+            public void mouseClicked(MouseEvent e) {
+               cardLayout.show(MainPanel, "LogInPanel");
+           }
+       });
+
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new DashboardPanel().Dashboard);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setVisible(true);
-    }
 }
