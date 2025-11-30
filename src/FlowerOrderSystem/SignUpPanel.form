@@ -117,24 +117,6 @@
                       <text value="Username:                                       "/>
                     </properties>
                   </component>
-                  <component id="6201" class="javax.swing.JTextField" binding="username">
-                    <constraints>
-                      <grid row="9" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                        <minimum-size width="375" height="35"/>
-                        <preferred-size width="375" height="35"/>
-                        <maximum-size width="375" height="35"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-3688541"/>
-                      <caretColor color="-9623246"/>
-                      <disabledTextColor color="-9623246"/>
-                      <font name="Ink Free" size="20"/>
-                      <foreground color="-9623246"/>
-                      <selectedTextColor color="-9623246"/>
-                      <text value=""/>
-                    </properties>
-                  </component>
                   <component id="d0036" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="17" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -510,6 +492,24 @@
                       <grid row="30" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                     </constraints>
                   </vspacer>
+                  <component id="6201" class="javax.swing.JTextField" binding="username">
+                    <constraints>
+                      <grid row="9" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                        <minimum-size width="375" height="35"/>
+                        <preferred-size width="375" height="35"/>
+                        <maximum-size width="375" height="35"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                      <caretColor color="-9623246"/>
+                      <disabledTextColor color="-9623246"/>
+                      <font name="Ink Free" size="20"/>
+                      <foreground color="-9623246"/>
+                      <selectedTextColor color="-9623246"/>
+                      <text value=""/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
             </children>

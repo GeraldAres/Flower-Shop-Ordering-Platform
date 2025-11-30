@@ -11,6 +11,7 @@ public class MainPanel {
     private JButton btnLogIn;
     private JButton btnGuest;
     private JLabel Logo;
+    private JLabel ImageHolder2;
 
     public MainPanel() {
         MainPanel.setLayout(cardLayout);
