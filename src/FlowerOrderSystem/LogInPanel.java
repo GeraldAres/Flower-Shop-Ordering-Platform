@@ -18,6 +18,8 @@ public class LogInPanel {
     private JLabel invalidPassword;
     private JButton prevButton;
     private JPanel Holder;
+    private JLabel SignUpBtn;
+    private JLabel ForgotPasswordBtn;
     private JPanel Log;
 
     public LogInPanel(JPanel MainPanel, CardLayout cardLayout) {

@@ -153,24 +153,6 @@
                       <text value="Password:                                       "/>
                     </properties>
                   </component>
-                  <component id="59735" class="javax.swing.JTextField" binding="passwordField">
-                    <constraints>
-                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                        <minimum-size width="375" height="35"/>
-                        <preferred-size width="375" height="35"/>
-                        <maximum-size width="375" height="35"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-3688541"/>
-                      <caretColor color="-9623246"/>
-                      <disabledTextColor color="-9623246"/>
-                      <font name="Ink Free" size="20"/>
-                      <foreground color="-9623246"/>
-                      <selectedTextColor color="-9623246"/>
-                      <text value=""/>
-                    </properties>
-                  </component>
                   <component id="b6e0b" class="javax.swing.JButton" binding="logInButton" default-binding="true">
                     <constraints>
                       <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -220,7 +202,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="672d4" class="javax.swing.JLabel">
+                      <component id="672d4" class="javax.swing.JLabel" binding="SignUpBtn">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -264,7 +246,7 @@
                       </grid>
                     </constraints>
                   </vspacer>
-                  <component id="42b58" class="javax.swing.JLabel">
+                  <component id="42b58" class="javax.swing.JLabel" binding="ForgotPasswordBtn">
                     <constraints>
                       <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="9" use-parent-layout="false"/>
                     </constraints>
@@ -324,6 +306,24 @@
                       <foreground color="-394241"/>
                       <text value="Incorrect password"/>
                       <visible value="false"/>
+                    </properties>
+                  </component>
+                  <component id="2ac53" class="javax.swing.JPasswordField" binding="passwordField">
+                    <constraints>
+                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                        <minimum-size width="375" height="35"/>
+                        <preferred-size width="375" height="35"/>
+                        <maximum-size width="375" height="35"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                      <caretColor color="-9623246"/>
+                      <disabledTextColor color="-9623246"/>
+                      <font name="Ink Free" size="20"/>
+                      <foreground color="-9623246"/>
+                      <selectedTextColor color="-9623246"/>
+                      <selectionColor color="-1842760"/>
                     </properties>
                   </component>
                 </children>

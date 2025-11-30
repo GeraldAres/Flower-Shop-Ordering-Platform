@@ -20,4 +20,5 @@ public abstract class Stem {
     public double getPrice() {
         return price;
     }
+
 }
