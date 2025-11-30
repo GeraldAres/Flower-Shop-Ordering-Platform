@@ -13,8 +13,8 @@ public class MainPanel {
     private JLabel Logo;
     private JPanel BusinessName;
     private final Action action;
-    private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/flower.jpeg");
-    private Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+    private ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Hiraya.png");
+    private Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
     private ImageIcon scaledIcon = new ImageIcon(img);
 
 
