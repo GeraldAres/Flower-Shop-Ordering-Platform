@@ -13,14 +13,6 @@ public class Sample {
     private JButton prevButton;
     private JLabel ImageHolder;
     private JLabel LogOut;
-    private JPanel Holder;
-    private JPanel BusinessName;
-    private JPanel MainDashboard;
-    private JPanel WelcomePanel;
-    private JPanel Holder2;
-    private JPanel Left;
-    private JPanel ButtonsList;
-    private JPanel DogImageHolder;
     private JPanel Main;
 
     public Sample() {
