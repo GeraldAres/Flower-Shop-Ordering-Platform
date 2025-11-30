@@ -51,7 +51,7 @@ public class StemPanel {
 
     public StemPanel() {
         // Load the image
-        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/flower.jpeg");
+        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/flower.jpeg");
 
         // Optional: scale the image to fit nicely
         Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);

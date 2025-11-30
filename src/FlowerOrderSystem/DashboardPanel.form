@@ -1,68 +1,343 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="src.FlowerOrderSystem.DashboardPanel">
-  <grid id="27dc6" binding="Dashboard" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="Dashboard" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="942" height="400"/>
+      <xy x="20" y="20" width="1319" height="979"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="8339f" binding="BusinessName" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="183c3" binding="Main" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="1080" height="40"/>
-            <maximum-size width="1080" height="40"/>
-          </grid>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-11133902"/>
+          <background color="-1842760"/>
         </properties>
         <border type="none"/>
         <children>
-          <component id="2863d" class="javax.swing.JLabel">
+          <vspacer id="53aab">
             <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-3688541"/>
-              <foreground color="-3688541"/>
-              <text value="Hiraya Flowershop Cebu"/>
-            </properties>
-          </component>
-          <component id="f2855" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <foreground color="-3688541"/>
-              <text value="Prev"/>
-            </properties>
-          </component>
-          <hspacer id="e2bc8">
-            <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="425" height="-1"/>
-                <maximum-size width="425" height="-1"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="50"/>
+                <maximum-size width="-1" height="50"/>
               </grid>
             </constraints>
-          </hspacer>
-          <hspacer id="a216a">
+          </vspacer>
+          <grid id="d912d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="300" height="-1"/>
-                <maximum-size width="300" height="-1"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1842760"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="62b16" binding="Holder" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="1080" height="1440"/>
+                  </grid>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="c1447" binding="BusinessName" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="North"/>
+                    <properties>
+                      <background color="-1842760"/>
+                      <maximumSize width="1080" height="100"/>
+                      <minimumSize width="1080" height="100"/>
+                      <preferredSize width="951" height="40"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <hspacer id="7795a">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="900" height="-1"/>
+                            <maximum-size width="900" height="-1"/>
+                          </grid>
+                        </constraints>
+                      </hspacer>
+                      <hspacer id="1c6c4">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="10" height="-1"/>
+                            <maximum-size width="10" height="-1"/>
+                          </grid>
+                        </constraints>
+                      </hspacer>
+                      <component id="db6c3" class="javax.swing.JLabel" binding="LogOut">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <foreground color="-11133902"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="76455" binding="MainDashboard" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints border-constraint="Center"/>
+                    <properties>
+                      <background color="-1842760"/>
+                      <maximumSize width="1080" height="1300"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <vspacer id="c7bda">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                            <preferred-size width="-1" height="100"/>
+                            <maximum-size width="-1" height="100"/>
+                          </grid>
+                        </constraints>
+                      </vspacer>
+                      <grid id="16d46" binding="WelcomePanel" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="0">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="950" height="250"/>
+                            <maximum-size width="950" height="250"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-9623246"/>
+                          <focusable value="true"/>
+                          <foreground color="-9623246"/>
+                          <inheritsPopupMenu value="false"/>
+                          <maximumSize width="900" height="400"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="e30a2" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Ink Free" size="80"/>
+                              <foreground color="-394241"/>
+                              <text value="Hi, Ral!"/>
+                            </properties>
+                          </component>
+                          <component id="a7321" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                              <font name="Bell MT" size="18" style="0"/>
+                              <foreground color="-3688541"/>
+                              <text value="How can we help you today amigo?"/>
+                            </properties>
+                          </component>
+                          <vspacer id="3bce">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                          </vspacer>
+                          <vspacer id="27ded">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                          </vspacer>
+                        </children>
+                      </grid>
+                      <vspacer id="9c95e">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </vspacer>
+                      <grid id="a477c" binding="Holder2" layout-manager="BorderLayout" hgap="0" vgap="0">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="950" height="400"/>
+                            <maximum-size width="950" height="400"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-1842760"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <grid id="f7ca7" binding="Left" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints border-constraint="West"/>
+                            <properties>
+                              <background color="-1842760"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <grid id="ec361" binding="ButtonsList" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="0">
+                                <margin top="0" left="0" bottom="0" right="0"/>
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="475" height="400"/>
+                                    <maximum-size width="475" height="400"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-1842760"/>
+                                  <focusable value="true"/>
+                                  <foreground color="-3688541"/>
+                                  <inheritsPopupMenu value="false"/>
+                                  <maximumSize width="900" height="400"/>
+                                </properties>
+                                <border type="none"/>
+                                <children>
+                                  <component id="2b992" class="javax.swing.JButton" binding="newOrderButton" default-binding="true">
+                                    <constraints>
+                                      <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                                        <preferred-size width="350" height="55"/>
+                                        <maximum-size width="350" height="55"/>
+                                      </grid>
+                                    </constraints>
+                                    <properties>
+                                      <background color="-11133902"/>
+                                      <font name="Ink Free" size="25"/>
+                                      <foreground color="-3688541"/>
+                                      <text value="new order"/>
+                                    </properties>
+                                  </component>
+                                  <component id="71191" class="javax.swing.JButton" binding="myOrdersBtn">
+                                    <constraints>
+                                      <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                                        <preferred-size width="350" height="55"/>
+                                        <maximum-size width="350" height="55"/>
+                                      </grid>
+                                    </constraints>
+                                    <properties>
+                                      <background color="-9623246"/>
+                                      <font name="Ink Free" size="25"/>
+                                      <foreground color="-3688541"/>
+                                      <horizontalAlignment value="0"/>
+                                      <horizontalTextPosition value="0"/>
+                                      <text value="my orders"/>
+                                    </properties>
+                                  </component>
+                                  <component id="ec0cd" class="javax.swing.JButton" binding="availableFlowersbtn">
+                                    <constraints>
+                                      <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                                        <preferred-size width="350" height="55"/>
+                                        <maximum-size width="350" height="55"/>
+                                      </grid>
+                                    </constraints>
+                                    <properties>
+                                      <background color="-9623246"/>
+                                      <font name="Ink Free" size="25"/>
+                                      <foreground color="-3688541"/>
+                                      <text value="available flowers"/>
+                                    </properties>
+                                  </component>
+                                  <component id="d334f" class="javax.swing.JButton" binding="settingsBtn">
+                                    <constraints>
+                                      <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                                        <preferred-size width="350" height="55"/>
+                                        <maximum-size width="350" height="55"/>
+                                      </grid>
+                                    </constraints>
+                                    <properties>
+                                      <background color="-9623246"/>
+                                      <font name="Ink Free" size="25"/>
+                                      <foreground color="-3688541"/>
+                                      <text value="settings"/>
+                                    </properties>
+                                  </component>
+                                  <vspacer id="3e708">
+                                    <constraints>
+                                      <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                                    </constraints>
+                                  </vspacer>
+                                  <vspacer id="789e5">
+                                    <constraints>
+                                      <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                                        <preferred-size width="-1" height="10"/>
+                                        <maximum-size width="-1" height="10"/>
+                                      </grid>
+                                    </constraints>
+                                  </vspacer>
+                                  <vspacer id="d3bc1">
+                                    <constraints>
+                                      <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                                        <preferred-size width="-1" height="10"/>
+                                        <maximum-size width="-1" height="10"/>
+                                      </grid>
+                                    </constraints>
+                                  </vspacer>
+                                  <vspacer id="770db">
+                                    <constraints>
+                                      <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                                        <preferred-size width="-1" height="10"/>
+                                        <maximum-size width="-1" height="10"/>
+                                      </grid>
+                                    </constraints>
+                                  </vspacer>
+                                  <vspacer id="ec4ff">
+                                    <constraints>
+                                      <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                                        <preferred-size width="-1" height="10"/>
+                                        <maximum-size width="-1" height="10"/>
+                                      </grid>
+                                    </constraints>
+                                  </vspacer>
+                                  <vspacer id="78dba">
+                                    <constraints>
+                                      <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                                        <preferred-size width="-1" height="100"/>
+                                        <maximum-size width="-1" height="100"/>
+                                      </grid>
+                                    </constraints>
+                                  </vspacer>
+                                </children>
+                              </grid>
+                            </children>
+                          </grid>
+                          <grid id="c5a03" binding="DogImageHolder" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints border-constraint="East"/>
+                            <properties>
+                              <background color="-1842760"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="6e8f" class="javax.swing.JLabel" binding="ImageHolder">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="475" height="400"/>
+                                    <maximum-size width="475" height="400"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <text value=""/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <vspacer id="2dd04">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="50"/>
+                <maximum-size width="-1" height="50"/>
               </grid>
             </constraints>
-          </hspacer>
+          </vspacer>
         </children>
       </grid>
-      <vspacer id="76d75">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
     </children>
   </grid>
 </form>

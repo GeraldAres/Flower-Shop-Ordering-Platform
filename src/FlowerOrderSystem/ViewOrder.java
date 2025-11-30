@@ -34,51 +34,55 @@ public class ViewOrder {
                             }
                         }
 
-        String orderId = data.getOrDefault("Order ID", "Unknown");
-        String orderDate = data.getOrDefault("Order Date", "Unknown");
-        String priceStr = data.getOrDefault("Total Price", "0").replace("$", "").trim();
-        double totalPrice = 0.0;
-            try {
-                totalPrice = Double.parseDouble(priceStr);
-            } catch (NumberFormatException e) {
-                totalPrice = 0.0;
-            }
+                    String orderId = data.getOrDefault("Order ID", "Unknown");
+                    String orderDate = data.getOrDefault("Order Date", "Unknown");
+                    String priceStr = data.getOrDefault("Total Price", "0").replace("$", "").trim();
+                    double totalPrice = 0.0;
 
-                CheckOut order = new CheckOut(orderId, null, null, totalPrice, orderDate);
+                        try {
+                            totalPrice = Double.parseDouble(priceStr);
+                        } catch (NumberFormatException e) {
+                            totalPrice = 0.0;
+                        }
 
-                order.setModeOfDelivery(data.get("Mode of Delivery"));
-                order.setAddressOfDelivery(data.get("Address of Delivery"));
-                order.setModeOfPayment(data.get("Mode of Payment"));
-                order.setDateOfDelivery(data.get("Date of Delivery"));
-                order.setSpecialInstructions(data.get("Special Instructions"));
-                order.setOrderStatus(data.get("Order Status"));
+                    CheckOut order = new CheckOut(orderId, null, null, totalPrice, orderDate);
 
-                    try {
-                        order.setNumsOfAddOns(Integer.parseInt(data.getOrDefault("Number of Add-Ons", "0")));
-                    } catch (NumberFormatException e) {
-                        order.setNumsOfAddOns(0);
-                    }
+                        order.setModeOfDelivery(data.get("Mode of Delivery"));
+                        order.setAddressOfDelivery(data.get("Address of Delivery"));
+                        order.setModeOfPayment(data.get("Mode of Payment"));
+                        order.setDateOfDelivery(data.get("Date of Delivery"));
+                        order.setSpecialInstructions(data.get("Special Instructions"));
+                        order.setOrderStatus(data.get("Order Status"));
 
-                ArrayList<String> addOns = new ArrayList<>();
-                String listRaw = data.get("Add-Ons List");
-                    if (listRaw != null && !listRaw.equals("None")) {
-                        listRaw = listRaw.replace("[", "").replace("]", "");
-                            if (!listRaw.isBlank()) {
-                                String[] items = listRaw.split(",");
-                                    for (String s : items) {
-                                        addOns.add(s.trim());
-                                    }
-                            }
-                    }
-                order.setAddOnsList(addOns);
-                order.updateContent();
-                ordersList.add(order);
+                        try {
+                            order.setNumsOfAddOns(Integer.parseInt(data.getOrDefault("Number of Add-Ons", "0")));
+                        } catch (NumberFormatException e) {
+                            order.setNumsOfAddOns(0);
+                        }
+
+                    ArrayList<String> addOns = new ArrayList<>();
+                    String listRaw = data.get("Add-Ons List");
+
+                        if (listRaw != null && !listRaw.equals("None")) {
+                            listRaw = listRaw.replace("[", "").replace("]", "");
+                                if (!listRaw.isBlank()) {
+                                    String[] items = listRaw.split(",");
+                                        for (String s : items) {
+                                            addOns.add(s.trim());
+                                        }
+                                }
+                        }
+
+                        order.setAddOnsList(addOns);
+                        order.updateContent();
+                        ordersList.add(order);
 
                 } catch (Exception e) {
                     System.err.println("Failed to read file: " + file.getName());
                     e.printStackTrace();
+                }
             }
-        }
+        sortByDateDescending();
     }
 
     public ArrayList<CheckOut> getAllOrders() {
@@ -92,8 +96,8 @@ public class ViewOrder {
 
     public void sortByDateDescending() {
         ordersList.sort((o1, o2) -> {
-            String id1 = o1.getOrderID();
-            String id2 = o2.getOrderID();
+                String id1 = o1.getOrderID();
+                String id2 = o2.getOrderID();
             return id2.compareTo(id1);
         });
     }

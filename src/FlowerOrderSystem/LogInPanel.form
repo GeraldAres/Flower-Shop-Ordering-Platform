@@ -3,12 +3,12 @@
   <grid id="27dc6" binding="LogInPnl" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="946" height="724"/>
+      <xy x="20" y="20" width="1105" height="823"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="8f407" layout-manager="BorderLayout" hgap="0" vgap="0">
+      <grid id="8f407" binding="Holder" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="1080" height="1440"/>
@@ -122,7 +122,7 @@
                       <text value="Username:                                       "/>
                     </properties>
                   </component>
-                  <component id="6201" class="javax.swing.JTextField" binding="username">
+                  <component id="6201" class="javax.swing.JTextField" binding="usernameField">
                     <constraints>
                       <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <minimum-size width="375" height="35"/>
@@ -133,6 +133,7 @@
                     <properties>
                       <background color="-3688541"/>
                       <caretColor color="-9623246"/>
+                      <columns value="0"/>
                       <disabledTextColor color="-9623246"/>
                       <font name="Ink Free" size="20"/>
                       <foreground color="-9623246"/>
@@ -150,24 +151,6 @@
                       <font name="Bell MT" size="24" style="1"/>
                       <foreground color="-394241"/>
                       <text value="Password:                                       "/>
-                    </properties>
-                  </component>
-                  <component id="59735" class="javax.swing.JTextField" binding="password">
-                    <constraints>
-                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                        <minimum-size width="375" height="35"/>
-                        <preferred-size width="375" height="35"/>
-                        <maximum-size width="375" height="35"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-3688541"/>
-                      <caretColor color="-9623246"/>
-                      <disabledTextColor color="-9623246"/>
-                      <font name="Ink Free" size="20"/>
-                      <foreground color="-9623246"/>
-                      <selectedTextColor color="-9623246"/>
-                      <text value=""/>
                     </properties>
                   </component>
                   <component id="b6e0b" class="javax.swing.JButton" binding="logInButton" default-binding="true">
@@ -219,7 +202,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="672d4" class="javax.swing.JLabel">
+                      <component id="672d4" class="javax.swing.JLabel" binding="SignUpBtn">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -263,7 +246,7 @@
                       </grid>
                     </constraints>
                   </vspacer>
-                  <component id="42b58" class="javax.swing.JLabel">
+                  <component id="42b58" class="javax.swing.JLabel" binding="ForgotPasswordBtn">
                     <constraints>
                       <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="9" use-parent-layout="false"/>
                     </constraints>
@@ -325,6 +308,24 @@
                       <visible value="false"/>
                     </properties>
                   </component>
+                  <component id="2ac53" class="javax.swing.JPasswordField" binding="passwordField">
+                    <constraints>
+                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                        <minimum-size width="375" height="35"/>
+                        <preferred-size width="375" height="35"/>
+                        <maximum-size width="375" height="35"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                      <caretColor color="-9623246"/>
+                      <disabledTextColor color="-9623246"/>
+                      <font name="Ink Free" size="20"/>
+                      <foreground color="-9623246"/>
+                      <selectedTextColor color="-9623246"/>
+                      <selectionColor color="-1842760"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
             </children>
@@ -379,17 +380,6 @@
                       </grid>
                     </constraints>
                   </vspacer>
-                  <component id="4ebc3" class="javax.swing.JLabel">
-                    <constraints>
-                      <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-11133902"/>
-                      <font name="Bell MT" size="18" style="0"/>
-                      <foreground color="-11133902"/>
-                      <text value="Cebu knows best."/>
-                    </properties>
-                  </component>
                   <component id="2eaf8" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -441,12 +431,26 @@
                       </grid>
                     </constraints>
                   </vspacer>
-                  <component id="63bc8" class="javax.swing.JLabel">
+                  <component id="4ebc3" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
+                      <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <background color="-11133902"/>
+                      <font name="Bell MT" size="18" style="0"/>
+                      <foreground color="-11133902"/>
+                      <text value="Cebu knows best."/>
+                    </properties>
+                  </component>
+                  <component id="4f6a" class="javax.swing.JButton" binding="prevButton" default-binding="true">
+                    <constraints>
+                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-11133902"/>
+                      <font name="Bell MT" size="12"/>
                       <foreground color="-3688541"/>
+                      <horizontalAlignment value="2"/>
                       <text value="Prev"/>
                     </properties>
                   </component>
