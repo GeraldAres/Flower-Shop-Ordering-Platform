@@ -379,17 +379,6 @@
                       </grid>
                     </constraints>
                   </vspacer>
-                  <component id="4ebc3" class="javax.swing.JLabel">
-                    <constraints>
-                      <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-11133902"/>
-                      <font name="Bell MT" size="18" style="0"/>
-                      <foreground color="-11133902"/>
-                      <text value="Cebu knows best."/>
-                    </properties>
-                  </component>
                   <component id="2eaf8" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -441,11 +430,24 @@
                       </grid>
                     </constraints>
                   </vspacer>
-                  <component id="63bc8" class="javax.swing.JLabel">
+                  <component id="4ebc3" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
+                      <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
+                      <background color="-11133902"/>
+                      <font name="Bell MT" size="18" style="0"/>
+                      <foreground color="-11133902"/>
+                      <text value="Cebu knows best."/>
+                    </properties>
+                  </component>
+                  <component id="4f6a" class="javax.swing.JButton" binding="prevButton" default-binding="true">
+                    <constraints>
+                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-11133902"/>
+                      <font name="Bell MT" size="12"/>
                       <foreground color="-3688541"/>
                       <text value="Prev"/>
                     </properties>

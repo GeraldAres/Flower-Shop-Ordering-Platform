@@ -13,6 +13,7 @@ public class LogInPanel {
     private JButton logInButton;
     private JLabel InvalidUsername;
     private JLabel invalidPassword;
+    private JButton prevButton;
     private JPanel Log;
 
 
