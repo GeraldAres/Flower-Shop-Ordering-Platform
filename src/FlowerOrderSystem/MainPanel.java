@@ -12,6 +12,7 @@ public class MainPanel {
     private JButton btnGuest;
     private JLabel Logo;
     private JLabel ImageHolder2;
+    private JLabel ImageHolder;
 
     public MainPanel() {
         MainPanel.setLayout(cardLayout);
@@ -53,6 +54,14 @@ public class MainPanel {
                 cardLayout.show(MainPanel, "LogInPanel");
             }
         });
+
+        ImageIcon pic = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Accessories.png");
+        Image imgg =  pic.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        ImageIcon set = new ImageIcon(imgg);
+        ImageHolder.setIcon(set);
+        ImageHolder2.setIcon(set);
+        ImageHolder.setText("");
+        ImageHolder2.setText("");
     }
 
 
