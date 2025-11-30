@@ -11,8 +11,6 @@ public class MainPanel {
     private JButton btnLogIn;
     private JButton btnGuest;
     private JLabel Logo;
-    private JPanel BusinessName;
-    private final Action action;
 
     public MainPanel() {
         MainPanel.setLayout(cardLayout);
@@ -32,9 +30,7 @@ public class MainPanel {
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
 
-        action = new Action(MainPanel, cardLayout);
-
-        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Hiraya.png");
+        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/HirayaCebu.png");
         Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(img);
         Logo.setIcon(scaledIcon);
@@ -46,14 +42,14 @@ public class MainPanel {
         btnGuest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.performAction("Guest");
+                cardLayout.show(MainPanel, "OrderPanel");
             }
         });
 
         btnLogIn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                action.performAction("LogIn");
+                cardLayout.show(MainPanel, "LogInPanel");
             }
         });
     }

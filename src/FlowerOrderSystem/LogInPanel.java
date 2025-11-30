@@ -11,8 +11,8 @@ public class LogInPanel {
     private JPanel Right;
     private JLabel Welcome;
     private JPanel Left;
-    private JTextField username;
-    private JTextField password;
+    private JTextField usernameField;
+    private JTextField passwordField;
     private JButton logInButton;
     private JLabel InvalidUsername;
     private JLabel invalidPassword;
@@ -34,12 +34,21 @@ public class LogInPanel {
             }
         });
 
+        prevButton.setOpaque(false);
+        prevButton.setContentAreaFilled(false);
+        prevButton.setBorderPainted(false);
+        prevButton.setFocusPainted(false);
+        prevButton.setText("");
+
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cardLayout.show(MainPanel, "Dashboard");
             }
         });
+
+        usernameField.getCaret().setVisible(true);
+        passwordField.getCaret().setSelectionVisible(true);
     }
 
 }

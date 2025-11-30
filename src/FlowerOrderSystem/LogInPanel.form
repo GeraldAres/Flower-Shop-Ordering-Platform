@@ -122,7 +122,7 @@
                       <text value="Username:                                       "/>
                     </properties>
                   </component>
-                  <component id="6201" class="javax.swing.JTextField" binding="username">
+                  <component id="6201" class="javax.swing.JTextField" binding="usernameField">
                     <constraints>
                       <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <minimum-size width="375" height="35"/>
@@ -133,6 +133,7 @@
                     <properties>
                       <background color="-3688541"/>
                       <caretColor color="-9623246"/>
+                      <columns value="0"/>
                       <disabledTextColor color="-9623246"/>
                       <font name="Ink Free" size="20"/>
                       <foreground color="-9623246"/>
@@ -152,7 +153,7 @@
                       <text value="Password:                                       "/>
                     </properties>
                   </component>
-                  <component id="59735" class="javax.swing.JTextField" binding="password">
+                  <component id="59735" class="javax.swing.JTextField" binding="passwordField">
                     <constraints>
                       <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                         <minimum-size width="375" height="35"/>
@@ -449,6 +450,7 @@
                       <background color="-11133902"/>
                       <font name="Bell MT" size="12"/>
                       <foreground color="-3688541"/>
+                      <horizontalAlignment value="2"/>
                       <text value="Prev"/>
                     </properties>
                   </component>

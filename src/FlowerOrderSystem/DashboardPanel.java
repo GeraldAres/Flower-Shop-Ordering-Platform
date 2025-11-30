@@ -26,7 +26,7 @@ public class DashboardPanel {
     private JPanel DogImageHolder;
 
     public DashboardPanel(JPanel MainPanel, CardLayout cardLayout){
-        ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doogo.png");
+        ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
         Image imgg =  img.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
         ImageHolder.setIcon(set);
