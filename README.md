@@ -15,9 +15,9 @@ Project implementation action plan (as of November 24, 2025)
 
   November 24-29, 2025: Finalize class diagram, screen designs, and test functionalities. Create the skeleton of the system, ensuring to apply OOP principles. The group intends to list out plans for implementing file handling and throwing of exceptions within the system that is visible for the users to see and interact with.
 
-  November 30- December 6, 2025: Create a functioning system with little to no errors to debug; the system must be able to compute total prices, including base price and any add-ons. System buttons must all function in their intended use, and design-wise, the visuals of the systems are applied and fit their overall functionalities, ready for pitching.
+  November 30 - December 6, 2025: Create a functioning system with little to no errors to debug; the system must be able to compute total prices, including base price and any add-ons. System buttons must all function in their intended use, and design-wise, the visuals of the systems are applied and fit their overall functionalities, ready for pitching.
 
-  November 7-15, 2025: Finalize project, including possible pitch deck requirement and script for presenting. Create a comprehensive paper on its intended use and applications to real-world problems. 
+  December 7-15, 2025: Finalize project, including possible pitch deck requirement and script for presenting. Create a comprehensive paper on its intended use and applications to real-world problems. 
 
   To view more outlined allocation of tasks and progress click this excel link: https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/angelajahziel_encabo_cit_edu/IQCJkBYIVsKaTpAXVsNIdXkCAQXy0pWYhIGdOZZsHMx8LEc?e=0EMKg6 
 
