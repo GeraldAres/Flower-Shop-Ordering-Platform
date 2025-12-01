@@ -8,11 +8,10 @@ public abstract class Stem {
     private final double price;
     private ArrayList<Stem> inventory;
 
-    public Stem(String name, String color, double price, ArrayList<Stem> Inventory) {
+    public Stem(String name, String color, double price) {
         this.name = name;
         this.color = color;
         this.price = price;
-        this.inventory = inventory;
     }
 
     public String getName() {
