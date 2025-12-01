@@ -22,6 +22,7 @@
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints border-constraint="North"/>
             <properties>
+              <background color="-3688541"/>
               <maximumSize width="1080" height="85"/>
             </properties>
             <border type="none"/>

@@ -1,6 +1,7 @@
 package src.FlowerOrderSystem;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class SampleViewOrderPanel {
 
@@ -24,7 +25,13 @@ public class SampleViewOrderPanel {
     private JLabel RightImg;
 
     public SampleViewOrderPanel(){
-
+        ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
+        Image imgg =  img.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        ImageIcon set = new ImageIcon(imgg);
+        LeftImg.setIcon(set);
+        LeftImg.setText("");
+        RightImg.setIcon(set);
+        RightImg.setText("");
     }
 
     public static void main(String[] args) {
