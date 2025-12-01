@@ -5,9 +5,16 @@ import javax.swing.*;
 public class CheckoutPanel {
     private JPanel checkoutPanel;
     private JButton checkOutButton;
-    private JComboBox comboBox1;
-    private JTextField textField1;
+    private JComboBox modeOfDelivery;
     private JButton prevButton;
+    private JRadioButton ferreroRadioButton;
+    private JComboBox modeOfPayment;
+    private JLabel contactNumber;
+    private JLabel dateToDeliver;
+    private JLabel customerName;
+    private JLabel address;
+    private JLabel gmail;
+    private JPanel orderDetails;
 
 
     public static void main(String[] args) {
