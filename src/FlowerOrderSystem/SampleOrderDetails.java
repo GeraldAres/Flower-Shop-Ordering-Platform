@@ -10,6 +10,11 @@ public class SampleOrderDetails {
     private JPanel South;
     private JPanel East;
     private JPanel West;
+    private JPanel CustomerDetails;
+    private JPanel GrandTotal;
+    private JPanel OrderDetails;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
     private JPanel SampleOrderDetailsPnl;
 
     public static void main(String[] args) {
