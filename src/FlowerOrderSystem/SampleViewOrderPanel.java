@@ -2,6 +2,8 @@ package src.FlowerOrderSystem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SampleViewOrderPanel {
 
@@ -23,8 +25,11 @@ public class SampleViewOrderPanel {
     private JPanel Two;
     private JLabel LeftImg;
     private JLabel RightImg;
+    private JPanel LeftSouth;
+    private JPanel RightSouth;
+    private JButton prevButton;
 
-    public SampleViewOrderPanel(){
+    public SampleViewOrderPanel(JPanel MainPanel, CardLayout cardLayout){
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
         Image imgg =  img.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
@@ -32,7 +37,24 @@ public class SampleViewOrderPanel {
         LeftImg.setText("");
         RightImg.setIcon(set);
         RightImg.setText("");
+
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img5);
+        prevButton.setIcon(prev);
+        prevButton.setText("");
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(MainPanel, "FirstPage");
+            }
+    });
     }
+
+    public SampleViewOrderPanel() {
+
+    }
+
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Order System");
