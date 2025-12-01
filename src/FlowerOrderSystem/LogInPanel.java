@@ -42,6 +42,7 @@ public class LogInPanel {
         prevButton.setFocusPainted(false);
         prevButton.setText("");
 
+
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
