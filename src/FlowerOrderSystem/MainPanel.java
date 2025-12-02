@@ -17,7 +17,7 @@ public class MainPanel {
     public MainPanel() {
         MainPanel.setLayout(cardLayout);
 
-        OrderPanel orderPanel = new OrderPanel(MainPanel, cardLayout);
+        GuestOrderPanel newFormSample = new GuestOrderPanel(MainPanel, cardLayout);
         ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
         StemPanel stemPanel = new StemPanel();
         BouquetPanel bouquetPanel = new BouquetPanel();
@@ -25,7 +25,7 @@ public class MainPanel {
         DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
 
         MainPanel.add(FirstPage, "FirstPage");
-        MainPanel.add(orderPanel.OrderPanel, "OrderPanel");
+        MainPanel.add(newFormSample.GuestOrder, "Guest");
         MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
@@ -44,7 +44,7 @@ public class MainPanel {
         btnGuest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cardLayout.show(MainPanel, "OrderPanel");
+                cardLayout.show(MainPanel, "Guest");
             }
         });
 
