@@ -11,7 +11,7 @@ public class MultiUserTest {
         System.out.println("==========================================\n");
 
         // 1. Define 3 Different Users
-        String[] users = {"Chloe", "Iren", "Mary"};
+        String[] users = {"flowerKing", "roseLover"};
 
         // CLEANUP: Delete the main 'Orders' folder to start fresh (Optional)
         // cleanMainFolder();
