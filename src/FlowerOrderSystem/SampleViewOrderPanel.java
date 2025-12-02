@@ -39,7 +39,7 @@ public class SampleViewOrderPanel {
         RightImg.setText("");
 
         ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
-        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        Image img5=  image5.getImage().getScaledInstance(18, 10, Image.SCALE_SMOOTH);
         ImageIcon prev = new ImageIcon(img5);
         prevButton.setIcon(prev);
         prevButton.setText("");
