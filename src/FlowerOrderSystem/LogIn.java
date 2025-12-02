@@ -1,18 +1,50 @@
 package src.FlowerOrderSystem;
-import src.FlowerOrderSystem.InvalidInputException;
-import java.io.IOException;
+
+import java.io.*;
 
 public class LogIn {
-    User user;
+    private User user;
+    private String successMess = "Login successful! Welcome Back!";
 
     public LogIn (String username, String password) throws IOException, InvalidInputException {
-        /*search sa username nga txt if naa ba na nga username and then mu check if ang
-        password nga same line sa line ni username is same sa na input, if dili mu throw ug invalidException.
-        If wla si username pasabot sad si file and di ma open iyang acc so mu display siya
-        ug
-        */
+        File file  = new File("Accounts/accounts.csv");
+            if (!file.exists()) {
+                throw new InvalidInputException("No accounts database found. Please sign up first.");
+            }
 
+            boolean found = false;
+                try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                    String line;
+                        while ((line = br.readLine()) != null) {
+                            if (line.startsWith("Name,Email")) {
+                                continue;
+                            }
+
+                            String[] data = line.split(",");
+                                if (data.length > 5) {
+                                    continue;
+                                }
+
+                                String storedUserName = data[3].trim();
+                                String storedPassword = data[4].trim();
+                                    if (storedUserName.equals(username) && storedPassword.equals(password)) {
+                                        this.user = new User(data[0], data[1], data[2], data[3], data[4]);
+                                        found = true;
+                                        break;
+                                    }
+                        }
+                }
+
+                if (!found) {
+                    throw new InvalidInputException("Invalid username or password.");
+                }
     }
 
+    public User getUser() {
+        return user;
+    }
 
+    public String getSuccessMess() {
+        return successMess;
+    }
 }
