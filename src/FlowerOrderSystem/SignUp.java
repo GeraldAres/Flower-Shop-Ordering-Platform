@@ -56,7 +56,6 @@ public class SignUp {
                     String newData = fullName + "," + emailAddress + "," + contactNumber + "," + username + "," + password;
                     bw.write(newData);
                 } catch (IOException e) {
-                    e.printStackTrace();
                     throw new InvalidInputException("Error saving account in the database.");
                 }
 
