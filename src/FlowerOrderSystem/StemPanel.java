@@ -27,9 +27,6 @@ public class StemPanel {
     private JLabel lilyCount;
     private JLabel sunflowerQuantityIncrease;
     private JLabel sunflowerQuantityDecrease;
-    private JLabel roseFlower;
-    private JLabel lilyFlower;
-    private JLabel sunflowerFlower;
     private JLabel sunflowerCount;
     private JLabel tulipCount;
     private JLabel tulipQuantityIncrease;
@@ -47,31 +44,17 @@ public class StemPanel {
     private JButton prevBtn;
     private JButton checkoutBtn;
     private JLabel totalPrice;
-    private JLabel carnationFlower;
+    private JPanel center_left;
+    private JLabel roseFlower;
+    private JLabel lilyFlower;
+    private JLabel sunflowerFlower;
+    private JPanel center_right;
     private JLabel tulipFlower;
+    private JLabel carnationFlower;
     private JLabel daisyFlower;
+    private JLabel picture;
 
     private Order order = new Order("Stem");
-
-    private ImageIcon addMarginToImage(Image img, int margin) {
-        int w = img.getWidth(null) + margin * 2;
-        int h = img.getHeight(null) + margin * 2;
-
-        BufferedImage padded = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g = padded.createGraphics();
-
-        g.setComposite(AlphaComposite.SrcOver);
-
-        // optional: background color of margin
-        // g.setColor(Color.WHITE);
-        // g.fillRect(0, 0, w, h);
-
-        // draw image centered inside the margin
-        g.drawImage(img, margin, margin, null);
-        g.dispose();
-
-        return new ImageIcon(padded);
-    }
 
 
     public StemPanel() {
@@ -90,22 +73,22 @@ public class StemPanel {
         ImageIcon scaledIcon0 = new ImageIcon(img0);
 
         // Optional: scale the image to fit nicely
-        Image img1 = roseImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        Image img1 = roseImage.getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon1 = new ImageIcon(img1);
 
-        Image img2 = carnationImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        Image img2 = carnationImage.getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon2 = new ImageIcon(img2);
 
-        Image img3 = daisyImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        Image img3 = daisyImage.getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon3 = new ImageIcon(img3);
 
-        Image img4 = lilyImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        Image img4 = lilyImage.getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon4 = new ImageIcon(img4);
 
-        Image img5 = sunflowerImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        Image img5 = sunflowerImage.getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon5 = new ImageIcon(img5);
 
-        Image img6 = tulipImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        Image img6 = tulipImage.getImage().getScaledInstance(100, 130, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon6 = new ImageIcon(img6);
 
 
@@ -117,7 +100,6 @@ public class StemPanel {
         prevBtn.setContentAreaFilled(false);
         prevBtn.setFocusPainted(false);
         prevBtn.setOpaque(false);
-
 
         roseFlower.setIcon(scaledIcon1);
         roseFlower.setHorizontalTextPosition(JLabel.RIGHT);
@@ -131,8 +113,8 @@ public class StemPanel {
 
         daisyFlower.setIcon(scaledIcon3);
         daisyFlower.setHorizontalTextPosition(JLabel.RIGHT);
-        daisyFlower.setVerticalTextPosition(JLabel.CENTER);
-        daisyFlower.setIconTextGap(10);
+        daisyFlower.setVerticalTextPosition(JLabel.TOP);
+        daisyFlower.setIconTextGap(50);
 
         lilyFlower.setIcon(scaledIcon4);
         lilyFlower.setHorizontalTextPosition(JLabel.RIGHT);
