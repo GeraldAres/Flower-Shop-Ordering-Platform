@@ -1,8 +1,6 @@
 package src.FlowerOrderSystem;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Inventory {
     private ArrayList<Rose> roses = new ArrayList<>();
@@ -19,7 +17,7 @@ public class Inventory {
             sunflowers.add(new Sunflower("Yellow"));
             lilies.add(new Lily("White"));
             daisies.add(new Daisy("White"));
-            carnations.add(new Carnation("Red"));
+            carnations.add(new Carnation("Pink"));
             tulips.add(new Tulip("Purple"));
         }
     }
