@@ -4,85 +4,147 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 public class StemPanel {
     JPanel StemPanel;
-    private JPanel FlowersPanel;
-
+    private JPanel Container;
+    private JPanel Header;
+    private JPanel Center;
+    private JPanel left;
+    private JPanel right;
+    private JPanel leftside_left;
+    private JPanel rightside_left;
+    private JPanel leftside_right;
+    private JPanel rightside_right;
+    private JLabel roseStock;
+    private JLabel lilyStock;
     private JLabel roseQuantityIncrease;
     private JLabel roseQuantityDecrease;
-
-    private JLabel carnationQuantityIncrease;
-    private JLabel carnationQuantityDecrease;
-
+    private JLabel roseCount;
     private JLabel lilyQuantityIncrease;
     private JLabel lilyQuantityDecrease;
-
-    private JLabel daisyQuantityIncrease;
-    private JLabel daisyQuantityDecrease;
-
+    private JLabel lilyCount;
     private JLabel sunflowerQuantityIncrease;
     private JLabel sunflowerQuantityDecrease;
-
-    private JLabel tulipQuantityIncrease;
-    private JLabel tulipQuantityDecrease;
-
-    private JButton previousButton;
-    private JButton nextButton;
-
     private JLabel roseFlower;
-    private JLabel carnationFlower;
-    private JLabel daisyFlower;
     private JLabel lilyFlower;
     private JLabel sunflowerFlower;
-    private JLabel tulipFlower;
-
-    private JLabel roseCount;
-    private JLabel carnationCount;
-    private JLabel daisyCount;
-    private JLabel lilyCount;
     private JLabel sunflowerCount;
     private JLabel tulipCount;
+    private JLabel tulipQuantityIncrease;
+    private JLabel tulipQuantityDecrease;
+    private JLabel carnationCount;
+    private JLabel carnationQuantityIncrease;
+    private JLabel carnationQuantityDecrease;
+    private JLabel daisyCount;
+    private JLabel daisyQuantityIncrease;
+    private JLabel daisyQuantityDecrease;
+    private JLabel sunflowerStock;
+    private JLabel tulipStock;
+    private JLabel carnationStock;
+    private JLabel daisyStock;
+    private JButton prevBtn;
+    private JButton checkoutBtn;
     private JLabel totalPrice;
+    private JLabel carnationFlower;
+    private JLabel tulipFlower;
+    private JLabel daisyFlower;
 
     private Order order = new Order("Stem");
 
+    private ImageIcon addMarginToImage(Image img, int margin) {
+        int w = img.getWidth(null) + margin * 2;
+        int h = img.getHeight(null) + margin * 2;
+
+        BufferedImage padded = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = padded.createGraphics();
+
+        g.setComposite(AlphaComposite.SrcOver);
+
+        // optional: background color of margin
+        // g.setColor(Color.WHITE);
+        // g.fillRect(0, 0, w, h);
+
+        // draw image centered inside the margin
+        g.drawImage(img, margin, margin, null);
+        g.dispose();
+
+        return new ImageIcon(padded);
+    }
 
 
     public StemPanel() {
         // Load the image
-        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/flower.jpeg");
+        ImageIcon roseImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Rose.png");
+        ImageIcon carnationImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Carnation.png");
+        ImageIcon daisyImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Daisy.png");
+        ImageIcon lilyImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Lily.png");
+        ImageIcon sunflowerImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Sunflower.png");
+        ImageIcon tulipImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Tulip.png");
+
+        ImageIcon prevBtnImage = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+//        ImageIcon checkoutBtnImage = new ImageIcon("");
+
+        Image img0 = prevBtnImage.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon0 = new ImageIcon(img0);
 
         // Optional: scale the image to fit nicely
-        Image img = image1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-        ImageIcon scaledIcon = new ImageIcon(img);
+        Image img1 = roseImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon1 = new ImageIcon(img1);
 
-        roseFlower.setIcon(scaledIcon);
+        Image img2 = carnationImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon2 = new ImageIcon(img2);
+
+        Image img3 = daisyImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon3 = new ImageIcon(img3);
+
+        Image img4 = lilyImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon4 = new ImageIcon(img4);
+
+        Image img5 = sunflowerImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon5 = new ImageIcon(img5);
+
+        Image img6 = tulipImage.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon6 = new ImageIcon(img6);
+
+
+        prevBtn.setIcon(scaledIcon0);
+        prevBtn.setHorizontalTextPosition(SwingConstants.CENTER);
+        prevBtn.setVerticalTextPosition(SwingConstants.CENTER);
+        prevBtn.setIconTextGap(0);
+        prevBtn.setBorderPainted(false);
+        prevBtn.setContentAreaFilled(false);
+        prevBtn.setFocusPainted(false);
+        prevBtn.setOpaque(false);
+
+
+        roseFlower.setIcon(scaledIcon1);
         roseFlower.setHorizontalTextPosition(JLabel.RIGHT);
         roseFlower.setVerticalTextPosition(JLabel.CENTER);
         roseFlower.setIconTextGap(10);
 
-        carnationFlower.setIcon(scaledIcon);
+        carnationFlower.setIcon(scaledIcon2);
         carnationFlower.setHorizontalTextPosition(JLabel.RIGHT);
         carnationFlower.setVerticalTextPosition(JLabel.CENTER);
         carnationFlower.setIconTextGap(10);
 
-        daisyFlower.setIcon(scaledIcon);
+        daisyFlower.setIcon(scaledIcon3);
         daisyFlower.setHorizontalTextPosition(JLabel.RIGHT);
         daisyFlower.setVerticalTextPosition(JLabel.CENTER);
         daisyFlower.setIconTextGap(10);
 
-        lilyFlower.setIcon(scaledIcon);
+        lilyFlower.setIcon(scaledIcon4);
         lilyFlower.setHorizontalTextPosition(JLabel.RIGHT);
         lilyFlower.setVerticalTextPosition(JLabel.CENTER);
         lilyFlower.setIconTextGap(10);
 
-        sunflowerFlower.setIcon(scaledIcon);
+        sunflowerFlower.setIcon(scaledIcon5);
         sunflowerFlower.setHorizontalTextPosition(JLabel.RIGHT);
         sunflowerFlower.setVerticalTextPosition(JLabel.CENTER);
         sunflowerFlower.setIconTextGap(10);
 
-        tulipFlower.setIcon(scaledIcon);
+        tulipFlower.setIcon(scaledIcon6);
         tulipFlower.setHorizontalTextPosition(JLabel.RIGHT);
         tulipFlower.setVerticalTextPosition(JLabel.CENTER);
         tulipFlower.setIconTextGap(10);
@@ -97,17 +159,22 @@ public class StemPanel {
         roseQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(roseCount.getText()) + 1;
+                int c = Integer.parseInt(roseCount.getText());
 
-//                Stem rose = new Rose("red");
+                if(c < Integer.parseInt(roseStock.getText())){
+                    c++;
 
-                order.addFlower(rose);
+                    order.addFlower(rose);
 
-                order.setPrice();
+                    order.setPrice();
 
-                totalPrice.setText(order.getOrderPrice() + "");
+                    totalPrice.setText(order.getOrderPrice() + "");
 
-                roseCount.setText(c + "");
+                    roseCount.setText(c + "");
+                }
+
+
+
             }
         });
 
@@ -134,14 +201,20 @@ public class StemPanel {
         carnationQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(carnationCount.getText()) + 1;
+                int c = Integer.parseInt(carnationCount.getText());
 
-                order.addFlower(carnation);
-                order.setPrice();
+                if(c < Integer.parseInt(carnationStock.getText())){
+                    c++;
 
-                totalPrice.setText(order.getOrderPrice() + "");
+                    order.addFlower(carnation);
+                    order.setPrice();
 
-                carnationCount.setText(c + "");
+                    totalPrice.setText(order.getOrderPrice() + "");
+
+                    carnationCount.setText(c + "");
+                }
+
+
             }
         });
 
@@ -166,14 +239,20 @@ public class StemPanel {
         daisyQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(daisyCount.getText()) + 1;
+                int c = Integer.parseInt(daisyCount.getText());
 
-                order.addFlower(daisy);
-                order.setPrice();
+                if(c < Integer.parseInt(daisyStock.getText())){
+                    c++;
 
-                totalPrice.setText(order.getOrderPrice() + "");
+                    order.addFlower(daisy);
+                    order.setPrice();
 
-                daisyCount.setText(c + "");
+                    totalPrice.setText(order.getOrderPrice() + "");
+
+                    daisyCount.setText(c + "");
+                }
+
+
             }
         });
 
@@ -199,14 +278,20 @@ public class StemPanel {
         lilyQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(lilyCount.getText()) + 1;
+                int c = Integer.parseInt(lilyCount.getText());
 
-                order.addFlower(lily);
-                order.setPrice();
+                if(c < Integer.parseInt(lilyStock.getText())){
+                    c++;
 
-                totalPrice.setText(order.getOrderPrice() + "");
+                    order.addFlower(lily);
+                    order.setPrice();
 
-                lilyCount.setText(c + "");
+                    totalPrice.setText(order.getOrderPrice() + "");
+
+                    lilyCount.setText(c + "");
+                }
+
+
             }
         });
 
@@ -232,14 +317,19 @@ public class StemPanel {
         sunflowerQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(sunflowerCount.getText()) + 1;
+                int c = Integer.parseInt(sunflowerCount.getText());
 
-                order.addFlower(sunflower);
-                order.setPrice();
+                if(c < Integer.parseInt(sunflowerStock.getText())){
+                    c++;
 
-                totalPrice.setText(order.getOrderPrice() + "");
+                    order.addFlower(sunflower);
+                    order.setPrice();
 
-                sunflowerCount.setText(c + "");
+                    totalPrice.setText(order.getOrderPrice() + "");
+
+                    sunflowerCount.setText(c + "");
+                }
+
             }
         });
 
@@ -265,14 +355,19 @@ public class StemPanel {
         tulipQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(tulipCount.getText()) + 1;
+                int c = Integer.parseInt(tulipCount.getText());
 
-                order.addFlower(tulip);
-                order.setPrice();
+                if(c < Integer.parseInt(tulipStock.getText())){
+                    c++;
 
-                totalPrice.setText(order.getOrderPrice() + "");
+                    order.addFlower(tulip);
+                    order.setPrice();
 
-                tulipCount.setText(c + "");
+                    totalPrice.setText(order.getOrderPrice() + "");
+
+                    tulipCount.setText(c + "");
+                }
+
             }
         });
 
@@ -296,15 +391,12 @@ public class StemPanel {
         });
     }
 
-
     public static void main(String[] args) {
         JFrame frame = new JFrame("Order System");
         frame.setContentPane(new StemPanel().StemPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
+        frame.setSize(1080, 1440);
         frame.pack();
         frame.setVisible(true);
     }
 }
-
-
