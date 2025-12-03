@@ -10,6 +10,7 @@ public class User {
     private String email;
     private String contactNumber;
     private ArrayList<CheckOut> Orders;
+    private User user;
 
     public User(String fullName, String emailAddress, String contactNumber) throws InvalidInputException {
         if (fullName == null || fullName.trim().isEmpty()
@@ -56,11 +57,19 @@ public class User {
             throw new InvalidInputException("Passwords do not match");
         }
         this.fullName = fullName;
-        this.email = email;
+        this.email = emailAddress;
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
         Orders = new ArrayList<>();
+    }
+
+    public User(String fullName, String email, String contactNumber, String username, String password) {
+        this.fullName = fullName;
+        this.email = email;
+        this.contactNumber = contactNumber;
+        this.username = username;
+        this.password = password;
     }
 
     public String getFullName() {
