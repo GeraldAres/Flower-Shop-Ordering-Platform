@@ -7,8 +7,9 @@ import java.time.*;
 
 public class CheckOut {
     private NewForm newForm;
+    private User user;
     private LocalDateTime timestamp = LocalDateTime.now();
-    private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+    private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
     private DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("MM-dd-yy hh:mm a");
     private String orderID;
     private String formattedDate;
@@ -22,9 +23,13 @@ public class CheckOut {
     private String specialInstructions;
     private String orderStatus;
     private String content;
+    private static final List<String> ORDER_STATUS = Arrays.asList(
+            "Ongoing" , "Ready for Delivery/Pick Up" , "Cancelled", "Complete"
+    );
 
-    public CheckOut(NewForm newForm) {
+    public CheckOut(NewForm newForm, User user) {
         this.newForm = newForm;
+        this.user = user;
         this.formattedDate = timestamp.format(displayFormatter);
         this.orderID = timestamp.format(idFormatter);
         this.orderStatus = "Pending";
@@ -34,6 +39,7 @@ public class CheckOut {
         this.orderID = orderId;
         this.formattedDate = date;
         this.totalPrice = total;
+        this.user = new User(customerName, "N/A", "N/A", "N/A", "N/A");
     }
 
     public String getModeOfDelivery() {
@@ -121,9 +127,24 @@ public class CheckOut {
         return orderID;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public void updateContent() {
+        String userName = (user != null) ? user.getFullName() : "default";
+        String userEmail = (user != null) ? user.getEmail() : "default";
+        String userContactNum = (user != null) ? user.getContactNumber() : "default";
+
         this.content = "Order ID: " + getOrderID() +
                 "\nOrder Date: " + getFormattedDate() +
+                "\nFull Name: " + userName +
+                "\nEmail: " + userEmail +
+                "\nContact Number: " + userContactNum +
                 "\nMode of Delivery: " + getModeOfDelivery() +
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
@@ -135,21 +156,48 @@ public class CheckOut {
                 "\nOrder Status: " + getOrderStatus();
     }
 
-    public void saveOrderToUserFolder(String username) {
+    public boolean changeOrderStatus(String newStatus) {
+        boolean isValid = false;
+        String formattedStatus = "";
+
+            for (String valid : ORDER_STATUS) {
+                if (valid.equalsIgnoreCase(newStatus)) {
+                    formattedStatus = valid;
+                    isValid = true;
+                    break;
+                }
+            }
+
+            if (!isValid) {
+                System.err.println("Error: '" + newStatus + "' is not a valid status.");
+                System.out.println("Allowed statuses: " + ORDER_STATUS);
+                return false;
+            }
+
+        this.orderStatus = formattedStatus;
+        updateContent();
+        saveOrder();
+
+        System.out.println("Order " + getOrderID() + " updated to: " + formattedStatus);
+        return true;
+    }
+
+    public void saveOrder() {
         updateContent();
         String mainFolderName = "Orders";
-        File userFolder = new File(mainFolderName, username);
+        String folderName;
+            if (user.getUsername().equals("default")) {
+                folderName = "Guest";
+            } else {
+                folderName = user.getUsername();
+            }
+        File userFolder = new File(mainFolderName, folderName);
             if (!userFolder.exists()) {
-                boolean created = userFolder.mkdirs();
-                    if (!created) {
-                        System.err.println("Error: Could not create directory " + userFolder.getPath());
-                        return;
-                    }
+                userFolder.mkdirs();
             }
         File file = new File(userFolder, getOrderID() + ".txt");
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-                writer.write(content);
-                System.out.println("Order saved successfully to: " + file.getAbsolutePath());
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+                bw.write(content);
             } catch (IOException e) {
                 System.err.println("Error saving order: " + e.getMessage());
                 e.printStackTrace();
