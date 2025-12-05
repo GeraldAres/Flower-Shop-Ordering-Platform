@@ -7,7 +7,7 @@ public class ResetPasswordTester {
         System.out.println("====== STARTING PASSWORD RESET TESTS ======");
 
         // Pre-requisite: Make sure 'flowerKing' exists (from SignUpTester)
-        String targetUser = "flowerKing";
+        String targetUser = "Fatima";
         String targetEmail = "king@test.com"; // Must match what you signed up with
 
         // --- TEST 1: Successful Reset ---
