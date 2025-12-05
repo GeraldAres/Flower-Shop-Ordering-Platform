@@ -14,7 +14,7 @@ public class MainPanel {
     private JLabel ImageHolder2;
     private JLabel ImageHolder;
 
-    public MainPanel() {
+    public MainPanel() throws InvalidInputException {
         MainPanel.setLayout(cardLayout);
 
         GuestOrderPanel newFormSample = new GuestOrderPanel(MainPanel, cardLayout);
@@ -23,6 +23,7 @@ public class MainPanel {
         BouquetPanel bouquetPanel = new BouquetPanel();
         LogInPanel logInPanel = new LogInPanel(MainPanel, cardLayout);
         DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
+        SignUpPanel signUpPanel = new SignUpPanel(MainPanel, cardLayout);
 
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(newFormSample.GuestOrder, "Guest");
@@ -31,6 +32,7 @@ public class MainPanel {
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
+        MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
 
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/HirayaCebu.png");
         Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
@@ -65,11 +67,5 @@ public class MainPanel {
     }
 
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Food Ordering System");
-        frame.setContentPane(new MainPanel().MainPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setVisible(true);
-    }
+
 }

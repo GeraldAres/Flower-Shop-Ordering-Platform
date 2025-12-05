@@ -101,8 +101,6 @@ public class GuestOrderPanel {
     private void validateInputs(NewForm n) {
 
         // Reset visibility
-
-
         String name = fullName.getText().trim();
         String contact = contactNumber.getText().trim();
         String address = emailAddress.getText().trim();
