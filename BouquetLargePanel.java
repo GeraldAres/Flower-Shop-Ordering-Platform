@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class BouquetOrderForm {
+public class BouquetLargePanel {
 
     private JPanel Bouquet;
     private JPanel Holder;
@@ -23,11 +23,21 @@ public class BouquetOrderForm {
     private JLabel placeholder6;
     private JLabel placeholder5;
     private JLabel placeholder2;
+    private JLabel lilyText;
+    private JLabel Stocks;
+    private JLabel Clr;
+    private JLabel PriceGet;
+    private JLabel SunFlwerText;
+    private JLabel Clr2;
+    private JLabel Price2;
+    private JLabel Text3;
+    private JLabel Stock3;
+    private JLabel Clr3;
 
     public static void main(String[] args) {
 
         // Create ONE SINGLE instance
-        BouquetOrderForm form = new BouquetOrderForm();
+        BouquetLargePanel form = new BouquetLargePanel();
 
         // Load image into THAT SAME instance
         ImageIcon img = new ImageIcon("src/assets/testFlower.png");
