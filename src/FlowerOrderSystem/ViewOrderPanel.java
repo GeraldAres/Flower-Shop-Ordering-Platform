@@ -11,7 +11,7 @@ public class ViewOrderPanel {
         JFrame frame = new JFrame("Food Ordering System");
         frame.setContentPane(new ViewOrderPanel().ViewOrderPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 400);
+        frame.setSize(1080, 1440);
         frame.setVisible(true);
     }
 }

@@ -10,7 +10,7 @@ public class OrderPanel {
     private JLabel BrandName;
     private JTextField userContactNumber;
     private JTextField userAddress;
-    private JTextField userName;
+    private JTextField userFullName;
     private JPanel ServicesBtn;
     private JButton stemButton;
     private JButton bouquetButton;
@@ -30,7 +30,7 @@ public class OrderPanel {
         invalidEmailAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
 
-        userName.addActionListener(e -> validateInputs());
+        userFullName.addActionListener(e -> validateInputs());
         userAddress.addActionListener(e -> validateInputs());
         userContactNumber.addActionListener(e -> validateInputs());
 
@@ -65,7 +65,7 @@ public class OrderPanel {
         invalidEmailAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
 
-        String name = userName.getText().trim();
+        String name = userFullName.getText().trim();
         String address = userAddress.getText().trim();
         String contact = userContactNumber.getText().trim();
 

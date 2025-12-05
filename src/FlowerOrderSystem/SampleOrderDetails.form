@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="src.FlowerOrderSystem.SampleOrderDetails">
+  <grid id="27dc6" binding="OrderDetailsPnl" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="2273" height="1255"/>
+    </constraints>
+    <properties>
+      <maximumSize width="1080" height="1040"/>
+      <preferredSize width="1080" height="1040"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="8a764" binding="Holder" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="1080" height="1040"/>
+            <maximum-size width="1080" height="1040"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-11133902"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="57e5f" binding="Header" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="North"/>
+            <properties>
+              <background color="-11133902"/>
+              <maximumSize width="1080" height="150"/>
+              <preferredSize width="1080" height="150"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="feef3" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ink Free" size="24" style="1"/>
+                  <foreground color="-3688541"/>
+                  <text value="Hiraya Flowershop Cebu"/>
+                </properties>
+              </component>
+              <component id="e2cda" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Bell MT" size="72" style="1"/>
+                  <foreground color="-3688541"/>
+                  <text value="Order Details"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="93d01" binding="West" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="West"/>
+            <properties>
+              <background color="-3688541"/>
+              <maximumSize width="50" height="740"/>
+              <preferredSize width="50" height="740"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="2639b" binding="East" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="East"/>
+            <properties>
+              <background color="-3688541"/>
+              <foreground color="-3688541"/>
+              <maximumSize width="50" height="740"/>
+              <preferredSize width="50" height="740"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+          <grid id="1d434" binding="Footer" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints border-constraint="South"/>
+            <properties>
+              <background color="-3688541"/>
+              <maximumSize width="1080" height="150"/>
+              <preferredSize width="1080" height="150"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="3ddf5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-3688541"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="d7c19" class="javax.swing.JButton" binding="prevButton" default-binding="true">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                        <preferred-size width="100" height="30"/>
+                        <maximum-size width="100" height="30"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-11133902"/>
+                      <font name="Bell MT" size="12"/>
+                      <foreground color="-3688541"/>
+                      <horizontalAlignment value="2"/>
+                      <maximumSize width="10" height="14"/>
+                      <minimumSize width="10" height="14"/>
+                      <preferredSize width="10" height="14"/>
+                      <text value="Prev"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="e4e66" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-3688541"/>
+                </properties>
+                <border type="none"/>
+                <children/>
+              </grid>
+            </children>
+          </grid>
+          <grid id="91c2" binding="Body" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <background color="-3688541"/>
+              <maximumSize width="980" height="740"/>
+              <preferredSize width="980" height="740"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="4fe37" binding="CustomerDetails" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints border-constraint="North"/>
+                <properties>
+                  <background color="-3688541"/>
+                  <doubleBuffered value="true"/>
+                  <enabled value="true"/>
+                  <font/>
+                  <maximumSize width="980" height="200"/>
+                  <minimumSize width="980" height="200"/>
+                  <preferredSize width="980" height="200"/>
+                  <requestFocusEnabled value="true"/>
+                  <verifyInputWhenFocusTarget value="true"/>
+                  <visible value="true"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="d8af1" binding="leftDT" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="490" height="200"/>
+                        <maximum-size width="490" height="200"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                      <font name="Bell MT"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="f7a84" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="1"/>
+                          <foreground color="-11133902"/>
+                          <text value="Customer Name:"/>
+                          <verticalTextPosition value="3"/>
+                        </properties>
+                      </component>
+                      <component id="c66ec" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <alignmentY value="1.0"/>
+                          <font name="Bell MT" size="22" style="1"/>
+                          <foreground color="-11133902"/>
+                          <text value="Address:"/>
+                          <verticalAlignment value="1"/>
+                        </properties>
+                      </component>
+                      <component id="7b045" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <alignmentY value="1.0"/>
+                          <font name="Bell MT" size="22" style="1"/>
+                          <foreground color="-11133902"/>
+                          <text value="Gmail:"/>
+                        </properties>
+                      </component>
+                      <component id="e5a59" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="0"/>
+                          <foreground color="-9623246"/>
+                          <horizontalAlignment value="2"/>
+                          <horizontalTextPosition value="11"/>
+                          <text value="Gerald Ares"/>
+                          <verticalAlignment value="0"/>
+                        </properties>
+                      </component>
+                      <component id="e2c1" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="0"/>
+                          <foreground color="-9623246"/>
+                          <horizontalAlignment value="2"/>
+                          <horizontalTextPosition value="2"/>
+                          <text value="Guadalupe, Cebu City"/>
+                        </properties>
+                      </component>
+                      <component id="2aeb9" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                            <preferred-size width="478" height="17"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="0"/>
+                          <foreground color="-9623246"/>
+                          <text value="geraldares@gmail.com"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="e062" binding="rightDT" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="490" height="200"/>
+                        <maximum-size width="490" height="200"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="c8b8" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <alignmentX value="0.5"/>
+                          <font name="Bell MT" size="22" style="1"/>
+                          <foreground color="-11133902"/>
+                          <text value="Contact No.:"/>
+                        </properties>
+                      </component>
+                      <component id="85e3a" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="1"/>
+                          <foreground color="-11133902"/>
+                          <text value="Date to Deliver:"/>
+                        </properties>
+                      </component>
+                      <component id="b30e9" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="0"/>
+                          <foreground color="-9623246"/>
+                          <text value="09123456789"/>
+                        </properties>
+                      </component>
+                      <component id="491a8" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="0"/>
+                          <foreground color="-9623246"/>
+                          <text value="11/11/1111"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <grid id="3a628" binding="GrandTotal" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints border-constraint="South"/>
+                <properties>
+                  <background color="-3688541"/>
+                  <maximumSize width="940" height="100"/>
+                  <preferredSize width="980" height="100"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="bba42" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                        <preferred-size width="490" height="100"/>
+                        <maximum-size width="490" height="100"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                      <foreground color="-1"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="36ecf" class="javax.swing.JButton" binding="CheckOut">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                            <minimum-size width="150" height="50"/>
+                            <preferred-size width="150" height="50"/>
+                            <maximum-size width="150" height="50"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-11133902"/>
+                          <borderPainted value="true"/>
+                          <font name="Bell MT" size="12" style="1"/>
+                          <foreground color="-1"/>
+                          <text value="Check Out"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="42599" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="490" height="100"/>
+                        <maximum-size width="490" height="100"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="9e365" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-3688541"/>
+                          <font name="Bell MT" size="22" style="1"/>
+                          <foreground color="-11133902"/>
+                          <text value="Grand Total"/>
+                        </properties>
+                      </component>
+                      <component id="8a40e" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Bell MT" size="22" style="0"/>
+                          <foreground color="-9623246"/>
+                          <text value="Php 0.00"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <grid id="b3a5c" binding="Middle" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <background color="-3688541"/>
+                  <maximumSize width="980" height="400"/>
+                  <preferredSize width="980" height="400"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="d16d1" binding="OrderDetails" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="980" height="200"/>
+                        <maximum-size width="980" height="200"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="e68ec" binding="Left" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints border-constraint="East"/>
+                        <properties>
+                          <background color="-3688541"/>
+                          <maximumSize width="490" height="200"/>
+                          <preferredSize width="490" height="200"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <grid id="78646" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                <preferred-size width="245" height="200"/>
+                                <maximum-size width="245" height="200"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <background color="-3688541"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <grid id="12dd8" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                                <margin top="0" left="0" bottom="0" right="0"/>
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                    <preferred-size width="245" height="100"/>
+                                    <maximum-size width="245" height="100"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-3688541"/>
+                                </properties>
+                                <border type="none"/>
+                                <children>
+                                  <component id="33151" class="javax.swing.JLabel">
+                                    <constraints>
+                                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                                    </constraints>
+                                    <properties>
+                                      <background color="-3688541"/>
+                                      <font name="Bell MT" size="22" style="1"/>
+                                      <foreground color="-11133902"/>
+                                      <text value="Mode of Payment"/>
+                                    </properties>
+                                  </component>
+                                </children>
+                              </grid>
+                              <grid id="c07eb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                                <margin top="0" left="0" bottom="0" right="0"/>
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                    <preferred-size width="245" height="100"/>
+                                    <maximum-size width="245" height="100"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-3688541"/>
+                                </properties>
+                                <border type="none"/>
+                                <children>
+                                  <component id="7369f" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+                                    <constraints>
+                                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
+                                    </constraints>
+                                    <properties>
+                                      <background color="-3688541"/>
+                                    </properties>
+                                  </component>
+                                </children>
+                              </grid>
+                            </children>
+                          </grid>
+                          <grid id="17381" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                <preferred-size width="245" height="200"/>
+                                <maximum-size width="245" height="200"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <background color="-3688541"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <grid id="8a929" binding="North" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                                <margin top="0" left="0" bottom="0" right="0"/>
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                    <preferred-size width="245" height="100"/>
+                                    <maximum-size width="245" height="100"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-3688541"/>
+                                </properties>
+                                <border type="none"/>
+                                <children>
+                                  <component id="33b33" class="javax.swing.JLabel">
+                                    <constraints>
+                                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                                    </constraints>
+                                    <properties>
+                                      <font name="Bell MT" size="22" style="1"/>
+                                      <foreground color="-11133902"/>
+                                      <text value="Mode of Delivery"/>
+                                    </properties>
+                                  </component>
+                                </children>
+                              </grid>
+                              <grid id="627fc" binding="South" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                                <margin top="0" left="0" bottom="0" right="0"/>
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                                    <preferred-size width="245" height="100"/>
+                                    <maximum-size width="245" height="100"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-3688541"/>
+                                </properties>
+                                <border type="none"/>
+                                <children>
+                                  <component id="62f67" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+                                    <constraints>
+                                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
+                                    </constraints>
+                                    <properties>
+                                      <background color="-3688541"/>
+                                    </properties>
+                                  </component>
+                                </children>
+                              </grid>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                      <grid id="92dc8" binding="Right" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints border-constraint="Center"/>
+                        <properties>
+                          <background color="-3688541"/>
+                          <maximumSize width="490" height="200"/>
+                          <preferredSize width="490" height="200"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="bfc7" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-3688541"/>
+                              <font name="Bell MT" size="22" style="1"/>
+                              <foreground color="-11133902"/>
+                              <text value="Order Details"/>
+                            </properties>
+                          </component>
+                          <component id="a4737" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-3688541"/>
+                              <font name="Bell MT" size="22" style="0"/>
+                              <foreground color="-9623246"/>
+                              <text value="Flower Details and Size"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="54767" binding="AddOns" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="980" height="200"/>
+                        <maximum-size width="980" height="200"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-3688541"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="ffc05" binding="RightAddOn" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <preferred-size width="490" height="200"/>
+                            <maximum-size width="490" height="200"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-3688541"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="7232b" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-3688541"/>
+                              <font name="Bell MT" size="22" style="1"/>
+                              <foreground color="-11133902"/>
+                              <text value="Special Instructions"/>
+                            </properties>
+                          </component>
+                          <component id="407f9" class="javax.swing.JTextField" binding="addASurprisingElementTextField" default-binding="true">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="490" height="100"/>
+                                <maximum-size width="490" height="100"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <background color="-9623246"/>
+                              <font name="Bell MT" size="20" style="2"/>
+                              <foreground color="-1"/>
+                              <text value="add a surprising element please!"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="327a6" binding="LeftAddOn" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <preferred-size width="490" height="200"/>
+                            <maximum-size width="490" height="200"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <background color="-3688541"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="a8895" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bell MT" size="22" style="1"/>
+                              <foreground color="-11133902"/>
+                              <text value="Add-Ons:"/>
+                            </properties>
+                          </component>
+                          <component id="1445e" class="javax.swing.JCheckBox" binding="handwrittenCardCheckBox" default-binding="true">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-3688541"/>
+                              <font name="Bell MT" size="22" style="0"/>
+                              <foreground color="-9623246"/>
+                              <text value="Handwritten Card"/>
+                            </properties>
+                          </component>
+                          <component id="de9bd" class="javax.swing.JCheckBox" binding="fiyeroChocolateCheckBox" default-binding="true">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-3688541"/>
+                              <enabled value="true"/>
+                              <font name="Bell MT" size="22" style="0"/>
+                              <foreground color="-9623246"/>
+                              <text value="Fiyero Chocolate"/>
+                            </properties>
+                          </component>
+                          <component id="4a9f5" class="javax.swing.JCheckBox" binding="checkBox1" default-binding="true">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="CheckBox"/>
+                            </properties>
+                          </component>
+                          <component id="ff0c" class="javax.swing.JCheckBox" binding="checkBox2" default-binding="true">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <text value="CheckBox"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
