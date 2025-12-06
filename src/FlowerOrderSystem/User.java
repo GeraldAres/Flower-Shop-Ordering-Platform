@@ -4,13 +4,15 @@ import src.FlowerOrderSystem.InvalidInputException;
 import java.util.ArrayList;
 
 public class User {
-    private final String fullName;
+    private String fullName;
     private String username;
     private String password;
     private String email;
     private String contactNumber;
     private ArrayList<CheckOut> orders;
+    public User(){
 
+    }
     public User(String fullName, String emailAddress, String contactNumber) throws InvalidInputException {
         validateUserInfo(fullName, emailAddress, contactNumber);
         this.fullName = fullName;

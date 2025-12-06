@@ -1,20 +1,24 @@
 package src.FlowerOrderSystem;
+import src.FlowerOrderSystem.Controllers.MainController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainPanel {
-    JPanel MainPanel;
-    CardLayout cardLayout = new CardLayout();
+    private JPanel MainPanel;
+    private final CardLayout cardLayout = new CardLayout();
     private JPanel FirstPage;
     private JButton btnLogIn;
     private JButton btnGuest;
     private JLabel Logo;
     private JLabel ImageHolder2;
     private JLabel ImageHolder;
+    private String action;
+    private MainController controller;
 
-    public MainPanel() throws InvalidInputException {
+    public MainPanel() throws InvalidInputException, NullPointerException {
         MainPanel.setLayout(cardLayout);
 
         GuestOrderPanel newFormSample = new GuestOrderPanel(MainPanel, cardLayout);
@@ -46,14 +50,23 @@ public class MainPanel {
         btnGuest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cardLayout.show(MainPanel, "Guest");
+                   try{
+                       controller.changeDisplay("Guest");
+                   } catch (InvalidInputException ex) {
+                       JOptionPane.showMessageDialog(MainPanel,ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                   }
+
             }
         });
 
         btnLogIn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cardLayout.show(MainPanel, "LogInPanel");
+                try{
+                    controller.changeDisplay("Regular");
+                } catch (InvalidInputException ex) {
+                    JOptionPane.showMessageDialog(MainPanel,ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
@@ -66,6 +79,19 @@ public class MainPanel {
         ImageHolder2.setText("");
     }
 
+    public JPanel getMainPanel() {
+        return MainPanel;
+    }
 
+    public CardLayout getCardLayout() {
+            return cardLayout;
+    }
 
+    public String getAction(){
+        return action;
+    }
+
+    public void setController(MainController controller) {
+        this.controller = controller;
+    }
 }
