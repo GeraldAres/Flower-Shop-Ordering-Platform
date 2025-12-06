@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="SignUpPnl" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1105" height="1288"/>
+      <xy x="20" y="20" width="1105" height="1327"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -411,11 +411,6 @@
                       <text value=""/>
                     </properties>
                   </component>
-                  <vspacer id="a8164">
-                    <constraints>
-                      <grid row="38" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                  </vspacer>
                   <vspacer id="e8a19">
                     <constraints>
                       <grid row="40" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -474,11 +469,6 @@
                   <vspacer id="2efdd">
                     <constraints>
                       <grid row="33" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                  </vspacer>
-                  <vspacer id="d1ce5">
-                    <constraints>
-                      <grid row="33" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                     </constraints>
                   </vspacer>
                   <component id="6201" class="javax.swing.JTextField" binding="fullnameField">

@@ -58,7 +58,7 @@ public class SignUp {
                     throw new InvalidInputException("Error saving account in the database.");
                 }
 
-            File userOrderFolder = new File("Orders/" + username);
+            File userOrderFolder = new File("HirayaCebuOrders/Orders/" + username);
                 if (!userOrderFolder.exists()) {
                     boolean created = userOrderFolder.mkdirs();
                         if (!created) {
