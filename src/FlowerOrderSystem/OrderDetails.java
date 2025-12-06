@@ -2,7 +2,7 @@ package src.FlowerOrderSystem;
 
 import javax.swing.*;
 
-public class SampleOrderDetails {
+public class OrderDetails {
     private JPanel OrderDetailsPnl;
     private JPanel Holder;
     private JPanel Header;
@@ -36,7 +36,7 @@ public class SampleOrderDetails {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new SampleOrderDetails().OrderDetailsPnl);
+        frame.setContentPane(new OrderDetails().OrderDetailsPnl);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1080, 1440);
         frame.setVisible(true);
