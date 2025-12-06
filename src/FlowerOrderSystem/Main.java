@@ -1,7 +1,6 @@
 package src.FlowerOrderSystem;
 
 import src.FlowerOrderSystem.Controllers.MainController;
-import src.FlowerOrderSystem.Controllers.UserSetup;
 
 import javax.swing.*;
 import java.awt.*;

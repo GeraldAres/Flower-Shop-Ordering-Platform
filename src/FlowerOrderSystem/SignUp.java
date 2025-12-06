@@ -11,13 +11,12 @@ public class SignUp {
     private String userName;
     private String Password;
 
-    public SignUp(String fullName, String emailAddress, String contactNumber, String username, String password, String confirmPassword) throws InvalidInputException{
-        this.fullName = fullName;
-        this.email = emailAddress;
-        this.contactNum = contactNumber;
-        this.userName = username;
-        this.Password = password;
+    public SignUp(){
 
+    }
+    public User validateSignUp(String fullName, String emailAddress, String contactNumber, String username, String password, String confirmPassword) throws InvalidInputException, InvalidInputException.InvalidEmail, InvalidInputException.InvalidName, InvalidInputException.InvalidPhone, InvalidInputException.PasswordMismatch, InvalidInputException.WeakPassword {
+        User temp = new User();
+        user =  temp.validateSignUp(fullName, emailAddress, contactNumber, username, password, confirmPassword);
             if (!password.equals(confirmPassword)) {
                 throw new InvalidInputException("Passwords do not match");
             }
@@ -66,7 +65,10 @@ public class SignUp {
                             System.err.println("Warning: Could not create a folder for " + username);
                         }
                 }
-        user = new User(fullName, emailAddress, contactNumber, username, password);
+                if (user != null){
+                    return user;
+                }
+                return null;
     }
 
     public String getFullName(){

@@ -17,17 +17,17 @@ public class MainPanel {
     private JLabel ImageHolder;
     private String action;
     private MainController controller;
+    private  GuestOrderPanel newFormSample = new GuestOrderPanel(MainPanel, cardLayout);
+    private ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
+    private StemPanel stemPanel = new StemPanel();
+    private BouquetPanel bouquetPanel = new BouquetPanel();
+    private  LogInPanel logInPanel = new LogInPanel();
+    private  DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
+    private SignUpPanel signUpPanel = new SignUpPanel();
 
     public MainPanel() throws InvalidInputException, NullPointerException {
+        // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
         MainPanel.setLayout(cardLayout);
-
-        GuestOrderPanel newFormSample = new GuestOrderPanel(MainPanel, cardLayout);
-        ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
-        StemPanel stemPanel = new StemPanel();
-        BouquetPanel bouquetPanel = new BouquetPanel();
-        LogInPanel logInPanel = new LogInPanel(MainPanel, cardLayout);
-        DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
-        SignUpPanel signUpPanel = new SignUpPanel(MainPanel, cardLayout);
 
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(newFormSample.GuestOrder, "Guest");
@@ -38,6 +38,8 @@ public class MainPanel {
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
         MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
 
+        // Sets the business logo up for display //
+
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/HirayaCebu.png");
         Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(img);
@@ -46,6 +48,17 @@ public class MainPanel {
         Logo.setVerticalTextPosition(JLabel.CENTER);
         Logo.setIconTextGap(10);
 
+        //Sets up the border images of the design //
+
+        ImageIcon pic = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Accessories.png");
+        Image imgg =  pic.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        ImageIcon set = new ImageIcon(imgg);
+        ImageHolder.setIcon(set);
+        ImageHolder2.setIcon(set);
+        ImageHolder.setText("");
+        ImageHolder2.setText("");
+
+        // Guest option//
 
         btnGuest.addActionListener(new ActionListener() {
             @Override
@@ -59,6 +72,8 @@ public class MainPanel {
             }
         });
 
+        // Login option//
+
         btnLogIn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,13 +85,7 @@ public class MainPanel {
             }
         });
 
-        ImageIcon pic = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Accessories.png");
-        Image imgg =  pic.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
-        ImageIcon set = new ImageIcon(imgg);
-        ImageHolder.setIcon(set);
-        ImageHolder2.setIcon(set);
-        ImageHolder.setText("");
-        ImageHolder2.setText("");
+
     }
 
     public JPanel getMainPanel() {
@@ -94,4 +103,30 @@ public class MainPanel {
     public void setController(MainController controller) {
         this.controller = controller;
     }
+    public LogInPanel getLogInPanel() {
+        return logInPanel;
+    }
+
+    public SignUpPanel getSignUpPanel() {
+        return signUpPanel;
+    }
+
+    public DashboardPanel getDashboardPanel() {
+        return dashboardPanel;
+    }
+
+    public BouquetPanel getBouquetPanel() {
+        return bouquetPanel;
+    }
+    public  GuestOrderPanel getGuestOrderPanel() {
+        return newFormSample;
+    }
+    public ViewOrderPanel getViewOrderPanel() {
+        return viewOrderPanel;
+    }
+    public StemPanel getStemPanel() {
+        return stemPanel;
+    }
+
+
 }

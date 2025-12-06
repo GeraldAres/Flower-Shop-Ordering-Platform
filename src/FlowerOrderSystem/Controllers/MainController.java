@@ -1,32 +1,47 @@
 package src.FlowerOrderSystem.Controllers;
-import src.FlowerOrderSystem.InvalidInputException;
-import src.FlowerOrderSystem.MainPanel;
-import src.FlowerOrderSystem.User;
-
-import javax.swing.*;
+import src.FlowerOrderSystem.*;
+import java.io.IOException;
 
 public class MainController {
-    private MainPanel main;
+    private final MainPanel main;
+    private  UserController setup;
+    private  OrderController orderController;
+    private SignUpPanel signUpPanel;
     private User activeUser;
+    private Order order;
 
     public MainController(MainPanel main) {
         this.main = main;
-    }
-    public void setUser(){
-        String action = main.getAction();
+        setup = new UserController(this);
     }
 
-    public void changeDisplay(String user) throws InvalidInputException {
-        UserSetup setup = new UserSetup();
-        if (user.equals("Guest")) {
+    public void changeDisplay(String action) throws InvalidInputException {
+        if (action.equals("Guest")) {
             main.getCardLayout().show(main.getMainPanel(), "Guest");
-            activeUser = setup.userFactory(user);
+            activeUser = setup.userFactory(action);
         }
 
-        if (user.equals("Regular")) {
+        if (action.equals("Regular")) {
+            main.getLogInPanel().setController(setup);
             main.getCardLayout().show(main.getMainPanel(), "LogInPanel");
-            activeUser = setup.userFactory(user);
+
         }
+
+        if (action.equals("SignUp")){
+            main.getSignUpPanel().setController(setup);
+            main.getCardLayout().show(main.getMainPanel(), "SignUpPanel");
+        }
+
+        if (action.equals("Dashboard")) {
+            main.getCardLayout().show(main.getMainPanel(), "Dashboard");
+        };
+
     }
+
+
+
+
+
+
 
 }

@@ -1,11 +1,14 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.UserController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class SignUpPanel {
     JPanel SignUpPnl;
@@ -16,8 +19,8 @@ public class SignUpPanel {
     private JTextField fullnameField;
     private JTextField passwordField;
     private JButton createAccountButton;
-    private JLabel InvalidUsername;
-    private JLabel invalidPassword;
+    private JLabel invalidUsername;
+    private JLabel passwordMismatch;
     private JButton prevButton;
     private JPanel Holder;
     private JTextField confirmPasswordField;
@@ -29,9 +32,35 @@ public class SignUpPanel {
     private JTextField emailField;
     private JLabel email;
     private JLabel LogInBtn;
+    private JLabel invalidNameField;
+    private JLabel invalidEmail;
+    private JLabel invalidNumber;
+    private JLabel weakPassword;
     private JPanel Log;
+    private UserController userController;
 
-    public SignUpPanel(JPanel MainPanel, CardLayout cardLayout) throws InvalidInputException {
+    public SignUpPanel() throws InvalidInputException {
+        invalidNameField.setVisible(false);
+        invalidEmail.setVisible(false);
+        invalidNumber.setVisible(false);
+        invalidUsername.setVisible(false);
+        passwordMismatch.setVisible(false);
+        weakPassword.setVisible(false);
+    }
+
+    public void setController(UserController userController) {
+        this.userController = userController;
+
+        LogInBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    userController.userActions("Register");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
 
         createAccountButton.addActionListener(new ActionListener() {
             @Override
@@ -42,19 +71,61 @@ public class SignUpPanel {
                 String password = passwordField.getText();
                 String confirmPassword = confirmPasswordField.getText();
                 String username = usernameField.getText();
-                User user = new User(name, email, contactNo, password, confirmPassword);
+
+                try {
+                    invalidNameField.setVisible(false);
+                    invalidEmail.setVisible(false);
+                    invalidNumber.setVisible(false);
+                    invalidUsername.setVisible(false);
+                    passwordMismatch.setVisible(false);
+                    weakPassword.setVisible(false);
+
+                    if (userController.signUpValidation(name, email, contactNo, username, password, confirmPassword)) {
+                        // Create the dialog
+                        JDialog dialog = new JDialog((JFrame) null, "Info", true); // true = modal
+                        dialog.setSize(350, 150);
+                        dialog.setLayout(new BorderLayout());
+
+                        // Message
+                        JLabel message = new JLabel("Account created, please log in to continue.", JLabel.CENTER);
+                        message.setFont(new Font("Arial", Font.PLAIN, 14));
+
+                        // OK Button
+                        JButton okButton = new JButton("OK");
+                        okButton.addActionListener(ev -> {
+                            try {
+                                userController.userActions("Regular");
+                            } catch (InvalidInputException ex) {
+                                JOptionPane.showMessageDialog(dialog, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                            }
+                            dialog.dispose();
+                        });
+
+                        dialog.add(message, BorderLayout.CENTER);
+                        dialog.add(okButton, BorderLayout.SOUTH);
+
+                        dialog.setLocationRelativeTo(null);
+
+                        // Show the dialog
+                        dialog.setVisible(true);
+                    }
+                }  catch (InvalidInputException.InvalidName ex) {
+                    invalidNameField.setVisible(true);
+
+                } catch (InvalidInputException.InvalidEmail ex) {
+                    invalidEmail.setVisible(true);
+
+                } catch (InvalidInputException.InvalidPhone ex) {
+                    invalidNumber.setVisible(true);
+
+                } catch (InvalidInputException | IOException ex) {
+                    invalidUsername.setVisible(true);
+                }  catch (InvalidInputException.WeakPassword ex) {
+                    weakPassword.setVisible(true);
+                } catch (InvalidInputException.PasswordMismatch ex) {
+                    passwordMismatch.setVisible(true);
+                }
             }
-        });
-
-
-
-        LogInBtn.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                cardLayout.show(MainPanel, "LogInPanel");
-            }
-
         });
     }
 }
-

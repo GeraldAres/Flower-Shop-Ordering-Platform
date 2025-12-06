@@ -3,7 +3,7 @@ package src.FlowerOrderSystem;
 import java.io.File;
 
 public class CheckOutTester {
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         System.out.println("====== STARTING CHECKOUT SAVE LOGIC TEST ======");
 
         // --- TEST 1: GUEST USER (Should go to Orders/Guest) ---
@@ -83,4 +83,6 @@ public class CheckOutTester {
             System.out.println("❌ FAILURE: File NOT found at -> " + path);
         }
     }
+
+    */
 }

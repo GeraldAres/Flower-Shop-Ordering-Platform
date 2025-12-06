@@ -13,7 +13,7 @@ public class User {
     public User(){
 
     }
-    public User(String fullName, String emailAddress, String contactNumber) throws InvalidInputException {
+    public User(String fullName, String emailAddress, String contactNumber) throws InvalidInputException, InvalidInputException.InvalidEmail, InvalidInputException.InvalidName, InvalidInputException.InvalidPhone {
         validateUserInfo(fullName, emailAddress, contactNumber);
         this.fullName = fullName;
         this.email = emailAddress;
@@ -22,25 +22,25 @@ public class User {
         this.password = "default";
     }
 
-    public User (String fullName, String emailAddress, String contactNumber, String username, String password, String confirmPassword) throws InvalidInputException {
+    public User validateSignUp (String fullName, String emailAddress, String contactNumber, String username, String password, String confirmPassword) throws InvalidInputException, InvalidInputException.InvalidEmail, InvalidInputException.InvalidName, InvalidInputException.InvalidPhone, InvalidInputException.PasswordMismatch, InvalidInputException.WeakPassword {
         validateUserInfo(fullName, emailAddress, contactNumber);
-
         if (username == null || username.trim().isEmpty()
                 || !username.matches("^[A-Za-z0-9_]{3,16}$")) {
             throw new InvalidInputException("Invalid username");
         }
         if (password == null || password.trim().isEmpty()
                 || !password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")) {
-            throw new InvalidInputException("Invalid password");
+            throw new InvalidInputException.WeakPassword("Password is too weak.");
         }
         if (!password.equals(confirmPassword)) {
-            throw new InvalidInputException("Passwords do not match");
+            throw new InvalidInputException.PasswordMismatch("Passwords do not match");
         }
         this.fullName = fullName;
         this.email = emailAddress;
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
+        return this;
     }
 
     public User(String fullName, String email, String contactNumber, String username, String password) {
@@ -52,18 +52,18 @@ public class User {
     }
 
 
-    public void validateUserInfo(String fullName, String email, String contactNumber) throws InvalidInputException {
+    public void validateUserInfo(String fullName, String email, String contactNumber) throws InvalidInputException, InvalidInputException.InvalidName, InvalidInputException.InvalidEmail, InvalidInputException.InvalidPhone {
         if (fullName == null || fullName.trim().isEmpty()
                 || !fullName.matches("[a-zA-Z .]+")) {
-            throw new InvalidInputException("Invalid name");
+            throw new InvalidInputException.InvalidName("Invalid name");
         }
         if (email == null || email.trim().isEmpty()
                 || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
-            throw new InvalidInputException("Invalid email address");
+            throw new InvalidInputException.InvalidEmail("Invalid email address");
         }
         if (contactNumber == null || contactNumber.trim().isEmpty()
-                ||  !contactNumber.trim().matches("\\+\\d{2} \\d{9,10}")) {
-            throw new InvalidInputException("Invalid contact number");
+                || !contactNumber.trim().matches("\\+\\d{11,12}")) {
+            throw new InvalidInputException.InvalidPhone("Invalid contact number");
         }
     }
 

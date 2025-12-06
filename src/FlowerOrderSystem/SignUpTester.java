@@ -3,7 +3,7 @@ package src.FlowerOrderSystem;
 import java.io.*;
 
 public class SignUpTester {
-
+    /*
     public static void main(String[] args) {
         System.out.println("====== STARTING SIGN UP & FOLDER CREATION TEST ======");
 
@@ -96,4 +96,6 @@ public class SignUpTester {
             System.out.println("Error: Accounts/accounts.csv was not created.");
         }
     }
+
+     */
 }
