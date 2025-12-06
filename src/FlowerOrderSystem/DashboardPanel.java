@@ -104,5 +104,23 @@ public class DashboardPanel {
                 } catch (InvalidInputException ex) {}
             }
         });
+
+        availableFlowersbtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("AvailableFlowers");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+
+        settingsBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("Settings");
+                } catch (InvalidInputException ex) {}
+            }
+        });
     }
 }
