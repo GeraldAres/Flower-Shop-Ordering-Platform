@@ -17,26 +17,29 @@ public class MainPanel {
     private JLabel ImageHolder;
     private String action;
     private MainController controller;
-    private  GuestOrderPanel newFormSample = new GuestOrderPanel(MainPanel, cardLayout);
+    private  GuestOrderPanel guestOrderPanel = new GuestOrderPanel(MainPanel, cardLayout);
     private ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
     private StemPanel stemPanel = new StemPanel();
     private BouquetPanel bouquetPanel = new BouquetPanel();
     private  LogInPanel logInPanel = new LogInPanel();
     private  DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
     private SignUpPanel signUpPanel = new SignUpPanel();
+    private OrderPanel order = new OrderPanel();
 
     public MainPanel() throws InvalidInputException, NullPointerException {
         // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
         MainPanel.setLayout(cardLayout);
 
         MainPanel.add(FirstPage, "FirstPage");
-        MainPanel.add(newFormSample.GuestOrder, "Guest");
+        MainPanel.add(guestOrderPanel.GuestOrder, "Guest");
         MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
         MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
+        MainPanel.add(order.orderPanel, "NewOrder");
+
 
         // Sets the business logo up for display //
 
@@ -119,7 +122,7 @@ public class MainPanel {
         return bouquetPanel;
     }
     public  GuestOrderPanel getGuestOrderPanel() {
-        return newFormSample;
+        return guestOrderPanel;
     }
     public ViewOrderPanel getViewOrderPanel() {
         return viewOrderPanel;

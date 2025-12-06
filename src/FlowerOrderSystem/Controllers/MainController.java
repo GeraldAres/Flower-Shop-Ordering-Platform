@@ -34,7 +34,16 @@ public class MainController {
 
         if (action.equals("Dashboard")) {
             main.getCardLayout().show(main.getMainPanel(), "Dashboard");
+            main.getDashboardPanel().setController(this);
         };
+
+        if (action.equals("NewOrder")){
+            main.getCardLayout().show(main.getMainPanel(), "NewOrder");
+        }
+
+        if (action.equals("prev")){
+            main.getCardLayout().show(main.getMainPanel(), "FirstPage");
+        }
 
     }
 
