@@ -34,13 +34,6 @@ public class LogInPanel {
         ImageIcon prev = new ImageIcon(img5);
         prevButton.setIcon(prev);
         prevButton.setText("");
-        prevButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
         prevButton.setOpaque(false);
         prevButton.setContentAreaFilled(false);
         prevButton.setBorderPainted(false);
@@ -78,6 +71,18 @@ public class LogInPanel {
             public void mouseClicked(MouseEvent e) {
                 try {
                     userController.userActions("SignUp");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+
+        });
+
+        ForgotPasswordBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    userController.userActions("Settings");
                 } catch (InvalidInputException ex) {
                     throw new RuntimeException(ex);
                 }

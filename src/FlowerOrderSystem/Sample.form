@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="src.FlowerOrderSystem.Sample">
+  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="644"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="d70ae" binding="Left" layout-manager="GridLayoutManager" row-count="21" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="10" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="540" height="1440"/>
+            <maximum-size width="540" height="1440"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-9623246"/>
+          <foreground color="-3688541"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="5c25e" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <font name="Bell MT" size="48" style="1"/>
+              <foreground color="-394241"/>
+              <text value="Hey amigo! Can't"/>
+            </properties>
+          </component>
+          <component id="fd301" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <focusable value="false"/>
+              <font name="Bell MT" size="48" style="1"/>
+              <foreground color="-394241"/>
+              <text value="wait to see ya!"/>
+            </properties>
+          </component>
+          <component id="dbb2c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <font name="Ink Free" size="18" style="1"/>
+              <foreground color="-1842760"/>
+              <text value="Set New Password"/>
+            </properties>
+          </component>
+          <vspacer id="a23cc">
+            <constraints>
+              <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="7d04" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <focusable value="false"/>
+              <font name="Bell MT" size="24" style="1"/>
+              <foreground color="-394241"/>
+              <text value="New Password:                                 "/>
+            </properties>
+          </component>
+          <component id="4c188" class="javax.swing.JTextField" binding="usernameField">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="375" height="35"/>
+                <preferred-size width="375" height="35"/>
+                <maximum-size width="375" height="35"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3688541"/>
+              <caretColor color="-9623246"/>
+              <columns value="0"/>
+              <disabledTextColor color="-9623246"/>
+              <font name="Ink Free" size="20"/>
+              <foreground color="-9623246"/>
+              <selectedTextColor color="-9623246"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="b7975" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <focusable value="false"/>
+              <font name="Bell MT" size="24" style="1"/>
+              <foreground color="-394241"/>
+              <text value="Confirm Password:                            "/>
+            </properties>
+          </component>
+          <component id="9afea" class="javax.swing.JButton" binding="confirmButton" default-binding="true">
+            <constraints>
+              <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="350" height="45"/>
+                <preferred-size width="350" height="45"/>
+                <maximum-size width="350" height="45"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <enabled value="true"/>
+              <font name="Ink Free" size="28"/>
+              <foreground color="-3688541"/>
+              <hideActionText value="true"/>
+              <text value="Confirm"/>
+            </properties>
+          </component>
+          <component id="f7270" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <font name="Ink Free" size="18" style="1"/>
+              <foreground color="-394241"/>
+              <text value="_______________or_______________"/>
+            </properties>
+          </component>
+          <vspacer id="1f3d1">
+            <constraints>
+              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="5"/>
+                <preferred-size width="-1" height="5"/>
+                <maximum-size width="-1" height="5"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <grid id="ddf0c" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-9623246"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="4263" class="javax.swing.JLabel" binding="SignUpBtn">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-11133902"/>
+                  <focusable value="false"/>
+                  <font name="Bell MT" size="14" style="3"/>
+                  <foreground color="-394241"/>
+                  <text value="SignUp"/>
+                </properties>
+              </component>
+              <component id="606b6" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-11133902"/>
+                  <focusable value="false"/>
+                  <font name="Bell MT" size="14" style="0"/>
+                  <foreground color="-394241"/>
+                  <text value="Don't have an account yet?"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <vspacer id="391bb">
+            <constraints>
+              <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="10"/>
+                <preferred-size width="-1" height="10"/>
+                <maximum-size width="-1" height="10"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <vspacer id="f9b42">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="10"/>
+                <preferred-size width="-1" height="10"/>
+                <maximum-size width="-1" height="10"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <vspacer id="49214">
+            <constraints>
+              <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="c960f">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="24eb6">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="172b8">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="ff2b2">
+            <constraints>
+              <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="4f619" class="javax.swing.JLabel" binding="InvalidUsername">
+            <constraints>
+              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="25" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <focusable value="false"/>
+              <font name="Bell MT" size="12" style="0"/>
+              <foreground color="-394241"/>
+              <text value="Username not found."/>
+              <visible value="false"/>
+            </properties>
+          </component>
+          <component id="bf291" class="javax.swing.JLabel" binding="invalidPassword">
+            <constraints>
+              <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="25" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+              <focusable value="false"/>
+              <font name="Bell MT" size="12" style="0"/>
+              <foreground color="-394241"/>
+              <text value="Incorrect password"/>
+              <visible value="false"/>
+            </properties>
+          </component>
+          <component id="d271b" class="javax.swing.JPasswordField" binding="passwordField">
+            <constraints>
+              <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="375" height="35"/>
+                <preferred-size width="375" height="35"/>
+                <maximum-size width="375" height="35"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-3688541"/>
+              <caretColor color="-9623246"/>
+              <disabledTextColor color="-9623246"/>
+              <font name="Ink Free" size="20"/>
+              <foreground color="-9623246"/>
+              <selectedTextColor color="-9623246"/>
+              <selectionColor color="-1842760"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

@@ -44,6 +44,15 @@ public class MainController {
         if (action.equals("prev")){
             main.getCardLayout().show(main.getMainPanel(), "FirstPage");
         }
+        if(action.equals("MyOrders")){
+            main.getCardLayout().show(main.getMainPanel(), "MyOrders");
+        }
+        if (action.equals("Settings")){
+            main.getCardLayout().show(main.getMainPanel(), "Settings");
+        }
+        if(action.equals("Flowers")){
+            main.getCardLayout().show(main.getMainPanel(), "Flowers");
+        }
 
     }
 

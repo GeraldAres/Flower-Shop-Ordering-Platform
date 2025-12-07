@@ -30,7 +30,7 @@ public class User {
         }
         if (password == null || password.trim().isEmpty()
                 || !password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")) {
-            throw new InvalidInputException.WeakPassword("Password is too weak.");
+            throw new InvalidInputException.WeakPassword("Password must be 8+ characters with uppercase, lowercase, number, and special symbol.");
         }
         if (!password.equals(confirmPassword)) {
             throw new InvalidInputException.PasswordMismatch("Passwords do not match");

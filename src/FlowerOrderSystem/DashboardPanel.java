@@ -47,12 +47,12 @@ public class DashboardPanel {
         ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/availableFlowers.png");
         Image img3 =  image3.getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH);
         ImageIcon settings = new ImageIcon(img3);
-        settingsBtn.setIcon(settings);
+        availableFlowersbtn.setIcon(settings);
 
         ImageIcon image4 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/settingss.png");
         Image img4 =  image4.getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH);
         ImageIcon avaiable = new ImageIcon(img4);
-        availableFlowersbtn.setIcon(avaiable);
+        settingsBtn.setIcon(avaiable);
 
 
         ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/logout.png");
@@ -109,7 +109,7 @@ public class DashboardPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    mainController.changeDisplay("AvailableFlowers");
+                    mainController.changeDisplay("Flowers");
                 } catch (InvalidInputException ex) {}
             }
         });

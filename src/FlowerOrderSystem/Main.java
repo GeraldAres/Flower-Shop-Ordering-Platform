@@ -20,6 +20,7 @@ public class Main {
         MainController controller = new MainController(mainPanelClass);
         mainPanelClass.setController(controller);
 
+
         JFrame frame = new JFrame("Hiraya Cebu");
         frame.setIconImage(scaledIcon.getImage());
         frame.setContentPane(mainPanelClass.getMainPanel());

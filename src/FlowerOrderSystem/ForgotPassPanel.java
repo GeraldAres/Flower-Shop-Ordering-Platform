@@ -1,25 +1,35 @@
 package src.FlowerOrderSystem;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ForgotPassPanel {
-    private JPanel ForgotPassPnl;
+    JPanel ForgotPassPnl;
     private JPanel Holder;
     private JPanel BusinessName;
+    private JPanel Right;
+    private JLabel Welcome;
+    private JButton prevButton;
     private JPanel Left;
-    private JTextField usernameField;
+    private JTextField newPasswordField;
     private JButton confirmButton;
-    private JLabel SignUpBtn;
-    private JLabel InvalidUsername;
-    private JLabel invalidPassword;
-    private JPasswordField passwordField;
+    private JLabel weakPassword;
+    private JLabel passwordMismatch;
+    private JPasswordField confirmPasswordFIeld;
+    private JTextField usernameFiel;
+    private JLabel invalidUsername;
 
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new ForgotPassPanel().ForgotPassPnl);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setVisible(true);
+    public ForgotPassPanel() {
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img5);
+        prevButton.setIcon(prev);
+        prevButton.setText("");
+        prevButton.setOpaque(false);
+        prevButton.setContentAreaFilled(false);
+        prevButton.setBorderPainted(false);
+        prevButton.setFocusPainted(false);
+        prevButton.setText("");
     }
+
 }

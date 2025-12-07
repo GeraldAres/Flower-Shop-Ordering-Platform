@@ -18,13 +18,14 @@ public class MainPanel {
     private String action;
     private MainController controller;
     private  GuestOrderPanel guestOrderPanel = new GuestOrderPanel(MainPanel, cardLayout);
-    private ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
+    private ViewOrdersPanel viewOrders = new ViewOrdersPanel();
     private StemPanel stemPanel = new StemPanel();
     private BouquetPanel bouquetPanel = new BouquetPanel();
     private  LogInPanel logInPanel = new LogInPanel();
     private  DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
     private SignUpPanel signUpPanel = new SignUpPanel();
     private OrderPanel order = new OrderPanel();
+    private ForgotPassPanel forgotPassPanel = new ForgotPassPanel();
 
     public MainPanel() throws InvalidInputException, NullPointerException {
         // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
@@ -32,13 +33,14 @@ public class MainPanel {
 
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(guestOrderPanel.GuestOrder, "Guest");
-        MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
+        MainPanel.add(viewOrders.viewOrdersPanel, "ViewOrderPanel");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
         MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
-        MainPanel.add(order.orderPanel, "NewOrder");
+        MainPanel.add(order.orderPanel, "MyOrders");
+        MainPanel.add(forgotPassPanel.ForgotPassPnl, "Settings");
 
 
         // Sets the business logo up for display //
@@ -124,8 +126,8 @@ public class MainPanel {
     public  GuestOrderPanel getGuestOrderPanel() {
         return guestOrderPanel;
     }
-    public ViewOrderPanel getViewOrderPanel() {
-        return viewOrderPanel;
+    public ViewOrdersPanel getViewOrderPanel() {
+        return viewOrders;
     }
     public StemPanel getStemPanel() {
         return stemPanel;
