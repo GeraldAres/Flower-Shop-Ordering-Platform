@@ -2,6 +2,8 @@ package src.FlowerOrderSystem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -55,9 +57,19 @@ public class StemPanel {
     private JLabel picture;
 
     private Order order = new Order("Stem");
+    private Inventory inventory = new Inventory();
 
 
     public StemPanel() {
+
+        roseStock.setText(inventory.getStockCount("rose") + "");
+        carnationStock.setText(inventory.getStockCount("carnation") + "");
+        sunflowerStock.setText(inventory.getStockCount("sunflower") + "");
+        daisyStock.setText(inventory.getStockCount("daisy") + "");
+        lilyStock.setText(inventory.getStockCount("lily") + "");
+        tulipStock.setText(inventory.getStockCount("tulip") + "");
+
+
         // Load the image
         ImageIcon roseImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Rose.png");
         ImageIcon carnationImage = new ImageIcon("src/FlowerOrderSystem/Assets/Flower illustrations/Carnation.png");
@@ -154,9 +166,6 @@ public class StemPanel {
 
                     roseCount.setText(c + "");
                 }
-
-
-
             }
         });
 
@@ -195,8 +204,6 @@ public class StemPanel {
 
                     carnationCount.setText(c + "");
                 }
-
-
             }
         });
 
@@ -371,6 +378,22 @@ public class StemPanel {
                 tulipCount.setText(c + "");
             }
         });
+
+        checkoutBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                CheckoutPanel cp = new CheckoutPanel(inventory, order);
+
+                JFrame frame = new JFrame("Checkout");
+
+                frame.setContentPane(new CheckoutPanel(inventory, order).checkoutPanel);
+
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -380,5 +403,7 @@ public class StemPanel {
         frame.setSize(1080, 1440);
         frame.pack();
         frame.setVisible(true);
+
+
     }
 }

@@ -7,6 +7,8 @@ public class Order {
     private ArrayList<Stem> Flowers;
     private double orderPrice;
 
+    private Inventory inventory = new Inventory();
+
     public Order(String type){
         this.type = type;
         Flowers = new ArrayList<>();
@@ -15,6 +17,18 @@ public class Order {
     public void addFlower(Stem stem) {
         Flowers.add(stem);
         setPrice();
+    }
+
+    public int count(String name){
+        int c = 0;
+
+        for(Stem stem : Flowers){
+            if(stem.getName().equalsIgnoreCase(name)){
+                c++;
+            }
+        }
+
+        return c;
     }
 
     public void removeFlower(Stem stem) {
@@ -37,6 +51,12 @@ public class Order {
 
     public double getOrderPrice() {
         return orderPrice;
+    }
+
+    public void print(){
+        for(Stem stem : Flowers){
+            System.out.println(stem.getName());
+        }
     }
 
 
