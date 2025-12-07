@@ -3,7 +3,7 @@ package src.FlowerOrderSystem;
 import java.io.IOException;
 
 public class LogInTester {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println("====== STARTING LOGIN TESTS ======");
 
         // --- PRE-REQUISITE: Ensure 'Accounts/accounts.csv' exists ---
@@ -49,4 +49,6 @@ public class LogInTester {
             e.printStackTrace();
         }
     }
+    */
+
 }

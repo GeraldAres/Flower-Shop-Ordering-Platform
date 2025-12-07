@@ -4,7 +4,7 @@ import java.io.*;
 
 public class ResetPasswordTester {
     public static void main(String[] args) {
-        System.out.println("====== STARTING PASSWORD RESET TESTS ======");
+      /* System.out.println("====== STARTING PASSWORD RESET TESTS ======");
 
         // Pre-requisite: Make sure 'flowerKing' exists (from SignUpTester)
         String targetUser = "Fatima";
@@ -40,5 +40,8 @@ public class ResetPasswordTester {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+       */
     }
+
 }

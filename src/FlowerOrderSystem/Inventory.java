@@ -13,12 +13,12 @@ public class Inventory {
 
     private void initializeStock() {
         for (int i = 0; i < defaultStock; i++) {
-            roses.add(new Rose("Red"));
-            sunflowers.add(new Sunflower("Yellow"));
-            lilies.add(new Lily("White"));
-            daisies.add(new Daisy("White"));
-            carnations.add(new Carnation("Pink"));
-            tulips.add(new Tulip("Purple"));
+            roses.add(new Rose());
+            sunflowers.add(new Sunflower());
+            lilies.add(new Lily());
+            daisies.add(new Daisy());
+            carnations.add(new Carnation());
+            tulips.add(new Tulip());
         }
     }
 
@@ -28,9 +28,7 @@ public class Inventory {
 
     public <T> boolean removeFlowers(ArrayList<T> list, int quantity, String typeName) {
         if (list.size() >= quantity) {
-            for (int i = 0; i < quantity; i++) {
                 list.remove(0);
-            }
             System.out.println("Inventory Update: Sold " + quantity + " " + typeName + "(s). Remaining: " + list.size());
             return true;
         } else {

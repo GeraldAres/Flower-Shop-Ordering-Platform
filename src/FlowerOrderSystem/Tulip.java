@@ -2,7 +2,7 @@ package src.FlowerOrderSystem;
 
 public class Tulip extends Stem{
 
-    public Tulip(String color) {
-        super("Tulip", color, 75.00);
+    public Tulip() {
+        super("Tulip", "Pink", 75.00);
     }
 }
