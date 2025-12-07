@@ -189,34 +189,65 @@ public class StemPanel {
         carnationQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(carnationCount.getText());
+                if (orderController.validIncrease(c, "Carnation")){
+                    c++;
+                    orderController.addFlower("Carnation");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    carnationCount.setText(c+"");
+                }
             }
         });
 
         carnationQuantityDecrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(carnationCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Carnation");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    carnationCount.setText(c+"");
+                }
             }
         });
 
         daisyQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(daisyCount.getText());
+                if (orderController.validIncrease(c, "Daisy")){
+                    c++;
+                    orderController.addFlower("Daisy");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    daisyCount.setText(c+"");
+                }
             }
         });
 
         daisyQuantityDecrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(carnationCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Carnation");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    carnationCount.setText(c+"");
+                }
             }
         });
 
         lilyQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(lilyCount.getText());
+                if (orderController.validIncrease(c, "Lily")){
+                    c++;
+                    orderController.addFlower("Lily");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    lilyCount.setText(c+"");
+                }
 
             }
         });
@@ -231,7 +262,13 @@ public class StemPanel {
         sunflowerQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(sunflowerCount.getText());
+                if (orderController.validIncrease(c, "Sunflower")){
+                    c++;
+                    orderController.addFlower("Sunflower");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    sunflowerCount.setText(c+"");
+                }
 
             }
         });
@@ -247,7 +284,13 @@ public class StemPanel {
         tulipQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(tulipCount.getText());
+                if (orderController.validIncrease(c, "Tulip")){
+                    c++;
+                    orderController.addFlower("Tulip");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    tulipCount.setText(c+"");
+                }
 
             }
         });
