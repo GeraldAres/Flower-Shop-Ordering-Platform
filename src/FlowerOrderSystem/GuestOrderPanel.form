@@ -289,7 +289,7 @@
                               <font name="Ink Free" size="20"/>
                               <foreground color="-9623246"/>
                               <selectedTextColor color="-9623246"/>
-                              <text value=""/>
+                              <text value="+639"/>
                             </properties>
                           </component>
                           <component id="a355a" class="javax.swing.JLabel" binding="invalidNameLbl">
