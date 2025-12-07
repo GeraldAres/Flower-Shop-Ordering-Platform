@@ -46,16 +46,52 @@ public class SignUpPanel {
         invalidUsername.setVisible(false);
         passwordMismatch.setVisible(false);
         weakPassword.setVisible(false);
+
+        fullnameField.setText("");
+        emailField.setText("");
+        contactField.setText("+63");
+        usernameField.setText("");
+        passwordField.setText("");
+        confirmPasswordField.setText("");
+        prevButton.setOpaque(false);
+        prevButton.setContentAreaFilled(false);
+        prevButton.setBorderPainted(false);
+        prevButton.setFocusPainted(false);
+        prevButton.setText("");
+
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img5);
+        prevButton.setIcon(prev);
+        prevButton.setText("");
     }
 
     public void setController(UserController userController) {
         this.userController = userController;
 
+        fullnameField.setText("");
+        emailField.setText("");
+        contactField.setText("+63");
+        usernameField.setText("");
+        passwordField.setText("");
+        confirmPasswordField.setText("");
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    userController.userActions("prev");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
         LogInBtn.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    userController.userActions("Register");
+                    userController.userActions("Regular");
                 } catch (InvalidInputException ex) {
                     throw new RuntimeException(ex);
                 }

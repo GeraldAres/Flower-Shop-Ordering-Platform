@@ -14,8 +14,6 @@ import java.io.IOException;
 public class LogInPanel {
     JPanel LogInPnl;
     private JPanel BusinessName;
-    private JPanel Right;
-    private JLabel Welcome;
     private JPanel Left;
     private JTextField usernameField;
     private JTextField passwordField;
@@ -25,6 +23,8 @@ public class LogInPanel {
     private JPanel Holder;
     private JLabel SignUpBtn;
     private JLabel ForgotPasswordBtn;
+    private JPanel Right;
+    private JLabel Welcome;
     private JPanel Log;
     private UserController userController;
 
@@ -34,25 +34,22 @@ public class LogInPanel {
         ImageIcon prev = new ImageIcon(img5);
         prevButton.setIcon(prev);
         prevButton.setText("");
-        prevButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
         prevButton.setOpaque(false);
         prevButton.setContentAreaFilled(false);
         prevButton.setBorderPainted(false);
         prevButton.setFocusPainted(false);
         prevButton.setText("");
 
-
+        usernameField.setText("");
+        passwordField.setText("");
         usernameField.getCaret().setVisible(true);
         passwordField.getCaret().setSelectionVisible(true);
     }
     public void setController(UserController userController) {
         this.userController = userController;
+        usernameField.setText("");
+        passwordField.setText("");
+        invalidPassword.setVisible(false);
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -79,6 +76,29 @@ public class LogInPanel {
                 }
             }
 
+        });
+
+        ForgotPasswordBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    userController.userActions("Settings");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+
+        });
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    userController.userActions("prev");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
         });
     }
 

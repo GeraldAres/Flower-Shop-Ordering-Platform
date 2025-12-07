@@ -1,9 +1,11 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.UserController;
+
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class GuestOrderPanel {
     JPanel GuestOrder;
@@ -30,107 +32,122 @@ public class GuestOrderPanel {
     private JButton prevButton;
     private JTextField emailAddress;
     private JTextField contactNumber;
+    private UserController userController;
 
-    public GuestOrderPanel(JPanel MainPanel, CardLayout cardLayout) {
-        final JPanel parentPanel = MainPanel;
-        final CardLayout layout = cardLayout;
-        NewForm newForm = new NewForm();
-        stemButton.setEnabled(true);
-        bouquetButton.setEnabled(true);
+    public GuestOrderPanel() {
+
+        stemButton.setEnabled(false);
+        bouquetButton.setEnabled(false);
         invalidNameLbl.setVisible(false);
         invalidEmailAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
 
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/StemBtn.png");
-        Image img1 =  image1.getImage().getScaledInstance(200, 55, Image.SCALE_SMOOTH);
-        ImageIcon stem = new ImageIcon(img1);
-        stemButton.setIcon(stem);
+        Image img1 = image1.getImage().getScaledInstance(200, 55, Image.SCALE_SMOOTH);
+        stemButton.setIcon(new ImageIcon(img1));
 
         ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/BouquetBtn.png");
-        Image img2 =  image2.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
-        ImageIcon bouquet = new ImageIcon(img2);
-        bouquetButton.setIcon(bouquet);
+        Image img2 = image2.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+        bouquetButton.setIcon(new ImageIcon(img2));
 
         ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
-        Image img3 =  image3.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
-        ImageIcon prev = new ImageIcon(img3);
-        prevButton.setIcon(prev);
-
-
-
-        fullName.addActionListener(e -> validateInputs(newForm));
-        emailAddress.addActionListener(e -> validateInputs(newForm));
-        contactNumber.addActionListener(e -> validateInputs(newForm));
-
-        stemButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                newForm.createOrder("Stem");
-                layout.show(parentPanel, "StemPanel");
-            }
-        });
-
-        bouquetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                newForm.createOrder("Bouquet");
-                layout.show(parentPanel, "BouquetPanel");
-            }
-        });
-
-        prevButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                layout.show(parentPanel, "FirstPage");
-            }
-        });
+        Image img3 = image3.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        prevButton.setIcon(new ImageIcon(img3));
 
         JButton[] buttons = {stemButton, bouquetButton, prevButton};
-        for(JButton btn : buttons) {
+        for (JButton btn : buttons) {
             btn.setOpaque(false);
             btn.setBorderPainted(false);
             btn.setContentAreaFilled(false);
             btn.setFocusPainted(false);
             btn.setText("");
-
         }
     }
 
+    public void setUserController(UserController userController) {
+        this.userController = userController;
 
+        DocumentListener listener = new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) { updateButtons(); }
+            public void removeUpdate(DocumentEvent e) { updateButtons(); }
+            public void changedUpdate(DocumentEvent e) { updateButtons(); }
+        };
 
-    private void validateInputs(NewForm n) {
+        fullName.getDocument().addDocumentListener(listener);
+        emailAddress.getDocument().addDocumentListener(listener);
+        contactNumber.getDocument().addDocumentListener(listener);
 
-        // Reset visibility
-        String name = fullName.getText().trim();
-        String contact = contactNumber.getText().trim();
-        String address = emailAddress.getText().trim();
-
-        try {
-            n.createUser(name, address, contact);
-            stemButton.setEnabled(true);
-            bouquetButton.setEnabled(true);
-
-        } catch (InvalidInputException e) {
-
-            // ANY invalid → disable buttons
-            stemButton.setEnabled(false);
-            bouquetButton.setEnabled(false);
-
-            // Show the correct error label based on exception message
-            switch (e.getMessage()) {
-
-                case "Invalid name":
-                    invalidNameLbl.setVisible(true);
-                    break;
-
-                case "Invalid email address":
-                    invalidEmailAddressLbl.setVisible(true);
-                    break;
-
-                case "Invalid contact number":
-                    invalidContactLbl.setVisible(true);
-                    break;
+        stemButton.addActionListener(e -> {
+            try {
+                userController.userActions("Stem");
+            } catch (InvalidInputException ex) {
+                throw new RuntimeException(ex);
             }
+        });
+
+        bouquetButton.addActionListener(e -> {
+            try {
+                userController.userActions("Bouquet");
+            } catch (InvalidInputException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        prevButton.addActionListener(e -> {
+            try {
+                userController.userActions("prev");
+            } catch (InvalidInputException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+    }
+
+    private void updateButtons() {
+        boolean valid = true;
+
+        String nameText = fullName.getText().trim();
+        if (!nameText.isEmpty()) {
+            try {
+                userController.validateName(nameText);
+                invalidNameLbl.setVisible(false);
+            } catch (InvalidInputException.InvalidName e) {
+                invalidNameLbl.setVisible(true);
+                valid = false;
+            }
+        } else {
+            invalidNameLbl.setVisible(false);
+            valid = false;
         }
+
+        String emailText = emailAddress.getText().trim();
+        if (!emailText.isEmpty()) {
+            try {
+                userController.validateEmail(emailText);
+                invalidEmailAddressLbl.setVisible(false);
+            } catch (InvalidInputException.InvalidEmail e) {
+                invalidEmailAddressLbl.setVisible(true);
+                valid = false;
+            }
+        } else {
+            invalidEmailAddressLbl.setVisible(false);
+            valid = false;
+        }
+
+        String contactText = contactNumber.getText().trim();
+        if (!contactText.isEmpty()) {
+            try {
+                userController.validatePhone(contactText);
+                invalidContactLbl.setVisible(false);
+            } catch (InvalidInputException.InvalidPhone e) {
+                invalidContactLbl.setVisible(true);
+                valid = false;
+            }
+        } else {
+            invalidContactLbl.setVisible(false);
+            valid = false;
+        }
+
+        stemButton.setEnabled(valid);
+        bouquetButton.setEnabled(valid);
     }
 }

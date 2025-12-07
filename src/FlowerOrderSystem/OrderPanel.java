@@ -1,76 +1,105 @@
 package src.FlowerOrderSystem;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OrderPanel {
-    JPanel OrderPanel;
-    private JPanel InputArea;
-    private JLabel BrandName;
-    private JTextField userContactNumber;
-    private JTextField userAddress;
-    private JTextField userFullName;
-    private JPanel ServicesBtn;
+     JPanel orderPanel;
+    private JPanel Holder;
+    private JPanel Header;
+    private JPanel Body;
+    private JPanel Left;
+    private JPanel Right;
+    private JPanel OrderOptions;
+    private JPanel NewForm;
+    private JLabel ImageHolder1;
+    private JLabel ImageHolder2;
+    private JTextField fullName;
+    private JPanel Label;
     private JButton stemButton;
     private JButton bouquetButton;
-    private JButton btnPrevious;
     private JLabel invalidNameLbl;
-    private JLabel invalidEmailAddressLbl;
     private JLabel invalidContactLbl;
-    private src.FlowerOrderSystem.NewForm newForm;
+    private JLabel invalidEmailAddressLbl;
+    private JButton prevButton;
+    private JButton Stembtn;
+    private JButton Bouquetbtn;
+    private JTextField emailAddress;
+    private JTextField contactNumber;
 
-    public OrderPanel(JPanel MainPanel, CardLayout cardLayout) {
-        final JPanel parentPanel = MainPanel;
-        final CardLayout layout = cardLayout;
-        newForm = new NewForm();
-        stemButton.setEnabled(false);
-        bouquetButton.setEnabled(false);
-        invalidNameLbl.setVisible(false);
-        invalidEmailAddressLbl.setVisible(false);
-        invalidContactLbl.setVisible(false);
+    public OrderPanel() {
 
-        userFullName.addActionListener(e -> validateInputs());
-        userAddress.addActionListener(e -> validateInputs());
-        userContactNumber.addActionListener(e -> validateInputs());
+        NewForm newForm = new NewForm();
+        Stembtn.setEnabled(true);
+        Bouquetbtn.setEnabled(true);
 
-        stemButton.addActionListener(new ActionListener() {
+        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/StemBtn.png");
+        Image img1 =  image1.getImage().getScaledInstance(200, 55, Image.SCALE_SMOOTH);
+        ImageIcon stem = new ImageIcon(img1);
+        Stembtn.setIcon(stem);
+
+        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/BouquetBtn.png");
+        Image img2 =  image2.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+        ImageIcon bouquet = new ImageIcon(img2);
+        Bouquetbtn.setIcon(bouquet);
+
+        ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img3 =  image3.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img3);
+        prevButton.setIcon(prev);
+
+
+        Stembtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 newForm.createOrder("Stem");
-                layout.show(parentPanel, "StemPanel");
             }
         });
 
-        bouquetButton.addActionListener(new ActionListener() {
+        Bouquetbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 newForm.createOrder("Bouquet");
-                layout.show(parentPanel, "BouquetPanel");
             }
         });
 
-        btnPrevious.addActionListener(new ActionListener() {
+        prevButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                layout.show(parentPanel, "FirstPage");
+
             }
         });
+
+        JButton[] buttons = {Bouquetbtn, Stembtn, prevButton};
+        for(JButton btn : buttons) {
+            btn.setOpaque(false);
+            btn.setBorderPainted(false);
+            btn.setContentAreaFilled(false);
+            btn.setFocusPainted(false);
+            btn.setText("");
+
+        }
     }
 
-    private void validateInputs() {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Hiraya Cebu");
+        frame.setContentPane(new OrderPanel().orderPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1080, 1440);
+        frame.setVisible(true);
+    }
+
+    private void validateInputs(NewForm n) {
 
         // Reset visibility
-        invalidNameLbl.setVisible(false);
-        invalidEmailAddressLbl.setVisible(false);
-        invalidContactLbl.setVisible(false);
-
-        String name = userFullName.getText().trim();
-        String address = userAddress.getText().trim();
-        String contact = userContactNumber.getText().trim();
+        String name = fullName.getText().trim();
+        String contact = contactNumber.getText().trim();
+        String address = emailAddress.getText().trim();
 
         try {
-            newForm.createUser(name, address, contact);
+            n.createUser(name, address, contact);
             stemButton.setEnabled(true);
             bouquetButton.setEnabled(true);
 

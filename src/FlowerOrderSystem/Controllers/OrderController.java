@@ -1,16 +1,17 @@
 package src.FlowerOrderSystem.Controllers;
 
+import src.FlowerOrderSystem.Order;
 import src.FlowerOrderSystem.User;
 
 public class OrderController {
     private MainController mainController;
     private User user;
-    public OrderController(MainController mainController, User user){
+    private Order order;
+    public OrderController(MainController mainController){
         this.mainController = mainController;
-        this.user = user;
+        user = mainController.getUser();
     }
 
-    public void  OrderFactory(){
 
-    }
+
 }

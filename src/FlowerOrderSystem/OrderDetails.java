@@ -2,7 +2,7 @@ package src.FlowerOrderSystem;
 
 import javax.swing.*;
 
-public class SampleOrderDetails {
+public class OrderDetails {
     private JPanel OrderDetailsPnl;
     private JPanel Holder;
     private JPanel Header;
@@ -24,19 +24,15 @@ public class SampleOrderDetails {
     private JPanel RightAddOn;
     private JTextField addASurprisingElementTextField;
     private JPanel LeftAddOn;
-    private JCheckBox handwrittenCardCheckBox;
-    private JCheckBox fiyeroChocolateCheckBox;
     private JButton prevButton;
     private JPanel leftDT;
     private JPanel rightDT;
     private JButton CheckOut;
-    private JCheckBox checkBox1;
-    private JCheckBox checkBox2;
     private JPanel SampleOrderDetailsPnl;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new SampleOrderDetails().OrderDetailsPnl);
+        frame.setContentPane(new OrderDetails().OrderDetailsPnl);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1080, 1440);
         frame.setVisible(true);
