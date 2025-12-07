@@ -67,6 +67,31 @@ public class User {
         }
     }
 
+    public static boolean validateName(String name) throws InvalidInputException.InvalidName {
+        if (name == null || name.trim().isEmpty()
+                || !name.matches("[a-zA-Z .]+")) {
+            throw new InvalidInputException.InvalidName("Invalid name");
+        }
+        return true;
+    }
+
+    public static boolean validateEmail(String email) throws InvalidInputException.InvalidEmail {
+        if (email == null || email.trim().isEmpty()
+                || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+            throw new InvalidInputException.InvalidEmail("Invalid email address");
+        }
+        return true;
+
+    }
+
+    public static boolean validatePhone(String contactNumber) throws InvalidInputException.InvalidPhone {
+        if (contactNumber == null || contactNumber.trim().isEmpty()
+                || !contactNumber.trim().matches("\\+\\d{11,12}")) {
+            throw new InvalidInputException.InvalidPhone("Invalid contact number");
+        }
+        return true;
+    }
+
     public String getFullName() {
         return fullName;
     }

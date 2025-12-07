@@ -26,9 +26,10 @@ public class DashboardPanel {
     private JPanel Left;
     private JPanel ButtonsList;
     private JPanel DogImageHolder;
+    private JLabel WelcomeLabel;
     private MainController mainController;
 
-    public DashboardPanel(JPanel MainPanel, CardLayout cardLayout){
+    public DashboardPanel(){
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
         Image imgg =  img.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
@@ -74,11 +75,12 @@ public class DashboardPanel {
     public void setController(MainController mainController) {
         this.mainController = mainController;
 
+        WelcomeLabel.setText("Hi, " + mainController.getName() +"!");
         LogOut.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    mainController.changeDisplay("Regular");
+                    mainController.changeDisplay("Logout");
                 } catch (InvalidInputException ex) {
                     throw new RuntimeException(ex);
                 }

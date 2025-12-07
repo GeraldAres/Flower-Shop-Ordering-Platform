@@ -17,12 +17,12 @@ public class MainPanel {
     private JLabel ImageHolder;
     private String action;
     private MainController controller;
-    private  GuestOrderPanel guestOrderPanel = new GuestOrderPanel(MainPanel, cardLayout);
+    private  GuestOrderPanel guestOrderPanel = new GuestOrderPanel();
     private ViewOrdersPanel viewOrders = new ViewOrdersPanel();
     private StemPanel stemPanel = new StemPanel();
     private BouquetPanel bouquetPanel = new BouquetPanel();
     private  LogInPanel logInPanel = new LogInPanel();
-    private  DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
+    private  DashboardPanel dashboardPanel = new DashboardPanel();
     private SignUpPanel signUpPanel = new SignUpPanel();
     private OrderPanel order = new OrderPanel();
     private ForgotPassPanel forgotPassPanel = new ForgotPassPanel();
@@ -33,13 +33,13 @@ public class MainPanel {
 
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(guestOrderPanel.GuestOrder, "Guest");
-        MainPanel.add(viewOrders.viewOrdersPanel, "ViewOrderPanel");
+        MainPanel.add(viewOrders.viewOrdersPanel, "MyOrders");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
         MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
-        MainPanel.add(order.orderPanel, "MyOrders");
+        MainPanel.add(order.orderPanel, "NewOrder");
         MainPanel.add(forgotPassPanel.ForgotPassPnl, "Settings");
 
 

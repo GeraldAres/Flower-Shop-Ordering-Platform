@@ -117,7 +117,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="e30a2" class="javax.swing.JLabel">
+                          <component id="e30a2" class="javax.swing.JLabel" binding="WelcomeLabel">
                             <constraints>
                               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
                             </constraints>

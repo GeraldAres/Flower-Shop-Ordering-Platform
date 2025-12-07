@@ -13,19 +13,19 @@ public class UserController {
         this.mainController = mainController;
     }
 
-    public User userFactory(String user) throws InvalidInputException {
-        if (user.equals("Guest")) {
-            return  new Guest();
-        } else{
-            return new User();
+    public User userFactory(String action) throws InvalidInputException {
+        if (action.equals("Guest")) {
+            user = new Guest();
+
         }
+        return user;
     }
 
     public void logInValidation(String username, String password) throws InvalidInputException, IOException {
          LogIn login = new LogIn();
           user = login.validateLogIn(username, password);
           if (user != null) {
-              userActions("Dashboard");
+              userActions("LoggedIn");
           }
     }
 
@@ -40,6 +40,22 @@ public class UserController {
 
     public void userActions(String action) throws InvalidInputException {
         mainController.changeDisplay(action);
+    }
+
+    public User getUser(){
+        return user;
+    }
+
+    public boolean validateName(String name) throws InvalidInputException.InvalidName {
+       return User.validateName(name);
+    }
+
+    public boolean validatePhone(String phone) throws InvalidInputException.InvalidPhone {
+        return User.validatePhone(phone);
+    }
+
+    public boolean validateEmail(String email) throws InvalidInputException.InvalidEmail {
+        return User.validateEmail(email);
     }
 
 }
