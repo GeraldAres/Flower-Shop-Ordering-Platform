@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class ViewOrderPanel {
 
-    private JPanel SampleViewOrderPnl;
+    private JPanel ViewOrderPnl;
     private JPanel Header;
     private JPanel Holder;
     private JPanel BusinessName;
@@ -29,7 +29,7 @@ public class ViewOrderPanel {
     private JPanel RightSouth;
     private JButton prevButton;
 
-    public SampleViewOrderPanel(JPanel MainPanel, CardLayout cardLayout){
+    public ViewOrderPanel(JPanel MainPanel, CardLayout cardLayout){
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
         Image imgg =  img.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
@@ -51,14 +51,14 @@ public class ViewOrderPanel {
     });
     }
 
-    public SampleViewOrderPanel() {
+    public ViewOrderPanel() {
 
     }
 
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new SampleViewOrderPanel().SampleViewOrderPnl);
+        frame.setContentPane(new ViewOrderPanel().ViewOrderPnl);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1080, 1440);
         frame.setVisible(true);

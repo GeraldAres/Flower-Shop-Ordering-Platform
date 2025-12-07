@@ -24,14 +24,10 @@ public class OrderDetails {
     private JPanel RightAddOn;
     private JTextField addASurprisingElementTextField;
     private JPanel LeftAddOn;
-    private JCheckBox handwrittenCardCheckBox;
-    private JCheckBox fiyeroChocolateCheckBox;
     private JButton prevButton;
     private JPanel leftDT;
     private JPanel rightDT;
     private JButton CheckOut;
-    private JCheckBox checkBox1;
-    private JCheckBox checkBox2;
     private JPanel SampleOrderDetailsPnl;
 
     public static void main(String[] args) {
