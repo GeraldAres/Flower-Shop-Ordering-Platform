@@ -3,20 +3,56 @@ import java.util.ArrayList;
 
 
 public class Order {
-    protected final String type;
     private ArrayList<Stem> Flowers;
-    private double orderPrice;
+    private double orderPrice = 0;
 
     private Inventory inventory = new Inventory();
 
-    public Order(String type){
-        this.type = type;
+    public Order(){
         Flowers = new ArrayList<>();
     }
 
-    public void addFlower(Stem stem) {
-        Flowers.add(stem);
-        setPrice();
+    public void addFlower (String name) {
+        if (name.equals("Rose")){
+            Rose rose = new Rose();
+            Flowers.add(rose);
+            addPrice(rose);
+        }
+        if (name.equals("Daisy")){
+            Daisy daisy = new Daisy();
+            Flowers.add(daisy);
+            addPrice(daisy);
+        }
+        if (name.equals("Tulip")){
+            Tulip tulip = new Tulip();
+            Flowers.add(tulip);
+            addPrice(tulip);
+        }
+        if (name.equals("Carnation")){
+            Carnation carnation = new Carnation();
+            Flowers.add(carnation);
+            addPrice(carnation);
+        }
+        if (name.equals("Sunflower")){
+            Sunflower sunflower = new Sunflower();
+            Flowers.add(sunflower);
+            addPrice(sunflower);
+        }
+        if (name.equals("Lily")){
+            Lily lily = new Lily();
+            Flowers.add(lily);
+            addPrice(lily);
+        }
+    }
+
+    public void removeFlower(String name) {
+        for (Stem flower : Flowers){
+            if (flower.getName().equalsIgnoreCase(name)){
+                Flowers.remove(flower);
+                removePrice(flower);
+                return;
+            }
+        }
     }
 
     public int count(String name){
@@ -31,22 +67,18 @@ public class Order {
         return c;
     }
 
-    public void removeFlower(Stem stem) {
-        Flowers.remove(stem);
-    }
+
 
     public ArrayList<Stem> getFlowers() {
         return Flowers;
     }
 
-    public void setPrice (){
-        orderPrice = 0;
-//        for(int i = 0; i < Flowers.size(); i++){
-//           orderPrice += Flowers.get(i).getPrice();
-//        }
-        for(Stem flower: Flowers){
-            orderPrice += flower.getPrice();
-        }
+    public void addPrice (Stem stem){
+      orderPrice += stem.getPrice();
+    }
+
+    public void removePrice(Stem stem){
+        orderPrice -= stem.getPrice();
     }
 
     public double getOrderPrice() {
@@ -60,5 +92,34 @@ public class Order {
     }
 
 
+    public int StemStock(String name) {
+        return inventory.getStockCount(name);
+    }
 
+    public void reduceStemStock(){
+        String[] flowerNames = {"Rose", "Daisy", "Tulip", "Carnation", "Sunflower", "Lily"};
+        int[] counts = new int[flowerNames.length];
+
+        for (Stem flower : Flowers) {
+            String name = flower.getName();
+            for (int i = 0; i < flowerNames.length; i++) {
+                if (name.equals(flowerNames[i])) {
+                    counts[i]++;
+                    break;
+                }
+            }
+        }
+
+        for (int i = 0; i < flowerNames.length; i++) {
+            if (counts[i] > 0) {
+                inventory.updateStock(flowerNames[i], counts[i]);
+            }
+        }
+
+
+    }
+
+    public boolean stockIncrease(int ctr, String name) {
+        return true;
+    }
 }

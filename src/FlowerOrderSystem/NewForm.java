@@ -16,7 +16,7 @@ public class NewForm {
 
 
     public void createOrder(String type){
-        this.order = new Order (type);
+        this.order = new Order ();
     }
 
     public Order getOrder() {

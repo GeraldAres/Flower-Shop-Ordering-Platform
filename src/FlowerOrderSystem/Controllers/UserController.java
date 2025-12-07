@@ -16,7 +16,6 @@ public class UserController {
     public User userFactory(String action) throws InvalidInputException {
         if (action.equals("Guest")) {
             user = new Guest();
-
         }
         return user;
     }

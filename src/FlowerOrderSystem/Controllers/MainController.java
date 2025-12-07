@@ -18,6 +18,7 @@ public class MainController {
 
     public void changeDisplay(String action) throws InvalidInputException {
         if (action.equals("Guest")) {
+            order = orderController.getOrder();
             main.getCardLayout().show(main.getMainPanel(), "Guest");
             main.getGuestOrderPanel().setUserController(setup);
             activeUser = setup.userFactory(action);
@@ -49,6 +50,7 @@ public class MainController {
         }
 
         if (action.equals("NewOrder")){
+            order = orderController.getOrder();
             main.getCardLayout().show(main.getMainPanel(), "NewOrder");
             main.getOrderPanel().setController (this);
         }
@@ -64,6 +66,11 @@ public class MainController {
         }
         if (action.equals("prev")){
             main.getCardLayout().show(main.getMainPanel(), "FirstPage");
+        }
+
+        if (action.equals("Stem")){
+            main.getStemPanel().setController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "StemPanel");
         }
 
     }
