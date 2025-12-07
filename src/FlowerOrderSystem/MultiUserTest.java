@@ -11,7 +11,7 @@ public class MultiUserTest {
         System.out.println("==========================================\n");
 
         // 1. Define 3 Different Users
-        String[] users = {"flowerKing", "roseLover"};
+        String[] users = {"Fatima", "roseLover"};
 
         // CLEANUP: Delete the main 'Orders' folder to start fresh (Optional)
         // cleanMainFolder();
@@ -23,14 +23,14 @@ public class MultiUserTest {
             System.out.println("   Processing User: " + user);
 
             // Create a dummy order
-            CheckOut order = new CheckOut(null);
+            CheckOut order = new CheckOut(null, null);
             order.setModeOfDelivery("Delivery");
             order.setAddressOfDelivery("Street of " + user);
             order.setTotalPrice(Math.random() * 1000); // Random price
             order.setOrderStatus("Paid");
 
             // Save it
-            order.saveOrderToUserFolder(user);
+            order.saveOrder();
 
             // PAUSE: We wait 1 second to ensure the IDs (filenames) are unique
             // because your ID format is based on seconds (HHmmss).

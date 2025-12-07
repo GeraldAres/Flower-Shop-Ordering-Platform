@@ -1,36 +1,47 @@
 package src.FlowerOrderSystem;
+import src.FlowerOrderSystem.Controllers.MainController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainPanel {
-    JPanel MainPanel;
-    CardLayout cardLayout = new CardLayout();
+    private JPanel MainPanel;
+    private final CardLayout cardLayout = new CardLayout();
     private JPanel FirstPage;
     private JButton btnLogIn;
     private JButton btnGuest;
     private JLabel Logo;
     private JLabel ImageHolder2;
     private JLabel ImageHolder;
+    private String action;
+    private MainController controller;
+    private  GuestOrderPanel guestOrderPanel = new GuestOrderPanel(MainPanel, cardLayout);
+    private ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
+    private StemPanel stemPanel = new StemPanel();
+    private BouquetPanel bouquetPanel = new BouquetPanel();
+    private  LogInPanel logInPanel = new LogInPanel();
+    private  DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
+    private SignUpPanel signUpPanel = new SignUpPanel();
+    private OrderPanel order = new OrderPanel();
 
-    public MainPanel() {
+    public MainPanel() throws InvalidInputException, NullPointerException {
+        // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
         MainPanel.setLayout(cardLayout);
 
-        GuestOrderPanel newFormSample = new GuestOrderPanel(MainPanel, cardLayout);
-        ViewOrderPanel viewOrderPanel = new ViewOrderPanel();
-        StemPanel stemPanel = new StemPanel();
-        BouquetPanel bouquetPanel = new BouquetPanel();
-        LogInPanel logInPanel = new LogInPanel(MainPanel, cardLayout);
-        DashboardPanel dashboardPanel = new DashboardPanel(MainPanel, cardLayout);
-
         MainPanel.add(FirstPage, "FirstPage");
-        MainPanel.add(newFormSample.GuestOrder, "Guest");
+        MainPanel.add(guestOrderPanel.GuestOrder, "Guest");
         MainPanel.add(viewOrderPanel.ViewOrderPanel, "ViewOrderPanel");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
         MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
+        MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
+        MainPanel.add(order.orderPanel, "NewOrder");
+
+
+        // Sets the business logo up for display //
 
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/HirayaCebu.png");
         Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
@@ -40,20 +51,7 @@ public class MainPanel {
         Logo.setVerticalTextPosition(JLabel.CENTER);
         Logo.setIconTextGap(10);
 
-
-        btnGuest.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cardLayout.show(MainPanel, "Guest");
-            }
-        });
-
-        btnLogIn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cardLayout.show(MainPanel, "LogInPanel");
-            }
-        });
+        //Sets up the border images of the design //
 
         ImageIcon pic = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Accessories.png");
         Image imgg =  pic.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
@@ -62,14 +60,76 @@ public class MainPanel {
         ImageHolder2.setIcon(set);
         ImageHolder.setText("");
         ImageHolder2.setText("");
+
+        // Guest option//
+
+        btnGuest.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                   try{
+                       controller.changeDisplay("Guest");
+                   } catch (InvalidInputException ex) {
+                       JOptionPane.showMessageDialog(MainPanel,ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                   }
+
+            }
+        });
+
+        // Login option//
+
+        btnLogIn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    controller.changeDisplay("Regular");
+                } catch (InvalidInputException ex) {
+                    JOptionPane.showMessageDialog(MainPanel,ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+
+    }
+
+    public JPanel getMainPanel() {
+        return MainPanel;
+    }
+
+    public CardLayout getCardLayout() {
+            return cardLayout;
+    }
+
+    public String getAction(){
+        return action;
+    }
+
+    public void setController(MainController controller) {
+        this.controller = controller;
+    }
+    public LogInPanel getLogInPanel() {
+        return logInPanel;
+    }
+
+    public SignUpPanel getSignUpPanel() {
+        return signUpPanel;
+    }
+
+    public DashboardPanel getDashboardPanel() {
+        return dashboardPanel;
+    }
+
+    public BouquetPanel getBouquetPanel() {
+        return bouquetPanel;
+    }
+    public  GuestOrderPanel getGuestOrderPanel() {
+        return guestOrderPanel;
+    }
+    public ViewOrderPanel getViewOrderPanel() {
+        return viewOrderPanel;
+    }
+    public StemPanel getStemPanel() {
+        return stemPanel;
     }
 
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Food Ordering System");
-        frame.setContentPane(new MainPanel().MainPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setVisible(true);
-    }
 }

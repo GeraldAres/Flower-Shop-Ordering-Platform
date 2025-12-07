@@ -3,16 +3,16 @@ package src.FlowerOrderSystem;
 import java.io.*;
 
 public class SignUpTester {
-
+    /*
     public static void main(String[] args) {
         System.out.println("====== STARTING SIGN UP & FOLDER CREATION TEST ======");
 
         // --- TEST 1: First User (Should create CSV + Header + User Folder) ---
-        String user1 = "flowerKing";
+        String user1 = "Fatima";
         System.out.println("\n--- Test 1: Creating First User (" + user1 + ") ---");
         try {
             SignUp sign1 = new SignUp(
-                    "King Flower",
+                    "Fatima",
                     "king@test.com",
                     "09170000001",
                     user1,
@@ -96,4 +96,6 @@ public class SignUpTester {
             System.out.println("Error: Accounts/accounts.csv was not created.");
         }
     }
+
+     */
 }

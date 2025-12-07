@@ -1,5 +1,7 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.MainController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,6 +26,7 @@ public class DashboardPanel {
     private JPanel Left;
     private JPanel ButtonsList;
     private JPanel DogImageHolder;
+    private MainController mainController;
 
     public DashboardPanel(JPanel MainPanel, CardLayout cardLayout){
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
@@ -64,18 +67,60 @@ public class DashboardPanel {
             btn.setContentAreaFilled(false);
             btn.setFocusPainted(false);
             btn.setText("");
-
         }
-
-
-
-       LogOut.addMouseListener(new MouseAdapter() {
-           @Override
-            public void mouseClicked(MouseEvent e) {
-               cardLayout.show(MainPanel, "LogInPanel");
-           }
-       });
 
     }
 
+    public void setController(MainController mainController) {
+        this.mainController = mainController;
+
+        LogOut.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("Regular");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        newOrderButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("NewOrder");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        myOrdersBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("MyOrders");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+
+        availableFlowersbtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("AvailableFlowers");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+
+        settingsBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("Settings");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+    }
 }
