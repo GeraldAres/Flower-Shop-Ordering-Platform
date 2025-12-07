@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class Stem {
     private final String name;
     private final String color;
-    private final double price;
+    private double price;
     private ArrayList<Stem> inventory;
 
     public Stem(String name, String color, double price) {
@@ -20,7 +20,7 @@ public abstract class Stem {
     public String getColor() {
         return color;
     }
-    public double getPrice() {
+    public  double getPrice() {
         return price;
     }
 

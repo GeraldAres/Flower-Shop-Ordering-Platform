@@ -326,7 +326,7 @@
                               <text value="Stock : "/>
                             </properties>
                           </component>
-                          <component id="30851" class="javax.swing.JLabel">
+                          <component id="30851" class="javax.swing.JLabel" binding="RosePrice">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                               <gridbag weightx="0.0" weighty="0.0"/>
@@ -415,7 +415,7 @@
                               <text value="Stock : "/>
                             </properties>
                           </component>
-                          <component id="79a48" class="javax.swing.JLabel">
+                          <component id="79a48" class="javax.swing.JLabel" binding="LilyPrice">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                               <gridbag weightx="0.0" weighty="0.0"/>
@@ -504,7 +504,7 @@
                               <text value="Stock : "/>
                             </properties>
                           </component>
-                          <component id="70d25" class="javax.swing.JLabel">
+                          <component id="70d25" class="javax.swing.JLabel" binding="SunflowerPrice">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                               <gridbag weightx="0.0" weighty="0.0"/>
@@ -810,7 +810,7 @@
                               <text value="Stock : "/>
                             </properties>
                           </component>
-                          <component id="b6d33" class="javax.swing.JLabel">
+                          <component id="b6d33" class="javax.swing.JLabel" binding="TulipPrice">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                               <gridbag weightx="0.0" weighty="0.0"/>
@@ -899,7 +899,7 @@
                               <text value="Stock : "/>
                             </properties>
                           </component>
-                          <component id="909e0" class="javax.swing.JLabel">
+                          <component id="909e0" class="javax.swing.JLabel" binding="CarnationPrice">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                               <gridbag weightx="0.0" weighty="0.0"/>
@@ -988,7 +988,7 @@
                               <text value="Stock : "/>
                             </properties>
                           </component>
-                          <component id="70a5d" class="javax.swing.JLabel">
+                          <component id="70a5d" class="javax.swing.JLabel" binding="DaisyPrice">
                             <constraints>
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                               <gridbag weightx="0.0" weighty="0.0"/>

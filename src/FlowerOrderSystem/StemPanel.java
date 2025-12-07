@@ -8,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 
 public class StemPanel {
     JPanel StemPanel;
@@ -56,6 +55,12 @@ public class StemPanel {
     private JLabel tulipFlower;
     private JLabel carnationFlower;
     private JLabel daisyFlower;
+    private JLabel RosePrice;
+    private JLabel LilyPrice;
+    private JLabel SunflowerPrice;
+    private JLabel DaisyPrice;
+    private JLabel CarnationPrice;
+    private JLabel TulipPrice;
     private JLabel picture;
     private OrderController orderController;
     private Order order = new Order();
@@ -147,6 +152,13 @@ public class StemPanel {
     public void setController (OrderController controller){
         this.orderController = controller;
 
+        RosePrice.setText("$ " + orderController.setPrice("Rose"));
+        SunflowerPrice.setText("$ " + orderController.setPrice("Sunflower"));
+        LilyPrice.setText("$ " + orderController.setPrice("Lily"));
+        CarnationPrice.setText("$ " + orderController.setPrice("Carnation"));
+        TulipPrice.setText("$ " + orderController.setPrice("Tulip"));
+        DaisyPrice.setText("$ " + orderController.setPrice("Daisy"));
+
         checkoutBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -228,12 +240,12 @@ public class StemPanel {
         daisyQuantityDecrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(carnationCount.getText());
+                int c = Integer.parseInt(daisyCount.getText());
                 if (c > 0){
                     c--;
-                    orderController.removeFlower("Carnation");
+                    orderController.removeFlower("Daisy");
                     totalPrice.setText(orderController.getTotalPrice() +"");
-                    carnationCount.setText(c+"");
+                    daisyCount.setText(c+"");
                 }
             }
         });
@@ -255,7 +267,13 @@ public class StemPanel {
         lilyQuantityDecrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(lilyCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Lily");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    lilyCount.setText(c+"");
+                }
             }
         });
 
@@ -276,7 +294,13 @@ public class StemPanel {
         sunflowerQuantityDecrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                int c = Integer.parseInt(sunflowerCount.getText()) ;
+                int c = Integer.parseInt(sunflowerCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Sunflower");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    sunflowerCount.setText(c+"");
+                }
 
             }
         });
@@ -298,7 +322,13 @@ public class StemPanel {
         tulipQuantityDecrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                int c = Integer.parseInt(tulipCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Tulip");
+                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    tulipCount.setText(c+"");
+                }
             }
         });
 

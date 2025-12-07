@@ -45,5 +45,9 @@ public class OrderController {
         return order.stockIncrease(ctr, name);
     }
 
+    public double setPrice (String name){
+        return order.getPrice(name);
+    }
+
 
 }
