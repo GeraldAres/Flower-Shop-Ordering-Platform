@@ -22,17 +22,14 @@ public class MainController {
             main.getGuestOrderPanel().setUserController(setup);
             activeUser = setup.userFactory(action);
         }
-
         if (action.equals("Regular")) {
             main.getLogInPanel().setController(setup);
             main.getCardLayout().show(main.getMainPanel(), "LogInPanel");
-
         }
         if (action.equals("Logout")) {
             main.getLogInPanel().setController(setup);
             main.getCardLayout().show(main.getMainPanel(), "LogInPanel");
             activeUser = null;
-
         }
 
         if (action.equals("SignUp")){
@@ -49,17 +46,13 @@ public class MainController {
             activeUser = setup.getUser();
             main.getCardLayout().show(main.getMainPanel(), "Dashboard");
             main.getDashboardPanel().setController(this);
-
         }
 
         if (action.equals("NewOrder")){
-
             main.getCardLayout().show(main.getMainPanel(), "NewOrder");
+            main.getOrderPanel().setController (this);
         }
 
-        if (action.equals("prev")){
-            main.getCardLayout().show(main.getMainPanel(), "FirstPage");
-        }
         if(action.equals("MyOrders")){
             main.getCardLayout().show(main.getMainPanel(), "MyOrders");
         }
@@ -68,6 +61,9 @@ public class MainController {
         }
         if(action.equals("Flowers")){
             main.getCardLayout().show(main.getMainPanel(), "Flowers");
+        }
+        if (action.equals("prev")){
+            main.getCardLayout().show(main.getMainPanel(), "FirstPage");
         }
 
     }

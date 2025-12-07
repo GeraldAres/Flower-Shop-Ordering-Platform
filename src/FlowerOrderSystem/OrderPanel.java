@@ -1,5 +1,7 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.MainController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,8 +28,7 @@ public class OrderPanel {
     private JButton prevButton;
     private JButton Stembtn;
     private JButton Bouquetbtn;
-    private JTextField emailAddress;
-    private JTextField contactNumber;
+    private MainController mainController;
 
     public OrderPanel() {
 
@@ -51,27 +52,6 @@ public class OrderPanel {
         prevButton.setIcon(prev);
 
 
-        Stembtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                newForm.createOrder("Stem");
-            }
-        });
-
-        Bouquetbtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                newForm.createOrder("Bouquet");
-            }
-        });
-
-        prevButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
         JButton[] buttons = {Bouquetbtn, Stembtn, prevButton};
         for(JButton btn : buttons) {
             btn.setOpaque(false);
@@ -83,47 +63,39 @@ public class OrderPanel {
         }
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Hiraya Cebu");
-        frame.setContentPane(new OrderPanel().orderPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setVisible(true);
-    }
+    public void setController(MainController mainController) {
+        this.mainController = mainController;
 
-    private void validateInputs(NewForm n) {
-
-        // Reset visibility
-        String name = fullName.getText().trim();
-        String contact = contactNumber.getText().trim();
-        String address = emailAddress.getText().trim();
-
-        try {
-            n.createUser(name, address, contact);
-            stemButton.setEnabled(true);
-            bouquetButton.setEnabled(true);
-
-        } catch (InvalidInputException e) {
-
-            // ANY invalid → disable buttons
-            stemButton.setEnabled(false);
-            bouquetButton.setEnabled(false);
-
-            // Show the correct error label based on exception message
-            switch (e.getMessage()) {
-
-                case "Invalid name":
-                    invalidNameLbl.setVisible(true);
-                    break;
-
-                case "Invalid email address":
-                    invalidEmailAddressLbl.setVisible(true);
-                    break;
-
-                case "Invalid contact number":
-                    invalidContactLbl.setVisible(true);
-                    break;
+        Stembtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    mainController.changeDisplay("Stem");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
-        }
+        });
+
+        Bouquetbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    mainController.changeDisplay("Bouquet");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    mainController.changeDisplay("Dashboard");
+                } catch (InvalidInputException ex) {}
+
+            }
+        });
     }
 }

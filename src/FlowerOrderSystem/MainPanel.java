@@ -132,6 +132,8 @@ public class MainPanel {
     public StemPanel getStemPanel() {
         return stemPanel;
     }
-
+    public OrderPanel getOrderPanel() {
+        return order;
+    }
 
 }

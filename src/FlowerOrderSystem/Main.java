@@ -1,10 +1,7 @@
 package src.FlowerOrderSystem;
-
 import src.FlowerOrderSystem.Controllers.MainController;
-
 import javax.swing.*;
 import java.awt.*;
-
 public class Main {
 
 
