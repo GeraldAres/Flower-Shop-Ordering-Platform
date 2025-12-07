@@ -4,6 +4,6 @@ public class Rose extends Stem{
 
     public Rose() {
 
-        super("Rose", "red", 15.00);
+        super("Rose", "Red", 15.00);
     }
 }

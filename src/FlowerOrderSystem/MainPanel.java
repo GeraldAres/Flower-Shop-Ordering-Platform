@@ -20,7 +20,7 @@ public class MainPanel {
     private  GuestOrderPanel guestOrderPanel = new GuestOrderPanel();
     private ViewOrdersPanel viewOrders = new ViewOrdersPanel();
     private StemPanel stemPanel = new StemPanel();
-    private BouquetPanel bouquetPanel = new BouquetPanel();
+    private bouquetFormSize bouquetPanel = new bouquetFormSize();
     private  LogInPanel logInPanel = new LogInPanel();
     private  DashboardPanel dashboardPanel = new DashboardPanel();
     private SignUpPanel signUpPanel = new SignUpPanel();
@@ -35,7 +35,7 @@ public class MainPanel {
         MainPanel.add(guestOrderPanel.GuestOrder, "Guest");
         MainPanel.add(viewOrders.viewOrdersPanel, "MyOrders");
         MainPanel.add(stemPanel.StemPanel, "StemPanel" );
-        MainPanel.add(bouquetPanel.BouquetPanel, "BouquetPanel");
+        MainPanel.add(bouquetPanel.Bouquet, "Bouquet");
         MainPanel.add(logInPanel.LogInPnl, "LogInPanel");
         MainPanel.add(dashboardPanel.Dashboard, "Dashboard");
         MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
@@ -120,7 +120,7 @@ public class MainPanel {
         return dashboardPanel;
     }
 
-    public BouquetPanel getBouquetPanel() {
+    public bouquetFormSize getBouquetPanel() {
         return bouquetPanel;
     }
     public  GuestOrderPanel getGuestOrderPanel() {

@@ -61,6 +61,12 @@ public class StemPanel {
     private JLabel DaisyPrice;
     private JLabel CarnationPrice;
     private JLabel TulipPrice;
+    private JLabel roseColor;
+    private JLabel lilyColor;
+    private JLabel sunflowerColor;
+    private JLabel tulipsColor;
+    private JLabel carnationsColor;
+    private JLabel daisyColor;
     private JLabel picture;
     private OrderController orderController;
     private Order order = new Order();
@@ -152,12 +158,20 @@ public class StemPanel {
     public void setController (OrderController controller){
         this.orderController = controller;
 
-        RosePrice.setText("$ " + orderController.setPrice("Rose"));
-        SunflowerPrice.setText("$ " + orderController.setPrice("Sunflower"));
-        LilyPrice.setText("$ " + orderController.setPrice("Lily"));
-        CarnationPrice.setText("$ " + orderController.setPrice("Carnation"));
-        TulipPrice.setText("$ " + orderController.setPrice("Tulip"));
-        DaisyPrice.setText("$ " + orderController.setPrice("Daisy"));
+        RosePrice.setText("₱ " + orderController.setPrice("Rose"));
+        SunflowerPrice.setText("₱ " + orderController.setPrice("Sunflower"));
+        LilyPrice.setText("₱ " + orderController.setPrice("Lily"));
+        CarnationPrice.setText("₱ " + orderController.setPrice("Carnation"));
+        TulipPrice.setText("₱ " + orderController.setPrice("Tulip"));
+        DaisyPrice.setText("₱ " + orderController.setPrice("Daisy"));
+        totalPrice.setText("₱ 0.00");
+
+        roseColor.setText(orderController.setColor("Rose"));
+        sunflowerColor.setText(orderController.setColor("Sunflower"));
+        lilyColor.setText(orderController.setColor("Lily"));
+        carnationsColor.setText(orderController.setColor("Carnation"));
+        tulipsColor.setText(orderController.setColor("Tulip"));
+        daisyColor.setText(orderController.setColor("Daisy"));
 
         checkoutBtn.addActionListener(new ActionListener() {
             @Override
@@ -170,6 +184,15 @@ public class StemPanel {
             }
         });
 
+        prevBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("StemBack");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+
 
         roseQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
@@ -178,7 +201,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Rose")){
                    c++;
                    orderController.addFlower("Rose");
-                   totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                    roseCount.setText(c+"");
                 }
 
@@ -191,7 +214,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Rose");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     roseCount.setText(c+"");
                 }
 
@@ -205,7 +228,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Carnation")){
                     c++;
                     orderController.addFlower("Carnation");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     carnationCount.setText(c+"");
                 }
             }
@@ -218,7 +241,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Carnation");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     carnationCount.setText(c+"");
                 }
             }
@@ -231,7 +254,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Daisy")){
                     c++;
                     orderController.addFlower("Daisy");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     daisyCount.setText(c+"");
                 }
             }
@@ -244,7 +267,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Daisy");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     daisyCount.setText(c+"");
                 }
             }
@@ -257,7 +280,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Lily")){
                     c++;
                     orderController.addFlower("Lily");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     lilyCount.setText(c+"");
                 }
 
@@ -271,7 +294,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Lily");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     lilyCount.setText(c+"");
                 }
             }
@@ -284,7 +307,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Sunflower")){
                     c++;
                     orderController.addFlower("Sunflower");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     sunflowerCount.setText(c+"");
                 }
 
@@ -298,7 +321,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Sunflower");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
                     sunflowerCount.setText(c+"");
                 }
 

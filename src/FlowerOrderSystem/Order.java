@@ -152,4 +152,33 @@ public class Order {
         }
         return 0.00;
     }
+
+    public String getColor (String name){
+        Stem temp;
+        if (name.equals("Rose")){
+            temp = new Rose();
+            return temp.getColor();
+        }
+        if (name.equals("Daisy")){
+            temp = new Daisy();
+            return temp.getColor();
+        }
+        if (name.equals("Tulip")){
+            temp = new Tulip();
+            return temp.getColor();
+        }
+        if (name.equals("Carnation")){
+            temp = new Carnation();
+            return temp.getColor();
+        }
+        if (name.equals("Sunflower")){
+            temp = new Sunflower();
+            return temp.getColor();
+        }
+        if (name.equals("Lily")){
+            temp = new Lily();
+            return temp.getColor();
+        }
+        return "White";
+    }
 }

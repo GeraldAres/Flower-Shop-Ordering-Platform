@@ -3,7 +3,7 @@ package src.FlowerOrderSystem;
 import javax.swing.*;
 
 public class bouquetFormSize {
-    private JPanel Bouquet;
+    JPanel Bouquet;
     private JPanel Holder;
     private JPanel SouthPanel;
     private JLabel SizeLabel;
