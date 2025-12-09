@@ -5,9 +5,7 @@ import java.util.ArrayList;
 public class Order {
     private ArrayList<Stem> Flowers;
     private double orderPrice = 0;
-
     private Inventory inventory = new Inventory();
-
     public Order(){
         Flowers = new ArrayList<>();
     }
@@ -120,6 +118,67 @@ public class Order {
     }
 
     public boolean stockIncrease(int ctr, String name) {
-        return true;
+       if (ctr < inventory.getStockCount(name)) {
+           return true;
+       }
+        return false;
+    }
+
+    public double getPrice (String name){
+        Stem temp;
+        if (name.equals("Rose")){
+            temp = new Rose();
+            return temp.getPrice();
+        }
+        if (name.equals("Daisy")){
+            temp = new Daisy();
+            return temp.getPrice();
+        }
+        if (name.equals("Tulip")){
+            temp = new Tulip();
+            return temp.getPrice();
+        }
+        if (name.equals("Carnation")){
+            temp = new Carnation();
+            return temp.getPrice();
+        }
+        if (name.equals("Sunflower")){
+            temp = new Sunflower();
+            return temp.getPrice();
+        }
+        if (name.equals("Lily")){
+            temp = new Lily();
+            return temp.getPrice();
+        }
+        return 0.00;
+    }
+
+    public String getColor (String name){
+        Stem temp;
+        if (name.equals("Rose")){
+            temp = new Rose();
+            return temp.getColor();
+        }
+        if (name.equals("Daisy")){
+            temp = new Daisy();
+            return temp.getColor();
+        }
+        if (name.equals("Tulip")){
+            temp = new Tulip();
+            return temp.getColor();
+        }
+        if (name.equals("Carnation")){
+            temp = new Carnation();
+            return temp.getColor();
+        }
+        if (name.equals("Sunflower")){
+            temp = new Sunflower();
+            return temp.getColor();
+        }
+        if (name.equals("Lily")){
+            temp = new Lily();
+            return temp.getColor();
+        }
+        return "White";
     }
 }

@@ -3,8 +3,7 @@ package src.FlowerOrderSystem;
 import java.io.*;
 
 public class LogIn {
-    private User user;
-    private final String successMess = "Login successful! Welcome Back!";
+
 
     public User validateLogIn (String username, String password) throws IOException, InvalidInputException {
         File file  = new File("Accounts/accounts.csv");
@@ -26,7 +25,7 @@ public class LogIn {
                                 String storedUserName = data[3].trim();
                                 String storedPassword = data[4].trim();
                                     if (storedUserName.equals(username) && storedPassword.equals(password)) {
-                                        this.user = new User(data[0], data[1], data[2], data[3], data[4]);
+                                        User user = new User(data[0], data[1], data[2], data[3], data[4]);
                                         return user;
                                     }
                         }
@@ -37,11 +36,4 @@ public class LogIn {
 
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public String getSuccessMess() {
-        return successMess;
-    }
 }

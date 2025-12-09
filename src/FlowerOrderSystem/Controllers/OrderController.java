@@ -1,17 +1,13 @@
 package src.FlowerOrderSystem.Controllers;
 
-import src.FlowerOrderSystem.InvalidInputException;
-import src.FlowerOrderSystem.Order;
-import src.FlowerOrderSystem.Rose;
-import src.FlowerOrderSystem.User;
+import src.FlowerOrderSystem.*;
 
 public class OrderController {
     private MainController mainController;
-    private User user;
     private Order order;
+    private Bouquet bouquet;
     public OrderController(MainController mainController){
         this.mainController = mainController;
-        user = mainController.getUser();
         order = new Order();
     }
 
@@ -44,6 +40,31 @@ public class OrderController {
     public boolean validIncrease(int ctr, String name){
         return order.stockIncrease(ctr, name);
     }
+
+    public double setPrice (String name){
+        return order.getPrice(name);
+    }
+
+    public String setColor(String name){
+        return order.getColor(name);
+    }
+
+    public Bouquet getBouquet(){
+        return bouquet;
+    }
+
+    public void setBouquetWrapper(String color){
+        bouquet.setWrap(color);
+    }
+
+    public void setBouquetSize(int size){
+        bouquet.setSize(size);
+    }
+
+    public int getBouquetSize(){
+        return bouquet.getSize();
+    }
+
 
 
 }

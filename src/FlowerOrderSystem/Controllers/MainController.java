@@ -73,6 +73,14 @@ public class MainController {
             main.getCardLayout().show(main.getMainPanel(), "StemPanel");
         }
 
+        if (action.equals("StemBack") || action.equals("BouquetBack")){
+            main.getCardLayout().show(main.getMainPanel(), "NewOrder");
+        }
+
+        if (action.equals("Bouquet")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
     }
 
     public String getName(){
