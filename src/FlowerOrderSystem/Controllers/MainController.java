@@ -1,19 +1,20 @@
 package src.FlowerOrderSystem.Controllers;
 import src.FlowerOrderSystem.*;
-import java.io.IOException;
 
-public class MainController {
+public class MainController implements Controller {
     private final MainPanel main;
     private  UserController setup;
     private  OrderController orderController;
     private SignUpPanel signUpPanel;
     private User activeUser;
     private Order order;
+    private boolean controlStatus;
 
     public MainController(MainPanel main) {
         this.main = main;
         setup = new UserController(this);
         orderController = new OrderController(this);
+        controlStatus = true;
     }
 
     public void changeDisplay(String action) throws InvalidInputException {
@@ -78,7 +79,18 @@ public class MainController {
         }
 
         if (action.equals("Bouquet")){
+            main.getBouquetPanel().setController(orderController);
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if (action.equals("Checkout")){
+            main.getCheckoutPanel().setDisplay(activeUser, order);
+            main.getCheckoutPanel().setOrderController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "Checkout");
+        }
+
+        if(action.equals("Small")){
+            main.getCardLayout().show(main.getMainPanel(), "Small");
         }
 
     }
@@ -100,5 +112,8 @@ public class MainController {
     }
 
 
-
+    @Override
+    public boolean isControlling() {
+        return controlStatus;
+    }
 }

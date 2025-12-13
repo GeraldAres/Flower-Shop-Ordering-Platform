@@ -2,7 +2,7 @@ package src.FlowerOrderSystem;
 
 import java.util.ArrayList;
 
-public abstract class Bouquet {
+public abstract class Bouquet implements InBloom {
     private final String type;
     private int size;
     private double bouqetPrice = 0;
@@ -43,5 +43,45 @@ public abstract class Bouquet {
         return wrap;
     }
 
+    public static class SmallBouquet extends Bouquet {
+        public SmallBouquet() {
+            super("SMALL");
+            setSize(1);
+        }
+    }
 
+    public static class MediumBouquet extends Bouquet {
+        public MediumBouquet() {
+            super("MEDIUM");
+            setSize(2);
+        }
+    }
+
+    public static class LargeBouquet extends Bouquet {
+        public LargeBouquet() {
+            super("LARGE");
+            setSize(3);
+        }
+    }
+    public static class BouquetFactory {
+        public static Bouquet getBouquet(String bouquetType) {
+            if (bouquetType == null) return null;
+
+            switch (bouquetType.toUpperCase()) {
+                case "SMALL":
+                    System.out.println("small bouquet");
+                    return new SmallBouquet();
+                case "MEDIUM":
+                    System.out.println("medium bouquet");
+                    return new MediumBouquet();
+                case "LARGE":
+                    System.out.println("large bouquet");
+                    return new LargeBouquet();
+                default:
+                    return null;
+            }
+        }
+    }
 }
+
+

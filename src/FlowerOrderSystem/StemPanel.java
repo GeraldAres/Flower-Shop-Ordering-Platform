@@ -69,18 +69,18 @@ public class StemPanel {
     private JLabel daisyColor;
     private JLabel picture;
     private OrderController orderController;
-    private Order order = new Order();
-    private Inventory inventory = new Inventory();
 
 
     public StemPanel() {
 
-        roseStock.setText(inventory.getStockCount("rose") + "");
+       /* roseStock.setText(inventory.getStockCount("rose") + "");
         carnationStock.setText(inventory.getStockCount("carnation") + "");
         sunflowerStock.setText(inventory.getStockCount("sunflower") + "");
         daisyStock.setText(inventory.getStockCount("daisy") + "");
         lilyStock.setText(inventory.getStockCount("lily") + "");
         tulipStock.setText(inventory.getStockCount("tulip") + "");
+
+        */
 
 
         // Load the image
@@ -201,7 +201,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Rose")){
                    c++;
                    orderController.addFlower("Rose");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                    roseCount.setText(c+"");
                 }
 
@@ -214,7 +214,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Rose");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     roseCount.setText(c+"");
                 }
 
@@ -228,7 +228,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Carnation")){
                     c++;
                     orderController.addFlower("Carnation");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     carnationCount.setText(c+"");
                 }
             }
@@ -241,7 +241,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Carnation");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     carnationCount.setText(c+"");
                 }
             }
@@ -254,7 +254,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Daisy")){
                     c++;
                     orderController.addFlower("Daisy");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     daisyCount.setText(c+"");
                 }
             }
@@ -267,7 +267,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Daisy");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     daisyCount.setText(c+"");
                 }
             }
@@ -280,7 +280,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Lily")){
                     c++;
                     orderController.addFlower("Lily");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     lilyCount.setText(c+"");
                 }
 
@@ -294,7 +294,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Lily");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     lilyCount.setText(c+"");
                 }
             }
@@ -307,7 +307,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Sunflower")){
                     c++;
                     orderController.addFlower("Sunflower");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     sunflowerCount.setText(c+"");
                 }
 
@@ -321,7 +321,7 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Sunflower");
-                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
                     sunflowerCount.setText(c+"");
                 }
 
@@ -335,7 +335,7 @@ public class StemPanel {
                 if (orderController.validIncrease(c, "Tulip")){
                     c++;
                     orderController.addFlower("Tulip");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText(orderController.getTotalPrice() +"0");
                     tulipCount.setText(c+"");
                 }
 
@@ -349,21 +349,11 @@ public class StemPanel {
                 if (c > 0){
                     c--;
                     orderController.removeFlower("Tulip");
-                    totalPrice.setText(orderController.getTotalPrice() +"");
+                    totalPrice.setText(orderController.getTotalPrice() +"0");
                     tulipCount.setText(c+"");
                 }
             }
         });
-
-
-    }
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Order System");
-        frame.setContentPane(new StemPanel().StemPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.pack();
-        frame.setVisible(true);
 
 
     }

@@ -2,13 +2,18 @@ package src.FlowerOrderSystem.Controllers;
 
 import src.FlowerOrderSystem.*;
 
-public class OrderController {
+import java.util.ArrayList;
+
+public class OrderController implements Controller {
     private MainController mainController;
     private Order order;
     private Bouquet bouquet;
+    private boolean controlStatus;
+
     public OrderController(MainController mainController){
         this.mainController = mainController;
         order = new Order();
+        controlStatus = true;
     }
 
     public Order getOrder(){
@@ -22,8 +27,9 @@ public class OrderController {
         order.removeFlower(name);
     }
     public void addFlower(String name){
-        order.addFlower(name);
+        order.addFlower(name, false);
     }
+    public void addBouquet(String name){ order.addFlower(name, true);}
 
     public double getTotalPrice(){
         return order.getOrderPrice();
@@ -64,7 +70,12 @@ public class OrderController {
     public int getBouquetSize(){
         return bouquet.getSize();
     }
-
-
+    @Override
+    public boolean isControlling() {
+        return controlStatus;
+    }
+    public ArrayList<InBloom> getFlowers(){
+        return order.getFlowers();
+    }
 
 }
