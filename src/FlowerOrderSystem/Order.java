@@ -16,7 +16,9 @@ public class Order {
         Factory factory;
         if (!isBouquet){
             factory = new StemFactory();
-            Flowers.add(factory.addInBloom(name));
+            InBloom flower = factory.addInBloom(name);
+            Flowers.add(flower);
+            addPrice(flower);
             factory = null;
         }
 
@@ -31,7 +33,7 @@ public class Order {
         for (InBloom flower : Flowers){
             if (flower.getName().equalsIgnoreCase(name)){
                 Flowers.remove(flower);
-                removePrice((Stem) flower);
+                removePrice(flower);
                 return;
             }
         }
@@ -55,11 +57,11 @@ public class Order {
         return Flowers;
     }
 
-    public void addPrice (Stem stem){
+    public void addPrice (InBloom stem){
       orderPrice += stem.getPrice();
     }
 
-    public void removePrice(Stem stem){
+    public void removePrice(InBloom stem){
         orderPrice -= stem.getPrice();
     }
 
@@ -109,7 +111,7 @@ public class Order {
     }
 
     public double getPrice (String name){
-        Stem temp;
+        Stem temp ;
         if (name.equals("Rose")){
             temp = new Rose();
             return temp.getPrice();
@@ -138,7 +140,7 @@ public class Order {
     }
 
     public String getColor (String name){
-        Stem temp;
+        Stem temp ;
         if (name.equals("Rose")){
             temp = new Rose();
             return temp.getColor();

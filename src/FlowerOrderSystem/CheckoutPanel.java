@@ -3,7 +3,11 @@ package src.FlowerOrderSystem;
 
 import src.FlowerOrderSystem.Controllers.Controller;
 
+import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,24 +34,35 @@ public class CheckoutPanel {
     private JCheckBox tobleronAddOn;
     private JCheckBox teddyBearAddOn;
     private JCheckBox labubuAddOn;
+    private JComboBox delivery;
+    private JComboBox payment;
+    private JTextField deliveryAddress;
+    private JTextField Date;
+    private JTextField Receiver;
     private Inventory inventory;
     private Order order;
     private Controller controller;
     private User user;
 
-    public static void main (String[] args) {
-
-        JFrame frame = new JFrame("Hiraya Cebu");
-        frame.setContentPane(new CheckoutPanel().checkoutPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setVisible(true);
-    }
 
     public void setOrderController(Controller controller){
         this.controller = controller;
         checkoutBtn.setEnabled(false);
+        displayUser();
         displayOrder();
+
+
+        String modeOfDelivery;
+        String modeOfPayment;
+        if ((!delivery.getSelectedItem().toString().equals("Select one"))
+                && (!payment.getSelectedItem().toString().equals("Select one"))
+        ) {
+            modeOfDelivery = delivery.getSelectedItem().toString();
+            modeOfPayment = payment.getSelectedItem().toString();
+            checkoutBtn.setEnabled(true);
+
+        }
+
 
 
         checkoutBtn.addActionListener(new ActionListener() {
@@ -81,16 +96,75 @@ public class CheckoutPanel {
         });
     }
 
-    public void setDisplay(User activeUser, Order order) {
+    public void setDisplay(User activeUser, Order order){
         this.user = activeUser;
         this.order = order;
     }
 
-    public void displayOrder(){
-        customerName.setText(user.getFullName());
-        contactNumber.setText(user.getContactNumber());
-        email.setText(user.getEmail());
-
-        for ()
+    public void displayUser(){
+        if(user != null){
+            customerName.setText(user.getFullName());
+            contactNumber.setText(user.getContactNumber());
+            email.setText(user.getEmail());
+        }
     }
+
+    private boolean alreadyDisplayed(ArrayList<InBloom> displayed, InBloom flower) {
+        for (InBloom f : displayed) {
+            if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public void displayOrder() {
+        orderSummaryPanel.setLayout(new BoxLayout(orderSummaryPanel, BoxLayout.Y_AXIS));
+
+        if (order != null && orderSummaryPanel != null) {
+            orderSummaryPanel.removeAll(); // clears old labels
+            ArrayList<InBloom> flowers = order.getFlowers();
+            ArrayList<InBloom> displayed = new ArrayList<>(); // track displayed types
+
+            for (InBloom flower : flowers) {
+                if (alreadyDisplayed(displayed, flower)) {
+                    continue; // skip if already displayed
+                }
+
+                // Count quantity of this type
+                int count = 0;
+                for (InBloom f : flowers) {
+                    if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
+                        count++;
+                    }
+                }
+
+                // Build label text: Name(Color)   Qty   TotalPrice
+                String text = String.format("%-54s %5d   %7.2f",
+                        flower.getName() + " (" + flower.getColor() + ")",
+                        count,
+                        count * flower.getPrice());
+
+                JLabel label = new JLabel(text);
+
+                try {
+                    Font bellFont = new Font("Bell MT", Font.PLAIN, 20);
+                    label.setFont(bellFont);
+                    label.setForeground(Color.decode("#561C32"));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                orderSummaryPanel.add(label);
+                displayed.add(flower); // mark as displayed
+            }
+
+            orderSummaryPanel.revalidate();
+            orderSummaryPanel.repaint();
+        }
+    }
+
+
+
 }
