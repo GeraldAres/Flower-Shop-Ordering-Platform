@@ -66,6 +66,7 @@ public class CheckoutPanel {
 
                 inventory.updateStock("daisy", order.count("daisy"));
                 inventory.displayInventoryStock();
+                    eveyerhitng that ia am praise the lord
 
                 */
 
