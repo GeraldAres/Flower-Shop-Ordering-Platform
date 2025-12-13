@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class BouquetLargePanel {
 
-    private JPanel Bouquet;
+    JPanel Bouquet;
     private JPanel Holder;
     private JPanel SouthPanel;
     private JPanel NorthPanel;
