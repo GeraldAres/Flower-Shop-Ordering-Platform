@@ -80,6 +80,7 @@ public class MainController implements Controller {
         }
 
         if (action.equals("Bouquet")){
+            main.getBouquetPanel().setController(orderController);
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
 
@@ -87,6 +88,10 @@ public class MainController implements Controller {
             main.getCheckoutPanel().setOrderController(this);
             main.getCheckoutPanel().displayOrder(activeUser, order);
             main.getCardLayout().show(main.getMainPanel(), "Checkout");
+        }
+
+        if(action.equals("Small")){
+            main.getCardLayout().show(main.getMainPanel(), "Small");
         }
 
     }
