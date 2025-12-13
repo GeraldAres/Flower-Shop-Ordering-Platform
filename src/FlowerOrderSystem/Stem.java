@@ -20,8 +20,10 @@ public abstract class Stem implements InBloom {
     public String getColor() {
         return color;
     }
-    public  double getPrice() {
+    public  String  bloomPrice() {
+        return "₱ " + price;
+    }
+    public double getPrice(){
         return price;
     }
-
 }

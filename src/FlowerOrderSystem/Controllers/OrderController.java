@@ -27,9 +27,9 @@ public class OrderController implements Controller {
         order.removeFlower(name);
     }
     public void addFlower(String name){
-        order.addFlower(name, true);
+        order.addFlower(name, false);
     }
-    public void addBouquet(String name){ order.addFlower(name, false);}
+    public void addBouquet(String name){ order.addFlower(name, true);}
 
     public double getTotalPrice(){
         return order.getOrderPrice();

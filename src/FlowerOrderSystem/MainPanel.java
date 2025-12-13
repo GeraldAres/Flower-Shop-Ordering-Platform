@@ -30,7 +30,6 @@ public class MainPanel {
     private BouquetOrderForm smallBouquet = new BouquetOrderForm();
     private BouquetMediumPanel mediumBouquet = new BouquetMediumPanel();
     private BouquetLargePanel largeBouquet =  new BouquetLargePanel();
-
     public MainPanel() throws InvalidInputException, NullPointerException {
         // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
         MainPanel.setLayout(cardLayout);
@@ -44,11 +43,10 @@ public class MainPanel {
         MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
         MainPanel.add(order.orderPanel, "NewOrder");
         MainPanel.add(forgotPassPanel.ForgotPassPnl, "Settings");
-        MainPanel.add(checkoutPanel.checkoutPanel, "CheckoutPanel");
+        MainPanel.add(checkoutPanel.checkoutPanel, "Checkout");
         MainPanel.add(smallBouquet.Bouquet, "Small");
         MainPanel.add(mediumBouquet.Bouquet, "Medium");
         MainPanel.add(largeBouquet.Bouquet, "Large");
-
 
         // Sets the business logo up for display //
 
@@ -149,9 +147,4 @@ public class MainPanel {
     public CheckoutPanel getCheckoutPanel() {
         return checkoutPanel;
     }
-
-    public BouquetOrderForm getSmallBouquet(){return smallBouquet;}
-    public BouquetLargePanel getLargeBouquet(){return largeBouquet;}
-    public BouquetMediumPanel getMediumBouquet(){return mediumBouquet;}
-
 }
