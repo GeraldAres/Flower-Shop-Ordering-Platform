@@ -3,14 +3,16 @@ import src.FlowerOrderSystem.*;
 
 import java.io.IOException;
 
-public class UserController {
+public class UserController implements Controller {
     private User user;
     private final MainController mainController;
     private LogInPanel logInPanel;
     private SignUp signUp;
+    private boolean controlStatus;
 
     public UserController(MainController mainController){
         this.mainController = mainController;
+        controlStatus = true;
     }
 
     public User userFactory(String action) throws InvalidInputException {
@@ -55,6 +57,11 @@ public class UserController {
 
     public boolean validateEmail(String email) throws InvalidInputException.InvalidEmail {
         return User.validateEmail(email);
+    }
+
+    @Override
+    public boolean isControlling() {
+        return controlStatus;
     }
 
 }

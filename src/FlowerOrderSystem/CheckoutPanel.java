@@ -1,50 +1,55 @@
 package src.FlowerOrderSystem;
 
+
+import src.FlowerOrderSystem.Controllers.Controller;
+
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CheckoutPanel {
-    JPanel checkoutPanel;
+     JPanel checkoutPanel;
     private JPanel container;
     private JPanel header;
-    private JPanel left;
-    private JPanel right;
     private JPanel center;
-    private JLabel customerName;
-    private JLabel custoemrAddress;
-    private JLabel customerGmail;
+    private JPanel left;
+    private JPanel Personal;
+    private JPanel orderInfo;
+    private JPanel OrdersHere;
+    private JPanel AddOns;
     private JCheckBox fiyeroChocolateCheckbox;
-    private JLabel totalPrice;
     private JButton checkoutBtn;
-    private JPanel top;
-    private JComboBox deliveryCombobox;
-    private JComboBox paymentCombobox;
-    private JTextArea specialInstructions;
-    private JPanel customerDetails;
-
+    private JPanel right;
+    private JTextArea specialRequest;
+    private JPanel PersonalInformation;
+    private JLabel totalPrice;
     private Inventory inventory;
     private Order order;
+    private Controller controller;
+    private User user;
 
-    public CheckoutPanel(Inventory inventory, Order order){
+    public static void main (String[] args) {
+
+        JFrame frame = new JFrame("Hiraya Cebu");
+        frame.setContentPane(new CheckoutPanel().checkoutPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1080, 1440);
+        frame.setVisible(true);
+    }
+
+    public void setOrderController(Controller controller){
+        this.controller = controller;
+        checkoutBtn.setVisible(true);
+        checkoutBtn.setEnabled(false);
 
 
-        JLabel label = new JLabel("casidey");
-
-        label.setFont(label.getFont().deriveFont(18f));
-        label.setForeground(new Color(0x561C32));
-        customerDetails.add(label);
-
-        this.inventory = inventory;
-        this.order = order;
-
-        totalPrice.setText("$" + order.getOrderPrice() + "");
 
         checkoutBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                inventory.updateStock("rose", order.count("rose"));
+
+
+               /* inventory.updateStock("rose", order.count("rose"));
                 inventory.displayInventoryStock();
 
                 inventory.updateStock("lily", order.count("lily"));
@@ -62,18 +67,15 @@ public class CheckoutPanel {
                 inventory.updateStock("daisy", order.count("daisy"));
                 inventory.displayInventoryStock();
 
+                */
+
 
             }
         });
-
-
     }
 
-
-
-
-
-//    public static void main(String[] args) {
-//        new CheckoutPanel();
-//    }
+    public void displayOrder(User activeUser, Order order) {
+        this.user = activeUser;
+    this.order = order;
+    }
 }

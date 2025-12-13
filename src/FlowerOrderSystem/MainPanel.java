@@ -26,11 +26,11 @@ public class MainPanel {
     private SignUpPanel signUpPanel = new SignUpPanel();
     private OrderPanel order = new OrderPanel();
     private ForgotPassPanel forgotPassPanel = new ForgotPassPanel();
+    private CheckoutPanel checkoutPanel = new CheckoutPanel();
 
     public MainPanel() throws InvalidInputException, NullPointerException {
         // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
         MainPanel.setLayout(cardLayout);
-
         MainPanel.add(FirstPage, "FirstPage");
         MainPanel.add(guestOrderPanel.GuestOrder, "Guest");
         MainPanel.add(viewOrders.viewOrdersPanel, "MyOrders");
@@ -41,6 +41,7 @@ public class MainPanel {
         MainPanel.add(signUpPanel.SignUpPnl, "SignUpPanel");
         MainPanel.add(order.orderPanel, "NewOrder");
         MainPanel.add(forgotPassPanel.ForgotPassPnl, "Settings");
+        MainPanel.add(checkoutPanel.checkoutPanel, "CheckoutPanel");
 
 
         // Sets the business logo up for display //
@@ -135,5 +136,11 @@ public class MainPanel {
     public OrderPanel getOrderPanel() {
         return order;
     }
+    public  ForgotPassPanel getForgotPassPanel() {
+        return forgotPassPanel;
+    }
 
+    public CheckoutPanel getCheckoutPanel() {
+        return checkoutPanel;
+    }
 }

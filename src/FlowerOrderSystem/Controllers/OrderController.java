@@ -2,13 +2,15 @@ package src.FlowerOrderSystem.Controllers;
 
 import src.FlowerOrderSystem.*;
 
-public class OrderController {
+public class OrderController implements Controller {
     private MainController mainController;
     private Order order;
     private Bouquet bouquet;
+    private boolean controlStatus;
     public OrderController(MainController mainController){
         this.mainController = mainController;
         order = new Order();
+        controlStatus = true;
     }
 
     public Order getOrder(){
@@ -64,7 +66,10 @@ public class OrderController {
     public int getBouquetSize(){
         return bouquet.getSize();
     }
-
+    @Override
+    public boolean isControlling() {
+        return controlStatus;
+    }
 
 
 }
