@@ -74,7 +74,7 @@ public class OrderController implements Controller {
     public boolean isControlling() {
         return controlStatus;
     }
-    public ArrayList<Stem> getFlowers(){
+    public ArrayList<InBloom> getFlowers(){
         return order.getFlowers();
     }
 

@@ -90,7 +90,34 @@ public class MainController implements Controller {
         }
 
         if(action.equals("Small")){
+            main.getSmallBouquet().setController(orderController, 0);
             main.getCardLayout().show(main.getMainPanel(), "Small");
+        }
+
+        if(action.equals("SmallBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if(action.equals("Medium")){
+            main.getSmallBouquet().setController(orderController, 1);
+            main.getCardLayout().show(main.getMainPanel(), "Small");
+//            main.getMediumBouquet().setController(orderController);
+//            main.getCardLayout().show(main.getMainPanel(), "Medium");
+        }
+
+        if(action.equals("MediumBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if(action.equals("Large")){
+            main.getSmallBouquet().setController(orderController, 2);
+            main.getCardLayout().show(main.getMainPanel(), "Small");
+//            main.getLargeBouquet().setController(orderController);
+//            main.getCardLayout().show(main.getMainPanel(), "Large");
+        }
+
+        if(action.equals("LargeBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
 
     }

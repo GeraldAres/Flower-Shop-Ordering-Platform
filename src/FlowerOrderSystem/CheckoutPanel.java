@@ -91,6 +91,6 @@ public class CheckoutPanel {
         contactNumber.setText(user.getContactNumber());
         email.setText(user.getEmail());
 
-        for ()
+//        for ()
     }
 }

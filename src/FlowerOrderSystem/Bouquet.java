@@ -42,6 +42,9 @@ public abstract class Bouquet implements InBloom {
     public String getWrap() {
         return wrap;
     }
+    public String getName(){
+        return "bouquet";
+    }
 
     public static class SmallBouquet extends Bouquet {
         public SmallBouquet() {

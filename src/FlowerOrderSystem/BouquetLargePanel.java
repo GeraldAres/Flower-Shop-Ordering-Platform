@@ -1,7 +1,11 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.OrderController;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BouquetLargePanel {
 
@@ -35,6 +39,23 @@ public class BouquetLargePanel {
     private JLabel Text3;
     private JLabel Stock3;
     private JLabel Clr3;
+
+    private OrderController orderController;
+
+    public void setController(OrderController orderController){
+        this.orderController = orderController;
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("SmallBack");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
 
     public static void main(String[] args) {
 
