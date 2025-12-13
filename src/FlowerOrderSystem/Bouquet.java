@@ -2,7 +2,7 @@ package src.FlowerOrderSystem;
 
 import java.util.ArrayList;
 
-public abstract class Bouquet {
+public abstract class Bouquet implements InBloom {
     private final String type;
     private int size;
     private double bouqetPrice = 0;

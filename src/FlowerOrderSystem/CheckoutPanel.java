@@ -17,12 +17,19 @@ public class CheckoutPanel {
     private JPanel orderInfo;
     private JPanel OrdersHere;
     private JPanel AddOns;
-    private JCheckBox fiyeroChocolateCheckbox;
+    private JCheckBox fereroAddOn;
     private JButton checkoutBtn;
     private JPanel right;
     private JTextArea specialRequest;
     private JPanel PersonalInformation;
     private JLabel totalPrice;
+    private JLabel customerName;
+    private JLabel contactNumber;
+    private JLabel email;
+    private JPanel orderSummaryPanel;
+    private JCheckBox tobleronAddOn;
+    private JCheckBox teddyBearAddOn;
+    private JCheckBox labubuAddOn;
     private Inventory inventory;
     private Order order;
     private Controller controller;
@@ -39,9 +46,8 @@ public class CheckoutPanel {
 
     public void setOrderController(Controller controller){
         this.controller = controller;
-        checkoutBtn.setVisible(true);
         checkoutBtn.setEnabled(false);
-
+        displayOrder();
 
 
         checkoutBtn.addActionListener(new ActionListener() {
@@ -66,6 +72,7 @@ public class CheckoutPanel {
 
                 inventory.updateStock("daisy", order.count("daisy"));
                 inventory.displayInventoryStock();
+                    eveyerhitng that ia am praise the lord
 
                 */
 
@@ -74,8 +81,16 @@ public class CheckoutPanel {
         });
     }
 
-    public void displayOrder(User activeUser, Order order) {
+    public void setDisplay(User activeUser, Order order) {
         this.user = activeUser;
-    this.order = order;
+        this.order = order;
+    }
+
+    public void displayOrder(){
+        customerName.setText(user.getFullName());
+        contactNumber.setText(user.getContactNumber());
+        email.setText(user.getEmail());
+
+        for ()
     }
 }

@@ -2,7 +2,7 @@ package src.FlowerOrderSystem;
 
 import java.util.ArrayList;
 
-public abstract class Stem {
+public abstract class Stem implements InBloom {
     private final String name;
     private final String color;
     private double price;

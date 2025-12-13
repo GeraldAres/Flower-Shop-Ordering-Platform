@@ -1,11 +1,10 @@
 package src.FlowerOrderSystem;
 
-public class PreMade extends Bouquet {
+public class PreMade  {
     private Stem stemFLower;
     int size;
 
     public PreMade(Stem stem, int size) {
-        super("PreMade");
         stemFLower = stem;
         this.size = size;
 

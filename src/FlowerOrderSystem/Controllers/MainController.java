@@ -1,6 +1,5 @@
 package src.FlowerOrderSystem.Controllers;
 import src.FlowerOrderSystem.*;
-import java.io.IOException;
 
 public class MainController implements Controller {
     private final MainPanel main;
@@ -85,8 +84,8 @@ public class MainController implements Controller {
         }
 
         if (action.equals("Checkout")){
-            main.getCheckoutPanel().setOrderController(this);
-            main.getCheckoutPanel().displayOrder(activeUser, order);
+            main.getCheckoutPanel().setDisplay(activeUser, order);
+            main.getCheckoutPanel().setOrderController(orderController);
             main.getCardLayout().show(main.getMainPanel(), "Checkout");
         }
 
