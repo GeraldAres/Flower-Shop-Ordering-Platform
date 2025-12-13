@@ -214,7 +214,7 @@
                                             </properties>
                                             <border type="none"/>
                                             <children>
-                                              <component id="cbee4" class="javax.swing.JLabel">
+                                              <component id="cbee4" class="javax.swing.JLabel" binding="customerName">
                                                 <constraints>
                                                   <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -225,7 +225,7 @@
                                                   <text value="name"/>
                                                 </properties>
                                               </component>
-                                              <component id="339c5" class="javax.swing.JLabel">
+                                              <component id="339c5" class="javax.swing.JLabel" binding="contactNumber">
                                                 <constraints>
                                                   <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -247,7 +247,7 @@
                                                   <text value="    "/>
                                                 </properties>
                                               </component>
-                                              <component id="f6c94" class="javax.swing.JLabel">
+                                              <component id="f6c94" class="javax.swing.JLabel" binding="email">
                                                 <constraints>
                                                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -335,44 +335,44 @@
                                             </properties>
                                             <border type="none"/>
                                             <children>
-                                              <component id="5a99" class="javax.swing.JCheckBox" binding="fiyeroChocolateCheckbox">
+                                              <component id="5a99" class="javax.swing.JCheckBox" binding="fereroAddOn">
                                                 <constraints>
                                                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
                                                   <background color="-3688541"/>
                                                   <foreground color="-11133902"/>
-                                                  <text value="Fiyero Chocolate"/>
+                                                  <text value="Ferero Chocolate"/>
                                                 </properties>
                                               </component>
-                                              <component id="d74a3" class="javax.swing.JCheckBox" default-binding="true">
+                                              <component id="d74a3" class="javax.swing.JCheckBox" binding="tobleronAddOn">
                                                 <constraints>
                                                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
                                                   <background color="-3688541"/>
                                                   <foreground color="-11133902"/>
-                                                  <text value="HandWritten Letter"/>
+                                                  <text value="Dark Chocolate Tobleron"/>
                                                 </properties>
                                               </component>
-                                              <component id="232af" class="javax.swing.JCheckBox" default-binding="true">
+                                              <component id="232af" class="javax.swing.JCheckBox" binding="teddyBearAddOn">
                                                 <constraints>
                                                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
                                                   <background color="-3688541"/>
                                                   <foreground color="-11133902"/>
-                                                  <text value="Fiyero Chocolate"/>
+                                                  <text value="12-inch Teddy Bear"/>
                                                 </properties>
                                               </component>
-                                              <component id="be590" class="javax.swing.JCheckBox" default-binding="true">
+                                              <component id="be590" class="javax.swing.JCheckBox" binding="labubuAddOn">
                                                 <constraints>
                                                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
                                                   <background color="-3688541"/>
                                                   <foreground color="-11133902"/>
-                                                  <text value="Fiyero Chocolate"/>
+                                                  <text value="24k Gold Labubu "/>
                                                 </properties>
                                               </component>
                                             </children>
@@ -471,7 +471,7 @@
                                 </properties>
                                 <border type="none"/>
                                 <children>
-                                  <grid id="7f567" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                                  <grid id="7f567" binding="orderSummaryPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                                     <margin top="0" left="0" bottom="0" right="0"/>
                                     <constraints>
                                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">

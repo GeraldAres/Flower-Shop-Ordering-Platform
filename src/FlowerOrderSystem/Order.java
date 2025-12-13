@@ -3,51 +3,35 @@ import java.util.ArrayList;
 
 
 public class Order {
-    private ArrayList<Stem> Flowers;
+    private ArrayList<InBloom> Flowers;
     private double orderPrice = 0;
     private Inventory inventory = new Inventory();
     public Order(){
         Flowers = new ArrayList<>();
     }
 
-    public void addFlower (String name) {
-        if (name.equals("Rose")){
-            Rose rose = new Rose();
-            Flowers.add(rose);
-            addPrice(rose);
+
+
+    public void addFlower (String name, boolean isBouquet) {
+        Factory factory;
+        if (!isBouquet){
+            factory = new StemFactory();
+            Flowers.add(factory.addInBloom(name));
+            factory = null;
         }
-        if (name.equals("Daisy")){
-            Daisy daisy = new Daisy();
-            Flowers.add(daisy);
-            addPrice(daisy);
+
+        if(isBouquet){
+           //  factory = new BouquetFactory();
+            // add flowers pero amount is dependent sa size sa bouquet (find logic unsaon pagkuha ato)
         }
-        if (name.equals("Tulip")){
-            Tulip tulip = new Tulip();
-            Flowers.add(tulip);
-            addPrice(tulip);
-        }
-        if (name.equals("Carnation")){
-            Carnation carnation = new Carnation();
-            Flowers.add(carnation);
-            addPrice(carnation);
-        }
-        if (name.equals("Sunflower")){
-            Sunflower sunflower = new Sunflower();
-            Flowers.add(sunflower);
-            addPrice(sunflower);
-        }
-        if (name.equals("Lily")){
-            Lily lily = new Lily();
-            Flowers.add(lily);
-            addPrice(lily);
-        }
+
     }
 
     public void removeFlower(String name) {
-        for (Stem flower : Flowers){
+        for (InBloom flower : Flowers){
             if (flower.getName().equalsIgnoreCase(name)){
                 Flowers.remove(flower);
-                removePrice(flower);
+                removePrice((Stem) flower);
                 return;
             }
         }
@@ -56,8 +40,8 @@ public class Order {
     public int count(String name){
         int c = 0;
 
-        for(Stem stem : Flowers){
-            if(stem.getName().equalsIgnoreCase(name)){
+        for(InBloom flower : Flowers){
+            if(flower.getName().equalsIgnoreCase(name)){
                 c++;
             }
         }
@@ -67,7 +51,7 @@ public class Order {
 
 
 
-    public ArrayList<Stem> getFlowers() {
+    public ArrayList<InBloom> getFlowers() {
         return Flowers;
     }
 
@@ -84,7 +68,7 @@ public class Order {
     }
 
     public void print(){
-        for(Stem stem : Flowers){
+        for(InBloom stem : Flowers){
             System.out.println(stem.getName());
         }
     }
@@ -98,7 +82,7 @@ public class Order {
         String[] flowerNames = {"Rose", "Daisy", "Tulip", "Carnation", "Sunflower", "Lily"};
         int[] counts = new int[flowerNames.length];
 
-        for (Stem flower : Flowers) {
+        for (InBloom flower : Flowers) {
             String name = flower.getName();
             for (int i = 0; i < flowerNames.length; i++) {
                 if (name.equals(flowerNames[i])) {
