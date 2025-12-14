@@ -51,7 +51,7 @@ public class MainPanel {
         // Sets the business logo up for display //
 
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/HirayaCebu.png");
-        Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+        Image img = image1.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(img);
         Logo.setIcon(scaledIcon);
         Logo.setHorizontalTextPosition(JLabel.CENTER);
@@ -61,7 +61,7 @@ public class MainPanel {
         //Sets up the border images of the design //
 
         ImageIcon pic = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Accessories.png");
-        Image imgg =  pic.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        Image imgg =  pic.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
         ImageHolder.setIcon(set);
         ImageHolder2.setIcon(set);
