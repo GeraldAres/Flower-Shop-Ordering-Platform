@@ -39,12 +39,12 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="d3733" class="javax.swing.JLabel">
+                  <component id="d3733" class="javax.swing.JLabel" binding="Title">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font size="36" style="1"/>
+                      <font name="Inter Semi Bold" size="36" style="1"/>
                       <foreground color="-11133902"/>
                       <text value="Hiraya Flowershop Cebu"/>
                     </properties>
@@ -54,9 +54,9 @@
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <font size="20"/>
+                      <font name="Book Antiqua" size="18"/>
                       <foreground color="-11133902"/>
-                      <text value="gege Bouquet Order Form"/>
+                      <text value="Bouquet Order Form"/>
                     </properties>
                   </component>
                 </children>

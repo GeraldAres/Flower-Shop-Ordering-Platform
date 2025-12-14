@@ -68,6 +68,7 @@ public class BouquetOrderForm {
     private JButton checkoutBtn;
     private JLabel totalPrice;
     private JLabel subTitle1;
+    private JLabel Title;
 
     private OrderController orderController;
     private int bouquetSize;

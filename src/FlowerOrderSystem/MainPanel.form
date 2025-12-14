@@ -126,6 +126,7 @@
                     </constraints>
                     <properties>
                       <background color="-3688541"/>
+                      <font name="Book Antiqua"/>
                       <foreground color="-3688541"/>
                       <text value="Hiraya Flowershop Cebu"/>
                     </properties>
