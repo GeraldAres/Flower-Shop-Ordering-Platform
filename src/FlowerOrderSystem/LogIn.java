@@ -1,9 +1,14 @@
 package src.FlowerOrderSystem;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class LogIn {
+    private User user;
+    private ArrayList<CheckOut> orders;
+    public LogIn() {
 
+    }
 
     public User validateLogIn (String username, String password) throws IOException, InvalidInputException {
         File file  = new File("Accounts/accounts.csv");
@@ -25,7 +30,7 @@ public class LogIn {
                                 String storedUserName = data[3].trim();
                                 String storedPassword = data[4].trim();
                                     if (storedUserName.equals(username) && storedPassword.equals(password)) {
-                                        User user = new User(data[0], data[1], data[2], data[3], data[4]);
+                                         user = new User(data[0], data[1], data[2], data[3], data[4]);
                                         return user;
                                     }
                         }
@@ -35,5 +40,9 @@ public class LogIn {
                 throw new InvalidInputException("Invalid username or password.");
 
     }
+
+
+
+
 
 }

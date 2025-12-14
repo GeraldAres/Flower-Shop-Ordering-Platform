@@ -6,7 +6,7 @@ public class NewForm {
     public NewForm() {
     }
 
-    public void createUser(String name, String emailAddress, String contactNumber) throws InvalidInputException  {
+    public void createUser(String name, String emailAddress, String contactNumber) throws InvalidInputException, InvalidInputException.InvalidEmail, InvalidInputException.InvalidName, InvalidInputException.InvalidPhone {
         this.user = new Guest(name, emailAddress, contactNumber);
     }
 
