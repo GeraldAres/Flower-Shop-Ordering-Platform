@@ -1,3 +1,5 @@
+package src.FlowerOrderSystem;
+
 import javax.swing.*;
 import java.awt.*;
 
