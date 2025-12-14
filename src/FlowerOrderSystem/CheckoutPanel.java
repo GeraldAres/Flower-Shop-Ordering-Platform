@@ -1,153 +1,186 @@
 package src.FlowerOrderSystem;
 
-
-import src.FlowerOrderSystem.Controllers.Controller;
-import src.FlowerOrderSystem.Controllers.OrderController;
-
-import java.awt.*;
-import java.util.ArrayList;
+import src.FlowerOrderSystem.Controllers.CheckoutController;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.util.ArrayList;
 
 public class CheckoutPanel {
-     JPanel checkoutPanel;
-    private JPanel container;
-    private JPanel header;
-    private JPanel center;
-    private JPanel left;
-    private JPanel Personal;
-    private JPanel orderInfo;
-    private JPanel OrdersHere;
-    private JPanel AddOns;
-    private JCheckBox fereroAddOn;
+
+    JPanel checkoutPanel;
+
     private JButton checkoutBtn;
-    private JPanel right;
-    private JTextArea specialRequest;
-    private JPanel PersonalInformation;
+    private JComboBox<String> delivery;
+    private JComboBox<String> payment;
+    private JTextField deliveryAddress;
+    private JTextField dateField;
+    private JTextField Receiver;
+
     private JLabel totalPrice;
     private JLabel customerName;
     private JLabel contactNumber;
     private JLabel email;
+
     private JPanel orderSummaryPanel;
+    private JLabel fereroPrice;
+    private JLabel tobleronPrice;
+    private JLabel teddyBearPrice;
+    private JLabel labubuPrice;
+    private JCheckBox fereroAddOn;
     private JCheckBox tobleronAddOn;
     private JCheckBox teddyBearAddOn;
     private JCheckBox labubuAddOn;
-    private JComboBox delivery;
-    private JComboBox payment;
-    private JTextField deliveryAddress;
-    private JTextField Date;
-    private JTextField Receiver;
-    private Inventory inventory;
+
+    private CheckoutController controller;
     private Order order;
-    private OrderController controller;
     private User user;
 
+    /* ==============================
+       CONTROLLER SETUP
+       ============================== */
 
-    public void setOrderController(OrderController controller){
+    public void setOrderController(CheckoutController controller) {
         this.controller = controller;
+
         checkoutBtn.setEnabled(false);
-        displayUser();
+
+        customerName.setText(controller.getName());
+        contactNumber.setText(controller.getNumber());
+        email.setText(controller.getEmail());
+
         displayOrder();
-
-    // to add is pag update sa price after every addOn, pag process sa payment and then pag balik to dashboard
-
-        ArrayList<String>orderAddOns = new ArrayList<>();
-        String dateOfDelivery = Date.getText();
-        String deliveryAddress = Receiver.getText();
-        String modeOfDelivery = delivery.getSelectedItem().toString();
-        String modeOfPayment = payment.getSelectedItem().toString();
-        if ((!delivery.getSelectedItem().toString().equals("Select one"))
-                && (!payment.getSelectedItem().toString().equals("Select one"))
-        ) {
-            modeOfDelivery = delivery.getSelectedItem().toString();
-            modeOfPayment = payment.getSelectedItem().toString();
-            checkoutBtn.setEnabled(true);
-
-        }
-
-        String finalModeOfDelivery = modeOfDelivery;
-        String finalModeOfPayment = modeOfPayment;
-        checkoutBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.processCheckout(orderAddOns, dateOfDelivery, deliveryAddress, finalModeOfDelivery, finalModeOfPayment);
-            }
-        });
+        attachListeners();
+        revalidateCheckout();
     }
 
-    public void setDisplay(User activeUser, Order order){
+    public void setDisplay(User activeUser, Order order) {
         this.user = activeUser;
         this.order = order;
     }
 
-    public void displayUser(){
-        if(user != null){
-            customerName.setText(user.getFullName());
-            contactNumber.setText(user.getContactNumber());
-            email.setText(user.getEmail());
+
+    private void revalidateCheckout() {
+        try {
+            controller.validate(
+                    delivery.getSelectedItem().toString(),
+                    payment.getSelectedItem().toString(),
+                    dateField.getText(),
+                    deliveryAddress.getText(),
+                    Receiver.getText()
+            );
+            checkoutBtn.setEnabled(true);
+        } catch (IllegalArgumentException ex) {
+            checkoutBtn.setEnabled(false);
         }
     }
 
+
+    private void attachListeners() {
+        DocumentListener docListener = new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                revalidateCheckout();
+            }
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                revalidateCheckout();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                revalidateCheckout();
+            }
+        };
+
+        dateField.getDocument().addDocumentListener(docListener);
+        Receiver.getDocument().addDocumentListener(docListener);
+        deliveryAddress.getDocument().addDocumentListener(docListener);
+
+        delivery.addActionListener(e -> revalidateCheckout());
+        payment.addActionListener(e -> revalidateCheckout());
+
+        checkoutBtn.addActionListener(new ActionListener()  {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.processCheckout(delivery.getSelectedItem().toString(), payment.getSelectedItem().toString(),  dateField.getText(),  deliveryAddress.getText(),  Receiver.getText(), getAddOns(), Double.parseDouble(totalPrice.getText()));
+            }
+        });
+
+    }
+
+    public ArrayList<String> getAddOns(){
+        ArrayList<String> addOns = new ArrayList<>();
+        if (teddyBearAddOn.isSelected()){
+            addOns.add("TeddyBear");
+        }
+        if (labubuAddOn.isSelected()){
+            addOns.add("Labubu");
+        }
+        if(tobleronAddOn.isSelected()){
+            addOns.add("Tobleron");
+        }
+        if(teddyBearAddOn.isSelected()){
+            addOns.add("TeddyBear");
+        }
+        return addOns;
+    }
+
+    /* ==============================
+       ORDER SUMMARY
+       ============================== */
+
     private boolean alreadyDisplayed(ArrayList<InBloom> displayed, InBloom flower) {
         for (InBloom f : displayed) {
-            if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
+            if (f.getName().equals(flower.getName())
+                    && f.getColor().equals(flower.getColor())) {
                 return true;
             }
         }
         return false;
     }
 
-
     public void displayOrder() {
         orderSummaryPanel.setLayout(new BoxLayout(orderSummaryPanel, BoxLayout.Y_AXIS));
 
-        if (order != null && orderSummaryPanel != null) {
-            orderSummaryPanel.removeAll(); // clears old labels
-            ArrayList<InBloom> flowers = order.getFlowers();
-            ArrayList<InBloom> displayed = new ArrayList<>(); // track displayed types
+        if (order == null) return;
 
-            for (InBloom flower : flowers) {
-                if (alreadyDisplayed(displayed, flower)) {
-                    continue; // skip if already displayed
+        orderSummaryPanel.removeAll();
+
+        ArrayList<InBloom> flowers = order.getFlowers();
+        ArrayList<InBloom> displayed = new ArrayList<>();
+
+        for (InBloom flower : flowers) {
+
+            if (alreadyDisplayed(displayed, flower)) continue;
+
+            int count = 0;
+            for (InBloom f : flowers) {
+                if (f.getName().equals(flower.getName())
+                        && f.getColor().equals(flower.getColor())) {
+                    count++;
                 }
-
-                // Count quantity of this type
-                int count = 0;
-                for (InBloom f : flowers) {
-                    if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
-                        count++;
-                    }
-                }
-
-                // Build label text: Name(Color)   Qty   TotalPrice
-                String text = String.format("%-54s %5d   %7.2f",
-                        flower.getName() + " (" + flower.getColor() + ")",
-                        count,
-                        count * flower.getPrice());
-
-                JLabel label = new JLabel(text);
-
-                try {
-                    Font bellFont = new Font("Bell MT", Font.PLAIN, 20);
-                    label.setFont(bellFont);
-                    label.setForeground(Color.decode("#561C32"));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                orderSummaryPanel.add(label);
-                displayed.add(flower); // mark as displayed
             }
 
-            orderSummaryPanel.revalidate();
-            orderSummaryPanel.repaint();
-            totalPrice.setText("P " + order.getOrderPrice()+"0");
+            String text = String.format(
+                    "%-54s %5d   %7.2f",
+                    flower.getName() + " (" + flower.getColor() + ")",
+                    count,
+                    count * flower.getPrice()
+            );
+
+            JLabel label = new JLabel(text);
+            label.setFont(new Font("Bell MT", Font.PLAIN, 20));
+            label.setForeground(Color.decode("#561C32"));
+
+            orderSummaryPanel.add(label);
+            displayed.add(flower);
         }
+
+        totalPrice.setText("P " + order.getOrderPrice() + "0");
+        orderSummaryPanel.revalidate();
+        orderSummaryPanel.repaint();
     }
-
-
-
 }

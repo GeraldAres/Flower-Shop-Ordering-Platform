@@ -81,4 +81,16 @@ public class OrderController implements Controller {
     public void processCheckout(ArrayList<String> orderAddOns, String dateOfDelivery, String deliveryAddress, String finalModeOfDelivery, String finalModeOfPayment) {
 
     }
+
+    public String getName() {
+        return mainController.getUser().getFullName();
+    }
+
+    public String getEmail() {
+        return mainController.getUser().getEmail();
+    }
+
+    public String getNumber(){
+        return mainController.getUser().getContactNumber();
+    }
 }

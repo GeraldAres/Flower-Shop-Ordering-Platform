@@ -5,6 +5,7 @@ public class MainController implements Controller {
     private final MainPanel main;
     private  UserController setup;
     private  OrderController orderController;
+    private CheckoutController checkoutController;
     private SignUpPanel signUpPanel;
     private User activeUser;
     private Order order;
@@ -84,8 +85,8 @@ public class MainController implements Controller {
         }
 
         if (action.equals("Checkout")){
-            main.getCheckoutPanel().setDisplay(activeUser, order);
-            main.getCheckoutPanel().setOrderController(orderController);
+           checkoutController = new CheckoutController(activeUser, order);
+            main.getCheckoutPanel().setOrderController(checkoutController);
             main.getCardLayout().show(main.getMainPanel(), "Checkout");
         }
 
