@@ -57,6 +57,30 @@ public class BouquetLargePanel {
         });
     }
 
+    BouquetLargePanel(){
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img);
+        prevButton.setIcon(prev);
+        prevButton.setText("");
+        prevButton.setOpaque(false);
+        prevButton.setContentAreaFilled(false);
+        prevButton.setBorderPainted(false);
+        prevButton.setFocusPainted(false);
+        prevButton.setText("");
+
+        ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/checkoutBtn.png");
+        Image img7 =  image6.getImage().getScaledInstance(110, 35, Image.SCALE_SMOOTH);
+        ImageIcon chckoutbtn = new ImageIcon(img7);
+        btnCheckOut.setIcon(chckoutbtn);
+        btnCheckOut.setText("");
+        btnCheckOut.setOpaque(false);
+        btnCheckOut.setContentAreaFilled(false);
+        btnCheckOut.setBorderPainted(false);
+        btnCheckOut.setFocusPainted(false);
+        btnCheckOut.setText("");
+        //for the checkoutBtn
+    }
     public static void main(String[] args) {
 
         // Create ONE SINGLE instance

@@ -30,7 +30,7 @@ public class LogInPanel {
 
     public LogInPanel() {
         ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
-        Image img5=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        Image img5=  image5.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         ImageIcon prev = new ImageIcon(img5);
         prevButton.setIcon(prev);
         prevButton.setText("");
@@ -39,6 +39,17 @@ public class LogInPanel {
         prevButton.setBorderPainted(false);
         prevButton.setFocusPainted(false);
         prevButton.setText("");
+
+        ImageIcon image = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/LogIn.png");
+        Image img1 =  image.getImage().getScaledInstance(100, 50, Image.SCALE_SMOOTH);
+        ImageIcon login = new ImageIcon(img1);
+        logInButton.setIcon(login);
+        logInButton.setText("");
+        logInButton.setOpaque(false);
+        logInButton.setContentAreaFilled(false);
+        logInButton.setBorderPainted(false);
+        logInButton.setFocusPainted(false);
+        logInButton.setText("");
 
         usernameField.setText("");
         passwordField.setText("");

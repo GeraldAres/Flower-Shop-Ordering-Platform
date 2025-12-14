@@ -30,6 +30,11 @@ public class MainPanel {
     private BouquetOrderForm smallBouquet = new BouquetOrderForm();
     private BouquetMediumPanel mediumBouquet = new BouquetMediumPanel();
     private BouquetLargePanel largeBouquet =  new BouquetLargePanel();
+
+    private FlowerCat_Pnl1 flowerCatPnl1 = new FlowerCat_Pnl1();
+    private FlowerCat_Pnl2 flowerCatPnl2 = new FlowerCat_Pnl2();
+    private FlowerCat_Pnl3 flowerCatPnl3 = new FlowerCat_Pnl3();
+
     public MainPanel() throws InvalidInputException, NullPointerException {
         // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
         MainPanel.setLayout(cardLayout);
@@ -51,7 +56,7 @@ public class MainPanel {
         // Sets the business logo up for display //
 
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/HirayaCebu.png");
-        Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+        Image img = image1.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(img);
         Logo.setIcon(scaledIcon);
         Logo.setHorizontalTextPosition(JLabel.CENTER);
@@ -61,12 +66,34 @@ public class MainPanel {
         //Sets up the border images of the design //
 
         ImageIcon pic = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Accessories.png");
-        Image imgg =  pic.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        Image imgg =  pic.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
         ImageHolder.setIcon(set);
         ImageHolder2.setIcon(set);
         ImageHolder.setText("");
         ImageHolder2.setText("");
+
+        ImageIcon image = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/LogIn.png");
+        Image img1 =  image.getImage().getScaledInstance(100, 50, Image.SCALE_SMOOTH);
+        ImageIcon login = new ImageIcon(img1);
+        btnLogIn.setIcon(login);
+        btnLogIn.setText("");
+        btnLogIn.setOpaque(false);
+        btnLogIn.setContentAreaFilled(false);
+        btnLogIn.setBorderPainted(false);
+        btnLogIn.setFocusPainted(false);
+        btnLogIn.setText("");
+
+        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/Guess.png");
+        Image img2 =  image2.getImage().getScaledInstance(100, 50, Image.SCALE_SMOOTH);
+        ImageIcon guest = new ImageIcon(img2);
+        btnGuest.setIcon(guest);
+        btnGuest.setText("");
+        btnGuest.setOpaque(false);
+        btnGuest.setContentAreaFilled(false);
+        btnGuest.setBorderPainted(false);
+        btnGuest.setFocusPainted(false);
+        btnGuest.setText("");
 
         // Guest option//
 
