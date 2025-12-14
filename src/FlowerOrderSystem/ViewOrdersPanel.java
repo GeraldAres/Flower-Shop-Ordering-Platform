@@ -47,11 +47,21 @@ public class ViewOrdersPanel {
         prevButton.setBorderPainted(false);
         prevButton.setFocusPainted(false);
         prevButton.setText("");
+
     }
 
 
     public void setController(UserController userController){
         this.controller = userController;
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    userController.userActions("StemBack");
+                } catch (InvalidInputException ex) {}
+            }
+        });
 
     }
 

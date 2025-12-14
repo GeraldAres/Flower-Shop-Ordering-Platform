@@ -158,4 +158,8 @@ public class MainController implements Controller {
     public CheckOut getSelectedOrder() {
         return selectedOrder;
     }
+
+    public void setUser(User user) {
+        activeUser = user;
+    }
 }
