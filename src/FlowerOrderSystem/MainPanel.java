@@ -143,8 +143,19 @@ public class MainPanel {
     public  ForgotPassPanel getForgotPassPanel() {
         return forgotPassPanel;
     }
-
     public CheckoutPanel getCheckoutPanel() {
         return checkoutPanel;
+    }
+
+    public BouquetOrderForm getSmallBouquet() {
+        return smallBouquet;
+    }
+
+    public BouquetLargePanel getLargeBouquet() {
+        return largeBouquet;
+    }
+
+    public BouquetMediumPanel getMediumBouquet() {
+        return mediumBouquet;
     }
 }

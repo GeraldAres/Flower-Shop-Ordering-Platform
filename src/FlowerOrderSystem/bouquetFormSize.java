@@ -28,13 +28,46 @@ public class bouquetFormSize {
         btnNext.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                switch(SizeField.getSelectedIndex()){
+                    case 0:
+                        try {
+                            orderController.userActions("Small");
+                        } catch (InvalidInputException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                        break;
+                    case 1:
+                        try {
+                            orderController.userActions("Medium");
+                        } catch (InvalidInputException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                        break;
+                    case 2:
+                        try {
+                            orderController.userActions("Large");
+                        } catch (InvalidInputException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                        break;
+
+                }
+            }
+        });
+
+        btnPrev.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 try {
-                    orderController.userActions("Small");
-                } catch (InvalidInputException ex) {
+                    orderController.userActions("BouquetBack");
+                } catch (InvalidInputException ex ) {
                     throw new RuntimeException(ex);
                 }
             }
         });
+
+
 
 
     }

@@ -5,10 +5,12 @@ public class MainController implements Controller {
     private final MainPanel main;
     private  UserController setup;
     private  OrderController orderController;
+    private CheckoutController checkoutController;
     private SignUpPanel signUpPanel;
     private User activeUser;
     private Order order;
     private boolean controlStatus;
+    private CheckOut selectedOrder;
 
     public MainController(MainPanel main) {
         this.main = main;
@@ -57,7 +59,10 @@ public class MainController implements Controller {
         }
 
         if(action.equals("MyOrders")){
-            main.getCardLayout().show(main.getMainPanel(), "MyOrders");
+            main.getViewOrderPanel().setController(setup);
+            main.getViewOrderPanel().displayOrders();
+            main.getCardLayout().show(main.getMainPanel(), "MyOrders" +
+                    "");
         }
         if (action.equals("Settings")){
             main.getCardLayout().show(main.getMainPanel(), "Settings");
@@ -84,14 +89,43 @@ public class MainController implements Controller {
         }
 
         if (action.equals("Checkout")){
-            main.getCheckoutPanel().setDisplay(activeUser, order);
-            main.getCheckoutPanel().setOrderController(orderController);
+           checkoutController = new CheckoutController(activeUser, order, this);
+            main.getCheckoutPanel().setOrderController(checkoutController);
             main.getCardLayout().show(main.getMainPanel(), "Checkout");
         }
 
         if(action.equals("Small")){
+            main.getSmallBouquet().setController(orderController, 0);
             main.getCardLayout().show(main.getMainPanel(), "Small");
         }
+
+        if(action.equals("SmallBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if(action.equals("Medium")){
+            main.getSmallBouquet().setController(orderController, 1);
+            main.getCardLayout().show(main.getMainPanel(), "Small");
+//            main.getMediumBouquet().setController(orderController);
+//            main.getCardLayout().show(main.getMainPanel(), "Medium");
+        }
+
+        if(action.equals("MediumBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if(action.equals("Large")){
+            main.getSmallBouquet().setController(orderController, 2);
+            main.getCardLayout().show(main.getMainPanel(), "Small");
+//            main.getLargeBouquet().setController(orderController);
+//            main.getCardLayout().show(main.getMainPanel(), "Large");
+        }
+
+        if(action.equals("LargeBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+
 
     }
 
@@ -115,5 +149,13 @@ public class MainController implements Controller {
     @Override
     public boolean isControlling() {
         return controlStatus;
+    }
+
+    public void setSelectedOrder(CheckOut order) {
+        this.selectedOrder = order;
+    }
+
+    public CheckOut getSelectedOrder() {
+        return selectedOrder;
     }
 }

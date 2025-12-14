@@ -2,6 +2,7 @@ package src.FlowerOrderSystem.Controllers;
 import src.FlowerOrderSystem.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class UserController implements Controller {
     private User user;
@@ -64,4 +65,18 @@ public class UserController implements Controller {
         return controlStatus;
     }
 
+
+    public ArrayList<CheckOut> getCompletedOrders() {
+        return user.getOrders();
+    }
+
+
+    public void openViewOrder(CheckOut order) {
+        mainController.setSelectedOrder(order);
+        try {
+            mainController.changeDisplay("viewThis");
+        } catch (InvalidInputException e) {
+            e.printStackTrace();
+        }
+    }
 }

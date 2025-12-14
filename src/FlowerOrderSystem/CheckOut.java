@@ -6,7 +6,7 @@ import java.io.*;
 import java.time.*;
 
 public class CheckOut {
-    private NewForm newForm;
+    private Order order;
     private User user;
     private LocalDateTime timestamp = LocalDateTime.now();
     private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
@@ -23,16 +23,18 @@ public class CheckOut {
     private String specialInstructions;
     private String orderStatus;
     private String content;
+    private String receipientName;
     private static final List<String> ORDER_STATUS = Arrays.asList(
-            "Ongoing" , "Ready for Delivery/Pick Up" , "Cancelled", "Complete"
+            "Ongoing", "Ready for Delivery/Pick Up", "Cancelled", "Complete"
     );
 
-    public CheckOut(NewForm newForm, User user) {
-        this.newForm = newForm;
+    public CheckOut(User user, Order order) {
+        this.order = order;
         this.user = user;
         this.formattedDate = timestamp.format(displayFormatter);
         this.orderID = timestamp.format(idFormatter);
         this.orderStatus = "Pending";
+        this.totalPrice = order.getOrderPrice();
     }
 
     public CheckOut(String orderId, String customerName, String flower, double total, String date) {
@@ -62,8 +64,36 @@ public class CheckOut {
         return modeOfPayment;
     }
 
-    public void setModeOfPayment(String modeOfPayment) {
+    public void setModeOfPayment(String modeOfPayment) throws InvalidInputException.PaymentFailedException {
         this.modeOfPayment = modeOfPayment;
+        Payment payment;
+        switch (modeOfPayment) {
+            case "Cash on Delivery":
+                payment = new CashOnDelivery();
+                if(payment.processPayment(totalPrice)){
+                    saveOrder();
+                } else{
+                    throw new InvalidInputException.PaymentFailedException();
+                }
+                break;
+            case "Gcash":
+                payment = new GCash();
+                if(payment.processPayment(totalPrice)){
+                    saveOrder();
+                } else{
+                    throw new InvalidInputException.PaymentFailedException();
+                }
+                break;
+            case "Bank Transfer":
+                payment = new BankTransfer();
+                if(payment.processPayment(totalPrice)){
+                    saveOrder();
+                } else{
+                    throw new InvalidInputException.PaymentFailedException();
+                }
+                break;
+
+        }
     }
 
     public String getDateOfDelivery() {
@@ -86,9 +116,7 @@ public class CheckOut {
         return addOnsList;
     }
 
-    public void setAddOnsList(ArrayList<String> addOnsList) {
-        this.addOnsList = addOnsList;
-    }
+
 
     public double getTotalPrice() {
         return totalPrice;
@@ -119,11 +147,11 @@ public class CheckOut {
     }
 
     public String getContent() {
-            updateContent();
+        updateContent();
         return content;
     }
 
-    public String getOrderID(){
+    public String getOrderID() {
         return orderID;
     }
 
@@ -149,9 +177,10 @@ public class CheckOut {
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
                 "\nDate of Delivery: " + getDateOfDelivery() +
+                "\nReceipient: " + getReceipientName() +
                 "\nNumber of Add-Ons: " + getNumsOfAddOns() +
                 "\nAdd-Ons List: " + (addOnsList != null ? addOnsList.toString() : "None") +
-                "\nTotal Price: $" + String.format("%.2f", getTotalPrice()) +
+                "\nTotal Price: P" + String.format("%.2f", getTotalPrice()) +
                 "\nSpecial Instructions: " + (specialInstructions != null ? specialInstructions : "None") +
                 "\nOrder Status: " + getOrderStatus();
     }
@@ -160,19 +189,19 @@ public class CheckOut {
         boolean isValid = false;
         String formattedStatus = "";
 
-            for (String valid : ORDER_STATUS) {
-                if (valid.equalsIgnoreCase(newStatus)) {
-                    formattedStatus = valid;
-                    isValid = true;
-                    break;
-                }
+        for (String valid : ORDER_STATUS) {
+            if (valid.equalsIgnoreCase(newStatus)) {
+                formattedStatus = valid;
+                isValid = true;
+                break;
             }
+        }
 
-            if (!isValid) {
-                System.err.println("Error: '" + newStatus + "' is not a valid status.");
-                System.out.println("Allowed statuses: " + ORDER_STATUS);
-                return false;
-            }
+        if (!isValid) {
+            System.err.println("Error: '" + newStatus + "' is not a valid status.");
+            System.out.println("Allowed statuses: " + ORDER_STATUS);
+            return false;
+        }
 
         this.orderStatus = formattedStatus;
         updateContent();
@@ -186,21 +215,151 @@ public class CheckOut {
         updateContent();
         String mainFolderName = "Orders";
         String folderName;
-            if (user.getUsername().equals("default")) {
-                folderName = "Guest";
-            } else {
-                folderName = user.getUsername();
-            }
+        if (user.getUsername().equals("default")) {
+            folderName = "Guest";
+        } else {
+            folderName = user.getUsername();
+        }
         File userFolder = new File(mainFolderName, folderName);
-            if (!userFolder.exists()) {
-                userFolder.mkdirs();
-            }
+        if (!userFolder.exists()) {
+            userFolder.mkdirs();
+        }
         File file = new File(userFolder, getOrderID() + ".txt");
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
-                bw.write(content);
-            } catch (IOException e) {
-                System.err.println("Error saving order: " + e.getMessage());
-                e.printStackTrace();
-            }
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+            bw.write(content);
+        } catch (IOException e) {
+            System.err.println("Error saving order: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        user.addOrder(this);
     }
+
+    public void setReceipient(String name) {
+        this.receipientName = name;
+    }
+
+    public String getReceipientName() {
+        return receipientName;
+    }
+
+    private boolean alreadyDisplayed(ArrayList<InBloom> displayed, InBloom flower) {
+        for (InBloom f : displayed) {
+            if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public CheckOut.FlowerCountResult getFlowerCounts() {
+        ArrayList<InBloom> displayed = new ArrayList<>();
+        ArrayList<Integer> counts = new ArrayList<>();
+
+        ArrayList<InBloom> flowers = order.getFlowers();
+        for (InBloom flower : flowers) {
+            if (alreadyDisplayed(displayed, flower)) continue;
+
+            int count = 0;
+            for (InBloom f : flowers) {
+                if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
+                    count++;
+                }
+            }
+
+            displayed.add(flower);
+            counts.add(count);
+        }
+
+        return new FlowerCountResult(displayed, counts);
+    }
+
+    public void orderValidator(
+            String modeOfDelivery,
+            String modeOfPayment,
+            String dateOfDelivery,
+            String deliveryAdd,
+            String recipientName
+    ) {
+
+        if (modeOfDelivery == null || modeOfDelivery.trim().isEmpty()
+                || modeOfDelivery.equalsIgnoreCase("Select One")) {
+            throw new IllegalArgumentException("Please select a valid mode of delivery.");
+        }
+
+        if (modeOfPayment == null || modeOfPayment.trim().isEmpty()
+                || modeOfPayment.equalsIgnoreCase("Select One")) {
+            throw new IllegalArgumentException("Please select a valid mode of payment.");
+        }
+
+        if (dateOfDelivery == null || dateOfDelivery.trim().isEmpty()) {
+            throw new IllegalArgumentException("Date of delivery must not be empty.");
+        }
+
+        if (deliveryAdd == null || deliveryAdd.trim().isEmpty()) {
+            throw new IllegalArgumentException("Delivery address must not be empty.");
+        }
+
+        if (recipientName == null || recipientName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Recipient name must not be empty.");
+        }
+    }
+
+    public ArrayList<InBloom> getFlowers() {
+        return order.getFlowers();
+    }
+
+    public void setAddOnsList(ArrayList<String> addOns) {
+        this.addOnsList = addOns;
+        setNumsOfAddOns(addOnsList.size());
+        for (String addOn : addOnsList) {
+            switch(addOn){
+                case"Teddy":
+                    totalPrice+=800;
+                    break;
+                case "Labubu":
+                    totalPrice+= 2400;
+                    break;
+                case "Tobleron":
+                    totalPrice+= 500;
+                    break;
+                case "Ferrero":
+                    totalPrice+= 300;
+            }
+        }
+
+    }
+
+    public static class FlowerCountResult {
+        private final ArrayList<InBloom> flowers;
+        private final ArrayList<Integer> counts;
+
+        public FlowerCountResult(ArrayList<InBloom> flowers, ArrayList<Integer> counts) {
+            this.flowers = flowers;
+            this.counts = counts;
+        }
+
+        public ArrayList<InBloom> getFlowers() {
+            return flowers;
+        }
+
+        public ArrayList<Integer> getCounts() {
+            return counts;
+        }
+    }
+
+    public String getOrderDateForCard() {
+        DateTimeFormatter idFormatter =
+                DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
+        DateTimeFormatter displayFormatter =
+                DateTimeFormatter.ofPattern("MMMM d, yyyy");
+
+        LocalDateTime dateTime =
+                LocalDateTime.parse(orderID, idFormatter);
+
+        return dateTime.format(displayFormatter);
+    }
+
 }
+
+
+

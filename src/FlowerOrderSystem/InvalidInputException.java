@@ -33,4 +33,10 @@ public class InvalidInputException extends Exception {
             super(message);
         }
     }
+
+    public static class PaymentFailedException extends Exception{
+        public PaymentFailedException(){
+            super("Payment has failed.");
+        }
+    }
 }
