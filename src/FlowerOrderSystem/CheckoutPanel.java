@@ -1,170 +1,203 @@
 package src.FlowerOrderSystem;
 
-
-import src.FlowerOrderSystem.Controllers.Controller;
-
-import java.awt.*;
-import java.util.ArrayList;
+import src.FlowerOrderSystem.Controllers.CheckoutController;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.util.ArrayList;
 
 public class CheckoutPanel {
-     JPanel checkoutPanel;
-    private JPanel container;
-    private JPanel header;
-    private JPanel center;
-    private JPanel left;
-    private JPanel Personal;
-    private JPanel orderInfo;
-    private JPanel OrdersHere;
-    private JPanel AddOns;
-    private JCheckBox fereroAddOn;
+
+    JPanel checkoutPanel;
+
     private JButton checkoutBtn;
-    private JPanel right;
-    private JTextArea specialRequest;
-    private JPanel PersonalInformation;
+    private JComboBox<String> delivery;
+    private JComboBox<String> payment;
+    private JTextField deliveryAddress;
+    private JTextField dateField;
+    private JTextField Receiver;
+
     private JLabel totalPrice;
     private JLabel customerName;
     private JLabel contactNumber;
     private JLabel email;
+
     private JPanel orderSummaryPanel;
+    private JLabel fereroPrice;
+    private JLabel tobleronPrice;
+    private JLabel teddyBearPrice;
+    private JLabel labubuPrice;
+    private JCheckBox fereroAddOn;
     private JCheckBox tobleronAddOn;
     private JCheckBox teddyBearAddOn;
     private JCheckBox labubuAddOn;
-    private JComboBox delivery;
-    private JComboBox payment;
-    private JTextField deliveryAddress;
-    private JTextField Date;
-    private JTextField Receiver;
-    private Inventory inventory;
+    private JPanel container;
+    private JPanel header;
+    private JPanel center;
+    private JPanel left;
+    private JPanel right;
+    private JPanel Personal;
+    private JPanel orderInfo;
+    private JPanel AddOns;
+    private JPanel OrdersHere;
+    private JPanel PersonalInformation;
+    private JTextArea specialRequest;
+    private double base;
+    private CheckoutController controller;
     private Order order;
-    private Controller controller;
     private User user;
+    private ArrayList<String> addOns = new ArrayList<>();
 
+    /* ==============================
+       CONTROLLER SETUP
+       ============================== */
 
-    public void setOrderController(Controller controller){
+    public void setOrderController(CheckoutController controller) {
         this.controller = controller;
+
         checkoutBtn.setEnabled(false);
-        displayUser();
+
+        customerName.setText(controller.getName());
+        contactNumber.setText(controller.getNumber());
+        email.setText(controller.getEmail());
+
         displayOrder();
-
-
-        String modeOfDelivery;
-        String modeOfPayment;
-        if ((!delivery.getSelectedItem().toString().equals("Select one"))
-                && (!payment.getSelectedItem().toString().equals("Select one"))
-        ) {
-            modeOfDelivery = delivery.getSelectedItem().toString();
-            modeOfPayment = payment.getSelectedItem().toString();
-            checkoutBtn.setEnabled(true);
-
-        }
-
-
-
-        checkoutBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-               /* inventory.updateStock("rose", order.count("rose"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("lily", order.count("lily"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("sunflower", order.count("sunflower"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("tulip", order.count("tulip"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("carnation", order.count("carnation"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("daisy", order.count("daisy"));
-                inventory.displayInventoryStock();
-                    eveyerhitng that ia am praise the lord
-
-                */
-
-
-            }
-        });
+        attachListeners();
+        revalidateCheckout();
     }
 
-    public void setDisplay(User activeUser, Order order){
+    public void setDisplay(User activeUser, Order order) {
         this.user = activeUser;
         this.order = order;
     }
 
-    public void displayUser(){
-        if(user != null){
-            customerName.setText(user.getFullName());
-            contactNumber.setText(user.getContactNumber());
-            email.setText(user.getEmail());
+
+    private void revalidateCheckout() {
+        try {
+            controller.validate(
+                    delivery.getSelectedItem().toString(),
+                    payment.getSelectedItem().toString(),
+                    dateField.getText(),
+                    deliveryAddress.getText(),
+                    Receiver.getText()
+            );
+            checkoutBtn.setEnabled(true);
+        } catch (IllegalArgumentException ex) {
+            checkoutBtn.setEnabled(false);
         }
     }
 
-    private boolean alreadyDisplayed(ArrayList<InBloom> displayed, InBloom flower) {
-        for (InBloom f : displayed) {
-            if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
-                return true;
+
+    private void attachListeners() {
+        DocumentListener docListener = new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                revalidateCheckout();
             }
-        }
-        return false;
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                revalidateCheckout();
+            }
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                revalidateCheckout();
+            }
+        };
+
+        dateField.getDocument().addDocumentListener(docListener);
+        Receiver.getDocument().addDocumentListener(docListener);
+        deliveryAddress.getDocument().addDocumentListener(docListener);
+
+        delivery.addActionListener(e -> revalidateCheckout());
+        payment.addActionListener(e -> revalidateCheckout());
+
+        base = controller.getOrderTotalPrice();
+
+        teddyBearAddOn.addActionListener(e -> updateTotal());
+        tobleronAddOn.addActionListener(e -> updateTotal());
+        fereroAddOn.addActionListener(e -> updateTotal());
+        labubuAddOn.addActionListener(e -> updateTotal());
+
+
+
+        checkoutBtn.addActionListener(new ActionListener()  {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    controller.processCheckout(delivery.getSelectedItem().toString(), payment.getSelectedItem().toString(),  dateField.getText(),  deliveryAddress.getText(),
+                            Receiver.getText(), getAddOns(), Double.parseDouble(totalPrice.getText()),specialRequest.getText());
+                } catch (InvalidInputException.PaymentFailedException ex) {
+                    JDialog dialog = new JDialog((JFrame) null, "Info", true); // true = modal
+                    dialog.setSize(350, 150);
+                    dialog.setLayout(new BorderLayout());
+
+                    JOptionPane.showMessageDialog(dialog, ex.getMessage(), "Uh Oh!", JOptionPane.ERROR_MESSAGE);
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
     }
 
+    public ArrayList<String> getAddOns() {
+        return addOns;
+    }
 
+    /* ==============================
+       ORDER SUMMARY
+       ============================== */
     public void displayOrder() {
         orderSummaryPanel.setLayout(new BoxLayout(orderSummaryPanel, BoxLayout.Y_AXIS));
+        orderSummaryPanel.removeAll();
 
-        if (order != null && orderSummaryPanel != null) {
-            orderSummaryPanel.removeAll(); // clears old labels
-            ArrayList<InBloom> flowers = order.getFlowers();
-            ArrayList<InBloom> displayed = new ArrayList<>(); // track displayed types
+        ArrayList<String> lines = controller.getOrderSummaryLines(); // only plain Strings
 
-            for (InBloom flower : flowers) {
-                if (alreadyDisplayed(displayed, flower)) {
-                    continue; // skip if already displayed
-                }
-
-                // Count quantity of this type
-                int count = 0;
-                for (InBloom f : flowers) {
-                    if (f.getName().equals(flower.getName()) && f.getColor().equals(flower.getColor())) {
-                        count++;
-                    }
-                }
-
-                // Build label text: Name(Color)   Qty   TotalPrice
-                String text = String.format("%-54s %5d   %7.2f",
-                        flower.getName() + " (" + flower.getColor() + ")",
-                        count,
-                        count * flower.getPrice());
-
-                JLabel label = new JLabel(text);
-
-                try {
-                    Font bellFont = new Font("Bell MT", Font.PLAIN, 20);
-                    label.setFont(bellFont);
-                    label.setForeground(Color.decode("#561C32"));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                orderSummaryPanel.add(label);
-                displayed.add(flower); // mark as displayed
-            }
-
-            orderSummaryPanel.revalidate();
-            orderSummaryPanel.repaint();
+        for (String text : lines) {
+            JLabel label = new JLabel(text);
+            label.setFont(new Font("Bell MT", Font.PLAIN, 20));
+            label.setForeground(Color.decode("#561C32"));
+            orderSummaryPanel.add(label);
         }
-    }
 
+        totalPrice.setText( String.format("%.2f", controller.getOrderTotalPrice()));
+        orderSummaryPanel.revalidate();
+        orderSummaryPanel.repaint();
+    }
+    private void updateTotal() {
+        double newTotal = base;
+
+        // Clear the list first to rebuild it based on current selections
+       if(!addOns.isEmpty()){
+           addOns.clear();
+       }
+
+        if (teddyBearAddOn.isSelected()) {
+            addOns.add("Teddy");
+            newTotal += 800;
+        }
+
+        if (tobleronAddOn.isSelected()) {
+            addOns.add("Tobleron");
+            newTotal += 500;
+        }
+
+        if (fereroAddOn.isSelected()) {
+            addOns.add("Ferrero");
+            newTotal += 300;
+        }
+
+        if (labubuAddOn.isSelected()) {
+            addOns.add("Labubu");
+            newTotal += 2400;
+        }
+
+        // Update the totalPrice label
+        totalPrice.setText(String.format("%.2f", newTotal));
+    }
 
 
 }

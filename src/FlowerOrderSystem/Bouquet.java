@@ -3,6 +3,7 @@ package src.FlowerOrderSystem;
 import java.util.ArrayList;
 
 public abstract class Bouquet implements InBloom {
+
     private final String type;
     private int size;
     private double bouqetPrice = 0;
@@ -46,45 +47,71 @@ public abstract class Bouquet implements InBloom {
         return "bouquet";
     }
 
-    public static class SmallBouquet extends Bouquet {
+    public static  class SmallBouquet extends Bouquet {
         public SmallBouquet() {
             super("SMALL");
             setSize(1);
         }
-        public String getColor(){
-            return super.getWrap();
+
+        @Override
+        public String getName() {
+            return "";
         }
-        public double getPrice(){
-            return super.getBouqetPrice();
+
+        @Override
+        public String getColor() {
+            return "";
+        }
+
+        @Override
+        public double getPrice() {
+            return 0;
         }
     }
 
-    public static class MediumBouquet extends Bouquet {
+    public static   class MediumBouquet extends Bouquet {
         public MediumBouquet() {
             super("MEDIUM");
             setSize(2);
         }
-        public String getColor(){
-            return super.getWrap();
+
+        @Override
+        public String getName() {
+            return "";
         }
-        public double getPrice(){
-            return super.getBouqetPrice();
+
+        @Override
+        public String getColor() {
+            return "";
+        }
+
+        @Override
+        public double getPrice() {
+            return 0;
         }
     }
 
-    public static class LargeBouquet extends Bouquet {
+    public static  class LargeBouquet extends Bouquet {
         public LargeBouquet() {
             super("LARGE");
             setSize(3);
         }
-        public String getColor(){
-            return super.getWrap();
+
+        @Override
+        public String getName() {
+            return "";
         }
-        public double getPrice(){
-            return super.getBouqetPrice();
+
+        @Override
+        public String getColor() {
+            return "";
+        }
+
+        @Override
+        public double getPrice() {
+            return 0;
         }
     }
-
     public static class BouquetFactory {
         public static Bouquet getBouquet(String bouquetType) {
             if (bouquetType == null) return null;

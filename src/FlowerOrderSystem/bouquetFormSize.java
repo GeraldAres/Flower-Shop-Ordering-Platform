@@ -61,7 +61,9 @@ public class bouquetFormSize {
             public void actionPerformed(ActionEvent e) {
                 try {
                     orderController.userActions("BouquetBack");
-                } catch (InvalidInputException _) {}
+                } catch (InvalidInputException ex ) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
