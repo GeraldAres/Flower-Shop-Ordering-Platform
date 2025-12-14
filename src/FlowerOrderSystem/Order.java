@@ -1,5 +1,6 @@
 package src.FlowerOrderSystem;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class Order {
@@ -12,9 +13,10 @@ public class Order {
 
 
 
+
     public void addFlower (String name, boolean isBouquet) {
         Factory factory;
-        if (!isBouquet){
+        if (!isBouquet) {
             factory = new StemFactory();
             InBloom flower = factory.addInBloom(name);
             Flowers.add(flower);
@@ -22,14 +24,390 @@ public class Order {
             factory = null;
         }
 
-        if(isBouquet){
-           //  factory = new BouquetFactory();
-            // add flowers pero amount is dependent sa size sa bouquet (find logic unsaon pagkuha ato)
+        if (isBouquet) {
+            String bouquetSize = name.split("-")[1];
+            String bouquetName = name.split("-")[0];
+            factory = new BouquetFactory();
+            InBloom bouquet = factory.addInBloom(name);
+
+            Factory stemFactory = new StemFactory();
+
+            if (bouquetSize.equalsIgnoreCase("s")) {
+                switch (bouquetName.toLowerCase()) {
+                    case "rose":
+                        Bouquet rose = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                        rose.setSize(1);
+                        Flowers.add(rose);
+
+                        double roseCount = 0;
+                        for(int x = 1; x <= 3; x++){
+                            InBloom stem = stemFactory.addInBloom("Rose");
+                            roseCount += stem.getPrice();
+                            Flowers.add(stem);
+                        }
+
+                        rose.setBouqetPrice(roseCount);
+                        addPrice(rose);
+
+
+                        break;
+
+                    case "lily":
+                        Bouquet lily = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                        lily.setSize(1);
+                        Flowers.add(lily);
+
+                        double lilyCount = 0;
+                        for(int x = 1; x <= 3; x++){
+                            InBloom stem = stemFactory.addInBloom("Lily");
+                            lilyCount += stem.getPrice();
+                            Flowers.add(stem);
+                        }
+
+                        lily.setBouqetPrice(lilyCount);
+                        addPrice(lily);
+
+                        break;
+                    case "sunflower":
+                        Bouquet sunflower = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                        sunflower.setSize(1);
+                        Flowers.add(sunflower);
+
+                        double sunflowerCount = 0;
+                        for(int x = 1; x <= 3; x++){
+                            InBloom stem = stemFactory.addInBloom("Sunflower");
+                            sunflowerCount += stem.getPrice();
+                            Flowers.add(stem);
+                        }
+
+                        sunflower.setBouqetPrice(sunflowerCount);
+                        addPrice(sunflower);
+
+
+                        break;
+
+                    case "carnation":
+                        Bouquet carnation = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                        carnation.setSize(1);
+                        Flowers.add(carnation);
+
+                        double carnationCount = 0;
+                        for(int x = 1; x <= 3; x++){
+                            InBloom stem = stemFactory.addInBloom("Carnation");
+                            carnationCount += stem.getPrice();
+                            Flowers.add(stem);
+                        }
+
+                        carnation.setBouqetPrice(carnationCount);
+                        addPrice(carnation);
+
+
+                        break;
+                    case "tulip":
+                        Bouquet tulip = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                        tulip.setSize(1);
+                        Flowers.add(tulip);
+
+
+                        double tulipCount = 0;
+                        for(int x = 1; x <= 3; x++){
+                            InBloom stem = stemFactory.addInBloom("Tulip");
+                            tulipCount += stem.getPrice();
+                            Flowers.add(stem);
+                        }
+
+                        tulip.setBouqetPrice(tulipCount);
+                        addPrice(tulip);
+
+                        break;
+                    case "daisy":
+                        Bouquet daisy = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                        daisy.setSize(1);
+                        Flowers.add(daisy);
+
+
+                        double daisyCount = 0;
+                        for(int x = 1; x <= 3; x++){
+                            InBloom stem = stemFactory.addInBloom("Daisy");
+                            daisyCount += stem.getPrice();
+                            Flowers.add(stem);
+                        }
+
+
+                        daisy.setBouqetPrice(daisyCount);
+                        addPrice(daisy);
+                        break;
+                }
+            }
+                if (bouquetSize.equalsIgnoreCase("m")) {
+                    switch (bouquetName.toLowerCase()) {
+                        case "rose":
+                            Bouquet rose = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                            rose.setSize(2);
+                            Flowers.add(rose);
+
+                            double roseCount = 0;
+                            for(int x = 1; x <= 6; x++){
+                                InBloom stem = stemFactory.addInBloom("Rose");
+                                roseCount += stem.getPrice();
+                                Flowers.add(stem);
+                            }
+
+                            rose.setBouqetPrice(roseCount);
+                            addPrice(rose);
+
+
+                            break;
+
+                        case "lily":
+                            Bouquet lily = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                            lily.setSize(2);
+                            Flowers.add(lily);
+
+                            double lilyCount = 0;
+                            for(int x = 1; x <= 6; x++){
+                                InBloom stem = stemFactory.addInBloom("Lily");
+                                lilyCount += stem.getPrice();
+                                Flowers.add(stem);
+                            }
+
+                            lily.setBouqetPrice(lilyCount);
+                            addPrice(lily);
+
+                            break;
+                        case "sunflower":
+                            Bouquet sunflower = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                            sunflower.setSize(2);
+                            Flowers.add(sunflower);
+
+                            double sunflowerCount = 0;
+                            for(int x = 1; x <= 6; x++){
+                                InBloom stem = stemFactory.addInBloom("Sunflower");
+                                sunflowerCount += stem.getPrice();
+                                Flowers.add(stem);
+                            }
+
+                            sunflower.setBouqetPrice(sunflowerCount);
+                            addPrice(sunflower);
+
+
+                            break;
+
+                        case "carnation":
+                            Bouquet carnation = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                            carnation.setSize(2);
+                            Flowers.add(carnation);
+
+                            double carnationCount = 0;
+                            for(int x = 1; x <= 6; x++){
+                                InBloom stem = stemFactory.addInBloom("Carnation");
+                                carnationCount += stem.getPrice();
+                                Flowers.add(stem);
+                            }
+
+                            carnation.setBouqetPrice(carnationCount);
+                            addPrice(carnation);
+
+
+                            break;
+                        case "tulip":
+                            Bouquet tulip = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                            tulip.setSize(2);
+                            Flowers.add(tulip);
+
+
+                            double tulipCount = 0;
+                            for(int x = 1; x <= 6; x++){
+                                InBloom stem = stemFactory.addInBloom("Tulip");
+                                tulipCount += stem.getPrice();
+                                Flowers.add(stem);
+                            }
+
+                            tulip.setBouqetPrice(tulipCount);
+                            addPrice(tulip);
+
+                            break;
+                        case "daisy":
+                            Bouquet daisy = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                            daisy.setSize(2);
+                            Flowers.add(daisy);
+
+
+                            double daisyCount = 0;
+                            for(int x = 1; x <= 6; x++){
+                                InBloom stem = stemFactory.addInBloom("Daisy");
+                                daisyCount += stem.getPrice();
+                                Flowers.add(stem);
+                            }
+
+
+                            daisy.setBouqetPrice(daisyCount);
+                            addPrice(daisy);
+                            break;
+                    }
+                }
+                    if (bouquetSize.equalsIgnoreCase("l")) {
+                        switch (bouquetName.toLowerCase()) {
+                            case "rose":
+                                Bouquet rose = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                                rose.setSize(3);
+                                Flowers.add(rose);
+
+                                double roseCount = 0;
+                                for(int x = 1; x <= 12; x++){
+                                    InBloom stem = stemFactory.addInBloom("Rose");
+                                    roseCount += stem.getPrice();
+                                    Flowers.add(stem);
+                                }
+
+                                rose.setBouqetPrice(roseCount);
+                                addPrice(rose);
+
+
+                                break;
+
+                            case "lily":
+                                Bouquet lily = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                                lily.setSize(3);
+                                Flowers.add(lily);
+
+                                double lilyCount = 0;
+                                for(int x = 1; x <= 12; x++){
+                                    InBloom stem = stemFactory.addInBloom("Lily");
+                                    lilyCount += stem.getPrice();
+                                    Flowers.add(stem);
+                                }
+
+                                lily.setBouqetPrice(lilyCount);
+                                addPrice(lily);
+
+                                break;
+                            case "sunflower":
+                                Bouquet sunflower = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                                sunflower.setSize(3);
+                                Flowers.add(sunflower);
+
+                                double sunflowerCount = 0;
+                                for(int x = 1; x <= 12; x++){
+                                    InBloom stem = stemFactory.addInBloom("Sunflower");
+                                    sunflowerCount += stem.getPrice();
+                                    Flowers.add(stem);
+                                }
+
+                                sunflower.setBouqetPrice(sunflowerCount);
+                                addPrice(sunflower);
+
+
+                                break;
+
+                            case "carnation":
+                                Bouquet carnation = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                                carnation.setSize(3);
+                                Flowers.add(carnation);
+
+                                double carnationCount = 0;
+                                for(int x = 1; x <= 12; x++){
+                                    InBloom stem = stemFactory.addInBloom("Carnation");
+                                    carnationCount += stem.getPrice();
+                                    Flowers.add(stem);
+                                }
+
+                                carnation.setBouqetPrice(carnationCount);
+                                addPrice(carnation);
+
+
+                                break;
+                            case "tulip":
+                                Bouquet tulip = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                                tulip.setSize(3);
+                                Flowers.add(tulip);
+
+
+                                double tulipCount = 0;
+                                for(int x = 1; x <= 12; x++){
+                                    InBloom stem = stemFactory.addInBloom("Tulip");
+                                    tulipCount += stem.getPrice();
+                                    Flowers.add(stem);
+                                }
+
+                                tulip.setBouqetPrice(tulipCount);
+                                addPrice(tulip);
+
+                                break;
+                            case "daisy":
+                                Bouquet daisy = (Bouquet) factory.addInBloom(bouquetName.toLowerCase());
+                                daisy.setSize(3);
+                                Flowers.add(daisy);
+
+
+                                double daisyCount = 0;
+                                for(int x = 1; x <= 12; x++){
+                                    InBloom stem = stemFactory.addInBloom("Daisy");
+                                    daisyCount += stem.getPrice();
+                                    Flowers.add(stem);
+                                }
+
+
+                                daisy.setBouqetPrice(daisyCount);
+                                addPrice(daisy);
+                                break;
+                        }
+                    }// add flowers pero amount is dependent sa size sa bouquet (find logic unsaon pagkuha ato)
         }
+    }
+
+    public void removeBouquet(String name){
 
     }
 
+
+
+
     public void removeFlower(String name) {
+        Bouquet targetBouquet = null;
+
+        //pangita sa bouquet
+        for (InBloom flower : Flowers) {
+
+            if (flower instanceof Bouquet && flower.getName().equalsIgnoreCase(name.toLowerCase() + " bouquet")) {
+                targetBouquet = (Bouquet) flower;
+                break;
+            }
+        }
+
+        //delete sa mga stem
+        if (targetBouquet != null) {
+
+            int stemsToRemove = 0;
+
+            int size = targetBouquet.getSize();
+
+            if (size == 1) {
+                stemsToRemove = 3;
+            } else if (size == 2) {
+                stemsToRemove = 6;
+            } else if (size == 3) {
+                stemsToRemove = 12;
+            }
+
+            Flowers.remove(targetBouquet);
+            removePrice(targetBouquet);
+
+            Iterator<InBloom> it = Flowers.iterator();
+
+            while (it.hasNext() && stemsToRemove > 0) {
+                InBloom stem = it.next();
+
+                if (!(stem instanceof Bouquet) && stem.getName().equalsIgnoreCase(name)) {
+                    it.remove();
+                    stemsToRemove--;
+                }
+            }
+            return;
+        } else {
+            System.out.println("Bouquet not found.");
+        }
+
         for (InBloom flower : Flowers){
             if (flower.getName().equalsIgnoreCase(name)){
                 Flowers.remove(flower);

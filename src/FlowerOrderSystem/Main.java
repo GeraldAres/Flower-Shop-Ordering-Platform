@@ -11,7 +11,6 @@ public class Main {
         Image img = image1.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(img);
 
-
         MainPanel  mainPanelClass = new MainPanel();
         JPanel mainPanel = mainPanelClass.getMainPanel();
         MainController controller = new MainController(mainPanelClass);
