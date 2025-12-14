@@ -78,4 +78,7 @@ public class OrderController implements Controller {
         return order.getFlowers();
     }
 
+    public void processCheckout(ArrayList<String> orderAddOns, String dateOfDelivery, String deliveryAddress, String finalModeOfDelivery, String finalModeOfPayment) {
+
+    }
 }

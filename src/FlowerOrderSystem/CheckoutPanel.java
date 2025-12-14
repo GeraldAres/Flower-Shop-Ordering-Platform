@@ -2,6 +2,7 @@ package src.FlowerOrderSystem;
 
 
 import src.FlowerOrderSystem.Controllers.Controller;
+import src.FlowerOrderSystem.Controllers.OrderController;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -41,19 +42,23 @@ public class CheckoutPanel {
     private JTextField Receiver;
     private Inventory inventory;
     private Order order;
-    private Controller controller;
+    private OrderController controller;
     private User user;
 
 
-    public void setOrderController(Controller controller){
+    public void setOrderController(OrderController controller){
         this.controller = controller;
         checkoutBtn.setEnabled(false);
         displayUser();
         displayOrder();
 
+    // to add is pag update sa price after every addOn, pag process sa payment and then pag balik to dashboard
 
-        String modeOfDelivery;
-        String modeOfPayment;
+        ArrayList<String>orderAddOns = new ArrayList<>();
+        String dateOfDelivery = Date.getText();
+        String deliveryAddress = Receiver.getText();
+        String modeOfDelivery = delivery.getSelectedItem().toString();
+        String modeOfPayment = payment.getSelectedItem().toString();
         if ((!delivery.getSelectedItem().toString().equals("Select one"))
                 && (!payment.getSelectedItem().toString().equals("Select one"))
         ) {
@@ -63,35 +68,12 @@ public class CheckoutPanel {
 
         }
 
-
-
+        String finalModeOfDelivery = modeOfDelivery;
+        String finalModeOfPayment = modeOfPayment;
         checkoutBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-
-               /* inventory.updateStock("rose", order.count("rose"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("lily", order.count("lily"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("sunflower", order.count("sunflower"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("tulip", order.count("tulip"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("carnation", order.count("carnation"));
-                inventory.displayInventoryStock();
-
-                inventory.updateStock("daisy", order.count("daisy"));
-                inventory.displayInventoryStock();
-                    eveyerhitng that ia am praise the lord
-
-                */
-
-
+                controller.processCheckout(orderAddOns, dateOfDelivery, deliveryAddress, finalModeOfDelivery, finalModeOfPayment);
             }
         });
     }
@@ -162,6 +144,7 @@ public class CheckoutPanel {
 
             orderSummaryPanel.revalidate();
             orderSummaryPanel.repaint();
+            totalPrice.setText("P " + order.getOrderPrice()+"0");
         }
     }
 
