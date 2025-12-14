@@ -60,7 +60,7 @@ public class MainController implements Controller {
 
         if(action.equals("MyOrders")){
             main.getViewOrderPanel().setController(setup);
-            main.getViewOrderPanel().displayOrders();
+            main.getViewOrderPanel().displayOrders(activeUser);
             main.getCardLayout().show(main.getMainPanel(), "MyOrders" +
                     "");
         }
@@ -157,5 +157,9 @@ public class MainController implements Controller {
 
     public CheckOut getSelectedOrder() {
         return selectedOrder;
+    }
+
+    public void setUser(User user) {
+        activeUser = user;
     }
 }

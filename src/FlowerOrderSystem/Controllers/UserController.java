@@ -27,6 +27,7 @@ public class UserController implements Controller {
          LogIn login = new LogIn();
           user = login.validateLogIn(username, password);
           if (user != null) {
+              user.loadOrdersFromViewOrder();
               userActions("LoggedIn");
           }
     }
@@ -78,5 +79,10 @@ public class UserController implements Controller {
         } catch (InvalidInputException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setGuest(String name, String email, String contact) throws InvalidInputException, InvalidInputException.InvalidEmail, InvalidInputException.InvalidName, InvalidInputException.InvalidPhone {
+        user = new Guest(name, email, contact);
+        mainController.setUser(user);
     }
 }
