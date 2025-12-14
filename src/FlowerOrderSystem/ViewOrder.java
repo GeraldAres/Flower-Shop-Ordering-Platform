@@ -36,7 +36,9 @@ public class ViewOrder {
 
                     String orderId = data.getOrDefault("Order ID", "Unknown");
                     String orderDate = data.getOrDefault("Order Date", "Unknown");
-                    String priceStr = data.getOrDefault("Total Price", "0").replace("$", "").trim();
+                    String priceStr = data.getOrDefault("Total Price", "0")
+                            .replaceAll("[^0-9.]", "");
+
                     double totalPrice = 0.0;
 
                         try {

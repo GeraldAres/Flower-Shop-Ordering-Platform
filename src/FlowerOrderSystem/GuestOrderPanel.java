@@ -95,8 +95,15 @@ public class GuestOrderPanel {
 
         stemButton.addActionListener(e -> {
             try {
+                userController.setGuest(fullName.getText(), emailAddress.getText(), contactNumber.getText());
                 userController.userActions("Stem");
             } catch (InvalidInputException ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidInputException.InvalidEmail ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidInputException.InvalidName ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidInputException.InvalidPhone ex) {
                 throw new RuntimeException(ex);
             }
         });

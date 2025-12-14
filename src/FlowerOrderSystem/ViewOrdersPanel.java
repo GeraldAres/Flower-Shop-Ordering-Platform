@@ -47,38 +47,51 @@ public class ViewOrdersPanel {
         prevButton.setBorderPainted(false);
         prevButton.setFocusPainted(false);
         prevButton.setText("");
+
     }
+
 
     public void setController(UserController userController){
         this.controller = userController;
-        displayOrders();;
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    userController.userActions("StemBack");
+                } catch (InvalidInputException ex) {}
+            }
+        });
 
     }
 
-    public void displayOrders() {
-        User user = controller.getUser();
+    public void displayOrders(User user) {
         if (user == null) {
             System.err.println("No active user.");
             return;
         }
 
         if (orderDisplay == null) {
-            System.err.println("ordersContainer is null.");
+            System.err.println("orderDisplay panel is null.");
+            return;
+        }
+
+        if (user.getOrders() == null) {
+            System.err.println("User orders list is null.");
+            return;
+        }
+
+        if (controller == null) {
+            System.err.println("Controller is null.");
             return;
         }
 
         orderDisplay.removeAll();
-        orderDisplay.setLayout(
-                new BoxLayout(orderDisplay, BoxLayout.Y_AXIS));
+        orderDisplay.setLayout(new BoxLayout(orderDisplay, BoxLayout.Y_AXIS));
 
-        for (CheckOut order : user.getOrders()) {
-
-            String status = order.getOrderStatus();
-            if (status == null || !status.equalsIgnoreCase("Complete"))
-                continue;
-
+        for (CheckOut order : controller.getCompletedOrders()) {
+            if (order == null) continue;
             OrderCardPanel card = new OrderCardPanel(order, controller);
-
             orderDisplay.add(card);
             orderDisplay.add(Box.createVerticalStrut(15));
         }
@@ -87,6 +100,9 @@ public class ViewOrdersPanel {
         orderDisplay.repaint();
     }
 
+    public void setControler(UserController userController) {
+        this.controller = userController;
+    }
 
 
 }
