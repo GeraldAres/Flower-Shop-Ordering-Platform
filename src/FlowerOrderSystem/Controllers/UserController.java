@@ -27,6 +27,7 @@ public class UserController implements Controller {
          LogIn login = new LogIn();
           user = login.validateLogIn(username, password);
           if (user != null) {
+              user.loadOrdersFromViewOrder();
               userActions("LoggedIn");
           }
     }

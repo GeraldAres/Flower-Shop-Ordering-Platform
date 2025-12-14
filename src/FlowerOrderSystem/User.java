@@ -9,7 +9,8 @@ public class User {
     private String password;
     private String email;
     private String contactNumber;
-    private ArrayList<CheckOut> orders;
+    private ArrayList<CheckOut> orders = new ArrayList<>();
+
     public User(){
 
     }
@@ -20,6 +21,7 @@ public class User {
         this.contactNumber = contactNumber;
         this.username = "default";
         this.password = "default";
+
     }
 
     public User validateSignUp (String fullName, String emailAddress, String contactNumber, String username, String password, String confirmPassword) throws InvalidInputException, InvalidInputException.InvalidEmail, InvalidInputException.InvalidName, InvalidInputException.InvalidPhone, InvalidInputException.PasswordMismatch, InvalidInputException.WeakPassword {
@@ -40,6 +42,7 @@ public class User {
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
+        orders = new ArrayList<>();
         return this;
     }
 
@@ -49,6 +52,7 @@ public class User {
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
+        orders = new ArrayList<>();
     }
 
 
@@ -128,8 +132,11 @@ public class User {
         return contactNumber;
     }
 
-    public void addOrder(CheckOut order) {
-        orders.add(order);
+    public void addOrder(CheckOut checkout) {
+        if (orders == null) {
+            orders = new ArrayList<>();
+        }
+        orders.add(checkout);
     }
 
     public ArrayList<CheckOut> getOrders() {
@@ -138,5 +145,18 @@ public class User {
 
     public void removeOrder(String orderID) {
         orders.removeIf(order -> order.getOrderID().equals(orderID));
+    }
+
+    public void loadOrdersFromViewOrder() {
+        ViewOrder viewOrder = new ViewOrder();
+        viewOrder.loadFromFile(username);
+
+        if (orders == null) {
+            orders = new ArrayList<>();
+        } else {
+            orders.clear();
+        }
+
+        orders.addAll(viewOrder.getAllOrders());
     }
 }
