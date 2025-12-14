@@ -51,12 +51,24 @@ public abstract class Bouquet implements InBloom {
             super("SMALL");
             setSize(1);
         }
+        public String getColor(){
+            return super.getWrap();
+        }
+        public double getPrice(){
+            return super.getBouqetPrice();
+        }
     }
 
     public static class MediumBouquet extends Bouquet {
         public MediumBouquet() {
             super("MEDIUM");
             setSize(2);
+        }
+        public String getColor(){
+            return super.getWrap();
+        }
+        public double getPrice(){
+            return super.getBouqetPrice();
         }
     }
 
@@ -65,7 +77,14 @@ public abstract class Bouquet implements InBloom {
             super("LARGE");
             setSize(3);
         }
+        public String getColor(){
+            return super.getWrap();
+        }
+        public double getPrice(){
+            return super.getBouqetPrice();
+        }
     }
+
     public static class BouquetFactory {
         public static Bouquet getBouquet(String bouquetType) {
             if (bouquetType == null) return null;

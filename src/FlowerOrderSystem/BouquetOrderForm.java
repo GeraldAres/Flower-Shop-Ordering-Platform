@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class BouquetOrderForm {
 
@@ -70,18 +72,56 @@ public class BouquetOrderForm {
     private JLabel subTitle1;
 
     private OrderController orderController;
-    private int bouquetSize;
+    private int bouquetMultiplier;
     private Inventory inventory = new Inventory();
+
+    public BouquetOrderForm(){
+        roseQuantityIncrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(roseCount.getText());
+                if (orderController.validIncrease(c * bouquetMultiplier, "Rose")){
+                    c++;
+                    orderController.addFlower("Rose");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    roseCount.setText(c+"");
+                }else{
+                    System.out.println("wala nay stock");
+                }
+            }
+        });
+
+        prevBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    roseCount.setText(0 + "");
+                    lilyCount.setText(0 + "");
+                    sunflowerCount.setText(0 + "");
+                    carnationCount.setText(0 + "");
+                    tulipCount.setText(0 + "");
+                    daisyCount.setText(0 + "");
+
+
+                    orderController.userActions("SmallBack");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
 
 
 
     public void setController(OrderController orderController, int size){
         this.orderController = orderController;
-        bouquetSize = size;
+
+
 
 
         switch (size){
             case 0:
+                bouquetMultiplier = 3;
 
                 roseStock.setText(inventory.getStockCount("rose")  / 3+ "");
                 carnationStock.setText(inventory.getStockCount("carnation")  / 3+ "");
@@ -121,6 +161,7 @@ public class BouquetOrderForm {
 
                 break;
             case 1:
+                bouquetMultiplier = 6;
                 subTitle1.setText("Medium Bouquet Order Form ");
 
                 roseStock.setText(inventory.getStockCount("rose")  / 6+ "");
@@ -157,6 +198,7 @@ public class BouquetOrderForm {
 
                 break;
             case 2:
+                bouquetMultiplier = 12;
                 subTitle1.setText("Large Bouquet Order Form ");
 
                 roseStock.setText(inventory.getStockCount("rose")  / 12+ "");
@@ -195,17 +237,7 @@ public class BouquetOrderForm {
 
         }
 
-        prevBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
 
-                    orderController.userActions("SmallBack");
-                } catch (InvalidInputException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
     }
 
     public static void main(String[] args) {

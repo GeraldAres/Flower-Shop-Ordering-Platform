@@ -147,4 +147,7 @@ public class MainPanel {
     public CheckoutPanel getCheckoutPanel() {
         return checkoutPanel;
     }
+    public BouquetOrderForm getSmallBouquet() {
+        return smallBouquet;
+    }
 }
