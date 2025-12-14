@@ -17,6 +17,7 @@ public abstract class Bouquet implements InBloom {
         return type;
     }
 
+
     public void setWrap(String wrap) {
         this.wrap = wrap;
     }

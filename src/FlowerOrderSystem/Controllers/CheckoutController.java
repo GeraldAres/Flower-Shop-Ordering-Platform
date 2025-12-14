@@ -79,6 +79,7 @@ public class CheckoutController implements Controller{
                 }
             }
 
+
             String text = String.format(
                     "%-54s %5d   %7.2f",
                     flower.getName(),

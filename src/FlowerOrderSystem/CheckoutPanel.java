@@ -144,6 +144,8 @@ public class CheckoutPanel {
 
     }
 
+
+
     public ArrayList<String> getAddOns() {
         return addOns;
     }
