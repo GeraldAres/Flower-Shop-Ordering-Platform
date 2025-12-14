@@ -1,18 +1,18 @@
 package src.FlowerOrderSystem.Controllers;
 
-import src.FlowerOrderSystem.CheckOut;
-import src.FlowerOrderSystem.Order;
-import src.FlowerOrderSystem.User;
+import src.FlowerOrderSystem.*;
 
 import java.util.ArrayList;
 
 public class CheckoutController implements Controller{
     private boolean controllingStatus;
     private CheckOut checkout;
+    private MainController mainController;
     
-    CheckoutController(User user, Order order){
+    CheckoutController(User user, Order order, MainController mainController){
        checkout = new CheckOut(user, order);
        controllingStatus = true;
+       this.mainController = mainController;
     }
     
     public boolean isControlling(){
@@ -34,7 +34,7 @@ public class CheckoutController implements Controller{
         checkout.setAddressOfDelivery(address);
     }
     
-    public void setPayment(String payment){
+    public void setPayment(String payment) throws InvalidInputException.PaymentFailedException {
         checkout.setModeOfPayment(payment);
     }
     
@@ -50,13 +50,63 @@ public class CheckoutController implements Controller{
          checkout.orderValidator(modeOfDelivery,modeOfPayment,dateOfDelivery,deliveryAdd,receipientName);
     }
 
-    public void processCheckout(String modeOfDelivery, String modeOfPayment, String dateOfDelivery, String deliveryAdd, String receipientName, ArrayList<String> addOns, double totalPrice) {
+
+    public void processCheckout(String modeOfDelivery, String modeOfPayment, String dateOfDelivery, String deliveryAdd, String receipientName, ArrayList<String> addOns, double totalPrice, String instructions) throws InvalidInputException.PaymentFailedException, InvalidInputException {
+        checkout.setAddOnsList(addOns);
         checkout.setModeOfDelivery(modeOfDelivery);
         checkout.setDateOfDelivery(dateOfDelivery);
         checkout.setAddressOfDelivery(deliveryAdd);
         checkout.setReceipient(receipientName);
-        checkout.setAddOnsList(addOns);
         checkout.setTotalPrice(totalPrice);
+        checkout.setSpecialInstructions(instructions);
         checkout.setModeOfPayment(modeOfPayment);
+        mainController.changeDisplay("Dashboard");
     }
+
+    public ArrayList<String> getOrderSummaryLines() {
+        ArrayList<String> lines = new ArrayList<>();
+        ArrayList<InBloom> flowers = checkout.getFlowers(); // still only in Controller
+
+        ArrayList<InBloom> displayed = new ArrayList<>();
+        for (InBloom flower : flowers) {
+            if (alreadyDisplayed(displayed, flower)) continue;
+
+            int count = 0;
+            for (InBloom f : flowers) {
+                if (f.getName().equals(flower.getName()) &&
+                        f.getColor().equals(flower.getColor())) {
+                    count++;
+                }
+            }
+
+            String text = String.format(
+                    "%-54s %5d   %7.2f",
+                    flower.getName() + " (" + flower.getColor() + ")",
+                    count,
+                    count * flower.getPrice()
+            );
+
+            lines.add(text);
+            displayed.add(flower);
+        }
+
+        return lines;
+    }
+
+    private boolean alreadyDisplayed(ArrayList<InBloom> displayed, InBloom flower) {
+        for (InBloom f : displayed) {
+            if (f.getName().equals(flower.getName()) &&
+                    f.getColor().equals(flower.getColor())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public double getOrderTotalPrice() {
+        return checkout.getTotalPrice();
+    }
+
+
+
 }

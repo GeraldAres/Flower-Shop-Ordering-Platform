@@ -34,10 +34,22 @@ public class CheckoutPanel {
     private JCheckBox tobleronAddOn;
     private JCheckBox teddyBearAddOn;
     private JCheckBox labubuAddOn;
-
+    private JPanel container;
+    private JPanel header;
+    private JPanel center;
+    private JPanel left;
+    private JPanel right;
+    private JPanel Personal;
+    private JPanel orderInfo;
+    private JPanel AddOns;
+    private JPanel OrdersHere;
+    private JPanel PersonalInformation;
+    private JTextArea specialRequest;
+    private double base;
     private CheckoutController controller;
     private Order order;
     private User user;
+    private ArrayList<String> addOns = new ArrayList<>();
 
     /* ==============================
        CONTROLLER SETUP
@@ -102,85 +114,90 @@ public class CheckoutPanel {
         delivery.addActionListener(e -> revalidateCheckout());
         payment.addActionListener(e -> revalidateCheckout());
 
+        base = controller.getOrderTotalPrice();
+
+        teddyBearAddOn.addActionListener(e -> updateTotal());
+        tobleronAddOn.addActionListener(e -> updateTotal());
+        fereroAddOn.addActionListener(e -> updateTotal());
+        labubuAddOn.addActionListener(e -> updateTotal());
+
+
+
         checkoutBtn.addActionListener(new ActionListener()  {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.processCheckout(delivery.getSelectedItem().toString(), payment.getSelectedItem().toString(),  dateField.getText(),  deliveryAddress.getText(),  Receiver.getText(), getAddOns(), Double.parseDouble(totalPrice.getText()));
+                try {
+                    controller.processCheckout(delivery.getSelectedItem().toString(), payment.getSelectedItem().toString(),  dateField.getText(),  deliveryAddress.getText(),
+                            Receiver.getText(), getAddOns(), Double.parseDouble(totalPrice.getText()),specialRequest.getText());
+                } catch (InvalidInputException.PaymentFailedException ex) {
+                    JDialog dialog = new JDialog((JFrame) null, "Info", true); // true = modal
+                    dialog.setSize(350, 150);
+                    dialog.setLayout(new BorderLayout());
+
+                    JOptionPane.showMessageDialog(dialog, ex.getMessage(), "Uh Oh!", JOptionPane.ERROR_MESSAGE);
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
     }
 
-    public ArrayList<String> getAddOns(){
-        ArrayList<String> addOns = new ArrayList<>();
-        if (teddyBearAddOn.isSelected()){
-            addOns.add("TeddyBear");
-        }
-        if (labubuAddOn.isSelected()){
-            addOns.add("Labubu");
-        }
-        if(tobleronAddOn.isSelected()){
-            addOns.add("Tobleron");
-        }
-        if(teddyBearAddOn.isSelected()){
-            addOns.add("TeddyBear");
-        }
+    public ArrayList<String> getAddOns() {
         return addOns;
     }
 
     /* ==============================
        ORDER SUMMARY
        ============================== */
-
-    private boolean alreadyDisplayed(ArrayList<InBloom> displayed, InBloom flower) {
-        for (InBloom f : displayed) {
-            if (f.getName().equals(flower.getName())
-                    && f.getColor().equals(flower.getColor())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void displayOrder() {
         orderSummaryPanel.setLayout(new BoxLayout(orderSummaryPanel, BoxLayout.Y_AXIS));
-
-        if (order == null) return;
-
         orderSummaryPanel.removeAll();
 
-        ArrayList<InBloom> flowers = order.getFlowers();
-        ArrayList<InBloom> displayed = new ArrayList<>();
+        ArrayList<String> lines = controller.getOrderSummaryLines(); // only plain Strings
 
-        for (InBloom flower : flowers) {
-
-            if (alreadyDisplayed(displayed, flower)) continue;
-
-            int count = 0;
-            for (InBloom f : flowers) {
-                if (f.getName().equals(flower.getName())
-                        && f.getColor().equals(flower.getColor())) {
-                    count++;
-                }
-            }
-
-            String text = String.format(
-                    "%-54s %5d   %7.2f",
-                    flower.getName() + " (" + flower.getColor() + ")",
-                    count,
-                    count * flower.getPrice()
-            );
-
+        for (String text : lines) {
             JLabel label = new JLabel(text);
             label.setFont(new Font("Bell MT", Font.PLAIN, 20));
             label.setForeground(Color.decode("#561C32"));
-
             orderSummaryPanel.add(label);
-            displayed.add(flower);
         }
 
-        totalPrice.setText("P " + order.getOrderPrice() + "0");
+        totalPrice.setText( String.format("%.2f", controller.getOrderTotalPrice()));
         orderSummaryPanel.revalidate();
         orderSummaryPanel.repaint();
     }
+    private void updateTotal() {
+        double newTotal = base;
+
+        // Clear the list first to rebuild it based on current selections
+       if(!addOns.isEmpty()){
+           addOns.clear();
+       }
+
+        if (teddyBearAddOn.isSelected()) {
+            addOns.add("Teddy");
+            newTotal += 800;
+        }
+
+        if (tobleronAddOn.isSelected()) {
+            addOns.add("Tobleron");
+            newTotal += 500;
+        }
+
+        if (fereroAddOn.isSelected()) {
+            addOns.add("Ferrero");
+            newTotal += 300;
+        }
+
+        if (labubuAddOn.isSelected()) {
+            addOns.add("Labubu");
+            newTotal += 2400;
+        }
+
+        // Update the totalPrice label
+        totalPrice.setText(String.format("%.2f", newTotal));
+    }
+
+
 }

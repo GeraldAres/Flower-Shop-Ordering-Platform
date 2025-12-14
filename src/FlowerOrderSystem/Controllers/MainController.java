@@ -85,7 +85,7 @@ public class MainController implements Controller {
         }
 
         if (action.equals("Checkout")){
-           checkoutController = new CheckoutController(activeUser, order);
+           checkoutController = new CheckoutController(activeUser, order, this);
             main.getCheckoutPanel().setOrderController(checkoutController);
             main.getCardLayout().show(main.getMainPanel(), "Checkout");
         }
