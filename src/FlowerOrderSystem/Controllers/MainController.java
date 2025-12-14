@@ -30,6 +30,10 @@ public class MainController implements Controller {
             main.getLogInPanel().setController(setup);
             main.getCardLayout().show(main.getMainPanel(), "LogInPanel");
         }
+        if (action.equals("ForgotPass")) {
+            main.getForgotPassPanel().setController(setup);
+            main.getCardLayout().show(main.getMainPanel(), "Settings");
+        }
         if (action.equals("Logout")) {
             main.getLogInPanel().setController(setup);
             main.getCardLayout().show(main.getMainPanel(), "LogInPanel");
@@ -124,7 +128,6 @@ public class MainController implements Controller {
         if(action.equals("LargeBack")){
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
-
 
 
     }
