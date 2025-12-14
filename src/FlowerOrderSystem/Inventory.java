@@ -16,6 +16,8 @@ public class Inventory {
         loadStockFromFile();
     }
 
+
+
     private void loadStockFromFile() {
         File file = new File(filePath);
             if (!file.exists()) {

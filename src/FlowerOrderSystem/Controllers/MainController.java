@@ -1,19 +1,21 @@
 package src.FlowerOrderSystem.Controllers;
 import src.FlowerOrderSystem.*;
-import java.io.IOException;
 
-public class MainController {
+public class MainController implements Controller {
     private final MainPanel main;
     private  UserController setup;
     private  OrderController orderController;
+    private CheckoutController checkoutController;
     private SignUpPanel signUpPanel;
     private User activeUser;
     private Order order;
+    private boolean controlStatus;
 
     public MainController(MainPanel main) {
         this.main = main;
         setup = new UserController(this);
         orderController = new OrderController(this);
+        controlStatus = true;
     }
 
     public void changeDisplay(String action) throws InvalidInputException {
@@ -78,6 +80,44 @@ public class MainController {
         }
 
         if (action.equals("Bouquet")){
+            main.getBouquetPanel().setController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if (action.equals("Checkout")){
+           checkoutController = new CheckoutController(activeUser, order, this);
+            main.getCheckoutPanel().setOrderController(checkoutController);
+            main.getCardLayout().show(main.getMainPanel(), "Checkout");
+        }
+
+        if(action.equals("Small")){
+            main.getSmallBouquet().setController(orderController, 0);
+            main.getCardLayout().show(main.getMainPanel(), "Small");
+        }
+
+        if(action.equals("SmallBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if(action.equals("Medium")){
+            main.getSmallBouquet().setController(orderController, 1);
+            main.getCardLayout().show(main.getMainPanel(), "Small");
+//            main.getMediumBouquet().setController(orderController);
+//            main.getCardLayout().show(main.getMainPanel(), "Medium");
+        }
+
+        if(action.equals("MediumBack")){
+            main.getCardLayout().show(main.getMainPanel(), "Bouquet");
+        }
+
+        if(action.equals("Large")){
+            main.getSmallBouquet().setController(orderController, 2);
+            main.getCardLayout().show(main.getMainPanel(), "Small");
+//            main.getLargeBouquet().setController(orderController);
+//            main.getCardLayout().show(main.getMainPanel(), "Large");
+        }
+
+        if(action.equals("LargeBack")){
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
 
@@ -100,5 +140,8 @@ public class MainController {
     }
 
 
-
+    @Override
+    public boolean isControlling() {
+        return controlStatus;
+    }
 }

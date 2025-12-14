@@ -1,23 +1,24 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.OrderController;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class BouquetMediumPanel {
 
-    private JPanel Bouquet;
+    JPanel Bouquet;
     private JPanel Holder;
     private JPanel SouthPanel;
     private JPanel NorthPanel;
     private JLabel subTitle1;
     private JLabel brandTitle1;
-    private JButton btnBuy;
     private JLabel placeholder1;
     private JLabel RoseBouquet;
-    private JLabel StockLabel;
     private JLabel getColor;
     private JLabel getPrice;
-    private JLabel getStocks;
     private JButton prevButton;
     private JButton btnCheckOut;
     private JLabel placeholder3;
@@ -25,6 +26,47 @@ public class BouquetMediumPanel {
     private JLabel placeholder6;
     private JLabel placeholder5;
     private JLabel placeholder2;
+    private JLabel roseStock;
+    private JLabel roseQuantityIncrease;
+    private JLabel roseQuantityDecrease;
+    private JLabel roseCount;
+    private JLabel lilyStock;
+    private JLabel sunlowerStock;
+    private JLabel lilyQuantityIncrease;
+    private JLabel lilyQuantityDecrease;
+    private JLabel sunflowerQuantityIncrease;
+    private JLabel sunflowerQuantityDecrease;
+    private JLabel lilyQuantityCount;
+    private JLabel sunflowerQuantityCount;
+    private JLabel carnationStock;
+    private JLabel carnationQuantityIncrease;
+    private JLabel carnationQuantityDecrease;
+    private JLabel tulipStock;
+    private JLabel daisyStock;
+    private JLabel tulipQuantityIncrease;
+    private JLabel tulipQuantityDecrease;
+    private JLabel daisyQuantityIncrease;
+    private JLabel daisyQuantityDecrease;
+    private JLabel carnationCount;
+    private JLabel tulipCount;
+    private JLabel daisyCount;
+
+    private OrderController orderController;
+
+    public void setController(OrderController orderController){
+        this.orderController = orderController;
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("SmallBack");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
 
     public static void main(String[] args) {
 
