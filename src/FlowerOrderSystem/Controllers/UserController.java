@@ -61,6 +61,22 @@ public class UserController implements Controller {
         return User.validateEmail(email);
     }
 
+    public void resetPasswordValidation(String username, String newPass, String confirmPass) throws InvalidInputException, IOException {
+        if (username.isEmpty() || newPass.isEmpty() || confirmPass.isEmpty()) {
+            throw new InvalidInputException("Please fill in all fields.");
+        }
+
+        if (!newPass.equals(confirmPass)) {
+            throw new InvalidInputException("Passwords do not match.");
+        }
+
+        if (!newPass.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")) {
+            throw new InvalidInputException("Weak: Invalid password format.");
+        }
+
+        new ResetPassword(username, "N/A", newPass, confirmPass);
+    }
+
     @Override
     public boolean isControlling() {
         return controlStatus;
