@@ -42,6 +42,20 @@ public class GuestOrderPanel {
         invalidEmailAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
 
+
+
+    /// IMAGE HOLDER
+        ImageIcon image4 = new ImageIcon("src/FlowerOrderSystem/Assets/Animal Illustrations/Dogwobg.png");
+        Image img4 = image4.getImage().getScaledInstance(150, 200, Image.SCALE_SMOOTH);
+        ImageHolder2.setIcon(new ImageIcon(img4));
+
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/Animal Illustrations/Dogwobg.png");
+        Image img5 = image5.getImage().getScaledInstance(150, 200, Image.SCALE_SMOOTH);
+        ImageHolder1.setIcon(new ImageIcon(img5)); // LEFT
+    /// IMAGE SIDE HOLDER
+
+
+
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/StemBtn.png");
         Image img1 = image1.getImage().getScaledInstance(200, 55, Image.SCALE_SMOOTH);
         stemButton.setIcon(new ImageIcon(img1));
@@ -53,6 +67,8 @@ public class GuestOrderPanel {
         ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
         Image img3 = image3.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
         prevButton.setIcon(new ImageIcon(img3));
+
+
 
         JButton[] buttons = {stemButton, bouquetButton, prevButton};
         for (JButton btn : buttons) {
@@ -79,8 +95,15 @@ public class GuestOrderPanel {
 
         stemButton.addActionListener(e -> {
             try {
+                userController.setGuest(fullName.getText(), emailAddress.getText(), contactNumber.getText());
                 userController.userActions("Stem");
             } catch (InvalidInputException ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidInputException.InvalidEmail ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidInputException.InvalidName ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidInputException.InvalidPhone ex) {
                 throw new RuntimeException(ex);
             }
         });

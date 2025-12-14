@@ -45,6 +45,7 @@ public class CheckoutPanel {
     private JPanel OrdersHere;
     private JPanel PersonalInformation;
     private JTextArea specialRequest;
+    private JButton cancelButton;
     private double base;
     private CheckoutController controller;
     private Order order;
@@ -153,6 +154,18 @@ public class CheckoutPanel {
     public void displayOrder() {
         orderSummaryPanel.setLayout(new BoxLayout(orderSummaryPanel, BoxLayout.Y_AXIS));
         orderSummaryPanel.removeAll();
+
+        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/checkoutBtn.png");
+        Image img1 =  image1.getImage().getScaledInstance(110, 35, Image.SCALE_SMOOTH);
+        ImageIcon Checkoutbtn = new ImageIcon(img1);
+        checkoutBtn.setIcon(Checkoutbtn);
+        checkoutBtn.setText("");
+        checkoutBtn.setOpaque(false);
+        checkoutBtn.setContentAreaFilled(false);
+        checkoutBtn.setBorderPainted(false);
+        checkoutBtn.setFocusPainted(false);
+        checkoutBtn.setText("");
+
 
         ArrayList<String> lines = controller.getOrderSummaryLines(); // only plain Strings
 

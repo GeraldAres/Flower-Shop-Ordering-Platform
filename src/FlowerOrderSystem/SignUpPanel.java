@@ -47,6 +47,18 @@ public class SignUpPanel {
         passwordMismatch.setVisible(false);
         weakPassword.setVisible(false);
 
+        ImageIcon image = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/signUp.png");
+        Image img1 =  image.getImage().getScaledInstance(100, 50, Image.SCALE_SMOOTH);
+        ImageIcon login = new ImageIcon(img1);
+        createAccountButton.setIcon(login);
+        createAccountButton.setText("");
+        createAccountButton.setOpaque(false);
+        createAccountButton.setContentAreaFilled(false);
+        createAccountButton.setBorderPainted(false);
+        createAccountButton.setFocusPainted(false);
+        createAccountButton.setText("");
+
+
         fullnameField.setText("");
         emailField.setText("");
         contactField.setText("+63");

@@ -122,6 +122,17 @@ public class StemPanel {
         prevBtn.setFocusPainted(false);
         prevBtn.setText("");
 
+        ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/checkoutBtn.png");
+        Image img7 =  image6.getImage().getScaledInstance(110, 35, Image.SCALE_SMOOTH);
+        ImageIcon Checkoutbtn = new ImageIcon(img7);
+        checkoutBtn.setIcon(Checkoutbtn);
+        checkoutBtn.setText("");
+        checkoutBtn.setOpaque(false);
+        checkoutBtn.setContentAreaFilled(false);
+        checkoutBtn.setBorderPainted(false);
+        checkoutBtn.setFocusPainted(false);
+        checkoutBtn.setText("");
+        //for the checkoutBtn
 
         roseFlower.setIcon(scaledIcon1);
         roseFlower.setHorizontalTextPosition(JLabel.RIGHT);

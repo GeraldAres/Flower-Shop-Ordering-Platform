@@ -10,6 +10,7 @@ public class MainController implements Controller {
     private User activeUser;
     private Order order;
     private boolean controlStatus;
+    private CheckOut selectedOrder;
 
     public MainController(MainPanel main) {
         this.main = main;
@@ -28,6 +29,10 @@ public class MainController implements Controller {
         if (action.equals("Regular")) {
             main.getLogInPanel().setController(setup);
             main.getCardLayout().show(main.getMainPanel(), "LogInPanel");
+        }
+        if (action.equals("ForgotPass")) {
+            main.getForgotPassPanel().setController(setup);
+            main.getCardLayout().show(main.getMainPanel(), "Settings");
         }
         if (action.equals("Logout")) {
             main.getLogInPanel().setController(setup);
@@ -58,7 +63,10 @@ public class MainController implements Controller {
         }
 
         if(action.equals("MyOrders")){
-            main.getCardLayout().show(main.getMainPanel(), "MyOrders");
+            main.getViewOrderPanel().setController(setup);
+            main.getViewOrderPanel().displayOrders(activeUser);
+            main.getCardLayout().show(main.getMainPanel(), "MyOrders" +
+                    "");
         }
         if (action.equals("Settings")){
             main.getCardLayout().show(main.getMainPanel(), "Settings");
@@ -121,6 +129,7 @@ public class MainController implements Controller {
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
 
+
     }
 
     public String getName(){
@@ -143,5 +152,17 @@ public class MainController implements Controller {
     @Override
     public boolean isControlling() {
         return controlStatus;
+    }
+
+    public void setSelectedOrder(CheckOut order) {
+        this.selectedOrder = order;
+    }
+
+    public CheckOut getSelectedOrder() {
+        return selectedOrder;
+    }
+
+    public void setUser(User user) {
+        activeUser = user;
     }
 }

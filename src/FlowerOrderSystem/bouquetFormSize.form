@@ -109,16 +109,13 @@
               </vspacer>
               <component id="edf0d" class="javax.swing.JButton" binding="btnNext">
                 <constraints>
-                  <grid row="6" column="1" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="30"/>
-                    <maximum-size width="150" height="30"/>
-                  </grid>
+                  <grid row="6" column="1" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-11133916"/>
                   <font name="Ink Free" size="18"/>
                   <foreground color="-1517372"/>
-                  <text value="Button"/>
+                  <text value="next"/>
                 </properties>
               </component>
               <vspacer id="38de9">
