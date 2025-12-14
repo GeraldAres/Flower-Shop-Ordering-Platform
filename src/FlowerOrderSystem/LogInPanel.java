@@ -82,7 +82,7 @@ public class LogInPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    userController.userActions("Settings");
+                    userController.userActions("ForgotPass");
                 } catch (InvalidInputException ex) {
                     throw new RuntimeException(ex);
                 }
