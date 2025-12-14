@@ -8,7 +8,7 @@ public class ResetPassword {
 
     public ResetPassword(String username, String email, String newPassword, String confirmPassword) throws InvalidInputException, IOException {
         if (!newPassword.equals(confirmPassword)) {
-            throw new InvalidInputException("Password does not match.");
+            throw new InvalidInputException("Passwords do not match.");
         }
 
         File file = new File("Accounts/accounts.csv");
@@ -18,6 +18,7 @@ public class ResetPassword {
 
         List<String> fileContent = new ArrayList<>();
         boolean userFound = false;
+
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
                     while ((line = br.readLine()) != null) {
@@ -26,28 +27,32 @@ public class ResetPassword {
                             continue;
                         }
 
+                        if (line.trim().isEmpty()) {
+                            continue;
+                        }
+
                         String[] data = line.split(",");
-                        if (data.length >= 5 && data[3].equals(username) && data[1].equals(email)) {
-                            userFound = true;
-                            String updatedLine = data[0] + "," + data[1] + "," + data[2] + "," + data[3] + "," + newPassword;
-                            fileContent.add(updatedLine);
-                        } else {
-                            fileContent.add(line);
-                        }
-                    }
-
-                    if (!userFound) {
-                        throw new InvalidInputException("Username and Email do not match our records.");
-                    }
-
-                    try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
-                        for (String s : fileContent) {
-                            bw.write(s);
-                            bw.newLine();
-                        }
+                            if (data.length >= 5 && data[3].equals(username)) {
+                                userFound = true;
+                                String updatedLine = data[0] + "," + data[1] + "," + data[2] + "," + data[3] + "," + newPassword;
+                                fileContent.add(updatedLine);
+                            } else {
+                                fileContent.add(line);
+                            }
                     }
             }
+
+            if (!userFound) {
+                throw new InvalidInputException("Username does not exist.");
+            }
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+            for (String s : fileContent) {
+                bw.write(s);
+                bw.newLine();
+            }
         }
+    }
 
     public String getSuccessMessage() {
         return successMessage;
