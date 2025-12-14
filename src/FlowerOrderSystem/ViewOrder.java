@@ -2,6 +2,8 @@ package src.FlowerOrderSystem;
 
 import java.io.*;
 import java.util.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ViewOrder {
 
@@ -9,6 +11,7 @@ public class ViewOrder {
 
     public void loadFromFile(String username) {
         ordersList.clear();
+
         File folder = new File("Orders/" + username);
             if (!folder.exists() || !folder.isDirectory()) {
                 System.out.println("No orders found for user: " + username);
@@ -21,67 +24,99 @@ public class ViewOrder {
                 return;
             }
 
-            for (File file : files) {
-                try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-                    String line;
-                    HashMap<String, String> data = new HashMap<>();
-                        while ((line = reader.readLine()) != null) {
-                            if (line.contains(":")) {
-                                String[] parts = line.split(":", 2);
-                                    if (parts.length == 2) {
-                                        data.put(parts[0].trim(), parts[1].trim());
-                                    }
-                            }
-                        }
+                for (File file : files) {
+                    try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                        String orderId = "Unknown";
+                        String orderDate = "Unknown";
+                        String priceStr = "0";
+                        String modeOfDelivery = "Unknown";
+                        String addressOfDelivery = "Unknown";
+                        String modeOfPayment = "Unknown";
+                        String dateOfDelivery = "Unknown";
+                        String specialInstructions = "None";
+                        String orderStatus = "Pending";
+                        String numsAddOnsStr = "0";
+                        String addOnsRaw = "None";
+                        String line;
 
-                    String orderId = data.getOrDefault("Order ID", "Unknown");
-                    String orderDate = data.getOrDefault("Order Date", "Unknown");
-                    String priceStr = data.getOrDefault("Total Price", "0").replace("$", "").trim();
-                    double totalPrice = 0.0;
+                            while ((line = reader.readLine()) != null) {
+                                if (line.contains(":")) {
+                                    String[] parts = line.split(":", 2);
+                                        if (parts.length == 2) {
+                                            String key = parts[0].trim();
+                                            String value = parts[1].trim();
 
-                        try {
-                            totalPrice = Double.parseDouble(priceStr);
-                        } catch (NumberFormatException e) {
-                            totalPrice = 0.0;
-                        }
-
-                    CheckOut order = new CheckOut(orderId, null, null, totalPrice, orderDate);
-
-                        order.setModeOfDelivery(data.get("Mode of Delivery"));
-                        order.setAddressOfDelivery(data.get("Address of Delivery"));
-                        order.setModeOfPayment(data.get("Mode of Payment"));
-                        order.setDateOfDelivery(data.get("Date of Delivery"));
-                        order.setSpecialInstructions(data.get("Special Instructions"));
-                        order.setOrderStatus(data.get("Order Status"));
-
-                        try {
-                            order.setNumsOfAddOns(Integer.parseInt(data.getOrDefault("Number of Add-Ons", "0")));
-                        } catch (NumberFormatException e) {
-                            order.setNumsOfAddOns(0);
-                        }
-
-                    ArrayList<String> addOns = new ArrayList<>();
-                    String listRaw = data.get("Add-Ons List");
-
-                        if (listRaw != null && !listRaw.equals("None")) {
-                            listRaw = listRaw.replace("[", "").replace("]", "");
-                                if (!listRaw.isBlank()) {
-                                    String[] items = listRaw.split(",");
-                                        for (String s : items) {
-                                            addOns.add(s.trim());
+                                                if (key.equals("Order ID")) {
+                                                    orderId = value;
+                                                } else if (key.equals("Order Date")) {
+                                                    orderDate = value;
+                                                } else if (key.equals("Total Price")) {
+                                                    priceStr = value;
+                                                } else if (key.equals("Mode of Delivery")) {
+                                                    modeOfDelivery = value;
+                                                } else if (key.equals("Address of Delivery")) {
+                                                    addressOfDelivery = value;
+                                                } else if (key.equals("Mode of Payment")) {
+                                                    modeOfPayment = value;
+                                                } else if (key.equals("Date of Delivery")) {
+                                                    dateOfDelivery = value;
+                                                } else if (key.equals("Special Instructions")) {
+                                                    specialInstructions = value;
+                                                } else if (key.equals("Order Status")) {
+                                                    orderStatus = value;
+                                                } else if (key.equals("Number of Add-Ons")) {
+                                                    numsAddOnsStr = value;
+                                                } else if (key.equals("Add-Ons List")) {
+                                                    addOnsRaw = value;
+                                                }
                                         }
                                 }
-                        }
+                            }
 
+                        double totalPrice = 0.0;
+                            try {
+                                totalPrice = Double.parseDouble(priceStr.replace("$", "").trim());
+                            } catch (NumberFormatException e) {
+                                totalPrice = 0.0;
+                            }
+
+                        int numsOfAddOns = 0;
+                            try {
+                                numsOfAddOns = Integer.parseInt(numsAddOnsStr);
+                            } catch (NumberFormatException e) {
+                                numsOfAddOns = 0;
+                            }
+
+                        ArrayList<String> addOns = new ArrayList<>();
+                            if (addOnsRaw != null && !addOnsRaw.equals("None")) {
+                                addOnsRaw = addOnsRaw.replace("[", "").replace("]", "");
+                                    if (!addOnsRaw.isBlank()) {
+                                        String[] items = addOnsRaw.split(",");
+                                            for (String s : items) {
+                                                addOns.add(s.trim());
+                                            }
+                                    }
+                            }
+
+                        CheckOut order = new CheckOut(orderId, null, null, totalPrice, orderDate);
+
+                        order.setModeOfDelivery(modeOfDelivery);
+                        order.setAddressOfDelivery(addressOfDelivery);
+                        order.setModeOfPayment(modeOfPayment);
+                        order.setDateOfDelivery(dateOfDelivery);
+                        order.setSpecialInstructions(specialInstructions);
+                        order.setOrderStatus(orderStatus);
+                        order.setNumsOfAddOns(numsOfAddOns);
                         order.setAddOnsList(addOns);
+
                         order.updateContent();
                         ordersList.add(order);
 
-                } catch (Exception e) {
-                    System.err.println("Failed to read file: " + file.getName());
-                    e.printStackTrace();
+                    } catch (Exception e) {
+                        System.err.println("Failed to read file: " + file.getName());
+                        e.printStackTrace();
+                    }
                 }
-            }
         sortByDateDescending();
     }
 
@@ -95,10 +130,21 @@ public class ViewOrder {
     }
 
     public void sortByDateDescending() {
-        ordersList.sort((o1, o2) -> {
-                String id1 = o1.getOrderID();
-                String id2 = o2.getOrderID();
-            return id2.compareTo(id1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yy hh:mm a", Locale.ENGLISH);
+
+        ordersList.sort(new Comparator<CheckOut>() {
+            @Override
+            public int compare(CheckOut o1, CheckOut o2) {
+                try {
+                    String dateStr1 = o1.getFormattedDate();
+                    String dateStr2 = o2.getFormattedDate();
+                    LocalDateTime date1 = LocalDateTime.parse(dateStr1, formatter);
+                    LocalDateTime date2 = LocalDateTime.parse(dateStr2, formatter);
+                    return date2.compareTo(date1);
+                } catch (Exception e) {
+                    return o2.getOrderID().compareTo(o1.getOrderID());
+                }
+            }
         });
     }
 }
