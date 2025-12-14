@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="src.FlowerOrderSystem.SampleStemFullScreenPanel">
+  <grid id="27dc6" binding="SampleStemPnlFllScrn" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="722" height="749"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="bb751" binding="StemPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="2160" height="1040"/>
+            <maximum-size width="2160" height="1040"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-11133902"/>
+          <maximumSize width="1080" height="1440"/>
+          <preferredSize width="1080" height="1440"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="75c2f" binding="Container" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="2160" height="1040"/>
+                <maximum-size width="2160" height="1040"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="95fe0" binding="Header" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="5"/>
+                <constraints border-constraint="North"/>
+                <properties>
+                  <background color="-3688541"/>
+                  <maximumSize width="2160" height="230"/>
+                  <preferredSize width="2160" height="230"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="f581c" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font size="36" style="1"/>
+                      <foreground color="-11133902"/>
+                      <text value="Hiraya Flowershop Cebu"/>
+                    </properties>
+                  </component>
+                  <component id="16ddf" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font size="20"/>
+                      <foreground color="-11133902"/>
+                      <text value="Stem Order Form"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="9ffe8" binding="Center" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <background color="-1"/>
+                  <inheritsPopupMenu value="true"/>
+                  <maximumSize width="2160" height="1210"/>
+                  <preferredSize width="2160" height="1210"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="239a7" binding="left" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="West"/>
+                    <properties>
+                      <background color="-11133902"/>
+                      <maximumSize width="540" height="1210"/>
+                      <opaque value="true"/>
+                      <preferredSize width="540" height="1210"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="ebffa" binding="leftside_left" layout-manager="GridBagLayout">
+                        <constraints border-constraint="West"/>
+                        <properties>
+                          <background color="-11133902"/>
+                          <maximumSize width="180" height="-1"/>
+                          <preferredSize width="180" height="-1"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="95e83" class="javax.swing.JLabel" binding="roseFlower">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value=""/>
+                            </properties>
+                          </component>
+                          <component id="6ca75" class="javax.swing.JLabel" binding="lilyFlower">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="100" left="0" bottom="100" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value=""/>
+                            </properties>
+                          </component>
+                          <component id="60845" class="javax.swing.JLabel" binding="sunflowerFlower">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value=""/>
+                              <toolTipText value=""/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="ce91a" binding="rightside_left" layout-manager="GridBagLayout">
+                        <constraints border-constraint="East"/>
+                        <properties>
+                          <background color="-11133902"/>
+                          <maximumSize width="180" height="-1"/>
+                          <preferredSize width="180" height="-1"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="9174a" class="javax.swing.JLabel" binding="roseQuantityIncrease">
+                            <constraints>
+                              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="+"/>
+                            </properties>
+                          </component>
+                          <component id="43056" class="javax.swing.JLabel" binding="roseQuantityDecrease">
+                            <constraints>
+                              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="-"/>
+                            </properties>
+                          </component>
+                          <component id="83a4a" class="javax.swing.JLabel" binding="lilyQuantityIncrease">
+                            <constraints>
+                              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="+"/>
+                            </properties>
+                          </component>
+                          <component id="8dd0" class="javax.swing.JLabel" binding="lilyQuantityDecrease">
+                            <constraints>
+                              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="-"/>
+                            </properties>
+                          </component>
+                          <component id="4d9f6" class="javax.swing.JLabel" binding="sunflowerQuantityIncrease">
+                            <constraints>
+                              <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="+"/>
+                            </properties>
+                          </component>
+                          <component id="c414f" class="javax.swing.JLabel" binding="sunflowerQuantityDecrease">
+                            <constraints>
+                              <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="-"/>
+                            </properties>
+                          </component>
+                          <grid id="bf784" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="7c564" class="javax.swing.JLabel" binding="roseCount">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="50" height="-1"/>
+                                    <maximum-size width="50" height="-1"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-11133902"/>
+                                  <font size="28" style="1"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="0"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="93086" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="26a35" class="javax.swing.JLabel" binding="lilyCount">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="50" height="-1"/>
+                                    <maximum-size width="50" height="-1"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-11133902"/>
+                                  <font size="28" style="1"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="0"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="57bf0" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="f0be1" class="javax.swing.JLabel" binding="sunflowerCount">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="50" height="-1"/>
+                                    <maximum-size width="50" height="-1"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-11133902"/>
+                                  <font size="28" style="1"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="0"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                      <grid id="ea9e8" binding="center_left" layout-manager="GridBagLayout">
+                        <constraints border-constraint="Center"/>
+                        <properties>
+                          <background color="-11133902"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="6435a" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="ROSE"/>
+                            </properties>
+                          </component>
+                          <grid id="43e0d" layout-manager="GridBagLayout">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="4d832" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Price: "/>
+                                </properties>
+                              </component>
+                              <component id="22621" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Stock : "/>
+                                </properties>
+                              </component>
+                              <component id="ef7d0" class="javax.swing.JLabel" binding="RosePrice">
+                                <constraints>
+                                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="$ 6.00"/>
+                                </properties>
+                              </component>
+                              <component id="b998e" class="javax.swing.JLabel" binding="roseStock">
+                                <constraints>
+                                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="10"/>
+                                </properties>
+                              </component>
+                              <component id="dee88" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Color: "/>
+                                </properties>
+                              </component>
+                              <component id="5dce5" class="javax.swing.JLabel" binding="roseColor">
+                                <constraints>
+                                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="pink"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="4358a" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="LILIES"/>
+                            </properties>
+                          </component>
+                          <grid id="1bbac" layout-manager="GridBagLayout">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="a4140" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Price: "/>
+                                </properties>
+                              </component>
+                              <component id="d8ddc" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Stock : "/>
+                                </properties>
+                              </component>
+                              <component id="b7a87" class="javax.swing.JLabel" binding="LilyPrice">
+                                <constraints>
+                                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="$ 6.00"/>
+                                </properties>
+                              </component>
+                              <component id="b1222" class="javax.swing.JLabel" binding="lilyStock">
+                                <constraints>
+                                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="10"/>
+                                </properties>
+                              </component>
+                              <component id="65664" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Color: "/>
+                                </properties>
+                              </component>
+                              <component id="b0da0" class="javax.swing.JLabel" binding="lilyColor">
+                                <constraints>
+                                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="pink"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="af72e" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="SUNFLOWER"/>
+                            </properties>
+                          </component>
+                          <grid id="381f6" layout-manager="GridBagLayout">
+                            <constraints>
+                              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="1cbdc" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Price: "/>
+                                </properties>
+                              </component>
+                              <component id="7a6a1" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Stock : "/>
+                                </properties>
+                              </component>
+                              <component id="621e9" class="javax.swing.JLabel" binding="SunflowerPrice">
+                                <constraints>
+                                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="$ 6.00"/>
+                                </properties>
+                              </component>
+                              <component id="e2f3e" class="javax.swing.JLabel" binding="sunflowerStock">
+                                <constraints>
+                                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="10"/>
+                                </properties>
+                              </component>
+                              <component id="b887" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Color: "/>
+                                </properties>
+                              </component>
+                              <component id="28909" class="javax.swing.JLabel" binding="sunflowerColor">
+                                <constraints>
+                                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="pink"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="37c30" binding="right" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="East"/>
+                    <properties>
+                      <background color="-11133902"/>
+                      <maximumSize width="540" height="1210"/>
+                      <preferredSize width="540" height="1210"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="8a2ec" binding="leftside_right" layout-manager="GridBagLayout">
+                        <constraints border-constraint="West"/>
+                        <properties>
+                          <background color="-11133902"/>
+                          <maximumSize width="180" height="-1"/>
+                          <preferredSize width="180" height="-1"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="b4c3b" class="javax.swing.JLabel" binding="tulipFlower">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <text value="."/>
+                            </properties>
+                          </component>
+                          <component id="cc8bf" class="javax.swing.JLabel" binding="carnationFlower">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="100" left="0" bottom="100" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <text value="."/>
+                            </properties>
+                          </component>
+                          <component id="eed1a" class="javax.swing.JLabel" binding="daisyFlower">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <text value="."/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="e9fd1" binding="rightside_right" layout-manager="GridBagLayout">
+                        <constraints border-constraint="East"/>
+                        <properties>
+                          <background color="-11133902"/>
+                          <maximumSize width="180" height="-1"/>
+                          <minimumSize width="270" height="-1"/>
+                          <preferredSize width="180" height="-1"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="d34ec" class="javax.swing.JLabel" binding="tulipQuantityIncrease">
+                            <constraints>
+                              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="+"/>
+                            </properties>
+                          </component>
+                          <component id="2cab" class="javax.swing.JLabel" binding="carnationQuantityIncrease">
+                            <constraints>
+                              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="+"/>
+                            </properties>
+                          </component>
+                          <component id="87996" class="javax.swing.JLabel" binding="daisyQuantityIncrease">
+                            <constraints>
+                              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="+"/>
+                            </properties>
+                          </component>
+                          <grid id="8fbeb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="4f307" class="javax.swing.JLabel" binding="tulipCount">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="50" height="-1"/>
+                                    <maximum-size width="50" height="-1"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-11133902"/>
+                                  <font size="28" style="1"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="0"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="75660" class="javax.swing.JLabel" binding="tulipQuantityDecrease">
+                            <constraints>
+                              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="-"/>
+                            </properties>
+                          </component>
+                          <grid id="40671" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="b572c" class="javax.swing.JLabel" binding="carnationCount">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="50" height="-1"/>
+                                    <maximum-size width="50" height="-1"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-11133902"/>
+                                  <font size="28" style="1"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="0"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="26b22" class="javax.swing.JLabel" binding="carnationQuantityDecrease">
+                            <constraints>
+                              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="-"/>
+                            </properties>
+                          </component>
+                          <grid id="b8d41" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                            <margin top="0" left="0" bottom="0" right="0"/>
+                            <constraints>
+                              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="c3441" class="javax.swing.JLabel" binding="daisyCount">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                                    <preferred-size width="50" height="-1"/>
+                                    <maximum-size width="50" height="-1"/>
+                                  </grid>
+                                </constraints>
+                                <properties>
+                                  <background color="-11133902"/>
+                                  <font size="28" style="1"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="0"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="a8cce" class="javax.swing.JLabel" binding="daisyQuantityDecrease">
+                            <constraints>
+                              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="28" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="-"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="3a730" binding="center_right" layout-manager="GridBagLayout">
+                        <constraints border-constraint="Center"/>
+                        <properties>
+                          <background color="-11133902"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="ebc47" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="TULIPS"/>
+                            </properties>
+                          </component>
+                          <grid id="495b" layout-manager="GridBagLayout">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="84052" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Price: "/>
+                                </properties>
+                              </component>
+                              <component id="edd40" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Stock : "/>
+                                </properties>
+                              </component>
+                              <component id="ef58f" class="javax.swing.JLabel" binding="TulipPrice">
+                                <constraints>
+                                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="$ 6.00"/>
+                                </properties>
+                              </component>
+                              <component id="381f3" class="javax.swing.JLabel" binding="tulipStock">
+                                <constraints>
+                                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="10"/>
+                                </properties>
+                              </component>
+                              <component id="eeb5c" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Color: "/>
+                                </properties>
+                              </component>
+                              <component id="97601" class="javax.swing.JLabel" binding="tulipsColor">
+                                <constraints>
+                                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="pink"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="c12c2" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="CARNATIONS"/>
+                            </properties>
+                          </component>
+                          <grid id="b027e" layout-manager="GridBagLayout">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="55579" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Price: "/>
+                                </properties>
+                              </component>
+                              <component id="cf117" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Stock : "/>
+                                </properties>
+                              </component>
+                              <component id="7cd7f" class="javax.swing.JLabel" binding="CarnationPrice">
+                                <constraints>
+                                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="$ 6.00"/>
+                                </properties>
+                              </component>
+                              <component id="70c8a" class="javax.swing.JLabel" binding="carnationStock">
+                                <constraints>
+                                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="10"/>
+                                </properties>
+                              </component>
+                              <component id="862f2" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Color: "/>
+                                </properties>
+                              </component>
+                              <component id="c296c" class="javax.swing.JLabel" binding="carnationsColor">
+                                <constraints>
+                                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="pink"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="ceeea" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                              <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <font size="24" style="1"/>
+                              <foreground color="-3688541"/>
+                              <text value="DAISY"/>
+                            </properties>
+                          </component>
+                          <grid id="bfa13" layout-manager="GridBagLayout">
+                            <constraints>
+                              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="eabd9" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Price: "/>
+                                </properties>
+                              </component>
+                              <component id="d9f9f" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Stock : "/>
+                                </properties>
+                              </component>
+                              <component id="2f976" class="javax.swing.JLabel" binding="DaisyPrice">
+                                <constraints>
+                                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="$ 6.00"/>
+                                </properties>
+                              </component>
+                              <component id="fe786" class="javax.swing.JLabel" binding="daisyStock">
+                                <constraints>
+                                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="10"/>
+                                </properties>
+                              </component>
+                              <component id="a5065" class="javax.swing.JLabel">
+                                <constraints>
+                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="Color: "/>
+                                </properties>
+                              </component>
+                              <component id="2149e" class="javax.swing.JLabel" binding="daisyColor">
+                                <constraints>
+                                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                  <gridbag weightx="0.0" weighty="0.0"/>
+                                </constraints>
+                                <properties>
+                                  <font size="20"/>
+                                  <foreground color="-3688541"/>
+                                  <text value="pink"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="f416" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="40" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="400"/>
+                <maximum-size width="-1" height="400"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-11133902"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="ad88e" class="javax.swing.JButton" binding="prevBtn">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                    <maximum-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <foreground color="-3688541"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="b03b5" class="javax.swing.JButton" binding="checkoutBtn">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <foreground color="-3688541"/>
+                  <text value="checkoutBtn"/>
+                </properties>
+              </component>
+              <grid id="1e2ad" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="200" height="-1"/>
+                    <maximum-size width="200" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-11133902"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="3c1ec" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font size="28" style="1"/>
+                      <foreground color="-3688541"/>
+                      <text value="Total:"/>
+                    </properties>
+                  </component>
+                  <component id="887c7" class="javax.swing.JLabel" binding="totalPrice">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <alignmentY value="0.5"/>
+                      <font size="28" style="1"/>
+                      <foreground color="-3688541"/>
+                      <text value="0"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

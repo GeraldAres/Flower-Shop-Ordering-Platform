@@ -40,9 +40,9 @@
           <component id="c7adc" class="javax.swing.JButton" binding="btnGuest">
             <constraints>
               <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="350" height="45"/>
-                <preferred-size width="350" height="45"/>
-                <maximum-size width="350" height="45"/>
+                <minimum-size width="800" height="90"/>
+                <preferred-size width="800" height="90"/>
+                <maximum-size width="800" height="90"/>
               </grid>
             </constraints>
             <properties>
@@ -89,9 +89,9 @@
           <component id="9bb5e" class="javax.swing.JButton" binding="btnLogIn">
             <constraints>
               <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="350" height="45"/>
-                <preferred-size width="350" height="45"/>
-                <maximum-size width="350" height="45"/>
+                <minimum-size width="800" height="90"/>
+                <preferred-size width="800" height="90"/>
+                <maximum-size width="800" height="90"/>
               </grid>
             </constraints>
             <properties>
@@ -104,8 +104,8 @@
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="2160" height="1040"/>
-                <maximum-size width="2160" height="1040"/>
+                <preferred-size width="2160" height="200"/>
+                <maximum-size width="2160" height="200"/>
               </grid>
             </constraints>
             <properties>
