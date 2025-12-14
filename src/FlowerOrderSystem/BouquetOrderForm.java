@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class BouquetOrderForm {
 
@@ -71,18 +73,261 @@ public class BouquetOrderForm {
     private JLabel Title;
 
     private OrderController orderController;
-    private int bouquetSize;
+    private int bouquetMultiplier;
     private Inventory inventory = new Inventory();
+
+    String size = "";
+
+    public BouquetOrderForm(){
+        roseQuantityIncrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(roseCount.getText());
+                if (c < Integer.parseInt(roseStock.getText())){
+
+                    c++;
+                    orderController.addBouquet("Rose"+size);
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    roseCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+                }else{
+                    System.out.println("wala nay stock");
+                }
+            }
+        });
+
+        roseQuantityDecrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(roseCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Rose");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    roseCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+                }
+            }
+        });
+
+
+
+        lilyQuantityIncrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(lilyCount.getText());
+                if (c < Integer.parseInt(lilyStock.getText())){
+                    c++;
+                    orderController.addBouquet("Lily"+size);
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    lilyCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+
+                }else{
+                    System.out.println("wala nay stock");
+                }
+            }
+        });
+
+        lilyQuantityDecrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(lilyCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Lily");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    lilyCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+                }
+            }
+        });
+
+        sunflowerQuantityIncrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(sunflowerCount.getText());
+                if (c < Integer.parseInt(sunflowerStock.getText())){
+                    c++;
+                    orderController.addBouquet("Sunflower"+size);
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    sunflowerCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+
+                }else{
+                    System.out.println("wala nay stock");
+                }
+            }
+        });
+
+        sunflowerQuantityDecrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(sunflowerCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Sunflower");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    sunflowerCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+                }
+            }
+        });
+
+        carnationQuantityIncrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(carnationCount.getText());
+                if (c < Integer.parseInt(carnationStock.getText())){
+                    c++;
+                    orderController.addBouquet("Carnation"+size);
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    carnationCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+
+                }else{
+                    System.out.println("wala nay stock");
+                }
+            }
+        });
+
+        carnationQuantityDecrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(carnationCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Carnation");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    carnationCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+                }
+            }
+        });
+
+        tulipQuantityIncrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(tulipCount.getText());
+                if (c < Integer.parseInt(tulipStock.getText())){
+                    c++;
+                    orderController.addBouquet("Tulip"+size);
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    tulipCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+
+                }else{
+                    System.out.println("wala nay stock");
+                }
+            }
+        });
+
+        tulipQuantityDecrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(tulipCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Tulip");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    tulipCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+                }
+            }
+        });
+
+        daisyQuantityIncrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(daisyCount.getText());
+                if (c < Integer.parseInt(daisyStock.getText())){
+                    c++;
+                    orderController.addBouquet("Daisy"+size);
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    daisyCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+
+                }else{
+                    System.out.println("wala nay stock");
+                }
+            }
+        });
+
+        daisyQuantityDecrease.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int c = Integer.parseInt(daisyCount.getText());
+                if (c > 0){
+                    c--;
+                    orderController.removeFlower("Daisy");
+                    totalPrice.setText("₱ " +orderController.getTotalPrice() +"0");
+                    daisyCount.setText(c+"");
+                    orderController.getOrder().print();
+                    System.out.println();
+                }
+            }
+        });
+
+        prevBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    roseCount.setText(0 + "");
+                    lilyCount.setText(0 + "");
+                    sunflowerCount.setText(0 + "");
+                    carnationCount.setText(0 + "");
+                    tulipCount.setText(0 + "");
+                    daisyCount.setText(0 + "");
+
+                    orderController.userActions("SmallBack");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        checkoutBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("Checkout");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+
+    }
 
 
 
     public void setController(OrderController orderController, int size){
         this.orderController = orderController;
-        bouquetSize = size;
-
 
         switch (size){
             case 0:
+                this.size = "-s";
+                RosePrice.setText("₱ " + 30);
+                SunflowerPrice.setText("₱ " + 30);
+                LilyPrice.setText("₱ " + 30);
+                CarnationPrice.setText("₱ " + 30);
+                TulipPrice.setText("₱ " + 30);
+                DaisyPrice.setText("₱ " + 30);
+                totalPrice.setText("₱ 0.00");
+
+                bouquetMultiplier = 3;
 
                 roseStock.setText(inventory.getStockCount("rose")  / 3+ "");
                 carnationStock.setText(inventory.getStockCount("carnation")  / 3+ "");
@@ -122,6 +367,17 @@ public class BouquetOrderForm {
 
                 break;
             case 1:
+                this.size = "-m";
+
+                RosePrice.setText("₱ " + 50);
+                SunflowerPrice.setText("₱ " + 50);
+                LilyPrice.setText("₱ " + 50);
+                CarnationPrice.setText("₱ " + 50);
+                TulipPrice.setText("₱ " + 50);
+                DaisyPrice.setText("₱ " + 50);
+                totalPrice.setText("₱ 0.00");
+
+                bouquetMultiplier = 6;
                 subTitle1.setText("Medium Bouquet Order Form ");
 
                 roseStock.setText(inventory.getStockCount("rose")  / 6+ "");
@@ -158,6 +414,17 @@ public class BouquetOrderForm {
 
                 break;
             case 2:
+                this.size = "-l";
+
+                RosePrice.setText("₱ " + 100);
+                SunflowerPrice.setText("₱ " + 100);
+                LilyPrice.setText("₱ " + 100);
+                CarnationPrice.setText("₱ " + 100);
+                TulipPrice.setText("₱ " + 100);
+                DaisyPrice.setText("₱ " + 100);
+                totalPrice.setText("₱ 0.00");
+
+                bouquetMultiplier = 12;
                 subTitle1.setText("Large Bouquet Order Form ");
 
                 roseStock.setText(inventory.getStockCount("rose")  / 12+ "");
@@ -196,17 +463,7 @@ public class BouquetOrderForm {
 
         }
 
-        prevBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
 
-                    orderController.userActions("SmallBack");
-                } catch (InvalidInputException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
     }
 
     BouquetOrderForm(){
