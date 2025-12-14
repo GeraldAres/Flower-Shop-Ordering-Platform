@@ -231,6 +231,8 @@ public class CheckOut {
             System.err.println("Error saving order: " + e.getMessage());
             e.printStackTrace();
         }
+
+        user.addOrder(this);
     }
 
     public void setReceipient(String name) {
@@ -323,13 +325,7 @@ public class CheckOut {
                 case "Ferrero":
                     totalPrice+= 300;
             }
-
-
-
         }
-
-
-
 
     }
 
@@ -349,6 +345,18 @@ public class CheckOut {
         public ArrayList<Integer> getCounts() {
             return counts;
         }
+    }
+
+    public String getOrderDateForCard() {
+        DateTimeFormatter idFormatter =
+                DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
+        DateTimeFormatter displayFormatter =
+                DateTimeFormatter.ofPattern("MMMM d, yyyy");
+
+        LocalDateTime dateTime =
+                LocalDateTime.parse(orderID, idFormatter);
+
+        return dateTime.format(displayFormatter);
     }
 
 }
