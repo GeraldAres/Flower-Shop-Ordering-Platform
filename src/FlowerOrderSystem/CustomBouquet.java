@@ -1,7 +1,7 @@
 package src.FlowerOrderSystem;
 
-public class CustomBouquet extends Bouquet {
+public class CustomBouquet   {
     public CustomBouquet() {
-        super("Custom");
+
     }
 }

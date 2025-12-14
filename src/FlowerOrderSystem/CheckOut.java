@@ -6,7 +6,7 @@ import java.io.*;
 import java.time.*;
 
 public class CheckOut {
-    private NewForm newForm;
+    private Order order;
     private User user;
     private LocalDateTime timestamp = LocalDateTime.now();
     private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
@@ -23,12 +23,13 @@ public class CheckOut {
     private String specialInstructions;
     private String orderStatus;
     private String content;
+    private String receipientName;
     private static final List<String> ORDER_STATUS = Arrays.asList(
             "Ongoing" , "Ready for Delivery/Pick Up" , "Cancelled", "Complete"
     );
 
-    public CheckOut(NewForm newForm, User user) {
-        this.newForm = newForm;
+    public CheckOut(User user, Order order) {
+        this.order = order;
         this.user = user;
         this.formattedDate = timestamp.format(displayFormatter);
         this.orderID = timestamp.format(idFormatter);
@@ -64,6 +65,22 @@ public class CheckOut {
 
     public void setModeOfPayment(String modeOfPayment) {
         this.modeOfPayment = modeOfPayment;
+        Payment payment;
+        switch(modeOfPayment){
+            case "Cash on Delivery":
+                payment = new CashOnDelivery();
+                payment.processPayment(totalPrice);
+                break;
+            case "Gcash":
+                payment = new GCash();
+                payment.processPayment(totalPrice);
+                break;
+            case "Bank Transfer":
+                payment = new BankTransfer();
+                payment.processPayment(totalPrice);
+                break;
+
+        }
     }
 
     public String getDateOfDelivery() {
@@ -149,6 +166,7 @@ public class CheckOut {
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
                 "\nDate of Delivery: " + getDateOfDelivery() +
+                "\nReceipient: " + getReceipientName() +
                 "\nNumber of Add-Ons: " + getNumsOfAddOns() +
                 "\nAdd-Ons List: " + (addOnsList != null ? addOnsList.toString() : "None") +
                 "\nTotal Price: $" + String.format("%.2f", getTotalPrice()) +
@@ -203,4 +221,45 @@ public class CheckOut {
                 e.printStackTrace();
             }
     }
+
+    public void setReceipient(String name) {
+        this.receipientName = name;
+    }
+
+    public String getReceipientName() {
+        return receipientName;
+    }
+
+    public void orderValidator(
+            String modeOfDelivery,
+            String modeOfPayment,
+            String dateOfDelivery,
+            String deliveryAdd,
+            String recipientName
+    ) {
+
+        if (modeOfDelivery == null || modeOfDelivery.trim().isEmpty()
+                || modeOfDelivery.equalsIgnoreCase("Select One")) {
+            throw new IllegalArgumentException("Please select a valid mode of delivery.");
+        }
+
+        if (modeOfPayment == null || modeOfPayment.trim().isEmpty()
+                || modeOfPayment.equalsIgnoreCase("Select One")) {
+            throw new IllegalArgumentException("Please select a valid mode of payment.");
+        }
+
+        if (dateOfDelivery == null || dateOfDelivery.trim().isEmpty()) {
+            throw new IllegalArgumentException("Date of delivery must not be empty.");
+        }
+
+        if (deliveryAdd == null || deliveryAdd.trim().isEmpty()) {
+            throw new IllegalArgumentException("Delivery address must not be empty.");
+        }
+
+        if (recipientName == null || recipientName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Recipient name must not be empty.");
+        }
+    }
+
+
 }

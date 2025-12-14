@@ -54,28 +54,28 @@ public class BouquetPanel {
         buyRoseBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                premade = new PreMade(new Rose("red"), size);
+                premade = new PreMade(new Rose(), size);
             }
         });
 
         buyLiliesBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                premade = new PreMade(new Lily("red"), size);
+                premade = new PreMade(new Lily(), size);
             }
         });
 
         buyTulipsBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                premade = new PreMade(new Tulip("red"), size);
+                premade = new PreMade(new Tulip(), size);
             }
         });
 
         buySunflowerBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                premade = new PreMade(new Sunflower("red"), size);
+                premade = new PreMade(new Sunflower(), size);
             }
         });
 

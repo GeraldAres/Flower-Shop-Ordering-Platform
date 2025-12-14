@@ -1,5 +1,7 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.MainController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,8 +26,10 @@ public class DashboardPanel {
     private JPanel Left;
     private JPanel ButtonsList;
     private JPanel DogImageHolder;
+    private JLabel WelcomeLabel;
+    private MainController mainController;
 
-    public DashboardPanel(JPanel MainPanel, CardLayout cardLayout){
+    public DashboardPanel(){
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
         Image imgg =  img.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
         ImageIcon set = new ImageIcon(imgg);
@@ -44,12 +48,12 @@ public class DashboardPanel {
         ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/availableFlowers.png");
         Image img3 =  image3.getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH);
         ImageIcon settings = new ImageIcon(img3);
-        settingsBtn.setIcon(settings);
+        availableFlowersbtn.setIcon(settings);
 
         ImageIcon image4 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/settingss.png");
         Image img4 =  image4.getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH);
         ImageIcon avaiable = new ImageIcon(img4);
-        availableFlowersbtn.setIcon(avaiable);
+        settingsBtn.setIcon(avaiable);
 
 
         ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/logout.png");
@@ -64,18 +68,61 @@ public class DashboardPanel {
             btn.setContentAreaFilled(false);
             btn.setFocusPainted(false);
             btn.setText("");
-
         }
-
-
-
-       LogOut.addMouseListener(new MouseAdapter() {
-           @Override
-            public void mouseClicked(MouseEvent e) {
-               cardLayout.show(MainPanel, "LogInPanel");
-           }
-       });
 
     }
 
+    public void setController(MainController mainController) {
+        this.mainController = mainController;
+
+        WelcomeLabel.setText("Hi, " + mainController.getName() +"!");
+        LogOut.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("Logout");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        newOrderButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("NewOrder");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        myOrdersBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("MyOrders");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+
+        availableFlowersbtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("Flowers");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+
+        settingsBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    mainController.changeDisplay("Settings");
+                } catch (InvalidInputException ex) {}
+            }
+        });
+    }
 }
