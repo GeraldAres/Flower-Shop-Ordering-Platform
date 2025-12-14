@@ -1,9 +1,12 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.UserController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ViewOrdersPanel {
     JPanel viewOrdersPanel;
@@ -17,16 +20,13 @@ public class ViewOrdersPanel {
     private JPanel East;
     private JPanel Order;
     private JScrollPane Scrikk;
-    private JPanel Status1;
-    private JPanel Date1;
-    private JPanel One;
-    private JPanel View1;
-    private JPanel Two;
     private JLabel LeftImg;
     private JLabel RightImg;
     private JPanel LeftSouth;
     private JPanel RightSouth;
     private JButton prevButton;
+    private JPanel orderDisplay;
+    private UserController controller;
 
     public ViewOrdersPanel(){
         ImageIcon img = new ImageIcon("src/FlowerOrderSystem/Assets/Extra/Doggos.png");
@@ -48,5 +48,45 @@ public class ViewOrdersPanel {
         prevButton.setFocusPainted(false);
         prevButton.setText("");
     }
+
+    public void setController(UserController userController){
+        this.controller = userController;
+        displayOrders();;
+
+    }
+
+    public void displayOrders() {
+        User user = controller.getUser();
+        if (user == null) {
+            System.err.println("No active user.");
+            return;
+        }
+
+        if (orderDisplay == null) {
+            System.err.println("ordersContainer is null.");
+            return;
+        }
+
+        orderDisplay.removeAll();
+        orderDisplay.setLayout(
+                new BoxLayout(orderDisplay, BoxLayout.Y_AXIS));
+
+        for (CheckOut order : user.getOrders()) {
+
+            String status = order.getOrderStatus();
+            if (status == null || !status.equalsIgnoreCase("Complete"))
+                continue;
+
+            OrderCardPanel card = new OrderCardPanel(order, controller);
+
+            orderDisplay.add(card);
+            orderDisplay.add(Box.createVerticalStrut(15));
+        }
+
+        orderDisplay.revalidate();
+        orderDisplay.repaint();
+    }
+
+
 
 }
