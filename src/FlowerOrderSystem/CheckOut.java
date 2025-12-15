@@ -27,6 +27,7 @@ public class CheckOut {
     private static final List<String> ORDER_STATUS = Arrays.asList(
             "Ongoing", "Ready for Delivery/Pick Up", "Cancelled", "Complete"
     );
+    private ArrayList<String> orderItems = new ArrayList<>();
 
     public CheckOut(User user, Order order) {
         this.order = order;
@@ -116,8 +117,6 @@ public class CheckOut {
         return addOnsList;
     }
 
-
-
     public double getTotalPrice() {
         return totalPrice;
     }
@@ -163,16 +162,40 @@ public class CheckOut {
         this.user = user;
     }
 
+    public ArrayList<String> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(ArrayList<String> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public void addOrderItem(String flowerName, String color, int qty, double price) {
+        String line = String.format("%s(%s), %d pieces, P%.2f", flowerName, color, qty, price);
+        this.orderItems.add(line);
+    }
+
     public void updateContent() {
         String userName = (user != null) ? user.getFullName() : "default";
         String userEmail = (user != null) ? user.getEmail() : "default";
         String userContactNum = (user != null) ? user.getContactNumber() : "default";
+
+        StringBuilder summaryBuilder = new StringBuilder();
+        summaryBuilder.append("\nOrder Summary:");
+            if (orderItems != null && !orderItems.isEmpty()) {
+                for (String item : orderItems) {
+                    summaryBuilder.append("\n\t").append(item);
+                }
+            } else {
+                summaryBuilder.append(" None");
+            }
 
         this.content = "Order ID: " + getOrderID() +
                 "\nOrder Date: " + getFormattedDate() +
                 "\nFull Name: " + userName +
                 "\nEmail: " + userEmail +
                 "\nContact Number: " + userContactNum +
+                summaryBuilder.toString() +
                 "\nMode of Delivery: " + getModeOfDelivery() +
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
