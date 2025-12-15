@@ -288,11 +288,11 @@
                                   </component>
                                   <component id="24467" class="javax.swing.JLabel">
                                     <constraints>
-                                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                                     </constraints>
                                     <properties>
                                       <foreground color="-11133902"/>
-                                      <text value="__________________________________________________________________________"/>
+                                      <text value="________________________________________________________________"/>
                                     </properties>
                                   </component>
                                 </children>
@@ -531,11 +531,11 @@
                               </vspacer>
                               <component id="7d6ec" class="javax.swing.JLabel">
                                 <constraints>
-                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
                                 </constraints>
                                 <properties>
                                   <foreground color="-11133902"/>
-                                  <text value="__________________________________________________________________________"/>
+                                  <text value="________________________________________________________________"/>
                                 </properties>
                               </component>
                             </children>
@@ -744,11 +744,11 @@
                                       </component>
                                       <component id="424e8" class="javax.swing.JLabel">
                                         <constraints>
-                                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                                         </constraints>
                                         <properties>
                                           <foreground color="-11133902"/>
-                                          <text value="_____________________________________________________________________"/>
+                                          <text value="________________________________________________________________"/>
                                         </properties>
                                       </component>
                                     </children>
@@ -1000,11 +1000,11 @@
                               </vspacer>
                               <component id="a65e" class="javax.swing.JLabel">
                                 <constraints>
-                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                                 </constraints>
                                 <properties>
                                   <foreground color="-11133902"/>
-                                  <text value="__________________________________________________________________________"/>
+                                  <text value="________________________________________________________________"/>
                                 </properties>
                               </component>
                             </children>
