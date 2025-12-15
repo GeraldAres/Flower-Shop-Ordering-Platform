@@ -8,6 +8,7 @@ import java.time.*;
 public class CheckOut {
     private Order order;
     private User user;
+    private ArrayList<String> orderItems = new ArrayList<>();
     private LocalDateTime timestamp = LocalDateTime.now();
     private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
     private DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("MM-dd-yy hh:mm a");
@@ -27,7 +28,6 @@ public class CheckOut {
     private static final List<String> ORDER_STATUS = Arrays.asList(
             "Ongoing", "Ready for Delivery/Pick Up", "Cancelled", "Complete"
     );
-    private ArrayList<String> orderItems = new ArrayList<>();
 
     public CheckOut(User user, Order order) {
         this.order = order;
@@ -36,6 +36,7 @@ public class CheckOut {
         this.orderID = timestamp.format(idFormatter);
         this.orderStatus = "Pending";
         this.totalPrice = order.getOrderPrice();
+        populateOrderItemsFromOrder();
     }
 
     public CheckOut(String orderId, String customerName, String flower, double total, String date) {
@@ -95,6 +96,20 @@ public class CheckOut {
                 break;
 
         }
+    }
+
+    private void populateOrderItemsFromOrder() {
+        FlowerCountResult result = getFlowerCounts();
+        ArrayList<InBloom> uniqueFlowers = result.getFlowers();
+        ArrayList<Integer> counts = result.getCounts();
+
+            for (int i = 0; i < uniqueFlowers.size(); i++) {
+                InBloom flower = uniqueFlowers.get(i);
+                int quantity = counts.get(i);
+                double batchPrice = flower.getPrice() * quantity;
+
+                addOrderItem(flower.getName(), flower.getColor(), quantity, batchPrice);
+            }
     }
 
     public String getDateOfDelivery() {
@@ -171,7 +186,7 @@ public class CheckOut {
     }
 
     public void addOrderItem(String flowerName, String color, int qty, double price) {
-        String line = String.format("%s(%s), %d pieces, P%.2f", flowerName, color, qty, price);
+        String line = String.format("%s(%s), %d, P%.2f", flowerName, color, qty, price);
         this.orderItems.add(line);
     }
 
