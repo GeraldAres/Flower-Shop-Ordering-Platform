@@ -16,7 +16,7 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-9356221"/>
+          <background color="-11133902"/>
         </properties>
         <border type="none"/>
         <children>
@@ -29,7 +29,7 @@
               </grid>
             </constraints>
             <properties>
-              <background color="-9356221"/>
+              <background color="-11133902"/>
               <foreground color="-1517372"/>
             </properties>
             <border type="none"/>
@@ -373,7 +373,7 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -400,7 +400,7 @@
                   <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -427,7 +427,7 @@
                   <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -454,7 +454,7 @@
                   <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                   <font size="20"/>
                 </properties>
                 <border type="none"/>
@@ -471,6 +471,7 @@
                   <component id="b4e13" class="javax.swing.JLabel" binding="roseQuantityDecrease">
                     <constraints border-constraint="South"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="18" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -526,13 +527,14 @@
                   <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
                   <component id="3aa3f" class="javax.swing.JLabel" binding="lilyQuantityIncrease">
                     <constraints border-constraint="North"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -542,6 +544,7 @@
                   <component id="67b27" class="javax.swing.JLabel" binding="lilyQuantityDecrease">
                     <constraints border-constraint="South"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -555,13 +558,14 @@
                   <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
                   <component id="38de1" class="javax.swing.JLabel" binding="sunflowerQuantityIncrease">
                     <constraints border-constraint="North"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -571,6 +575,7 @@
                   <component id="daa0d" class="javax.swing.JLabel" binding="sunflowerQuantityDecrease">
                     <constraints border-constraint="South"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -584,7 +589,7 @@
                   <grid row="1" column="11" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -599,6 +604,7 @@
                   <component id="fa3cf" class="javax.swing.JLabel" binding="carnationStock">
                     <constraints border-constraint="Center"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Bell MT" size="16" style="0"/>
                       <foreground color="-1517372"/>
                       <text value=" 2 pieces"/>
@@ -611,13 +617,14 @@
                   <grid row="0" column="13" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
                   <component id="93818" class="javax.swing.JLabel" binding="carnationQuantityIncrease">
                     <constraints border-constraint="North"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -627,6 +634,7 @@
                   <component id="63a91" class="javax.swing.JLabel" binding="carnationQuantityDecrease">
                     <constraints border-constraint="South"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -650,7 +658,7 @@
                   <grid row="6" column="11" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -665,6 +673,7 @@
                   <component id="3ceaf" class="javax.swing.JLabel" binding="tulipStock">
                     <constraints border-constraint="Center"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Bell MT" size="16" style="0"/>
                       <foreground color="-1517372"/>
                       <text value=" 2 pieces"/>
@@ -677,7 +686,7 @@
                   <grid row="11" column="11" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -692,6 +701,7 @@
                   <component id="81be1" class="javax.swing.JLabel" binding="daisyStock">
                     <constraints border-constraint="Center"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Bell MT" size="16" style="0"/>
                       <foreground color="-1517372"/>
                       <text value=" 2 pieces"/>
@@ -704,13 +714,14 @@
                   <grid row="5" column="13" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
                   <component id="f0f5a" class="javax.swing.JLabel" binding="tulipQuantityIncrease">
                     <constraints border-constraint="North"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -720,6 +731,7 @@
                   <component id="2f4c2" class="javax.swing.JLabel" binding="tulipQuantityDecrease">
                     <constraints border-constraint="South"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -733,13 +745,14 @@
                   <grid row="10" column="13" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-9356221"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
                   <component id="c14aa" class="javax.swing.JLabel" binding="daisyQuantityIncrease">
                     <constraints border-constraint="North"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
@@ -749,6 +762,7 @@
                   <component id="f52a6" class="javax.swing.JLabel" binding="daisyQuantityDecrease">
                     <constraints border-constraint="South"/>
                     <properties>
+                      <background color="-11133902"/>
                       <font name="Ink Free" size="20" style="1"/>
                       <foreground color="-3688541"/>
                       <horizontalAlignment value="0"/>
