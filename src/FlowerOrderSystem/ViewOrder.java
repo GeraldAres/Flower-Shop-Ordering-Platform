@@ -25,7 +25,13 @@ public class ViewOrder {
                 try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
                     String line;
                     HashMap<String, String> data = new HashMap<>();
+                    ArrayList<String> loadedItems = new ArrayList<>();
                         while ((line = reader.readLine()) != null) {
+                            if (line.contains("\t")) {
+                                loadedItems.add(line.trim());
+                                continue;
+                            }
+
                             if (line.contains(":")) {
                                 String[] parts = line.split(":", 2);
                                     if (parts.length == 2) {
@@ -76,6 +82,7 @@ public class ViewOrder {
                         }
 
                         order.setAddOnsList(addOns);
+                        order.setOrderItems(loadedItems);
                         order.updateContent();
                         ordersList.add(order);
 

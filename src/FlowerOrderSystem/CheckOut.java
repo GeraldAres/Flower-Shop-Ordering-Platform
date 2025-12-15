@@ -8,6 +8,7 @@ import java.time.*;
 public class CheckOut {
     private Order order;
     private User user;
+    private ArrayList<String> orderItems = new ArrayList<>();
     private LocalDateTime timestamp = LocalDateTime.now();
     private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
     private DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("MM-dd-yy hh:mm a");
@@ -35,6 +36,7 @@ public class CheckOut {
         this.orderID = timestamp.format(idFormatter);
         this.orderStatus = "Pending";
         this.totalPrice = order.getOrderPrice();
+        populateOrderItemsFromOrder();
     }
 
     public CheckOut(String orderId, String customerName, String flower, double total, String date) {
@@ -96,6 +98,20 @@ public class CheckOut {
         }
     }
 
+    private void populateOrderItemsFromOrder() {
+        FlowerCountResult result = getFlowerCounts();
+        ArrayList<InBloom> uniqueFlowers = result.getFlowers();
+        ArrayList<Integer> counts = result.getCounts();
+
+            for (int i = 0; i < uniqueFlowers.size(); i++) {
+                InBloom flower = uniqueFlowers.get(i);
+                int quantity = counts.get(i);
+                double batchPrice = flower.getPrice() * quantity;
+
+                addOrderItem(flower.getName(), flower.getColor(), quantity, batchPrice);
+            }
+    }
+
     public String getDateOfDelivery() {
         return dateOfDelivery;
     }
@@ -115,8 +131,6 @@ public class CheckOut {
     public ArrayList<String> getAddOnsList() {
         return addOnsList;
     }
-
-
 
     public double getTotalPrice() {
         return totalPrice;
@@ -163,16 +177,40 @@ public class CheckOut {
         this.user = user;
     }
 
+    public ArrayList<String> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(ArrayList<String> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public void addOrderItem(String flowerName, String color, int qty, double price) {
+        String line = String.format("%s(%s), %d, P%.2f", flowerName, color, qty, price);
+        this.orderItems.add(line);
+    }
+
     public void updateContent() {
         String userName = (user != null) ? user.getFullName() : "default";
         String userEmail = (user != null) ? user.getEmail() : "default";
         String userContactNum = (user != null) ? user.getContactNumber() : "default";
+
+        StringBuilder summaryBuilder = new StringBuilder();
+        summaryBuilder.append("\nOrder Summary:");
+            if (orderItems != null && !orderItems.isEmpty()) {
+                for (String item : orderItems) {
+                    summaryBuilder.append("\n\t").append(item);
+                }
+            } else {
+                summaryBuilder.append(" None");
+            }
 
         this.content = "Order ID: " + getOrderID() +
                 "\nOrder Date: " + getFormattedDate() +
                 "\nFull Name: " + userName +
                 "\nEmail: " + userEmail +
                 "\nContact Number: " + userContactNum +
+                summaryBuilder.toString() +
                 "\nMode of Delivery: " + getModeOfDelivery() +
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
