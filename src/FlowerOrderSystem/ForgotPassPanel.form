@@ -47,7 +47,7 @@
                     <properties>
                       <background color="-3688541"/>
                       <font name="Ink Free" size="16" style="1"/>
-                      <foreground color="-3688541"/>
+                      <foreground color="-1"/>
                       <text value="Hiraya Flowershop Cebu"/>
                     </properties>
                   </component>

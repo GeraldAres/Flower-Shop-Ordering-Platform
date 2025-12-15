@@ -24,7 +24,7 @@
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints border-constraint="North"/>
             <properties>
-              <background color="-1517372"/>
+              <background color="-1842760"/>
               <maximumSize width="1080" height="40"/>
               <minimumSize width="1080" height="40"/>
               <preferredSize width="1080" height="40"/>
@@ -196,7 +196,7 @@
                     <properties>
                       <focusable value="false"/>
                       <font name="Ink Free" size="22" style="1"/>
-                      <foreground color="-1517372"/>
+                      <foreground color="-1"/>
                       <text value="Tulips (The genius Tulipa)"/>
                     </properties>
                   </component>
@@ -240,7 +240,7 @@
                     <properties>
                       <focusable value="false"/>
                       <font name="Ink Free" size="22" style="1"/>
-                      <foreground color="-1517372"/>
+                      <foreground color="-1"/>
                       <text value="Daisy (happiness and positivity)"/>
                     </properties>
                   </component>
@@ -320,7 +320,7 @@
                     </constraints>
                     <properties>
                       <font name="Ink Free" size="48" style="1"/>
-                      <foreground color="-1517372"/>
+                      <foreground color="-1"/>
                       <text value="Flower Catalogue's"/>
                     </properties>
                   </component>

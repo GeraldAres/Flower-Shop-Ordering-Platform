@@ -26,7 +26,7 @@
             <margin top="0" left="0" bottom="0" right="5"/>
             <constraints border-constraint="North"/>
             <properties>
-              <background color="-3688541"/>
+              <background color="-1842760"/>
               <maximumSize width="1080" height="230"/>
               <preferredSize width="1080" height="230"/>
             </properties>
@@ -215,7 +215,7 @@
                             <properties>
                               <background color="-11133902"/>
                               <font name="Ink Free" size="26" style="1"/>
-                              <foreground color="-3688541"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -242,7 +242,7 @@
                             <properties>
                               <background color="-11133902"/>
                               <font name="Ink Free" size="26" style="1"/>
-                              <foreground color="-3688541"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -269,7 +269,7 @@
                             <properties>
                               <background color="-11133902"/>
                               <font name="Ink Free" size="26" style="1"/>
-                              <foreground color="-3688541"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -292,7 +292,7 @@
                         </constraints>
                         <properties>
                           <font name="Ink Free" size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <foreground color="-1"/>
                           <text value="ROSE"/>
                         </properties>
                       </component>
@@ -304,6 +304,7 @@
                         <properties>
                           <background color="-11133902"/>
                           <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                         </properties>
                         <border type="none"/>
                         <children>
@@ -382,7 +383,7 @@
                         </constraints>
                         <properties>
                           <font name="Ink Free" size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <foreground color="-1"/>
                           <text value="LILIES"/>
                         </properties>
                       </component>
@@ -394,6 +395,7 @@
                         <properties>
                           <background color="-11133902"/>
                           <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                         </properties>
                         <border type="none"/>
                         <children>
@@ -472,7 +474,7 @@
                         </constraints>
                         <properties>
                           <font name="Ink Free" size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <foreground color="-1"/>
                           <text value="SUNFLOWER"/>
                         </properties>
                       </component>
@@ -669,7 +671,7 @@
                             <properties>
                               <background color="-11133902"/>
                               <font name="Ink Free" size="26" style="1"/>
-                              <foreground color="-3688541"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -707,7 +709,7 @@
                             <properties>
                               <background color="-11133902"/>
                               <font name="Ink Free" size="26" style="1"/>
-                              <foreground color="-3688541"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -745,7 +747,7 @@
                             <properties>
                               <background color="-11133902"/>
                               <font name="Ink Free" size="26" style="1"/>
-                              <foreground color="-3688541"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -768,6 +770,7 @@
                     <constraints border-constraint="Center"/>
                     <properties>
                       <background color="-11133902"/>
+                      <foreground color="-1"/>
                     </properties>
                     <border type="none"/>
                     <children>
@@ -778,7 +781,7 @@
                         </constraints>
                         <properties>
                           <font name="Ink Free" size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <foreground color="-1"/>
                           <text value="TULIPS"/>
                         </properties>
                       </component>
@@ -867,7 +870,7 @@
                         </constraints>
                         <properties>
                           <font name="Ink Free" size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <foreground color="-1"/>
                           <text value="CARNATIONS"/>
                         </properties>
                       </component>
@@ -956,7 +959,7 @@
                         </constraints>
                         <properties>
                           <font name="Ink Free" size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <foreground color="-1"/>
                           <text value="DAISY"/>
                         </properties>
                       </component>
@@ -1099,7 +1102,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="36" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <text value="Total:"/>
                 </properties>
               </component>
@@ -1110,7 +1113,7 @@
                 <properties>
                   <alignmentY value="0.5"/>
                   <font name="Ink Free" size="36" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <text value="0"/>
                 </properties>
               </component>
