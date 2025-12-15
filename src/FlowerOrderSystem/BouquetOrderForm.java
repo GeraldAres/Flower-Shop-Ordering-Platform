@@ -70,7 +70,6 @@ public class BouquetOrderForm {
     private JButton checkoutBtn;
     private JLabel totalPrice;
     private JLabel subTitle1;
-    private JLabel Title;
 
     private OrderController orderController;
     private int bouquetMultiplier;
@@ -335,6 +334,8 @@ public class BouquetOrderForm {
 
     }
 
+
+
     public void setController(OrderController orderController, int size){
         this.orderController = orderController;
 
@@ -487,6 +488,7 @@ public class BouquetOrderForm {
 
 
     }
+
 
     public static void main(String[] args) {
 
