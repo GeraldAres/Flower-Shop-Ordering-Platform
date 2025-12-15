@@ -20,7 +20,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9623246"/>
+          <background color="-11133902"/>
         </properties>
         <border type="none"/>
         <children>
@@ -50,7 +50,7 @@
           <grid id="ddb6a" binding="Body" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints border-constraint="Center"/>
             <properties>
-              <background color="-11133916"/>
+              <background color="-11133902"/>
               <maximumSize width="548" height="1400"/>
               <minimumSize width="548" height="1400"/>
               <preferredSize width="900" height="1400"/>
@@ -60,7 +60,7 @@
               <grid id="d7b75" binding="leftimg_pnl" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints border-constraint="West"/>
                 <properties>
-                  <background color="-9623246"/>
+                  <background color="-11133902"/>
                   <maximumSize width="200" height="1400"/>
                   <preferredSize width="200" height="1400"/>
                 </properties>
@@ -78,7 +78,7 @@
               <grid id="794e7" binding="rightImg_pnl" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints border-constraint="East"/>
                 <properties>
-                  <background color="-9623246"/>
+                  <background color="-11133902"/>
                   <maximumSize width="200" height="1400"/>
                   <preferredSize width="200" height="1400"/>
                 </properties>
@@ -97,7 +97,7 @@
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints border-constraint="Center"/>
                 <properties>
-                  <background color="-9623246"/>
+                  <background color="-11133902"/>
                   <font name="Franklin Gothic Medium" size="24" style="1"/>
                   <maximumSize width="680" height="1400"/>
                   <minimumSize width="680" height="1400"/>

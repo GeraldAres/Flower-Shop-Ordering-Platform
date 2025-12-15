@@ -109,7 +109,7 @@
                           </grid>
                         </constraints>
                         <properties>
-                          <background color="-9623246"/>
+                          <background color="-11133902"/>
                           <focusable value="true"/>
                           <foreground color="-9623246"/>
                           <inheritsPopupMenu value="false"/>
