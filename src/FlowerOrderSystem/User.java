@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String email;
     private String contactNumber;
-    private ArrayList<CheckOut> orders = new ArrayList<>();
+    private ArrayList<CheckOut> orders;
 
     public User(){
 
@@ -46,13 +46,14 @@ public class User {
         return this;
     }
 
-    public User(String fullName, String email, String contactNumber, String username, String password) {
+    public User(String fullName, String email, String contactNumber, String username, String password, ArrayList<CheckOut>orders) {
         this.fullName = fullName;
         this.email = email;
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
-        orders = new ArrayList<>();
+        this.orders = orders;
+
     }
 
 
