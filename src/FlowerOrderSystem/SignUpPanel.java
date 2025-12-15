@@ -47,8 +47,8 @@ public class SignUpPanel {
         passwordMismatch.setVisible(false);
         weakPassword.setVisible(false);
 
-        ImageIcon image = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/signUp.png");
-        Image img1 =  image.getImage().getScaledInstance(100, 50, Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/newSignUpBtn.png");
+        Image img1 =  image.getImage().getScaledInstance(350, 45, Image.SCALE_SMOOTH);
         ImageIcon login = new ImageIcon(img1);
         createAccountButton.setIcon(login);
         createAccountButton.setText("");

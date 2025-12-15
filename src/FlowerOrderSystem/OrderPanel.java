@@ -38,13 +38,13 @@ public class OrderPanel {
         Stembtn.setEnabled(true);
         btnSmall.setEnabled(true);
 
-        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/StemBtn.png");
-        Image img1 =  image1.getImage().getScaledInstance(200, 55, Image.SCALE_SMOOTH);
+        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/StemFINAL.png");
+        Image img1 =  image1.getImage().getScaledInstance(350, 45, Image.SCALE_SMOOTH);
         ImageIcon stem = new ImageIcon(img1);
         Stembtn.setIcon(stem);
         //SMALL BOUQUET
-        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/smallBqt.png");
-        Image img2 =  image2.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/smallBqtbtn.png");
+        Image img2 =  image2.getImage().getScaledInstance(350, 45, Image.SCALE_SMOOTH);
         ImageIcon bouquet = new ImageIcon(img2);
         btnSmall.setIcon(bouquet);
         btnSmall.setText("");
@@ -55,8 +55,8 @@ public class OrderPanel {
         btnSmall.setText("");
 
 
-        ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/mediumBqt.png");
-        Image img3 =  image3.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+        ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/mediumBqtbtn.png");
+        Image img3 =  image3.getImage().getScaledInstance(350, 45, Image.SCALE_SMOOTH);
         ImageIcon mBouquet = new ImageIcon(img3);
         btnMedium.setIcon(mBouquet);
         btnMedium.setText("");
@@ -66,8 +66,8 @@ public class OrderPanel {
         btnMedium.setFocusPainted(false);
         btnMedium.setText("");
 
-        ImageIcon image4 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/largeBqt.png");
-        Image img4 =  image4.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+        ImageIcon image4 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/largeBqtbtn.png");
+        Image img4 =  image4.getImage().getScaledInstance(350, 45, Image.SCALE_SMOOTH);
         ImageIcon LBouquet = new ImageIcon(img4);
         btnLarge.setIcon(LBouquet);
         btnLarge.setText("");

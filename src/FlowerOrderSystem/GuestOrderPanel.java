@@ -56,17 +56,17 @@ public class GuestOrderPanel {
 
 
 
-        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/StemBtn.png");
-        Image img1 = image1.getImage().getScaledInstance(200, 55, Image.SCALE_SMOOTH);
+        ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prevGbtn.png");
+        Image img1 = image1.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
         prevBtn.setIcon(new ImageIcon(img1));
 
-        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/BouquetBtn.png");
+        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/nextGbtn.png");
         Image img2 = image2.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
         nextBtn.setIcon(new ImageIcon(img2));
 
-        ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
-        Image img3 = image3.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
-        prevBtn.setIcon(new ImageIcon(img3));
+//        ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+//        Image img3 = image3.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+//        prevBtn.setIcon(new ImageIcon(img3));
 
 
 

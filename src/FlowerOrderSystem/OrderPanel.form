@@ -205,20 +205,6 @@
                               </grid>
                             </constraints>
                           </vspacer>
-                          <component id="44566" class="javax.swing.JButton" binding="btnSmall">
-                            <constraints>
-                              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                                <minimum-size width="350" height="45"/>
-                                <preferred-size width="350" height="45"/>
-                                <maximum-size width="350" height="45"/>
-                              </grid>
-                            </constraints>
-                            <properties>
-                              <background color="-11133902"/>
-                              <foreground color="-3688541"/>
-                              <text value="Small Bouquet"/>
-                            </properties>
-                          </component>
                           <component id="8b5d4" class="javax.swing.JButton" binding="btnLarge">
                             <constraints>
                               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -236,7 +222,7 @@
                           </component>
                           <component id="402da" class="javax.swing.JButton" binding="btnMedium">
                             <constraints>
-                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                                 <minimum-size width="350" height="45"/>
                                 <preferred-size width="350" height="45"/>
                                 <maximum-size width="350" height="45"/>
@@ -298,6 +284,20 @@
                               <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                             </constraints>
                           </vspacer>
+                          <component id="44566" class="javax.swing.JButton" binding="btnSmall">
+                            <constraints>
+                              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                                <minimum-size width="350" height="45"/>
+                                <preferred-size width="350" height="45"/>
+                                <maximum-size width="350" height="45"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <background color="-11133902"/>
+                              <foreground color="-3688541"/>
+                              <text value="Small Bouquet"/>
+                            </properties>
+                          </component>
                         </children>
                       </grid>
                     </children>
