@@ -45,7 +45,6 @@ public class CheckoutPanel {
     private JPanel OrdersHere;
     private JPanel PersonalInformation;
     private JTextArea specialRequest;
-    private JButton cancelButton;
     private double base;
     private CheckoutController controller;
     private Order order;
