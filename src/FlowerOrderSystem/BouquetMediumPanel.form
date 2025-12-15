@@ -53,7 +53,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="18" style="1"/>
-                  <foreground color="-1517372"/>
+                  <foreground color="-1"/>
                   <text value="Rose Bouquet:"/>
                 </properties>
               </component>
@@ -96,7 +96,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-1517372"/>
+                  <foreground color="-1"/>
                   <text value="Lily Bouquet:"/>
                 </properties>
               </component>
@@ -134,7 +134,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-1517372"/>
+                  <foreground color="-1"/>
                   <text value="Sunflower Bouquet:"/>
                 </properties>
               </component>
@@ -164,7 +164,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-1517372"/>
+                  <foreground color="-1"/>
                   <text value="Carnalion Bouquet:"/>
                 </properties>
               </component>
@@ -194,7 +194,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-1517372"/>
+                  <foreground color="-1"/>
                   <text value="Tulips Bouquet:"/>
                 </properties>
               </component>
@@ -248,7 +248,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-1517372"/>
+                  <foreground color="-1"/>
                   <text value="Daisies Bouquet:"/>
                 </properties>
               </component>
@@ -282,8 +282,8 @@
                   <grid row="17" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font name="Bell MT" size="14" style="2"/>
-                  <foreground color="-1517372"/>
+                  <font name="Bell MT" size="18" style="2"/>
+                  <foreground color="-1"/>
                   <text value="Create your own unique bouquet."/>
                 </properties>
               </component>
@@ -490,7 +490,7 @@
                 <properties>
                   <background color="-11133902"/>
                   <font size="20"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <text value="0"/>
                 </properties>
               </component>
@@ -504,7 +504,7 @@
                 <properties>
                   <background color="-11133902"/>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <text value="0"/>
                 </properties>
               </component>
@@ -518,7 +518,7 @@
                 <properties>
                   <background color="-11133902"/>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <text value="0"/>
                 </properties>
               </component>
@@ -781,7 +781,7 @@
                 <properties>
                   <background color="-11133902"/>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
                   <text value="0"/>
@@ -797,7 +797,7 @@
                 <properties>
                   <background color="-11133902"/>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
                   <text value="0"/>
@@ -813,7 +813,7 @@
                 <properties>
                   <background color="-11133902"/>
                   <font name="Ink Free" size="20" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <horizontalAlignment value="0"/>
                   <horizontalTextPosition value="0"/>
                   <text value="0"/>
@@ -830,7 +830,7 @@
               </grid>
             </constraints>
             <properties>
-              <background color="-1517372"/>
+              <background color="-1842760"/>
             </properties>
             <border type="none"/>
             <children>
@@ -839,8 +839,8 @@
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font name="Bell MT" size="26" style="1"/>
-                  <foreground color="-11133916"/>
+                  <font name="Bell MT" size="20" style="1"/>
+                  <foreground color="-11133902"/>
                   <text value="Medium Bouquet Order Form "/>
                 </properties>
               </component>

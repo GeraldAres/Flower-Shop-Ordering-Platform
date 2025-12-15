@@ -37,7 +37,7 @@
                 </constraints>
                 <properties>
                   <font name="Ink Free" size="48" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <text value="Hiraya FlowerShop Cebu"/>
                 </properties>
               </component>
@@ -47,7 +47,7 @@
                 </constraints>
                 <properties>
                   <font name="Bell MT" size="28" style="1"/>
-                  <foreground color="-3688541"/>
+                  <foreground color="-1"/>
                   <text value="Order Details Details"/>
                 </properties>
               </component>
@@ -93,7 +93,7 @@
                             <margin top="0" left="7" bottom="0" right="0"/>
                             <constraints border-constraint="Center"/>
                             <properties>
-                              <background color="-3688541"/>
+                              <background color="-1842760"/>
                             </properties>
                             <border type="none"/>
                             <children>
@@ -106,7 +106,7 @@
                                   </grid>
                                 </constraints>
                                 <properties>
-                                  <background color="-3688541"/>
+                                  <background color="-1842760"/>
                                 </properties>
                                 <border type="none"/>
                                 <children>
@@ -138,7 +138,7 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="West"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="200"/>
                                               <minimumSize width="270" height="200"/>
                                               <preferredSize width="270" height="200"/>
@@ -206,7 +206,7 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="East"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="200"/>
                                               <minimumSize width="270" height="200"/>
                                               <name value=""/>
@@ -295,7 +295,7 @@
                                 </constraints>
                                 <properties>
                                   <autoscrolls value="false"/>
-                                  <background color="-3688541"/>
+                                  <background color="-1842760"/>
                                 </properties>
                                 <border type="none"/>
                                 <children>
@@ -308,7 +308,7 @@
                                       </grid>
                                     </constraints>
                                     <properties>
-                                      <background color="-3688541"/>
+                                      <background color="-1842760"/>
                                     </properties>
                                     <border type="none"/>
                                     <children>
@@ -328,7 +328,7 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="West"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="200"/>
                                               <minimumSize width="270" height="200"/>
                                               <preferredSize width="270" height="200"/>
@@ -381,7 +381,7 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="East"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="200"/>
                                               <minimumSize width="270" height="200"/>
                                               <preferredSize width="270" height="200"/>
@@ -394,7 +394,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="0"/>
+                                                  <font name="Bell MT" size="20" style="0"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="P 300"/>
                                                 </properties>
@@ -405,7 +405,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="0"/>
+                                                  <font name="Bell MT" size="20" style="0"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="P 2400"/>
                                                 </properties>
@@ -416,7 +416,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="0"/>
+                                                  <font name="Bell MT" size="20" style="0"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="P 500"/>
                                                 </properties>
@@ -427,7 +427,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="0"/>
+                                                  <font name="Bell MT" size="20" style="0"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="P 800"/>
                                                 </properties>
@@ -467,7 +467,7 @@
                                   </grid>
                                 </constraints>
                                 <properties>
-                                  <background color="-3688541"/>
+                                  <background color="-1842760"/>
                                 </properties>
                                 <border type="none"/>
                                 <children>
@@ -479,7 +479,7 @@
                                       </grid>
                                     </constraints>
                                     <properties>
-                                      <background color="-3688541"/>
+                                      <background color="-1842760"/>
                                     </properties>
                                     <border type="none"/>
                                     <children/>
@@ -501,7 +501,7 @@
                                     </constraints>
                                     <properties>
                                       <background color="-11133902"/>
-                                      <font size="20" style="1"/>
+                                      <font name="Bell MT" size="20" style="1"/>
                                       <foreground color="-11133902"/>
                                       <text value="Item:                                           Qty:    Price:  "/>
                                     </properties>
@@ -535,7 +535,7 @@
                             <margin top="0" left="0" bottom="0" right="15"/>
                             <constraints border-constraint="Center"/>
                             <properties>
-                              <background color="-3688541"/>
+                              <background color="-1842760"/>
                             </properties>
                             <border type="none"/>
                             <children>
@@ -546,7 +546,7 @@
                                 </constraints>
                                 <properties>
                                   <autoscrolls value="false"/>
-                                  <background color="-3688541"/>
+                                  <background color="-1842760"/>
                                 </properties>
                                 <border type="none"/>
                                 <children>
@@ -559,7 +559,7 @@
                                       </grid>
                                     </constraints>
                                     <properties>
-                                      <background color="-3688541"/>
+                                      <background color="-1842760"/>
                                     </properties>
                                     <border type="none"/>
                                     <children>
@@ -576,14 +576,18 @@
                                         </properties>
                                         <border type="none"/>
                                         <children>
-                                          <component id="3980c" class="javax.swing.JLabel" binding="specialInstruction">
+                                          <component id="824d9" class="javax.swing.JTextArea" binding="specialRequest">
                                             <constraints>
-                                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                                                <preferred-size width="450" height="50"/>
+                                                <maximum-size width="450" height="50"/>
+                                              </grid>
                                             </constraints>
                                             <properties>
-                                              <font name="Bell MT" size="20" style="0"/>
-                                              <foreground color="-11133902"/>
-                                              <text value="No special instrctions."/>
+                                              <background color="-3688541"/>
+                                              <font name="Bell MT" size="16"/>
+                                              <foreground color="-9623246"/>
+                                              <text value="Type here!"/>
                                             </properties>
                                           </component>
                                         </children>
@@ -610,7 +614,7 @@
                                       </grid>
                                     </constraints>
                                     <properties>
-                                      <background color="-3688541"/>
+                                      <background color="-1842760"/>
                                     </properties>
                                     <border type="none"/>
                                     <children>
@@ -630,7 +634,7 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="West"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="200"/>
                                               <minimumSize width="270" height="200"/>
                                               <preferredSize width="270" height="200"/>
@@ -643,7 +647,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="1"/>
+                                                  <font name="Bell MT" size="24" style="1"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="0.00"/>
                                                 </properties>
@@ -675,14 +679,14 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="East"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="200"/>
                                               <minimumSize width="270" height="200"/>
                                               <preferredSize width="270" height="200"/>
                                             </properties>
                                             <border type="none"/>
                                             <children>
-                                              <component id="4f5b7" class="javax.swing.JButton" binding="cancelBtn">
+                                              <component id="4f5b7" class="javax.swing.JButton" binding="checkoutBtn">
                                                 <constraints>
                                                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -742,7 +746,7 @@
                                   </grid>
                                 </constraints>
                                 <properties>
-                                  <background color="-3688541"/>
+                                  <background color="-1842760"/>
                                 </properties>
                                 <border type="none"/>
                                 <children>
@@ -755,7 +759,7 @@
                                       </grid>
                                     </constraints>
                                     <properties>
-                                      <background color="-3688541"/>
+                                      <background color="-1842760"/>
                                     </properties>
                                     <border type="none"/>
                                     <children>
@@ -774,7 +778,7 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="West"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="500"/>
                                               <minimumSize width="270" height="500"/>
                                               <preferredSize width="270" height="500"/>
@@ -787,7 +791,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="1"/>
+                                                  <font name="Bell MT" size="20" style="1"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="Mode of Delivery:"/>
                                                 </properties>
@@ -798,7 +802,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="1"/>
+                                                  <font name="Bell MT" size="20" style="1"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="Recipient Name"/>
                                                 </properties>
@@ -809,7 +813,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="1"/>
+                                                  <font name="Bell MT" size="20" style="1"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="Date of Delivery/Pickup"/>
                                                 </properties>
@@ -820,7 +824,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="1"/>
+                                                  <font name="Bell MT" size="20" style="1"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="Delivery Address"/>
                                                 </properties>
@@ -830,12 +834,12 @@
                                                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                               </vspacer>
-                                              <component id="61110" class="javax.swing.JLabel" binding="delivery">
+                                              <component id="61110" class="javax.swing.JLabel">
                                                 <constraints>
-                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
-                                                  <font name="Bell MT" size="18" style="0"/>
+                                                  <font name="Bell MT" size="20" style="0"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="J&amp;T Carrier"/>
                                                 </properties>
@@ -846,7 +850,7 @@
                                             <margin top="0" left="0" bottom="0" right="0"/>
                                             <constraints border-constraint="East"/>
                                             <properties>
-                                              <background color="-3688541"/>
+                                              <background color="-1842760"/>
                                               <maximumSize width="270" height="500"/>
                                               <minimumSize width="270" height="500"/>
                                               <preferredSize width="270" height="500"/>
@@ -859,7 +863,7 @@
                                                 </constraints>
                                                 <properties>
                                                   <background color="-11133902"/>
-                                                  <font size="20" style="1"/>
+                                                  <font name="Bell MT" size="20" style="1"/>
                                                   <foreground color="-11133902"/>
                                                   <text value="Mode of Payment"/>
                                                 </properties>
@@ -874,9 +878,9 @@
                                                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                               </vspacer>
-                                              <component id="8882f" class="javax.swing.JLabel" binding="payment">
+                                              <component id="8882f" class="javax.swing.JLabel">
                                                 <constraints>
-                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
                                                   <font name="Bell MT" size="18" style="0"/>
@@ -884,7 +888,7 @@
                                                   <text value="Cash On Delivery"/>
                                                 </properties>
                                               </component>
-                                              <component id="ef443" class="javax.swing.JLabel" binding="address">
+                                              <component id="ef443" class="javax.swing.JLabel">
                                                 <constraints>
                                                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -894,7 +898,7 @@
                                                   <text value="Brgy. San Roque, Talisay City, Cebu"/>
                                                 </properties>
                                               </component>
-                                              <component id="1e3f6" class="javax.swing.JLabel" binding="date">
+                                              <component id="1e3f6" class="javax.swing.JLabel">
                                                 <constraints>
                                                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -904,7 +908,7 @@
                                                   <text value="MM/DD/YYYY"/>
                                                 </properties>
                                               </component>
-                                              <component id="22bde" class="javax.swing.JLabel" binding="receiver">
+                                              <component id="22bde" class="javax.swing.JLabel">
                                                 <constraints>
                                                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>

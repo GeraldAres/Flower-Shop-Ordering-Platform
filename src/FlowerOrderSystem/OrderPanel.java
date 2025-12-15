@@ -78,18 +78,18 @@ public class OrderPanel {
         btnLarge.setText("");
 
         ImageIcon image9 = new ImageIcon("src/FlowerOrderSystem/Assets/Animal Illustrations/Catwobg.png");
-        Image img9 =  image9.getImage().getScaledInstance(150, 400, Image.SCALE_SMOOTH);
+        Image img9 =  image9.getImage().getScaledInstance(200, 400, Image.SCALE_SMOOTH);
         ImageIcon animal1 = new ImageIcon(img9);
         ImageHolder1.setIcon(animal1);
 
         ImageIcon image8 = new ImageIcon("src/FlowerOrderSystem/Assets/Animal Illustrations/Squirrel wo bg.png");
-        Image img8 =  image8.getImage().getScaledInstance(150, 400, Image.SCALE_SMOOTH);
+        Image img8 =  image8.getImage().getScaledInstance(160, 350, Image.SCALE_SMOOTH);
         ImageIcon animal2 = new ImageIcon(img8);
         ImageHolder2.setIcon(animal2); ///right
 
 
         ImageIcon image7 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
-        Image img7 =  image7.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        Image img7 =  image7.getImage().getScaledInstance(60, 30, Image.SCALE_SMOOTH);
         ImageIcon prev = new ImageIcon(img7);
         prevButton.setIcon(prev);
 
