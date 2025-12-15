@@ -130,16 +130,38 @@ public class SignUpPanel {
 
                     if (userController.signUpValidation(name, email, contactNo, username, password, confirmPassword)) {
                         // Create the dialog
-                        JDialog dialog = new JDialog((JFrame) null, "Info", true); // true = modal
-                        dialog.setSize(350, 150);
+                        JDialog dialog = new JDialog((JFrame) null, "Info", true);
+                        dialog.setSize(420, 180);
                         dialog.setLayout(new BorderLayout());
+                        dialog.setUndecorated(true); // removes sharp window borders
 
-                        // Message
-                        JLabel message = new JLabel("Account created, please log in to continue.", JLabel.CENTER);
-                        message.setFont(new Font("Arial", Font.PLAIN, 14));
+// Main panel (cream background)
+                        JPanel mainPanel = new JPanel(new BorderLayout());
+                        mainPanel.setBackground(Color.decode("#F5E6D3"));
+                        mainPanel.setBorder(BorderFactory.createLineBorder(Color.decode("#561C32"), 2));
 
-                        // OK Button
+// Message
+                        JLabel message = new JLabel(
+                                "<html><center>Account created successfully.<br>Please log in to continue.</center></html>",
+                                JLabel.CENTER
+                        );
+                        message.setFont(new Font("Bell MT", Font.BOLD, 18));
+                        message.setForeground(Color.decode("#561C32"));
+                        message.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 20));
+
+// Button panel
+                        JPanel buttonPanel = new JPanel();
+                        buttonPanel.setBackground(Color.decode("#F5E6D3"));
+
+// OK Button
                         JButton okButton = new JButton("OK");
+                        okButton.setFont(new Font("Bell MT", Font.BOLD, 14));
+                        okButton.setBackground(Color.decode("#561C32"));
+                        okButton.setForeground(Color.decode("#F5E6D3"));
+                        okButton.setFocusPainted(false);
+                        okButton.setBorder(BorderFactory.createEmptyBorder(8, 30, 8, 30));
+                        okButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
                         okButton.addActionListener(ev -> {
                             try {
                                 userController.userActions("Regular");
@@ -149,12 +171,13 @@ public class SignUpPanel {
                             dialog.dispose();
                         });
 
-                        dialog.add(message, BorderLayout.CENTER);
-                        dialog.add(okButton, BorderLayout.SOUTH);
+// Add components
+                        buttonPanel.add(okButton);
+                        mainPanel.add(message, BorderLayout.CENTER);
+                        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
+                        dialog.add(mainPanel);
                         dialog.setLocationRelativeTo(null);
-
-                        // Show the dialog
                         dialog.setVisible(true);
                     }
                 }  catch (InvalidInputException.InvalidName ex) {
