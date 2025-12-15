@@ -58,7 +58,7 @@ public class ViewOrdersPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    userController.userActions("StemBack");
+                    userController.userActions("Dashboard");
                 } catch (InvalidInputException ex) {}
             }
         });

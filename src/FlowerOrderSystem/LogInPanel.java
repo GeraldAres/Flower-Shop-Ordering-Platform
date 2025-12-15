@@ -56,6 +56,7 @@ public class LogInPanel {
         usernameField.getCaret().setVisible(true);
         passwordField.getCaret().setSelectionVisible(true);
     }
+
     public void setController(UserController userController) {
         this.userController = userController;
         usernameField.setText("");

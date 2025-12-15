@@ -1,10 +1,14 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.OrderController;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FlowerCat_Pnl3 {
-    private JPanel FlwrCat_Pnl3;
+    JPanel FlwrCat_Pnl3;
     private JPanel holder;
     private JPanel north;
     private JPanel Body;
@@ -23,6 +27,8 @@ public class FlowerCat_Pnl3 {
     private JLabel TitlePanel;
     private JLabel Header;
     private JButton prevbtn;
+
+    private OrderController orderController;
 
 
     FlowerCat_Pnl3(){
@@ -56,16 +62,22 @@ public class FlowerCat_Pnl3 {
         prevbtn.setFocusPainted(false);
         prevbtn.setText("");
 
-        ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/nextBtn.png");
-        Image img7 =  image6.getImage().getScaledInstance(100, 35, Image.SCALE_SMOOTH);
-        ImageIcon btnNext = new ImageIcon(img7);
-        nextBtn.setIcon(btnNext);
-        nextBtn.setText("");
-        nextBtn.setOpaque(false);
-        nextBtn.setContentAreaFilled(false);
-        nextBtn.setBorderPainted(false);
-        nextBtn.setFocusPainted(false);
-        nextBtn.setText("");
+    }
+
+    /// PREV BTN
+    public void setController(OrderController orderController){
+        this.orderController = orderController;
+
+        prevbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("available2");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
     public static void main(String[] args) {
 
@@ -76,6 +88,8 @@ public class FlowerCat_Pnl3 {
         frame.setSize(1080, 1440);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+
     }
 
 }

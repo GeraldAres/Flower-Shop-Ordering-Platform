@@ -133,7 +133,7 @@
                             </constraints>
                             <properties>
                               <background color="-11133902"/>
-                              <font name="Bell MT" size="18" style="0"/>
+                              <font name="Book Antiqua" size="18" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="How can we help you today amigo?"/>
                             </properties>

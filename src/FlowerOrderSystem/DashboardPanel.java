@@ -111,7 +111,7 @@ public class DashboardPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    mainController.changeDisplay("Flowers");
+                    mainController.changeDisplay("available1");
                 } catch (InvalidInputException ex) {}
             }
         });

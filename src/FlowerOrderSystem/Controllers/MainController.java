@@ -130,6 +130,20 @@ public class MainController implements Controller {
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
 
+        if(action.equals("available1")){
+            main.getFlowerCatPnl1().setOrderController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "available1");
+        }
+        if(action.equals("available2")){
+            main.getFlowerCatPnl2().setController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "available2");
+        }
+        if(action.equals("available3")){
+            main.getFlowerCatPnl3().setController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "available3");
+
+        }
+
 
     }
 
