@@ -69,6 +69,11 @@ public class MainController implements Controller {
             main.getCardLayout().show(main.getMainPanel(), "MyOrders" +
                     "");
         }
+
+        if (action.equals("viewThis")){
+            main.getOrderDetails().setController(checkoutController);
+            main.getCardLayout().show(main.getMainPanel(), "viewThis");
+        }
         if (action.equals("Settings")){
             main.getCardLayout().show(main.getMainPanel(), "Settings");
         }

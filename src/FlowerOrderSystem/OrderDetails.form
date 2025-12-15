@@ -576,18 +576,14 @@
                                         </properties>
                                         <border type="none"/>
                                         <children>
-                                          <component id="824d9" class="javax.swing.JTextArea" binding="specialRequest">
+                                          <component id="3980c" class="javax.swing.JLabel" binding="specialInstruction">
                                             <constraints>
-                                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="0" use-parent-layout="false">
-                                                <preferred-size width="450" height="50"/>
-                                                <maximum-size width="450" height="50"/>
-                                              </grid>
+                                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                             </constraints>
                                             <properties>
-                                              <background color="-1842760"/>
-                                              <font name="Bell MT" size="16"/>
-                                              <foreground color="-9623246"/>
-                                              <text value="Type here!"/>
+                                              <font name="Bell MT" size="20" style="0"/>
+                                              <foreground color="-11133902"/>
+                                              <text value="No special instrctions."/>
                                             </properties>
                                           </component>
                                         </children>
@@ -686,7 +682,7 @@
                                             </properties>
                                             <border type="none"/>
                                             <children>
-                                              <component id="4f5b7" class="javax.swing.JButton" binding="checkoutBtn">
+                                              <component id="4f5b7" class="javax.swing.JButton" binding="cancelBtn">
                                                 <constraints>
                                                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -834,9 +830,9 @@
                                                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                               </vspacer>
-                                              <component id="61110" class="javax.swing.JLabel">
+                                              <component id="61110" class="javax.swing.JLabel" binding="delivery">
                                                 <constraints>
-                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
                                                   <font name="Bell MT" size="18" style="0"/>
@@ -878,9 +874,9 @@
                                                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                               </vspacer>
-                                              <component id="8882f" class="javax.swing.JLabel">
+                                              <component id="8882f" class="javax.swing.JLabel" binding="payment">
                                                 <constraints>
-                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                                                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
                                                 <properties>
                                                   <font name="Bell MT" size="18" style="0"/>
@@ -888,7 +884,7 @@
                                                   <text value="Cash On Delivery"/>
                                                 </properties>
                                               </component>
-                                              <component id="ef443" class="javax.swing.JLabel">
+                                              <component id="ef443" class="javax.swing.JLabel" binding="address">
                                                 <constraints>
                                                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -898,7 +894,7 @@
                                                   <text value="Brgy. San Roque, Talisay City, Cebu"/>
                                                 </properties>
                                               </component>
-                                              <component id="1e3f6" class="javax.swing.JLabel">
+                                              <component id="1e3f6" class="javax.swing.JLabel" binding="date">
                                                 <constraints>
                                                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>
@@ -908,7 +904,7 @@
                                                   <text value="MM/DD/YYYY"/>
                                                 </properties>
                                               </component>
-                                              <component id="22bde" class="javax.swing.JLabel">
+                                              <component id="22bde" class="javax.swing.JLabel" binding="receiver">
                                                 <constraints>
                                                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                                                 </constraints>

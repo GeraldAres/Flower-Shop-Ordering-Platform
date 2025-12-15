@@ -30,6 +30,7 @@ public class MainPanel {
     private BouquetOrderForm smallBouquet = new BouquetOrderForm();
     private BouquetMediumPanel mediumBouquet = new BouquetMediumPanel();
     private BouquetLargePanel largeBouquet =  new BouquetLargePanel();
+    private OrderDetails orderDetails = new OrderDetails();
 
     private FlowerCat_Pnl1 flowerCatPnl1 = new FlowerCat_Pnl1();
     private FlowerCat_Pnl2 flowerCatPnl2 = new FlowerCat_Pnl2();
@@ -52,6 +53,7 @@ public class MainPanel {
         MainPanel.add(smallBouquet.Bouquet, "Small");
         MainPanel.add(mediumBouquet.Bouquet, "Medium");
         MainPanel.add(largeBouquet.Bouquet, "Large");
+        MainPanel.add(orderDetails.OrderDetailsPnl, "viewThis");
 
         // Sets the business logo up for display //
 
@@ -184,5 +186,9 @@ public class MainPanel {
 
     public BouquetMediumPanel getMediumBouquet() {
         return mediumBouquet;
+    }
+
+    public OrderDetails getOrderDetails() {
+        return orderDetails;
     }
 }

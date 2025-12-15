@@ -30,7 +30,8 @@ public class LogIn {
                                 String storedUserName = data[3].trim();
                                 String storedPassword = data[4].trim();
                                     if (storedUserName.equals(username) && storedPassword.equals(password)) {
-                                         user = new User(data[0], data[1], data[2], data[3], data[4]);
+                                        ArrayList<CheckOut>orderss = new ArrayList<>();
+                                         user = new User(data[0], data[1], data[2], data[3], data[4],orderss);
                                         return user;
                                     }
                         }
