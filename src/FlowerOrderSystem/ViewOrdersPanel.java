@@ -70,12 +70,8 @@ public class ViewOrdersPanel {
             System.err.println("No active user.");
             return;
         }
-
-        if (orderDisplay == null) {
-            System.err.println("orderDisplay panel is null.");
-            return;
-        }
-
+        orderDisplay = new JPanel();
+        Scrikk.setViewportView(orderDisplay);
         if (user.getOrders() == null) {
             System.err.println("User orders list is null.");
             return;

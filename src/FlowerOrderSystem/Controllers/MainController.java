@@ -65,6 +65,7 @@ public class MainController implements Controller {
 
         if(action.equals("MyOrders")){
             main.getViewOrderPanel().setController(setup);
+            activeUser.loadOrdersFromViewOrder();
             main.getViewOrderPanel().displayOrders(activeUser);
             main.getCardLayout().show(main.getMainPanel(), "MyOrders" +
                     "");

@@ -265,6 +265,7 @@ public class CheckOut {
         }
 
         user.addOrder(this);
+
     }
 
     public void setReceipient(String name) {

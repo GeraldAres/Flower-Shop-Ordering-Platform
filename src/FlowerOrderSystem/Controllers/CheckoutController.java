@@ -60,6 +60,8 @@ public class CheckoutController implements Controller{
         checkout.setTotalPrice(totalPrice);
         checkout.setSpecialInstructions(instructions);
         checkout.setModeOfPayment(modeOfPayment);
+        checkout.saveOrder();
+
     }
 
     public ArrayList<String> getOrderSummaryLines() {
