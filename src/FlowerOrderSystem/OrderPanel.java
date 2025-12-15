@@ -107,7 +107,7 @@ public class OrderPanel {
 
     public void setController(MainController mainController) {
         this.mainController = mainController;
-
+        //stem
         Stembtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -129,11 +129,34 @@ public class OrderPanel {
                 }
             }
         });
+        //medium panel
+        btnMedium.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    mainController.changeDisplay("Medium");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        btnLarge.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    mainController.changeDisplay("Bouquet");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
 
         prevButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+                    System.out.println("hi");
                     mainController.changeDisplay("Dashboard");
                 } catch (InvalidInputException ex) {}
 

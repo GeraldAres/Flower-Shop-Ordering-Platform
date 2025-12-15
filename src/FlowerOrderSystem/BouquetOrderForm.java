@@ -335,8 +335,6 @@ public class BouquetOrderForm {
 
     }
 
-
-
     public void setController(OrderController orderController, int size){
         this.orderController = orderController;
 
