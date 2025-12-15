@@ -27,6 +27,8 @@ public class OrderDetails {
     private JPanel orderSummaryPanel;
     private JPanel right;
     private JLabel totalPrice;
+    private JTextArea specialRequest;
+    private JButton checkoutBtn;
     private JButton cancelBtn;
     private JLabel delivery;
     private JLabel payment;
@@ -39,8 +41,12 @@ public class OrderDetails {
 
 
 
-    public void  setController(CheckoutController controller) {
+    public void  setController(CheckoutController controller, CheckOut selectedOrder) {
+
         this.controller = controller;
+        if (selectedOrder == null) {
+            System.out.println("No Order Selected");
+        }
         customerName.setText(controller.getName());
         contactNumber.setText(controller.getNumber());
         email.setText(controller.getEmail());

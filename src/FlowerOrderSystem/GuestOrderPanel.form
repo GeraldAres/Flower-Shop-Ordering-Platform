@@ -358,7 +358,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="116f4" class="javax.swing.JButton" binding="stemButton" default-binding="true">
+                          <component id="116f4" class="javax.swing.JButton" binding="prevBtn" default-binding="true">
                             <constraints>
                               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                                 <preferred-size width="200" height="50"/>
@@ -399,7 +399,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="3a3bc" class="javax.swing.JButton" binding="bouquetButton" default-binding="true">
+                          <component id="3a3bc" class="javax.swing.JButton" binding="nextBtn" default-binding="true">
                             <constraints>
                               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                                 <preferred-size width="200" height="50"/>

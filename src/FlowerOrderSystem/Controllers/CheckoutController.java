@@ -60,7 +60,6 @@ public class CheckoutController implements Controller{
         checkout.setTotalPrice(totalPrice);
         checkout.setSpecialInstructions(instructions);
         checkout.setModeOfPayment(modeOfPayment);
-        mainController.changeDisplay("Dashboard");
     }
 
     public ArrayList<String> getOrderSummaryLines() {
@@ -113,5 +112,7 @@ public class CheckoutController implements Controller{
     }
 
 
-
+    public void userActions(String regular) throws InvalidInputException {
+        mainController.changeDisplay(regular);
+    }
 }

@@ -24,8 +24,8 @@ public class GuestOrderPanel {
     private JPanel Label;
     private JPanel Stem;
     private JPanel Bouquet;
-    private JButton stemButton;
-    private JButton bouquetButton;
+    private JButton prevBtn;
+    private JButton nextBtn;
     private JLabel invalidNameLbl;
     private JLabel invalidContactLbl;
     private JLabel invalidEmailAddressLbl;
@@ -36,8 +36,8 @@ public class GuestOrderPanel {
 
     public GuestOrderPanel() {
 
-        stemButton.setEnabled(false);
-        bouquetButton.setEnabled(false);
+        prevBtn.setEnabled(false);
+        nextBtn.setEnabled(false);
         invalidNameLbl.setVisible(false);
         invalidEmailAddressLbl.setVisible(false);
         invalidContactLbl.setVisible(false);
@@ -58,19 +58,19 @@ public class GuestOrderPanel {
 
         ImageIcon image1 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/StemBtn.png");
         Image img1 = image1.getImage().getScaledInstance(200, 55, Image.SCALE_SMOOTH);
-        stemButton.setIcon(new ImageIcon(img1));
+        prevBtn.setIcon(new ImageIcon(img1));
 
         ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/BouquetBtn.png");
         Image img2 = image2.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
-        bouquetButton.setIcon(new ImageIcon(img2));
+        nextBtn.setIcon(new ImageIcon(img2));
 
         ImageIcon image3 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
         Image img3 = image3.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
-        prevButton.setIcon(new ImageIcon(img3));
+        prevBtn.setIcon(new ImageIcon(img3));
 
 
 
-        JButton[] buttons = {stemButton, bouquetButton, prevButton};
+        JButton[] buttons = {prevBtn, nextBtn};
         for (JButton btn : buttons) {
             btn.setOpaque(false);
             btn.setBorderPainted(false);
@@ -93,30 +93,16 @@ public class GuestOrderPanel {
         emailAddress.getDocument().addDocumentListener(listener);
         contactNumber.getDocument().addDocumentListener(listener);
 
-        stemButton.addActionListener(e -> {
-            try {
-                userController.setGuest(fullName.getText(), emailAddress.getText(), contactNumber.getText());
-                userController.userActions("Stem");
-            } catch (InvalidInputException ex) {
-                throw new RuntimeException(ex);
-            } catch (InvalidInputException.InvalidEmail ex) {
-                throw new RuntimeException(ex);
-            } catch (InvalidInputException.InvalidName ex) {
-                throw new RuntimeException(ex);
-            } catch (InvalidInputException.InvalidPhone ex) {
-                throw new RuntimeException(ex);
-            }
-        });
 
-        bouquetButton.addActionListener(e -> {
+        nextBtn.addActionListener(e -> {
             try {
-                userController.userActions("Bouquet");
+                userController.userActions("OrderSelection");
             } catch (InvalidInputException ex) {
                 throw new RuntimeException(ex);
             }
         });
 
-        prevButton.addActionListener(e -> {
+        prevBtn.addActionListener(e -> {
             try {
                 userController.userActions("prev");
             } catch (InvalidInputException ex) {
@@ -170,7 +156,7 @@ public class GuestOrderPanel {
             valid = false;
         }
 
-        stemButton.setEnabled(valid);
-        bouquetButton.setEnabled(valid);
+        prevBtn.setEnabled(valid);
+        nextBtn.setEnabled(valid);
     }
 }

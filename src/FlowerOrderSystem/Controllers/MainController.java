@@ -56,7 +56,7 @@ public class MainController implements Controller {
             main.getDashboardPanel().setController(this);
         }
 
-        if (action.equals("NewOrder")){
+        if (action.equals("NewOrder") || action.equals("OrderSelection")){
             order = orderController.getOrder();
             main.getCardLayout().show(main.getMainPanel(), "NewOrder");
             main.getOrderPanel().setController (this);
@@ -71,7 +71,7 @@ public class MainController implements Controller {
         }
 
         if (action.equals("viewThis")){
-            main.getOrderDetails().setController(checkoutController);
+            main.getOrderDetails().setController(checkoutController, selectedOrder);
             main.getCardLayout().show(main.getMainPanel(), "viewThis");
         }
         if (action.equals("Settings")){
@@ -135,7 +135,7 @@ public class MainController implements Controller {
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
 
-        if(action.equals("available1")){
+      /*  if(action.equals("available1")){
             main.getFlowerCatPnl1().setOrderController(orderController);
             main.getCardLayout().show(main.getMainPanel(), "available1");
         }
@@ -147,7 +147,7 @@ public class MainController implements Controller {
             main.getFlowerCatPnl3().setController(orderController);
             main.getCardLayout().show(main.getMainPanel(), "available3");
 
-        }
+        }*/
 
 
     }
