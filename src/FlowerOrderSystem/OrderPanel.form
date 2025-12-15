@@ -39,7 +39,7 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <background color="-1842760"/>
+                  <background color="-11133902"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -49,7 +49,7 @@
                     </constraints>
                     <properties>
                       <font name="Bell MT" size="20" style="1"/>
-                      <foreground color="-9623246"/>
+                      <foreground color="-1"/>
                       <text value="Order Form"/>
                     </properties>
                   </component>
@@ -59,7 +59,7 @@
                     </constraints>
                     <properties>
                       <font name="Ink Free" size="60"/>
-                      <foreground color="-9623246"/>
+                      <foreground color="-1"/>
                       <text value="Hiraya Flowershop Cebu"/>
                     </properties>
                   </component>
@@ -149,7 +149,7 @@
                         <margin top="0" left="0" bottom="0" right="0"/>
                         <constraints border-constraint="North"/>
                         <properties>
-                          <background color="-3688541"/>
+                          <background color="-1842760"/>
                           <maximumSize width="700" height="800"/>
                           <preferredSize width="700" height="800"/>
                         </properties>

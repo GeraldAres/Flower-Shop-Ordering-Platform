@@ -30,11 +30,11 @@ public class MainPanel {
     private BouquetOrderForm smallBouquet = new BouquetOrderForm();
     private BouquetMediumPanel mediumBouquet = new BouquetMediumPanel();
     private BouquetLargePanel largeBouquet =  new BouquetLargePanel();
+    private OrderDetails orderDetails = new OrderDetails();
 
     private FlowerCat_Pnl1 flowerCatPnl1 = new FlowerCat_Pnl1();
     private FlowerCat_Pnl2 flowerCatPnl2 = new FlowerCat_Pnl2();
     private FlowerCat_Pnl3 flowerCatPnl3 = new FlowerCat_Pnl3();
-
 
     public MainPanel() throws InvalidInputException, NullPointerException {
         // The following code sets up the card layout, allowing the Main Controller to easily switch through screens //
@@ -53,11 +53,7 @@ public class MainPanel {
         MainPanel.add(smallBouquet.Bouquet, "Small");
         MainPanel.add(mediumBouquet.Bouquet, "Medium");
         MainPanel.add(largeBouquet.Bouquet, "Large");
-        MainPanel.add(flowerCatPnl1.TestAvailableFlowers, "available1");
-        MainPanel.add(flowerCatPnl2.holder, "available2");
-        MainPanel.add(flowerCatPnl3.FlwrCat_Pnl3, "available3");
-
-
+        MainPanel.add(orderDetails.OrderDetailsPnl, "viewThis");
 
         // Sets the business logo up for display //
 
@@ -192,7 +188,7 @@ public class MainPanel {
         return mediumBouquet;
     }
 
-    public FlowerCat_Pnl1 getFlowerCatPnl1(){return flowerCatPnl1;}
-    public FlowerCat_Pnl3 getFlowerCatPnl3(){return flowerCatPnl3;}
-    public FlowerCat_Pnl2 getFlowerCatPnl2(){return flowerCatPnl2;}
+    public OrderDetails getOrderDetails() {
+        return orderDetails;
+    }
 }

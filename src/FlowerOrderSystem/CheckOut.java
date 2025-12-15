@@ -43,7 +43,7 @@ public class CheckOut {
         this.orderID = orderId;
         this.formattedDate = date;
         this.totalPrice = total;
-        this.user = new User(customerName, "N/A", "N/A", "N/A", "N/A");
+        this.user = new User(customerName, "N/A", "N/A", "N/A", "N/A" , null);
     }
 
     public String getModeOfDelivery() {
@@ -72,25 +72,19 @@ public class CheckOut {
         switch (modeOfPayment) {
             case "Cash on Delivery":
                 payment = new CashOnDelivery();
-                if(payment.processPayment(totalPrice)){
-                    saveOrder();
-                } else{
+                if(!payment.processPayment(totalPrice)){
                     throw new InvalidInputException.PaymentFailedException();
                 }
                 break;
             case "Gcash":
                 payment = new GCash();
-                if(payment.processPayment(totalPrice)){
-                    saveOrder();
-                } else{
+                if(!payment.processPayment(totalPrice)){
                     throw new InvalidInputException.PaymentFailedException();
                 }
                 break;
             case "Bank Transfer":
                 payment = new BankTransfer();
-                if(payment.processPayment(totalPrice)){
-                    saveOrder();
-                } else{
+                if(!payment.processPayment(totalPrice)){
                     throw new InvalidInputException.PaymentFailedException();
                 }
                 break;

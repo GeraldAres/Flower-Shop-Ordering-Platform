@@ -108,6 +108,10 @@ public class CheckoutController implements Controller{
         return checkout.getTotalPrice();
     }
 
+    public CheckOut getCheckout() {
+        return checkout;
+    }
+
 
 
 }

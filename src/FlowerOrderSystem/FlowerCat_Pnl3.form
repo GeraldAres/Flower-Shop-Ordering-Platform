@@ -27,7 +27,7 @@
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints border-constraint="North"/>
             <properties>
-              <background color="-1517372"/>
+              <background color="-1842760"/>
               <maximumSize width="1080" height="40"/>
               <minimumSize width="1080" height="40"/>
               <preferredSize width="1080" height="40"/>
@@ -59,7 +59,7 @@
               <grid id="4300" binding="leftimg_pnl" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints border-constraint="West"/>
                 <properties>
-                  <background color="-9623246"/>
+                  <background color="-11133902"/>
                   <maximumSize width="200" height="1400"/>
                   <preferredSize width="200" height="1400"/>
                 </properties>
@@ -77,7 +77,7 @@
               <grid id="fc1dc" binding="rightImg_pnl" layout-manager="BorderLayout" hgap="0" vgap="0">
                 <constraints border-constraint="East"/>
                 <properties>
-                  <background color="-9623246"/>
+                  <background color="-11133902"/>
                   <maximumSize width="200" height="1400"/>
                   <preferredSize width="200" height="1400"/>
                 </properties>
@@ -96,7 +96,7 @@
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints border-constraint="Center"/>
                 <properties>
-                  <background color="-9623246"/>
+                  <background color="-11133902"/>
                   <font name="Ink Free" size="20" style="1"/>
                   <maximumSize width="680" height="1400"/>
                   <minimumSize width="680" height="1400"/>
@@ -187,7 +187,7 @@
                     <properties>
                       <focusable value="false"/>
                       <font name="Ink Free" size="22" style="1"/>
-                      <foreground color="-1517372"/>
+                      <foreground color="-1"/>
                       <text value="Carnations (The devoted)"/>
                     </properties>
                   </component>
@@ -231,7 +231,7 @@
                     <properties>
                       <focusable value="false"/>
                       <font name="Ink Free" size="22" style="1"/>
-                      <foreground color="-1517372"/>
+                      <foreground color="-1"/>
                       <text value="Lilies (The Graceful)"/>
                     </properties>
                   </component>
@@ -311,7 +311,7 @@
                     </constraints>
                     <properties>
                       <font name="Ink Free" size="48" style="1"/>
-                      <foreground color="-1517372"/>
+                      <foreground color="-1"/>
                       <text value="Flower Catalogue's"/>
                     </properties>
                   </component>

@@ -153,6 +153,8 @@ public class CheckoutPanel {
        ORDER SUMMARY
        ============================== */
     public void displayOrder() {
+
+
         orderSummaryPanel.setLayout(new BoxLayout(orderSummaryPanel, BoxLayout.Y_AXIS));
         orderSummaryPanel.removeAll();
 
