@@ -78,6 +78,30 @@ public class BouquetOrderForm {
     String size = "";
 
     public BouquetOrderForm(){
+
+        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
+        Image img=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
+        ImageIcon prev = new ImageIcon(img);
+        prevBtn.setIcon(prev);
+        prevBtn.setText("");
+        prevBtn.setOpaque(false);
+        prevBtn.setContentAreaFilled(false);
+        prevBtn.setBorderPainted(false);
+        prevBtn.setFocusPainted(false);
+        prevBtn.setText("");
+
+        ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/checkoutBtn.png");
+        Image img7 =  image6.getImage().getScaledInstance(110, 35, Image.SCALE_SMOOTH);
+        ImageIcon chckoutbtn = new ImageIcon(img7);
+        checkoutBtn.setIcon(chckoutbtn);
+        checkoutBtn.setText("");
+        checkoutBtn.setOpaque(false);
+        checkoutBtn.setContentAreaFilled(false);
+        checkoutBtn.setBorderPainted(false);
+        checkoutBtn.setFocusPainted(false);
+        checkoutBtn.setText("");
+        //for the checkoutBtn
+
         roseQuantityIncrease.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -465,30 +489,6 @@ public class BouquetOrderForm {
 
     }
 
-    BouquetOrderForm(){
-        ImageIcon image5 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/prev.png");
-        Image img=  image5.getImage().getScaledInstance(66, 29, Image.SCALE_SMOOTH);
-        ImageIcon prev = new ImageIcon(img);
-        prevBtn.setIcon(prev);
-        prevBtn.setText("");
-        prevBtn.setOpaque(false);
-        prevBtn.setContentAreaFilled(false);
-        prevBtn.setBorderPainted(false);
-        prevBtn.setFocusPainted(false);
-        prevBtn.setText("");
-
-        ImageIcon image6 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/checkoutBtn.png");
-        Image img7 =  image6.getImage().getScaledInstance(110, 35, Image.SCALE_SMOOTH);
-        ImageIcon chckoutbtn = new ImageIcon(img7);
-        checkoutBtn.setIcon(chckoutbtn);
-        checkoutBtn.setText("");
-        checkoutBtn.setOpaque(false);
-        checkoutBtn.setContentAreaFilled(false);
-        checkoutBtn.setBorderPainted(false);
-        checkoutBtn.setFocusPainted(false);
-        checkoutBtn.setText("");
-        //for the checkoutBtn
-    }
 
     public static void main(String[] args) {
 
