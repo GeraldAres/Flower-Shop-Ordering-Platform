@@ -191,5 +191,10 @@ Potential future improvements include:
 
 ---
 
+FIGMA LINK for UI: 
+https://www.figma.com/design/5qhT7Lx3M43MfxPLY0sya1/JavaWookez?node-id=0-1&t=m8hDj6FWMKiXyDiR-1
+EXCEL for workload distribution:
+https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/angelajahziel_encabo_cit_edu/IQCJkBYIVsKaTpAXVsNIdXkCAQ6APap4aq7e4lYRyIIqAAo?e=K9PFu6
+
 ## Conclusion
 The **Flower Business Order System** is a well-structured, object-oriented Java application that demonstrates real-world software engineering principles while remaining flexible enough for practical use and future growth.
