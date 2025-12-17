@@ -56,7 +56,7 @@ public class MainController implements Controller {
             main.getDashboardPanel().setController(this);
         }
 
-        if (action.equals("NewOrder")){
+        if (action.equals("NewOrder") || action.equals("OrderSelection")){
             order = orderController.getOrder();
             main.getCardLayout().show(main.getMainPanel(), "NewOrder");
             main.getOrderPanel().setController (this);
@@ -65,9 +65,15 @@ public class MainController implements Controller {
 
         if(action.equals("MyOrders")){
             main.getViewOrderPanel().setController(setup);
+            activeUser.loadOrdersFromViewOrder();
             main.getViewOrderPanel().displayOrders(activeUser);
             main.getCardLayout().show(main.getMainPanel(), "MyOrders" +
                     "");
+        }
+
+        if (action.equals("viewThis")){
+            main.getOrderDetails().setController(checkoutController, selectedOrder);
+            main.getCardLayout().show(main.getMainPanel(), "viewThis");
         }
         if (action.equals("Settings")){
             main.getCardLayout().show(main.getMainPanel(), "Settings");
@@ -129,6 +135,20 @@ public class MainController implements Controller {
         if(action.equals("LargeBack")){
             main.getCardLayout().show(main.getMainPanel(), "Bouquet");
         }
+
+      /*  if(action.equals("available1")){
+            main.getFlowerCatPnl1().setOrderController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "available1");
+        }
+        if(action.equals("available2")){
+            main.getFlowerCatPnl2().setController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "available2");
+        }
+        if(action.equals("available3")){
+            main.getFlowerCatPnl3().setController(orderController);
+            main.getCardLayout().show(main.getMainPanel(), "available3");
+
+        }*/
 
 
     }

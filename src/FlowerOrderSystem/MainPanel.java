@@ -30,6 +30,7 @@ public class MainPanel {
     private BouquetOrderForm smallBouquet = new BouquetOrderForm();
     private BouquetMediumPanel mediumBouquet = new BouquetMediumPanel();
     private BouquetLargePanel largeBouquet =  new BouquetLargePanel();
+    private OrderDetails orderDetails = new OrderDetails();
 
     private FlowerCat_Pnl1 flowerCatPnl1 = new FlowerCat_Pnl1();
     private FlowerCat_Pnl2 flowerCatPnl2 = new FlowerCat_Pnl2();
@@ -52,6 +53,7 @@ public class MainPanel {
         MainPanel.add(smallBouquet.Bouquet, "Small");
         MainPanel.add(mediumBouquet.Bouquet, "Medium");
         MainPanel.add(largeBouquet.Bouquet, "Large");
+        MainPanel.add(orderDetails.OrderDetailsPnl, "viewThis");
 
         // Sets the business logo up for display //
 
@@ -73,8 +75,8 @@ public class MainPanel {
         ImageHolder.setText("");
         ImageHolder2.setText("");
 
-        ImageIcon image = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/LogIn.png");
-        Image img1 =  image.getImage().getScaledInstance(100, 50, Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/logBtn.png");
+        Image img1 =  image.getImage().getScaledInstance(350, 45, Image.SCALE_SMOOTH);
         ImageIcon login = new ImageIcon(img1);
         btnLogIn.setIcon(login);
         btnLogIn.setText("");
@@ -84,8 +86,8 @@ public class MainPanel {
         btnLogIn.setFocusPainted(false);
         btnLogIn.setText("");
 
-        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/Guess.png");
-        Image img2 =  image2.getImage().getScaledInstance(100, 50, Image.SCALE_SMOOTH);
+        ImageIcon image2 = new ImageIcon("src/FlowerOrderSystem/Assets/ImageButtons/guesBtn.png");
+        Image img2 =  image2.getImage().getScaledInstance(350, 45, Image.SCALE_SMOOTH);
         ImageIcon guest = new ImageIcon(img2);
         btnGuest.setIcon(guest);
         btnGuest.setText("");
@@ -184,5 +186,9 @@ public class MainPanel {
 
     public BouquetMediumPanel getMediumBouquet() {
         return mediumBouquet;
+    }
+
+    public OrderDetails getOrderDetails() {
+        return orderDetails;
     }
 }

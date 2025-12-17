@@ -1,10 +1,14 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.OrderController;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FlowerCat_Pnl2 {
-    private JPanel holder;
+    JPanel holder;
     private JLabel placeholder1;
     private JLabel placeholder2;
     private JPanel FlowerCt_Pnl2;
@@ -22,6 +26,9 @@ public class FlowerCat_Pnl2 {
     private JLabel Title1;
     private JLabel TitlePanel;
     private JButton prevBtn;
+
+    private OrderController orderController;
+
 
     public FlowerCat_Pnl2() {
 
@@ -64,6 +71,39 @@ public class FlowerCat_Pnl2 {
         nextBtn.setBorderPainted(false);
         nextBtn.setFocusPainted(false);
         nextBtn.setText("");
+
+        nextBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+    }
+
+    public void setController(OrderController orderController){
+        this.orderController = orderController;
+
+        nextBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("available3");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        prevBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("available1");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
     }
 
     public static void main(String[] args) {

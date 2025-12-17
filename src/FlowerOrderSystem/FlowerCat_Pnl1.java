@@ -1,11 +1,15 @@
 package src.FlowerOrderSystem;
 
+import src.FlowerOrderSystem.Controllers.OrderController;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FlowerCat_Pnl1 {
 
-    private JPanel TestAvailableFlowers;
+    JPanel TestAvailableFlowers;
     private JPanel holder;
     private JPanel north;
     private JPanel Body;
@@ -23,6 +27,34 @@ public class FlowerCat_Pnl1 {
     private JLabel decor1;
     private JLabel TitlePanel;
     private JButton prevBtn;
+
+    private OrderController orderController;
+
+    public void setOrderController(OrderController orderController){
+        this.orderController = orderController;
+
+        nextBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("available2");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        prevBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    orderController.userActions("Dashboard");
+                } catch (InvalidInputException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
 
     public FlowerCat_Pnl1(){
 
@@ -66,14 +98,16 @@ public class FlowerCat_Pnl1 {
         nextBtn.setFocusPainted(false);
         nextBtn.setText("");
 
+
+
     }
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Flower Catalogue");
-        FlowerCat_Pnl1 panel = new FlowerCat_Pnl1();
-        frame.setContentPane(panel.TestAvailableFlowers);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1080, 1440);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        JFrame frame = new JFrame("Flower Catalogue");
+//        FlowerCat_Pnl1 panel = new FlowerCat_Pnl1();
+//        frame.setContentPane(panel.TestAvailableFlowers);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setSize(1080, 1440);
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//    }
 }

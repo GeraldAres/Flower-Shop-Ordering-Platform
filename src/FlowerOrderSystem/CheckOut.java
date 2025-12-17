@@ -8,6 +8,7 @@ import java.time.*;
 public class CheckOut {
     private Order order;
     private User user;
+    private ArrayList<String> orderItems = new ArrayList<>();
     private LocalDateTime timestamp = LocalDateTime.now();
     private DateTimeFormatter idFormatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS");
     private DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("MM-dd-yy hh:mm a");
@@ -35,13 +36,14 @@ public class CheckOut {
         this.orderID = timestamp.format(idFormatter);
         this.orderStatus = "Pending";
         this.totalPrice = order.getOrderPrice();
+        populateOrderItemsFromOrder();
     }
 
     public CheckOut(String orderId, String customerName, String flower, double total, String date) {
         this.orderID = orderId;
         this.formattedDate = date;
         this.totalPrice = total;
-        this.user = new User(customerName, "N/A", "N/A", "N/A", "N/A");
+        this.user = new User(customerName, "N/A", "N/A", "N/A", "N/A" , null);
     }
 
     public String getModeOfDelivery() {
@@ -70,30 +72,38 @@ public class CheckOut {
         switch (modeOfPayment) {
             case "Cash on Delivery":
                 payment = new CashOnDelivery();
-                if(payment.processPayment(totalPrice)){
-                    saveOrder();
-                } else{
+                if(!payment.processPayment(totalPrice)){
                     throw new InvalidInputException.PaymentFailedException();
                 }
                 break;
             case "Gcash":
                 payment = new GCash();
-                if(payment.processPayment(totalPrice)){
-                    saveOrder();
-                } else{
+                if(!payment.processPayment(totalPrice)){
                     throw new InvalidInputException.PaymentFailedException();
                 }
                 break;
             case "Bank Transfer":
                 payment = new BankTransfer();
-                if(payment.processPayment(totalPrice)){
-                    saveOrder();
-                } else{
+                if(!payment.processPayment(totalPrice)){
                     throw new InvalidInputException.PaymentFailedException();
                 }
                 break;
 
         }
+    }
+
+    private void populateOrderItemsFromOrder() {
+        FlowerCountResult result = getFlowerCounts();
+        ArrayList<InBloom> uniqueFlowers = result.getFlowers();
+        ArrayList<Integer> counts = result.getCounts();
+
+            for (int i = 0; i < uniqueFlowers.size(); i++) {
+                InBloom flower = uniqueFlowers.get(i);
+                int quantity = counts.get(i);
+                double batchPrice = flower.getPrice() * quantity;
+
+                addOrderItem(flower.getName(), flower.getColor(), quantity, batchPrice);
+            }
     }
 
     public String getDateOfDelivery() {
@@ -115,8 +125,6 @@ public class CheckOut {
     public ArrayList<String> getAddOnsList() {
         return addOnsList;
     }
-
-
 
     public double getTotalPrice() {
         return totalPrice;
@@ -163,16 +171,40 @@ public class CheckOut {
         this.user = user;
     }
 
+    public ArrayList<String> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(ArrayList<String> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public void addOrderItem(String flowerName, String color, int qty, double price) {
+        String line = String.format("%s(%s), %d, P%.2f", flowerName, color, qty, price);
+        this.orderItems.add(line);
+    }
+
     public void updateContent() {
         String userName = (user != null) ? user.getFullName() : "default";
         String userEmail = (user != null) ? user.getEmail() : "default";
         String userContactNum = (user != null) ? user.getContactNumber() : "default";
+
+        StringBuilder summaryBuilder = new StringBuilder();
+        summaryBuilder.append("\nOrder Summary:");
+            if (orderItems != null && !orderItems.isEmpty()) {
+                for (String item : orderItems) {
+                    summaryBuilder.append("\n\t").append(item);
+                }
+            } else {
+                summaryBuilder.append(" None");
+            }
 
         this.content = "Order ID: " + getOrderID() +
                 "\nOrder Date: " + getFormattedDate() +
                 "\nFull Name: " + userName +
                 "\nEmail: " + userEmail +
                 "\nContact Number: " + userContactNum +
+                summaryBuilder.toString() +
                 "\nMode of Delivery: " + getModeOfDelivery() +
                 "\nAddress of Delivery: " + getAddressOfDelivery() +
                 "\nMode of Payment: " + getModeOfPayment() +
@@ -233,6 +265,7 @@ public class CheckOut {
         }
 
         user.addOrder(this);
+
     }
 
     public void setReceipient(String name) {

@@ -7,6 +7,7 @@
     </constraints>
     <properties>
       <background color="-11133902"/>
+      <font name="Ink Free" size="26" style="1"/>
       <maximumSize width="1080" height="1440"/>
       <preferredSize width="1080" height="1440"/>
     </properties>
@@ -25,7 +26,7 @@
             <margin top="0" left="0" bottom="0" right="5"/>
             <constraints border-constraint="North"/>
             <properties>
-              <background color="-3688541"/>
+              <background color="-1842760"/>
               <maximumSize width="1080" height="230"/>
               <preferredSize width="1080" height="230"/>
             </properties>
@@ -36,7 +37,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font size="36" style="1"/>
+                  <font name="Ink Free" size="48" style="1"/>
                   <foreground color="-11133902"/>
                   <text value="Hiraya Flowershop Cebu"/>
                 </properties>
@@ -46,7 +47,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font size="20"/>
+                  <font name="Bell MT" size="22" style="1"/>
                   <foreground color="-11133902"/>
                   <text value="Stem Order Form"/>
                 </properties>
@@ -133,7 +134,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="+"/>
                         </properties>
@@ -144,7 +145,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="-"/>
                         </properties>
@@ -155,7 +156,7 @@
                           <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="+"/>
                         </properties>
@@ -166,7 +167,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="-"/>
                         </properties>
@@ -177,7 +178,7 @@
                           <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="+"/>
                         </properties>
@@ -188,7 +189,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="-"/>
                         </properties>
@@ -213,8 +214,8 @@
                             </constraints>
                             <properties>
                               <background color="-11133902"/>
-                              <font size="28" style="1"/>
-                              <foreground color="-3688541"/>
+                              <font name="Ink Free" size="26" style="1"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -240,8 +241,8 @@
                             </constraints>
                             <properties>
                               <background color="-11133902"/>
-                              <font size="28" style="1"/>
-                              <foreground color="-3688541"/>
+                              <font name="Ink Free" size="26" style="1"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -267,8 +268,8 @@
                             </constraints>
                             <properties>
                               <background color="-11133902"/>
-                              <font size="28" style="1"/>
-                              <foreground color="-3688541"/>
+                              <font name="Ink Free" size="26" style="1"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -280,6 +281,7 @@
                     <constraints border-constraint="Center"/>
                     <properties>
                       <background color="-11133902"/>
+                      <font name="Ink Free" size="24" style="1"/>
                     </properties>
                     <border type="none"/>
                     <children>
@@ -289,8 +291,8 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                           <text value="ROSE"/>
                         </properties>
                       </component>
@@ -301,6 +303,8 @@
                         </constraints>
                         <properties>
                           <background color="-11133902"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                         </properties>
                         <border type="none"/>
                         <children>
@@ -310,7 +314,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Price: "/>
                             </properties>
@@ -321,7 +325,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Stock : "/>
                             </properties>
@@ -332,7 +336,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="$ 6.00"/>
                             </properties>
@@ -343,7 +347,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="10"/>
                             </properties>
@@ -354,7 +358,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Color: "/>
                             </properties>
@@ -365,7 +369,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="pink"/>
                             </properties>
@@ -378,8 +382,8 @@
                           <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                           <text value="LILIES"/>
                         </properties>
                       </component>
@@ -390,6 +394,8 @@
                         </constraints>
                         <properties>
                           <background color="-11133902"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                         </properties>
                         <border type="none"/>
                         <children>
@@ -399,7 +405,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Price: "/>
                             </properties>
@@ -410,7 +416,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Stock : "/>
                             </properties>
@@ -421,7 +427,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="$ 6.00"/>
                             </properties>
@@ -432,7 +438,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="10"/>
                             </properties>
@@ -443,7 +449,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Color: "/>
                             </properties>
@@ -454,7 +460,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="pink"/>
                             </properties>
@@ -467,8 +473,8 @@
                           <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                           <text value="SUNFLOWER"/>
                         </properties>
                       </component>
@@ -488,7 +494,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Price: "/>
                             </properties>
@@ -499,7 +505,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Stock : "/>
                             </properties>
@@ -510,7 +516,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="$ 6.00"/>
                             </properties>
@@ -521,7 +527,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="10"/>
                             </properties>
@@ -532,7 +538,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Color: "/>
                             </properties>
@@ -543,7 +549,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="pink"/>
                             </properties>
@@ -617,7 +623,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="+"/>
                         </properties>
@@ -628,7 +634,7 @@
                           <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="+"/>
                         </properties>
@@ -639,7 +645,7 @@
                           <gridbag top="120" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="+"/>
                         </properties>
@@ -664,8 +670,8 @@
                             </constraints>
                             <properties>
                               <background color="-11133902"/>
-                              <font size="28" style="1"/>
-                              <foreground color="-3688541"/>
+                              <font name="Ink Free" size="26" style="1"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -677,7 +683,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="-"/>
                         </properties>
@@ -702,8 +708,8 @@
                             </constraints>
                             <properties>
                               <background color="-11133902"/>
-                              <font size="28" style="1"/>
-                              <foreground color="-3688541"/>
+                              <font name="Ink Free" size="26" style="1"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -715,7 +721,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="-"/>
                         </properties>
@@ -740,8 +746,8 @@
                             </constraints>
                             <properties>
                               <background color="-11133902"/>
-                              <font size="28" style="1"/>
-                              <foreground color="-3688541"/>
+                              <font name="Ink Free" size="26" style="1"/>
+                              <foreground color="-1"/>
                               <text value="0"/>
                             </properties>
                           </component>
@@ -753,7 +759,7 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="28" style="1"/>
+                          <font name="Ink Free" size="26" style="1"/>
                           <foreground color="-3688541"/>
                           <text value="-"/>
                         </properties>
@@ -764,6 +770,7 @@
                     <constraints border-constraint="Center"/>
                     <properties>
                       <background color="-11133902"/>
+                      <foreground color="-1"/>
                     </properties>
                     <border type="none"/>
                     <children>
@@ -773,8 +780,8 @@
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                           <text value="TULIPS"/>
                         </properties>
                       </component>
@@ -794,7 +801,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Price: "/>
                             </properties>
@@ -805,7 +812,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Stock : "/>
                             </properties>
@@ -816,7 +823,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="$ 6.00"/>
                             </properties>
@@ -827,7 +834,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="10"/>
                             </properties>
@@ -838,7 +845,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Color: "/>
                             </properties>
@@ -849,7 +856,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="pink"/>
                             </properties>
@@ -862,8 +869,8 @@
                           <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                           <text value="CARNATIONS"/>
                         </properties>
                       </component>
@@ -883,7 +890,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Price: "/>
                             </properties>
@@ -894,7 +901,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Stock : "/>
                             </properties>
@@ -905,7 +912,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="$ 6.00"/>
                             </properties>
@@ -916,7 +923,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="10"/>
                             </properties>
@@ -927,7 +934,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Color: "/>
                             </properties>
@@ -938,7 +945,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="pink"/>
                             </properties>
@@ -951,8 +958,8 @@
                           <gridbag top="130" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
-                          <font size="24" style="1"/>
-                          <foreground color="-3688541"/>
+                          <font name="Ink Free" size="24" style="1"/>
+                          <foreground color="-1"/>
                           <text value="DAISY"/>
                         </properties>
                       </component>
@@ -972,7 +979,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Price: "/>
                             </properties>
@@ -983,7 +990,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Stock : "/>
                             </properties>
@@ -994,7 +1001,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="$ 6.00"/>
                             </properties>
@@ -1005,7 +1012,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="10"/>
                             </properties>
@@ -1016,7 +1023,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="Color: "/>
                             </properties>
@@ -1027,7 +1034,7 @@
                               <gridbag weightx="0.0" weighty="0.0"/>
                             </constraints>
                             <properties>
-                              <font size="20"/>
+                              <font name="Bell MT" size="20" style="0"/>
                               <foreground color="-3688541"/>
                               <text value="pink"/>
                             </properties>
@@ -1094,8 +1101,8 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <font size="28" style="1"/>
-                  <foreground color="-3688541"/>
+                  <font name="Ink Free" size="24" style="1"/>
+                  <foreground color="-1"/>
                   <text value="Total:"/>
                 </properties>
               </component>
@@ -1105,8 +1112,8 @@
                 </constraints>
                 <properties>
                   <alignmentY value="0.5"/>
-                  <font size="28" style="1"/>
-                  <foreground color="-3688541"/>
+                  <font name="Ink Free" size="24" style="1"/>
+                  <foreground color="-1"/>
                   <text value="0"/>
                 </properties>
               </component>

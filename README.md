@@ -1,32 +1,200 @@
-# Flower-Shop-Ordering-Platform
-Capstone project by BSCS-2 F3: Group 4 JAVAWookez (Alcoseba, Aloyon, Ares, Encabo, &amp; Quibuyen)
+# FLOWER BUSINESS ORDER SYSTEM
+**Demonstrated via a Flower Shop (Extensible to Other Small Businesses)**
+**By: Javawokez (Alcoseba, Aloyon, Ares, Encabo, Quibuyen)**
 
-Project Description: (as of November 20, 2025)
-- 
-- The proposed system is a Flower Shop Ordering Platform designed to streamline the process of buying flowers, whether through premade arrangements or fully customized bouquets. The goal of the system is to give users a convenient, interactive, and flexible way to create or choose flower arrangements according to their preferences. By guiding users step-by-step through the selection process, the system ensures a smooth ordering experience from choosing flowers all the way to checkout and delivery.
-  
-- The system begins by presenting users with two primary options: Premade Bouquets or Per Stem Purchase. If the user chooses to purchase per stem, they will be directed to a complete list of available flowers. Each flower type will display essential details such as its name, color, and price per stem. Users can then customize the number of stems they wish to buy using “+” and “–” controls. Once they finalize their selections, they will be taken to the checkout page. At checkout, users may add additional options—such as wrappers, ribbons, message cards, or accessories—as well as select their preferred mode of payment and delivery method (delivery or pickup).
-On the other hand, if the user chooses the Bouquet option, they will be redirected to a page that allows them to select the bouquet size. The system offers three standard sizes: Small (3 flowers), Medium (6 flowers), and Large (12 flowers). After choosing a size, the user will see two main paths: selecting from a collection of Ready-Made Bouquets or choosing the Custom Bouquet option. For ready-made bouquets, users simply click on their desired arrangement and proceed directly to checkout.
+---
 
-- If the user selects the Custom Bouquet option, the system will guide them through building their bouquet from scratch. A list of available flower types will be displayed, along with controls for adding (“+”) or removing (“–”) stems. The system actively monitors the flower count to ensure that the total number of stems matches the required maximum for the chosen size (3, 6, or 12). Users will not be allowed to continue until they have fully completed the bouquet by meeting the required number of stems. Once the bouquet is complete, the user can proceed to the checkout page, where they will once again choose their payment method and delivery mode.
-Overall, this system focuses on user customization, smooth navigation, and clear order flow, making it easy for customers to tailor their floral purchases according to their needs. It combines convenience, creativity, and structured purchasing options, giving users full control over whether they want a simple premade bouquet or a personalized arrangement built from individual flower stems.
+## Table of Contents
 
-Project Implementation Action Plan
-- 
-The group has updated the class diagram with the final list of items they will be working with for the project. 
+1. Overview
+2. Description
+3. Who Can Benefit?
+4. System Architecture & Design Patterns
+   * MVC Architecture
+   * Abstract Factory Pattern
+   * Facade Pattern
+5. Object-Oriented Programming Principles
+   * Inheritance
+   * Encapsulation
+   * Polymorphism
+   * Abstraction
+6. File Handling & Data Persistence
+7. Graphical User Interface (GUI)
+8. Scalability & Customization
+9. Future Enhancements
 
-Their goal this week is to finalize the drafts of the screen designs via Canva: https://www.canva.com/design/DAG5l81e_eI/A_BJocM_zAjhrffDH2mkhA/view?utm_content=DAG5l81e_eI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hef3a1069ea, implement at least two of the screens, and follow the others within the following days. 
+---
 
-  November 24-29, 2025: Finalize class diagram, screen designs, and test functionalities. Create the skeleton of the system, ensuring to apply OOP principles. The group intends to list out plans for implementing file handling and throwing of exceptions within the system that is visible for the users to see and interact with.
+## 1. Overview
 
-  November 30 - December 6, 2025: Create a functioning system with little to no errors to debug; the system must be able to compute total prices, including base price and any add-ons. System buttons must all function in their intended use, and design-wise, the visuals of the systems are applied and fit their overall functionalities, ready for pitching.
+The **Lower Business Order System** is a Java-based desktop application designed to help small businesses manage customer orders efficiently. While the system is demonstrated using a **Flower Shop** scenario, its architecture and design allow it to be easily adapted for other small businesses such as bakeries, cafés, retail stores, and service-based shops.
 
-  December 7-15, 2025: Finalize project, including possible pitch deck requirement and script for presenting. Create a comprehensive paper on its intended use and applications to real-world problems. 
+The system focuses on clean software architecture, strong object-oriented principles, and a flexible user interface that supports future customization.
 
-  To view more outlined allocation of tasks and progress click this excel link: https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/angelajahziel_encabo_cit_edu/IQCJkBYIVsKaTpAXVsNIdXkCAQXy0pWYhIGdOZZsHMx8LEc?e=0EMKg6 
+---
 
-  To view more on the UI/UX of GUI swing implementation click this figma link: https://www.figma.com/design/5qhT7Lx3M43MfxPLY0sya1/JavaWookez?node-id=0-1&t=u9EFuwFbLSITEAQa-1
+## 2. Description
 
-Design Patterns
-- 
-## 
+This system provides a complete order lifecycle for small businesses, including:
+* User account creation and authentication
+* Order placement and cancellation
+* Retrieval of previous order records
+* Simple and intuitive graphical interface
+
+The project emphasizes **maintainability, scalability, and reusability**, making it suitable both as a learning project and as a foundation for real-world small business applications.
+
+---
+
+## 3. Who Can Benefit?
+
+The Lower Business Order System is ideal for:
+
+* **Small business owners** needing a basic order management solution
+* **Developers** looking for a reusable desktop system template
+* **Startups** requiring a lightweight, customizable order system
+
+---
+
+## 4. System Architecture & Design Patterns
+
+### MVC (Model-View-Controller) Architecture
+
+The system follows the **MVC design architecture** to ensure separation of concerns:
+
+* **Model** – Handles business logic, order data, user data, and file operations
+* **View** – Manages the graphical user interface (Swing-based forms)
+* **Controller** – Acts as the bridge between the View and Model, processing user input and updating data accordingly
+
+This structure improves code readability, testability, and long-term maintenance.
+
+---
+
+### Abstract Factory Pattern
+
+The **Abstract Factory Pattern** is used to:
+
+* Create families of related objects (e.g., stems and bouquets)
+* Allow easy substitution of business types (Flower Shop → Bakery, Café, etc.)
+* Promote loose coupling between object creation and implementation
+
+This ensures that new business domains can be introduced with minimal code changes.
+
+---
+
+### Facade Pattern
+
+The **Facade Pattern** provides a simplified interface for complex subsystems such as:
+
+* Order processing
+* User authentication
+* File handling
+
+By using a facade, the system reduces dependencies and simplifies interactions between components.
+
+---
+
+## 5. Object-Oriented Programming Principles
+
+### Implementation of Inheritance
+
+Inheritance is used to:
+
+* Share common properties and behaviors among related classes
+* Create base classes such as `User`, `Product`, or `Order`
+* Extend these base classes for specific implementations (e.g., `User`, `Guest`, `Bouquet`)
+
+This reduces code duplication and improves maintainability.
+
+---
+
+### Implementation of Encapsulation
+
+Encapsulation is enforced by:
+
+* Using private fields for class data
+* Providing controlled access through getters and setters
+* Protecting sensitive information such as user credentials
+
+This ensures data integrity and controlled interaction with system components.
+
+---
+
+### Implementation of Polymorphism
+
+Polymorphism allows:
+
+* Different product or order types to be treated uniformly
+* Method overriding for customized behavior per business type
+* Flexible expansion of features without modifying existing code
+
+---
+
+### Implementation of Abstraction
+
+Abstraction is applied using:
+
+* Abstract classes and interfaces
+* High-level definitions for business operations
+
+This hides implementation details and allows developers to focus on functionality rather than internal complexity. 
+This was displayed through using interfaces and abstract classes all throughout the program.
+
+---
+
+## 6. File Handling & Data Persistence
+
+The system uses **file handling** to store and retrieve data without requiring a database.
+
+Supported features include:
+
+* User sign-up and login persistence
+* Order creation and cancellation
+* Retrieval of old order details
+* Basic record management using text or serialized files
+
+This approach keeps the system lightweight and easy to deploy.
+
+---
+
+## 7. Graphical User Interface (GUI)
+
+The GUI is built using a combination of:
+
+* **Figma-based design concepts**
+* **Java Swing forms**
+* **Pure Java code for custom layouts and interactions**
+* **Hand-drawn visual elements** for a unique and user-friendly appearance
+
+The codebase allows future clients or developers to:
+* Replace existing designs
+* Integrate their own UI concepts seamlessly
+* Customize branding without changing core logic
+
+---
+
+## 8. Scalability & Customization
+Although demonstrated as a Flower Shop system, the architecture allows:
+* Easy adaptation to other small business models
+* Addition of new product categories
+* Expansion of order workflows
+* Integration with future technologies (e.g., databases, APIs)
+
+---
+
+## 9. Future Enhancements
+Potential future improvements include:
+* Database integration (MySQL, SQLite, etc.)
+* Role-based access control
+* Advanced reporting and analytics
+* Online ordering support
+* Improved UI/UX with modern Java frameworks
+
+---
+
+FIGMA LINK for UI: 
+https://www.figma.com/design/5qhT7Lx3M43MfxPLY0sya1/JavaWookez?node-id=0-1&t=m8hDj6FWMKiXyDiR-1
+EXCEL for workload distribution:
+https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/angelajahziel_encabo_cit_edu/IQCJkBYIVsKaTpAXVsNIdXkCAQ6APap4aq7e4lYRyIIqAAo?e=K9PFu6
+
+## Conclusion
+The **Flower Business Order System** is a well-structured, object-oriented Java application that demonstrates real-world software engineering principles while remaining flexible enough for practical use and future growth.

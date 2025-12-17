@@ -45,7 +45,6 @@ public class CheckoutPanel {
     private JPanel OrdersHere;
     private JPanel PersonalInformation;
     private JTextArea specialRequest;
-    private JButton cancelButton;
     private double base;
     private CheckoutController controller;
     private Order order;
@@ -130,6 +129,57 @@ public class CheckoutPanel {
                 try {
                     controller.processCheckout(delivery.getSelectedItem().toString(), payment.getSelectedItem().toString(),  dateField.getText(),  deliveryAddress.getText(),
                             Receiver.getText(), getAddOns(), Double.parseDouble(totalPrice.getText()),specialRequest.getText());
+
+                    JDialog dialog = new JDialog((JFrame) null, "Info", true);
+                    dialog.setSize(420, 180);
+                    dialog.setLayout(new BorderLayout());
+                    dialog.setUndecorated(true); // removes sharp window borders
+
+// Main panel (cream background)
+                    JPanel mainPanel = new JPanel(new BorderLayout());
+                    mainPanel.setBackground(Color.decode("#F5E6D3"));
+                    mainPanel.setBorder(BorderFactory.createLineBorder(Color.decode("#561C32"), 2));
+
+// Message
+                    JLabel message = new JLabel(
+                            "<html><center>Your order is complete! Congratulations</center></html>",
+                            JLabel.CENTER
+                    );
+                    message.setFont(new Font("Bell MT", Font.BOLD, 18));
+                    message.setForeground(Color.decode("#561C32"));
+                    message.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 20));
+
+// Button panel
+                    JPanel buttonPanel = new JPanel();
+                    buttonPanel.setBackground(Color.decode("#F5E6D3"));
+
+// OK Button
+                    JButton okButton = new JButton("OK");
+                    okButton.setFont(new Font("Bell MT", Font.BOLD, 14));
+                    okButton.setBackground(Color.decode("#561C32"));
+                    okButton.setForeground(Color.decode("#F5E6D3"));
+                    okButton.setFocusPainted(false);
+                    okButton.setBorder(BorderFactory.createEmptyBorder(8, 30, 8, 30));
+                    okButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+                    okButton.addActionListener(ev -> {
+                        try {
+                            controller.userActions("Dashboard");
+                        } catch (InvalidInputException ex) {
+                            JOptionPane.showMessageDialog(dialog, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                        dialog.dispose();
+                    });
+
+// Add components
+                    buttonPanel.add(okButton);
+                    mainPanel.add(message, BorderLayout.CENTER);
+                    mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+
+                    dialog.add(mainPanel);
+                    dialog.setLocationRelativeTo(null);
+                    dialog.setVisible(true);
+
                 } catch (InvalidInputException.PaymentFailedException ex) {
                     JDialog dialog = new JDialog((JFrame) null, "Info", true); // true = modal
                     dialog.setSize(350, 150);
@@ -154,6 +204,8 @@ public class CheckoutPanel {
        ORDER SUMMARY
        ============================== */
     public void displayOrder() {
+
+
         orderSummaryPanel.setLayout(new BoxLayout(orderSummaryPanel, BoxLayout.Y_AXIS));
         orderSummaryPanel.removeAll();
 

@@ -42,17 +42,17 @@ public class User {
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
-        orders = new ArrayList<>();
         return this;
     }
 
-    public User(String fullName, String email, String contactNumber, String username, String password) {
+    public User(String fullName, String email, String contactNumber, String username, String password, ArrayList<CheckOut>orders) {
         this.fullName = fullName;
         this.email = email;
         this.contactNumber = contactNumber;
         this.username = username;
         this.password = password;
-        orders = new ArrayList<>();
+        this.orders = orders;
+
     }
 
 
@@ -149,14 +149,8 @@ public class User {
 
     public void loadOrdersFromViewOrder() {
         ViewOrder viewOrder = new ViewOrder();
-        viewOrder.loadFromFile(username);
-
-        if (orders == null) {
-            orders = new ArrayList<>();
-        } else {
-            orders.clear();
-        }
-
-        orders.addAll(viewOrder.getAllOrders());
+        viewOrder.loadFromFile(this.username);   // loads all the order files for this user
+        this.orders = viewOrder.getAllOrders();  // store in the user's orders list
     }
+
 }
